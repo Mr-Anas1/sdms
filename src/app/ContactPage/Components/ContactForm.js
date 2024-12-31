@@ -88,7 +88,21 @@ export default function ContactForm() {
               />
             </div>
             <div>
-              <label className="label">Project Type Budget</label>
+            <label className="label">Project Type</label>
+            <select className="input-field" defaultValue="">
+              <option value="" disabled>
+                Select a project type
+              </option>
+              <option value="branding">Branding</option>
+              <option value="design">Design</option>
+              <option value="development">Development</option>
+              <option value="design-and-development">Design and Development</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+            <div>
+              <label className="label">Project Budget </label>
               <input
                 type="text"
                 className="input-field"

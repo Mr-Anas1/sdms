@@ -130,6 +130,7 @@ input::placeholder , textarea::placeholder {
 
 .dark-mode .input-field {
   background-color: #000000;
+  color:#ffffff;
 }
 .dark-mode .textarea-field {
   background-color: #000000;
