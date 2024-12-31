@@ -1,0 +1,211 @@
+
+/* Home Heading */
+.home-heading {
+    font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+    font-size: 6.5rem;
+    color: #1A1A1A; /* Light color for light mode */
+    text-align: center;
+    line-height: 0.75;
+    margin-top: 5vh;
+    font-weight: 100;
+    letter-spacing:-2px;
+  }
+  
+  .dark-mode .home-heading {
+    color: var(--highlight-color); /* Highlight color for dark mode */
+  }
+  /* Paragraph Styling */
+  .home-desc {
+    font-size: 1rem; /* Minimal font size for readability */
+    font-family: 'Syne', serif;
+    margin: 10px 20px;
+    line-height: 1.5;
+    color: #000; /* Default color for light mode */
+    text-align: center;
+  }
+  /* Responsive Heading Size */
+  @media (max-width: 764px) {
+    .home-heading {
+      font-size: 3rem;
+      margin-top:15vh;
+    }
+    .home-desc{
+      font-size: 0.8rem;
+    }
+  }
+  
+
+/* Down Arrow Styling */
+.down-arrow {
+    font-size: 2.5rem;
+    margin-top: 5vh;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #000; /* Default color for light mode */
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .down-arrow:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Dark Mode Styling for Down Arrow */
+  body.dark-mode .down-arrow {
+    color: #fff; /* White arrow for dark mode */
+  }
+  
+  /* Button Row Container */
+  .button-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 40vw;
+    margin-top: 25px;
+  }
+  
+  
+  /* Button Styling */
+  .explore-button, .contact-button {
+    border: 2px solid #000000; /* Gold border for premium feel */
+    background: transparent;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    font-family:  'Syne',serif;
+    border-radius: 33px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding : 15px;
+  }
+  @media (max-width:764px) {
+    .button-row {
+      gap:20vw;
+    }
+    .explore-button, .contact-button {
+      font-size:1rem;
+    }
+  }
+  
+  /* Hover effect for buttons */
+  .explore-button:hover, .contact-button:hover {
+     transform: scale(1.1);
+     transition: transform 0.3s ease-in-out;
+  }
+  
+   
+  /* Light Mode Adjustments */
+  body.light-mode .home-desc, 
+  body.light-mode .down-arrow,
+  body.light-mode .explore-button,
+  body.light-mode .contact-button
+  {
+    color: #000; /* Black text and arrow for light mode */
+  }
+  
+  body.dark-mode .explore-button,
+  body.dark-mode .contact-button{ 
+    border: 2px solid #ffffff;
+  }
+  /* Dark Mode Adjustments */
+  body.dark-mode .home-desc, 
+  body.dark-mode .down-arrow,
+  body.dark-mode .explore-button,
+  body.dark-mode .contact-button{
+    color: #ffffff; /* White text and arrow for dark mode */
+  }
+  
+  
+  
+  
+  
+
+
+  .time-to-roar-head{
+    font-family:'Dirtyline36Daysoftype2022';
+    font-size: 6.5rem;
+    text-align: left;
+    text-transform: lowercase;
+    margin-left: 10vw;
+    margin-top: 10vh;
+    line-height: 5rem;
+    color:#000000;
+  }
+  .dark-mode .time-to-roar-head{
+    color:var(--background-light);
+  }
+  .time-to-roar {
+    text-align: center;
+    margin: 20px;
+    width:80vw;
+    margin-left: 10vw;
+    margin-bottom: 20vh;
+    
+  }
+  
+  .horizontal-line {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 10px 0;
+  }
+  
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  
+  }
+  
+  .contact-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .contact-item small {
+    display: block;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 5px;
+    font-family: 'Syne',serif;
+    text-transform: none;
+  }
+  
+  .contact-item p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    font-family: 'Syne',serif;
+    text-transform: none;
+  }
+  .dark-mode .contact-item p{
+    color:var(--background-light);
+  }
+  
+  @media(max-width:764px){
+    .time-to-roar-head{
+      font-size: 4rem;
+      line-height: 3rem;
+  
+    }
+    .contact-item small{
+      font-size: 0.5rem;
+    }
+    .contact-item p{
+      font-size: 0.6rem;
+    }
+    .web{
+      display: none;
+    }
+    .services-image {
+      width: 90%; /* Image takes 90% of the container width */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 1rem; /* Add spacing between image and text */
+      border-radius: 12px; /* Rounded corners */
+    }
+  
+  }
+ 
+  
