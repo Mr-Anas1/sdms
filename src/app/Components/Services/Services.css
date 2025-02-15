@@ -1,294 +1,381 @@
-
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
+}
+
 /* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
+
 /* Our Services Component Styles*/
 
 /* Container */
 .services-container {
-    padding: 2rem;
-    background-color: var(--bg-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    min-height: 100vh; /* Ensures it takes up full viewport height */
-    width: 90vw; /* Container takes up 80% of viewport width */
-    margin: 0 auto; /* Centers the container */
-  }
-  .who-are-we {
-    margin: 15vh 0;
-  
-  }
-  .who-are-we-head {
-    font-size: 8rem; /* Slightly larger font for emphasis */
-    margin-bottom: 0.4rem;
-    color: var(--background-dark);
-    text-transform: lowercase; /* Adds a professional look */
-    font-family:'Dirtyline36Daysoftype2022' ;
-    line-height: 0.8;
-    margin-top : 8vh;
-    font-weight: 100;
-    letter-spacing: -3pt;
-  }
-  .dark-mode .who-are-we-head {
-    color: var(--background-light);
-  }
+  padding: 2rem;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  /* Ensures it takes up full viewport height */
+  width: 90vw;
+  /* Container takes up 80% of viewport width */
+  margin: 0 auto;
+  /* Centers the container */
+}
+
+.who-are-we {
+  margin: 15vh 0;
+
+}
+
+.who-are-we-head {
+  font-size: 8rem;
+  /* Slightly larger font for emphasis */
+  margin-bottom: 0.4rem;
+  color: var(--background-dark);
+  text-transform: lowercase;
+  /* Adds a professional look */
+  font-family: 'Dirtyline36Daysoftype2022';
+  line-height: 0.8;
+  margin-top: 8vh;
+  font-weight: 100;
+  letter-spacing: -3pt;
+}
+
+.dark-mode .who-are-we-head {
+  color: var(--background-light);
+}
+
+.who-are-we-subhead {
+  color: var(--background-dark);
+  font-size: 2.2rem;
+  font-family: 'Syne', serif;
+  margin-bottom: 10px;
+  width: 50%;
+  font-weight: 200;
+}
+
+.who-are-we-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+
+.who-are-we-tag {
+  color: #717171;
+  font-family: 'Syne', serif;
+  text-transform: none;
+  font-size: 1.4rem;
+  width: 50%;
+  margin-top: 50px;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+
+@media(max-width:764px) {
   .who-are-we-subhead {
-    color : var(--background-dark);
-    font-size:2.2rem;
-    font-family: 'Syne',serif;
-    margin-bottom: 10px;
-    width:50%;
-  
-  }
-  .who-are-we-tag {
-    color : var(--background-dark);
-    font-family: 'Syne',serif;
-    text-transform: none;
-    font-size: 1.6rem;
-    width:50%;
-    margin-left:50%;
-  }
-  @media(max-width:764px){
-    .who-are-we-subhead{
-      width:100%;
-      font-size: 1.2rem;
-    }
-    .who-are-we-tag{
-      width:100%;
-      margin-left: 0%;
-      font-size: 1rem;
-    }
-    .who-are-we-head {
-       font-size: 4rem;
-       margin-top: 5vh;
-       letter-spacing: 1pt;
-    }
-  }
-  .dark-mode .who-are-we-subhead{
-    color:var(--background-light);
-  }
-  .dark-mode .who-are-we-tag{
-    color:var(--background-light);
-  }
-  /* Heading */
-  .services-heading {
-    font-size: 5rem; /* Slightly larger font for emphasis */
-    line-height:4rem;
-    color: var(--background-dark);
-    text-transform: lowercase; /* Adds a professional look */
-    font-family:'Dirtyline36Daysoftype2022' ;
-    font-weight: 100;
-  }
-  .dark-mode .services-heading {
-    color: var(--background-light);
-  }
-  .dark-mode .services-text-head {
-    color: var(--background-light);
-  }
-  .dark-mode .services-text-para {
-    color: var(--background-light);
-  }
-  .dark-mode .services-text-button {
-    color: var(--background-light);
-    border: 2px solid #ffffff;
-  }
-  
-  .our-services-tag {
-    color : var(--background-dark);
-    font-family: 'Syne' , serif;
-    text-transform: none;
-    font-size: 1.5rem;
-    margin-top: -10px;
-  }
-  .dark-mode .our-services-tag  {
-    color : var(--background-light);
-  }
-   
-  .services-card {
-    display: flex;
-    flex-direction: row; /* Side-by-side layout for image and text */
     width: 100%;
-    background-color: var(--card-bg);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
-    margin-top:10vh;
-    margin-bottom: 5vh;
+    font-size: 1.2rem;
   }
-  @media (min-width: 764px) {
-  .services-card:nth-child(4)  {
+
+  .who-are-we-tag {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+
+  .who-are-we-head {
+    font-size: 4rem;
+    margin-top: 5vh;
+    letter-spacing: 1pt;
+  }
+}
+
+.dark-mode .who-are-we-subhead {
+  color: var(--background-light);
+}
+
+.dark-mode .who-are-we-tag {
+  color: var(--background-light);
+}
+
+@media screen and (max-width: 500px) {
+  .who-are-we-container {
+    justify-content: flex-start;
+  }
+
+  .who-are-we-tag {
+    width: 100%;
+  }
+}
+
+/* Heading */
+.services-heading {
+  font-size: 5rem;
+  /* Slightly larger font for emphasis */
+  line-height: 4rem;
+  color: var(--background-dark);
+  text-transform: lowercase;
+  /* Adds a professional look */
+  font-family: 'Dirtyline36Daysoftype2022';
+  font-weight: 100;
+}
+
+.dark-mode .services-heading {
+  color: var(--background-light);
+}
+
+.dark-mode .services-text-head {
+  color: var(--background-light);
+}
+
+.dark-mode .services-text-para {
+  color: var(--background-light);
+}
+
+.dark-mode .services-text-button {
+  color: var(--background-light);
+  border: 2px solid #ffffff;
+}
+
+.our-services-tag {
+  color: var(--background-dark);
+  font-family: 'Syne', serif;
+  text-transform: none;
+  font-size: 1.5rem;
+  margin-top: -10px;
+}
+
+.dark-mode .our-services-tag {
+  color: var(--background-light);
+}
+
+.services-card {
+  display: flex;
+  flex-direction: row;
+  /* Side-by-side layout for image and text */
+  width: 100%;
+  background-color: var(--card-bg);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+@media (min-width: 764px) {
+  .services-card:nth-child(4) {
     flex-direction: row-reverse;
-    margin-left : -7vw; /* Image on the right for desktop view */
+    margin-left: -7vw;
+    /* Image on the right for desktop view */
   }
-  .services-card:nth-child(6)  {
+
+  .services-card:nth-child(6) {
     flex-direction: row-reverse;
-    margin-left : -7vw; /* Image on the right for desktop view */
+    margin-left: -7vw;
+    /* Image on the right for desktop view */
   }
+}
+
+.services-card:hover {
+  transform: scale(1.1);
+  /* Gives an elevation effect */
+}
+
+/* Image Section */
+.services-image {
+  width: 40vw;
+  /* Image takes up 40% of the container width */
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  /* Animation for image hover */
+  border-radius: 12px;
+}
+
+/* Text Section */
+.services-text {
+  width: 40vw;
+  /* Text section takes up 40% of the container width */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  /* Adds spacing between text elements */
+}
+
+/* Text Head */
+.services-text-head {
+  font-size: 1.8rem;
+  /* Larger for better visibility */
+  font-weight: 600;
+  color: var(--background-dark);
+  font-family: 'Dirtyline36Daysoftype2022';
+}
+
+/* Text Paragraph */
+.services-text-para {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  /* Improved readability */
+  color: var(--background-dark);
+  margin-bottom: 1rem;
+  list-style-type: none;
+  font-family: 'Syne', serif;
+}
+
+/* Button */
+.services-text-button {
+  border: 2px solid #000000;
+  /* Gold border for premium feel */
+  background: transparent;
+  color: var(--background-dark);
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Syne', serif;
+  border-radius: 33px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 15px;
+  margin-right: auto;
+  text-transform: none;
+
+}
+
+.services-text-button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-3px);
+  /* Subtle lift effect on hover */
+}
+
+/* GSAP Animations */
+@media (max-width: 768px) {
+  .services-card {
+    flex-direction: row;
+    /* Stacks the content vertically on smaller screens */
   }
-  .services-card:hover {
-    transform: scale(1.1); /* Gives an elevation effect */
+
+  .services-image,
+  .services-text {
+    width: 100%;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .services-container {
+
+    width: 100vw;
+    /* Container takes up 80% of viewport width */
+
+  }
+
+  .our-services-tag {
+    font-size: 1.1rem;
+  }
+
+  /* Card Layout */
+  .services-card {
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: center;
+    /* Center the card content */
+    margin-top: 2rem;
+    /* Adjust spacing between cards */
+    padding: 1rem;
+    /* Add padding for better spacing */
+
+  }
+
   /* Image Section */
   .services-image {
-    width: 40vw; /* Image takes up 40% of the container width */
+    width: 90%;
+    /* Image takes 90% of the container width */
     height: auto;
-    object-fit:cover;
-    transition: transform 0.3s ease; /* Animation for image hover */
+    /* Maintain aspect ratio */
+    margin-bottom: 1rem;
+    /* Add spacing between image and text */
     border-radius: 12px;
+    /* Rounded corners */
   }
-  
+
   /* Text Section */
   .services-text {
-    width: 40vw; /* Text section takes up 40% of the container width */
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem; /* Adds spacing between text elements */
+    width: 100%;
+    /* Text section takes full width */
+    padding: 1rem;
+    /* Add padding */
+    text-align: center;
+    /* Center-align text for better readability */
+    gap: 0.8rem;
+    /* Adjust spacing between text elements */
   }
-  
+
+  /* Heading */
+  .services-heading {
+    font-size: 4rem;
+    /* Reduce heading size for smaller screens */
+    margin-bottom: 1.5rem;
+    /* Adjust spacing below heading */
+    line-height: 0.8;
+  }
+
   /* Text Head */
   .services-text-head {
-    font-size: 1.8rem; /* Larger for better visibility */
-    font-weight: 600;
-    color: var(--background-dark);
-    font-family: 'Dirtyline36Daysoftype2022';
+    font-size: 1.3rem;
+    /* Adjust text head size */
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    /* Add spacing below text head */
+    text-transform: lowercase;
   }
-  
+
   /* Text Paragraph */
   .services-text-para {
-    font-size: 1.2rem;
-    line-height: 1.8; /* Improved readability */
-    color: var(--background-dark);
+    font-size: 1rem;
+    /* Keep text readable */
+    line-height: 1.6;
+    /* Maintain good line spacing */
     margin-bottom: 1rem;
-    list-style-type: none;
-    font-family: 'Syne', serif;
+    /* Add spacing below paragraph */
   }
-  
+
   /* Button */
   .services-text-button {
-    border: 2px solid #000000; /* Gold border for premium feel */
-    background: transparent;
-    color: var(--background-dark);
-    padding: 10px 20px;
+    padding: 12px 20px;
+    /* Slightly larger button padding */
     font-size: 1rem;
-    font-weight: bold;
-    font-family:  'Syne',serif;
-    border-radius: 33px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding : 15px;
-    margin-right: auto;
+    /* Keep font size readable */
+    border-radius: 25px;
+    /* Make the button look modern */
+    margin: 0 auto;
+    /* Center the button */
+    width: auto;
+    /* Ensure button doesn't stretch */
     text-transform: none;
-  
   }
-  
-  .services-text-button:hover {
-    background-color: var(--button-hover-bg);
-    transform: translateY(-3px); /* Subtle lift effect on hover */
-  }
-  
-  /* GSAP Animations */
-  @media (max-width: 768px) {
-    .services-card {
-      flex-direction: row; /* Stacks the content vertically on smaller screens */
-    }
-  
-    .services-image, .services-text {
-      width: 100%;
-    }
-  }
-  @media (max-width: 768px) {
-    .services-container {
-     
-      width: 100vw; /* Container takes up 80% of viewport width */
-       
-    }
-    .our-services-tag {
-      font-size: 1.1rem;
-    }
-    /* Card Layout */
-    .services-card {
-      flex-direction: column; /* Stack content vertically */
-      align-items: center; /* Center the card content */
-      margin-top: 2rem; /* Adjust spacing between cards */
-      padding: 1rem; /* Add padding for better spacing */
-      
-    }
-  
-    /* Image Section */
-    .services-image {
-      width: 90%; /* Image takes 90% of the container width */
-      height: auto; /* Maintain aspect ratio */
-      margin-bottom: 1rem; /* Add spacing between image and text */
-      border-radius: 12px; /* Rounded corners */
-    }
-  
-    /* Text Section */
-    .services-text {
-      width: 100%; /* Text section takes full width */
-      padding: 1rem; /* Add padding */
-      text-align: center; /* Center-align text for better readability */
-      gap: 0.8rem; /* Adjust spacing between text elements */
-    }
-  
-    /* Heading */
-    .services-heading {
-      font-size: 4rem; /* Reduce heading size for smaller screens */
-      margin-bottom: 1.5rem; /* Adjust spacing below heading */
-      line-height: 0.8;
-    }
-  
-    /* Text Head */
-    .services-text-head {
-      font-size: 1.3rem; /* Adjust text head size */
-      font-weight: bold;
-      margin-bottom: 0.8rem; /* Add spacing below text head */
-      text-transform: lowercase;
-    }
-  
-    /* Text Paragraph */
-    .services-text-para {
-      font-size: 1rem; /* Keep text readable */
-      line-height: 1.6; /* Maintain good line spacing */
-      margin-bottom: 1rem; /* Add spacing below paragraph */
-    }
-  
-    /* Button */
-    .services-text-button {
-      padding: 12px 20px; /* Slightly larger button padding */
-      font-size: 1rem; /* Keep font size readable */
-      border-radius: 25px; /* Make the button look modern */
-      margin: 0 auto; /* Center the button */
-      width: auto; /* Ensure button doesn't stretch */
-      text-transform: none;
-    }
-  }
-  
+}

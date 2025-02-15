@@ -1,38 +1,39 @@
 "use client"; // For client-side animations with GSAP
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap"
+import { gsap } from "gsap";
 import Stats from "../Stats/Stats";
-import Link from 'next/link';
-import './Services.css';
- 
+import Link from "next/link";
+import "./Services.css";
 
 const Services = () => {
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
   const WhoWeAreRef = useRef([]);
-;
-  
-
   return (
-    
-    <section className="services-container" id = "our-services">
+    <section className="services-container" id="our-services">
       {/* Who We Are Section */}
-      <div className="who-are-we" id = "WhoWeAre">
-        <h2 className="who-are-we-head" ref={WhoWeAreRef}>who <br/> we are</h2>
+      <div className="who-are-we" id="WhoWeAre">
+        <h2 className="who-are-we-head" ref={WhoWeAreRef}>
+          who <br /> we are
+        </h2>
         <h4 className="who-are-we-subhead">
-          As a pioneering force in the digital galaxy, SDMS® blends creativity with
-          cutting-edge technology to craft your brand’s journey through the stars.
+          As a pioneering force in the digital galaxy, SDMS® blends creativity
+          with cutting-edge technology to craft your brand’s journey through the
+          stars.
         </h4>
-        <p className="who-are-we-tag">
-          We help your business launch into the digital cosmos, delivering powerful
-          websites and apps that leave a lasting impact. Our expertise in the latest
-          digital trends ensures your brand orbits success, expanding across the universe
-          of possibilities.
-        </p>
+
+        <div className="who-are-we-container">
+          <p className="who-are-we-tag">
+            We help your business launch into the digital cosmos, delivering
+            powerful websites and apps that leave a lasting impact. Our
+            expertise in the latest digital trends ensures your brand orbits
+            success, expanding across the universe of possibilities.
+          </p>
+        </div>
       </div>
       {/* Heading */}
-      <h2   className="services-heading">
-        our <br/> services
+      <h2 className="services-heading">
+        our <br /> services
       </h2>
       <p className="our-services-tag">
         Like a constellation, our services align to create a universe of endless
@@ -40,6 +41,7 @@ const Services = () => {
       </p>
 
       {/* Service Cards */}
+
       {[
         {
           imgSrc: "./images/service1.jpeg",
@@ -49,23 +51,22 @@ const Services = () => {
             "Automation / API Creation",
             "Website / App Creation ",
             "POS Systems",
-            "UI/UX Design"
+            "UI/UX Design",
           ],
         },
         {
           imgSrc: "./images/service2.jpeg",
           title: "marketing & branding",
-          list: ["Video Creation (from Reels to AR/VR videos)", "Content Writing","Social Media Management",
+          list: [
+            "Video Creation (from Reels to AR/VR videos)",
+            "Content Writing",
+            "Social Media Management",
             "Ads Management",
-            "Whatsapp & Email Marketing"],
+            "Whatsapp & Email Marketing",
+          ],
         },
-        
       ].map((service, index) => (
-        <div
-          key={index}
-       
-          className="services-card"
-        >
+        <div key={index} className="services-card">
           {/* Image Section */}
           <img
             className="services-image"
@@ -80,12 +81,12 @@ const Services = () => {
                 <li key={idx}>{item}</li>
               ))}
             </ul>
-            <Link href = '/ServicesPage' ><button className="contact-button" >More Info</button></Link>
+            <Link href="/ServicesPage">
+              <button className="contact-button">More Info</button>
+            </Link>
           </div>
         </div>
       ))}
-
-      
 
       {/* Stats Section */}
       <Stats />

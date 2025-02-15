@@ -4,7 +4,8 @@
   --background-dark: #0a0a0a;
   --foreground-light: #171717;
   --foreground-dark: #ffff;
-  --highlight-color: #ffff; /* Golden color */
+  --highlight-color: #ffff;
+  /* Golden color */
 }
 
 /* Apply Dark Mode Colors for Dark Mode Preferences */
@@ -35,14 +36,16 @@
 @font-face {
   font-family: 'Syne';
   src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400; /* Regular */
+  font-weight: 400;
+  /* Regular */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Charrington';
   src: url('/fonts/Charbold.ttf') format('truetype');
-  font-weight: 400; /* Regular */
+  font-weight: 400;
+  /* Regular */
   font-style: normal;
 }
 
@@ -69,7 +72,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
- 
+
 
 
 /* Home Page Styles */
@@ -88,16 +91,18 @@ a {
 
 
 .cursor-canvas {
-  position: absolute; /* Stays fixed in the viewport */
+  position: absolute;
+  /* Stays fixed in the viewport */
   top: 0;
   left: 0;
-  pointer-events: none; /* Ensures the canvas does not block user interactions */
-  z-index: 9999; /* Ensures the canvas is above other content */
+  pointer-events: none;
+  /* Ensures the canvas does not block user interactions */
+  z-index: 9999;
+  /* Ensures the canvas is above other content */
 }
 
- @media(max-width:764px) {
-  .cursor-canvas{
-    position:fixed;
+@media(max-width:764px) {
+  .cursor-canvas {
+    position: fixed;
   }
- }
- 
+}

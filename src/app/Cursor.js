@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 export default function Cursor({ darkMode }) {
   const canvasRef = useRef(null);
@@ -82,10 +82,5 @@ export default function Cursor({ darkMode }) {
     };
   }, [darkMode]); // React to darkMode changes
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="cursor-canvas"
-    />
-  );
+  return <canvas ref={canvasRef} className="cursor-canvas" />;
 }

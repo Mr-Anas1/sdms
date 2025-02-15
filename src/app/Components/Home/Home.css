@@ -1,255 +1,301 @@
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
+}
 
 
 /* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
-  
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
+
 /* Home Page Styles */
 
 /* General styles for the loading screen */
 .loading-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000; /* Black background */
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  /* Black background */
+  overflow: hidden;
+}
+
+/* Video styles */
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Logo and title container */
+#logo-and-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Logo styles with zoom-in effect */
+.logo {
+  width: 150px;
+  opacity: 0;
+  animation: fade-in 2s ease forwards, zoom-in 2s ease forwards;
+}
+
+/* Glow text styles with zoom-in */
+.glow-text {
+  margin-top: 35vh;
+  font-size: 1.8rem;
+  color: #ffffff;
+  /* Golden color */
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  text-align: center;
+  opacity: 0;
+  text-transform: lowercase;
+  animation: fade-in 2.5s ease forwards 0.5s, zoom-in 2s ease forwards 0.5s, glow-effect 2s infinite ease-in-out 3s;
+}
+
+/* Glow effect keyframes */
+@keyframes glow-effect {
+
+  0%,
+  100% {
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffae00, 0 0 20px #ffae00, 0 0 25px #ffc700, 0 0 30px #ffc700;
   }
-  
-  /* Video styles */
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+
+  50% {
+    text-shadow: 0 0 10px #ffae00, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffc700, 0 0 50px #ffd700, 0 0 60px #ffd700;
   }
-  
-  /* Logo and title container */
-  #logo-and-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-  
-  /* Logo styles with zoom-in effect */
-  .logo {
-    width: 150px;
+}
+
+/* Fade-in keyframes */
+@keyframes fade-in {
+  0% {
     opacity: 0;
-    animation: fade-in 2s ease forwards, zoom-in 2s ease forwards;
   }
-  
-  /* Glow text styles with zoom-in */
-  .glow-text {
-    margin-top: 35vh;
-    font-size: 1.8rem;
-    color: #ffffff; /* Golden color */
-    font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-    text-align: center;
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Zoom-in keyframes */
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Keyframes for fade-in effect */
+@keyframes fade-in {
+  0% {
     opacity: 0;
-    text-transform: lowercase;
-    animation: fade-in 2.5s ease forwards 0.5s, zoom-in 2s ease forwards 0.5s, glow-effect 2s infinite ease-in-out 3s;
   }
-  
-  /* Glow effect keyframes */
-  @keyframes glow-effect {
-    0%, 100% {
-      text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffae00, 0 0 20px #ffae00, 0 0 25px #ffc700, 0 0 30px #ffc700;
-    }
-    50% {
-      text-shadow: 0 0 10px #ffae00, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffc700, 0 0 50px #ffd700, 0 0 60px #ffd700;
-    }
+
+  100% {
+    opacity: 1;
   }
-  
-  /* Fade-in keyframes */
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+
+/* Keyframes for zoom-in effect */
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
   }
-  
-  /* Zoom-in keyframes */
-  @keyframes zoom-in {
-    0% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
+
+  100% {
+    transform: scale(1);
   }
-  
-  
-  /* Keyframes for fade-in effect */
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  /* Keyframes for zoom-in effect */
-  @keyframes zoom-in {
-    0% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
+}
+
 
 /* Home Heading */
 .home-heading {
-    font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-    font-size: 6.5rem;
-    color: #1A1A1A; /* Light color for light mode */
-    text-align: center;
-    line-height: 0.8;
-    margin-top: 5vh;
-  }
-  
-  .dark-mode .home-heading {
-    color: var(--highlight-color); /* Highlight color for dark mode */
-  }
-  /* Paragraph Styling */
-  .home-desc {
-    font-size: 1rem; /* Minimal font size for readability */
-    font-family: 'Syne', serif;
-    margin: 10px 20px;
-    line-height: 1.5;
-    color: #000; /* Default color for light mode */
-    text-align: center;
-  }
-  /* Responsive Heading Size */
-  @media (max-width: 764px) {
-    .home-heading {
-      font-size: 3rem;
-      margin-top:15vh;
-    }
-    .home-desc{
-      font-size: 0.8rem;
-    }
-  }
-  
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  font-size: 6.5rem;
+  color: #1A1A1A;
+  /* Light color for light mode */
+  text-align: center;
+  line-height: 0.8;
+  margin-top: 5vh;
+}
+
+.dark-mode .home-heading {
+  color: var(--highlight-color);
+  /* Highlight color for dark mode */
+}
+
+/* Paragraph Styling */
+.home-desc {
+  font-size: 1rem;
+  /* Minimal font size for readability */
+  font-family: 'Syne', serif;
+  margin: 10px 20px;
+  line-height: 1.5;
+  color: #000;
+  /* Default color for light mode */
+  text-align: center;
+}
+
+
+
 
 /* Down Arrow Styling */
 .down-arrow {
+  font-size: 2.5rem;
+  margin-top: 5vh;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #717171;
+  /* Default color for light mode */
+  display: flex;
+  justify-content: center;
+
+}
+
+.down-arrow:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styling for Down Arrow */
+body.dark-mode .down-arrow {
+  color: #fff;
+  /* White arrow for dark mode */
+}
+
+/* Button Row Container */
+.button-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 40vw;
+  margin-top: 25px;
+  position: absolute;
+  bottom: 30px;
+}
+
+
+/* Button Styling */
+.explore-button,
+.contact-button {
+  border: 2px solid #000000;
+  /* Gold border for premium feel */
+  background: transparent;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  font-family: 'Syne', serif;
+  border-radius: 33px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 15px;
+}
+
+/* Responsive Heading Size */
+@media (max-width: 764px) {}
+
+@media (max-width: 1250px) {
+  .home-heading {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width:764px) {
+
+  .home-heading {
     font-size: 2.5rem;
-    margin-top: 5vh;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    color: #000; /* Default color for light mode */
-    display: flex;
-    justify-content: center;
-    
+    margin-top: 0vh;
+    margin-bottom: 10px;
+    line-height: 1;
   }
-  
-  .down-arrow:hover {
-    transform: scale(1.1);
+
+  .home-desc {
+    font-size: 0.8rem;
   }
-  
-  /* Dark Mode Styling for Down Arrow */
-  body.dark-mode .down-arrow {
-    color: #fff; /* White arrow for dark mode */
-  }
-  
-  /* Button Row Container */
+
   .button-row {
-    display: flex;
-    justify-content: space-around;
-    gap: 40vw;
-    margin-top: 25px;
+    gap: 20vw;
   }
-  
-  
-  /* Button Styling */
-  .explore-button, .contact-button {
-    border: 2px solid #000000; /* Gold border for premium feel */
-    background: transparent;
-    color: #000000;
-    padding: 10px 20px;
-    font-size: 1.3rem;
-    font-family:  'Syne',serif;
-    border-radius: 33px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding : 15px;
+
+  .explore-button,
+  .contact-button {
+    font-size: 1rem;
   }
-  @media (max-width:764px) {
-    .button-row {
-      gap:20vw;
-    }
-    .explore-button, .contact-button {
-      font-size:1rem;
-    }
-  }
-  
-  /* Hover effect for buttons */
-  .explore-button:hover, .contact-button:hover {
-     transform: scale(1.1);
-     transition: transform 0.3s ease-in-out;
-  }
-  
-   
-  /* Light Mode Adjustments */
-  body.light-mode .home-desc, 
-  body.light-mode .down-arrow,
-  body.light-mode .explore-button,
-  body.light-mode .contact-button
-  {
-    color: #000; /* Black text and arrow for light mode */
-  }
-  
-  body.dark-mode .explore-button,
-  body.dark-mode .contact-button{ 
-    border: 2px solid #ffffff;
-  }
-  /* Dark Mode Adjustments */
-  body.dark-mode .home-desc, 
-  body.dark-mode .down-arrow,
-  body.dark-mode .explore-button,
-  body.dark-mode .contact-button{
-    color: #ffffff; /* White text and arrow for dark mode */
-  }
-  
-  
-  
-  
-  
+}
+
+/* Hover effect for buttons */
+.explore-button:hover,
+.contact-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Light Mode Adjustments */
+body.light-mode .home-desc,
+body.light-mode .down-arrow,
+body.light-mode .explore-button,
+body.light-mode .contact-button {
+  color: #000;
+  /* Black text and arrow for light mode */
+}
+
+body.dark-mode .explore-button,
+body.dark-mode .contact-button {
+  border: 2px solid #ffffff;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .home-desc,
+body.dark-mode .down-arrow,
+body.dark-mode .explore-button,
+body.dark-mode .contact-button {
+  color: #ffffff;
+  /* White text and arrow for dark mode */
+}
+
+
+
+.home-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
