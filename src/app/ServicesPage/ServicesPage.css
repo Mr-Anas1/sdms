@@ -1,537 +1,620 @@
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
-  /* Font Import */
+}
+
+/* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
+
 /* Service Page Component */
 
 
-.service-page{
-    background-color: var(--background-light);
-    color:var(--background-dark);
-  }
-  .dark-mode .service-page {
-    background-color:  var(--background-dark);
-    color:var(--background-light);
-  }
-  
-  .content-container{
-    margin-top:35vh;
-    background-color: var(--background-light);
-    color:var(--background-dark);
-  }
-  .dark-mode .content-container{
-    background-color:  var(--background-dark);
-    color:var(--background-light);
-  }
-  .services-page {
-    background-color: var(--background-light);
-    color: var(--background-dark);
-  }
-  
-  .dark-mode .services-page{
-    background-color:  var(--background-dark);
-    color:var(--background-light);
-  }
-  /* Services Page Heading */
-  .services-page-heading {
-    font-family: "Dirtyline36Daysoftype2022", sans-serif;
-    font-size: 5.5rem;
-    text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
-  }
-  
-  .services-page-service {
-    text-align: center;
-    margin: 5vh auto;
-    width: 80%;
-  }
-  
+.service-page {
+  background-color: var(--background-light);
+  color: var(--background-dark);
+}
+
+.dark-mode .service-page {
+  background-color: var(--background-dark);
+  color: var(--background-light);
+}
+
+.content-container {
+  margin-top: 35vh;
+  background-color: var(--background-light);
+  color: var(--background-dark);
+}
+
+.dark-mode .content-container {
+  background-color: var(--background-dark);
+  color: var(--background-light);
+}
+
+.services-page {
+  background-color: var(--background-light);
+  color: var(--background-dark);
+}
+
+.dark-mode .services-page {
+  background-color: var(--background-dark);
+  color: var(--background-light);
+}
+
+/* Services Page Heading */
+.services-page-heading {
+  font-family: "Dirtyline36Daysoftype2022", sans-serif;
+  font-size: 5.5rem;
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+}
+
+.services-page-service {
+  text-align: center;
+  margin: 5vh auto;
+  width: 80%;
+  height: 50vh;
+}
+
+.service-page-head {
+  font-size: 1.8rem;
+  margin-bottom: 5vh;
+  font-family: 'Syne', serif;
+  text-transform: none;
+  text-align: left;
+
+}
+
+.dark-mode .service-page-head {
+  color: var(--background-light)
+}
+
+.service-page-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-transform: none;
+  font-family: 'Syne', serif;
+  text-align: left;
+  width: 70%;
+  margin-left: auto;
+
+}
+
+.dark-mode .service-page-text {
+  color: var(--background-light)
+}
+
+@media(max-width:764px) {
   .service-page-head {
-    font-size: 1.8rem;
-    margin-bottom: 5vh;
-    font-family: 'Syne' , serif;
-    text-transform: none;
-    text-align: left;
-  
+    font-size: 1.3rem;
+    margin-bottom: 30px;
   }
-  .dark-mode .service-page-head{
-    color:var(--background-light)
-  }
-  
+
   .service-page-text {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    text-transform: none;
-    font-family: 'Syne',serif;
-    text-align: left;
-    width:70%;
-    margin-left: auto;
-  
-  }
-  
-  .dark-mode .service-page-text{
-    color:var(--background-light)
-  }
-  
-  @media(max-width:764px){
-    .service-page-head {
-      font-size:1.3rem;
-    }
-    .service-page-text{
-      font-size: 1rem;
-      width:100%;
-    }
-    .content-container{
-      margin-top:20vh;
-  }
-  }
-  .services-extra-container {
-    background-color: var(--background-light);
-    color: var(--background-dark);
-    padding: 5vh 5vw;
-    margin: 5vh 3vw;
-    border: 2px solid rgba(0, 0, 0, 0.1); /* Adding subtle border */
-    border-radius: 12px; /* Rounded corners for a modern look */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
-                0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for elevation */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
-  }
-  
-  .services-extra-container:hover {
-    transform: translateY(-5px); /* Slight elevation on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 
-                0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
-  }
-  
-  .services-extra-content {
-    margin-bottom: 4vh;
-    display: flex;
-  }
-  
-  .dark-mode .services-extra-container {
-    background-color: var(--background-dark);
-    color: var(--background-light);
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for dark mode */
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2), 
-                0 4px 8px rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
-  }
-  
-  .extra-heading {
-    font-size: 4rem;
-    font-family: "Dirtyline36Daysoftype2022", sans-serif;
-    margin-bottom: 2vh;
-    width: 50%;
-    font-weight: 100;
-  }
-  
-  .extra-text,
-  .extra-text-para {
-    font-size: 1.4rem;
-    font-family: "Syne", serif;
-    text-transform: none;
-    margin-left: auto;
+    font-size: 1rem;
     width: 100%;
   }
-  
-  .extra-text-para {
-    width: 66%;
-    margin-bottom: 10px;
-    font-weight: bold;
+
+  .content-container {
+    margin-top: 20vh;
   }
-  .dark-mode .extra-text-para{
-    color:var(--background-light);
+}
+
+.services-extra-container {
+  background-color: var(--background-light);
+  color: var(--background-dark);
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 5vh 3vw;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  /* Adding subtle border */
+  border-radius: 12px;
+  /* Rounded corners for a modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Enhanced shadow for elevation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition on hover */
+}
+
+.services-extra-container:hover {
+  transform: translateY(-5px);
+  /* Slight elevation on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+  /* More pronounced shadow on hover */
+}
+
+.services-extra-content {
+  margin-bottom: 4vh;
+  display: flex;
+}
+
+.dark-mode .services-extra-container {
+  background-color: var(--background-dark);
+  color: var(--background-light);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  /* Subtle border for dark mode */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2),
+    0 4px 8px rgba(255, 255, 255, 0.1);
+  /* Light shadow for dark mode */
+}
+
+.extra-heading {
+  font-size: 4rem;
+  font-family: "Dirtyline36Daysoftype2022", sans-serif;
+  margin-bottom: 2vh;
+  width: 50%;
+  font-weight: 100;
+}
+
+.extra-text,
+.extra-text-para {
+  font-size: 1.4rem;
+  font-family: "Syne", serif;
+  text-transform: none;
+  margin-left: auto;
+  width: 100%;
+  line-height: 1.4;
+}
+
+.extra-text-para {
+  width: 66%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dark-mode .extra-text-para {
+  color: var(--background-light);
+}
+
+.dark-mode .extra-text {
+
+  color: var(--background-light);
+
+}
+
+.service-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 66%;
+  margin-left: auto;
+  font-family: 'Syne', serif;
+}
+
+.service-options-p {
+  width: 45%;
+  text-transform: lowercase;
+  font-size: 1.2rem;
+  text-transform: none;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.dark-mode .service-options-p {
+  color: var(--background-light);
+}
+
+
+.service-page-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 764px) {
+
+  .services-page-heading {
+    font-size: 3rem;
+    margin-top: 2vh;
   }
-  .dark-mode .extra-text{
-  
-      color:var(--background-light);
-  
+
+  .services-page-service {
+    width: 90%;
+    height: 20vh;
+    margin-top: 0;
   }
-  .service-options {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    width: 66%;
-    margin-left: auto;
-    font-family: 'Syne', serif;
-  }
-  
-  .service-options-p {
-    width: 45%;
-    text-transform: lowercase;
-    font-size: 1.2rem;
-    text-transform: none;
-  }
-  
-  .dark-mode .service-options-p {
-    color: var(--background-light);
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 764px) {
-    .services-page-heading {
-      font-size: 2.5rem;
-      margin-top: 2vh;
-    }
-  
-    .services-page-service {
-      width: 90%;
-    }
-  
-    .service-options {
-      flex-direction: column;
-      gap: 1.5rem;
-      align-items: center;
-      margin-right: auto;
-    }
-  
-    .services-extra-content {
-      display: block;
-    }
-  
-    .extra-heading {
-      font-size: 3.5rem;
-    }
-  
-    .extra-text-para {
-      width: 100%;
-    }
-  
-    .service-options-p {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  
-  .our-expertise-head{
-    font-family: 'Syne',serif;
-    text-align: center;
-    font-size:6rem;
-    margin:20vh 0;
-  
-  }
-  /* Wrapper for the scrolling container */
-  .cardScrollerWrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* The main scrolling container */
-  .cardScroller {
-    display: flex;
-    animation: scroll-cards 20s linear infinite;
-    margin-bottom: 2vh;
-  }
-  
-  /* Flexbox for card layout */
-  .cardScroller .card {
-    min-width: 30vw;  /* Adjust based on your design */
-    height: 50vh;     /* Adjust based on your design */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0;  /* No space between cards */
-    border: 1px solid #000000;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
-  .dark-mode .card{
-    border: 1px solid #ffffff;
-  }
-  .card{
-    margin : 0 10px;
-  }
-  
-  /* Centering the image inside each card */
-  .cardScroller .card .cardImage {
-    max-width: 70%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  
-  /* Animating the scroll */
-  @keyframes scroll-cards {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  /* Wrapper for the second scrolling container */
-  .cardScrollerWrapper2 {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* The main scrolling container for the second wrapper */
-  .cardScroller2 {
-    display: flex;
-    animation: scroll-cards-reverse 20s linear infinite; /* Reverse scroll */
-    margin-bottom: 2vh;
-  }
-  
-  /* Flexbox for card layout */
-  .cardScroller2 .card {
-    min-width: 30vw; /* Adjust based on your design */
-    height: 50vh;    /* Adjust based on your design */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0; /* No space between cards */
-    border: 1px solid #000000;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
-  
-  .dark-mode .card {
-    border: 1px solid #ffffff;
-  }
-  
-  .card {
-    margin: 0 10px;
-  }
-  
-  /* Centering the image inside each card */
-  .cardScroller2 .card .cardImage {
-    max-width: 70%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  
-  
-  /* Animating the reverse scroll */
-  @keyframes scroll-cards-reverse {
-    0% {
-      transform: translateX(-50%); /* Start from the middle of the duplicated cards */
-    }
-    100% {
-      transform: translateX(0); /* End at the beginning */
-    }
-  }
-   
-  
-  
-  @media(max-width:764px){
-    .our-expertise-head{
-      font-size: 4rem;
-    }
-    .cardScroller .card{
-      height:20vh;
-    }
-    .cardScroller2 .card{
-      height:20vh;
-    }
-  }
-  
-  .our-process-heading {
-    font-family: 'Dirtyline36Daysoftype2022';
-    font-size: 6rem;
-    text-align: center;
-    text-transform: lowercase;
-    line-height: 0.8;
-    font-weight: 100;
-    margin-top:15vh;
-  }
-  .dark-mode .our-process-heading {
-    color:var(--background-light);
-  }
-  .our-process-text{
-    font-size: 1.5rem;
-    font-family: 'Syne',serif;
-    text-transform: none;
-    text-align: center;
-    margin: 30px 0px;
-    margin-bottom: 15vh;
-  }
-  .dark-mode .our-process-text {
-    color:var(--background-light);
-  }
-  .cardContent {
-    font-family: 'Syne',serif;
+
+  .services-page-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-  }
-  .sequenceNumber{
-    font-size: 2rem;
-  }
-  
-  .cardHeading{
-    margin:5vh 0;
-    font-size: 1.9rem;
-  }
-  .cardDescription{
-    text-transform: none;
-    font-size: 1.3rem;
-  }
-  .dark-mode .cardDescription{
-    color:var(--background-light);
-  } 
-  
-  /* The main scrolling container */
-  .cardScroller3 {
-    display: flex;
-    animation: scroll-cards 20s linear infinite;
-    margin-bottom: 2vh;
-  }
-  .cardScroller3 .card {
-    min-width: 40vw;  /* Adjust based on your design */
-    height: 50vh;     /* Adjust based on your design */
-    display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0;  /* No space between cards */
-    border: 1px solid #000000;
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin-bottom:10vh;
+    height: 80vh;
   }
-  .dark-mode .card {
-    border: 1px solid #ffffff;
-  }
-  
-  @media(max-width:764px){
-    .our-process-heading{
-      font-size: 4rem;
-    }
-    .our-process-text{
-      font-size: 1.2rem;
-      }
-     
-      .cardScroller3 .card {
-        width:70vw;
-      }
-    .sequenceNumber{
-      font-size: 1rem;
-      display: none;
-    }
-    .cardHeading{
-      font-size: 1rem;
-      margin-top: -1vh;
-      text-align: center;
-    }
-    .cardDescription{
-      text-transform: none;
-      font-size: 0.8rem;
-      text-align: center;
-      margin-top: -3vh;
-    }
-    .cardScroller3 .card{
-      height: 30vh;
-    }
-  }
-  
-  
-  
-  
-  .time-to-roar-head{
-    font-family:'Dirtyline36Daysoftype2022';
-    font-size: 6.5rem;
-    text-align: left;
-    text-transform: lowercase;
-    margin-left: 10vw;
-    margin-top: 10vh;
-    line-height: 5rem;
-  }
-  .dark-mode .time-to-roar-head{
-    color:var(--background-light);
-  }
-  .time-to-roar {
-    text-align: center;
-    margin: 20px;
-    width:80vw;
-    margin-left: 10vw;
-    margin-bottom: 20vh;
-    
-  }
-  
-  .horizontal-line {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 10px 0;
-  }
-  
-  .contact-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .service-options {
     gap: 20px;
-  
+    align-items: start;
+    margin-right: auto;
+    width: 100%;
   }
-  
-  .contact-item {
-    flex: 1;
+
+  .services-extra-content {
+    display: block;
+  }
+
+  .extra-heading {
+    font-size: 3.5rem;
+  }
+
+  .extra-text-para {
+    width: 100%;
+  }
+
+  .service-options-p {
+    width: 100%;
+  }
+}
+
+.our-expertise-head {
+  font-family: 'Syne', serif;
+  text-align: center;
+  font-size: 6rem;
+  margin: 20vh 0;
+
+}
+
+/* Wrapper for the scrolling container */
+.cardScrollerWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The main scrolling container */
+.cardScroller {
+  display: flex;
+  animation: scroll-cards 20s linear infinite;
+  margin-bottom: 2vh;
+}
+
+/* Flexbox for card layout */
+.cardScroller .card {
+  min-width: 30vw;
+  /* Adjust based on your design */
+  height: 50vh;
+  /* Adjust based on your design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  /* No space between cards */
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.dark-mode .card {
+  border: 1px solid #ffffff;
+}
+
+.card {
+  margin: 0 10px;
+}
+
+/* Centering the image inside each card */
+.cardScroller .card .cardImage {
+  max-width: 70%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Animating the scroll */
+@keyframes scroll-cards {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Wrapper for the second scrolling container */
+.cardScrollerWrapper2 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The main scrolling container for the second wrapper */
+.cardScroller2 {
+  display: flex;
+  animation: scroll-cards-reverse 20s linear infinite;
+  /* Reverse scroll */
+  margin-bottom: 2vh;
+}
+
+/* Flexbox for card layout */
+.cardScroller2 .card {
+  min-width: 30vw;
+  /* Adjust based on your design */
+  height: 50vh;
+  /* Adjust based on your design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  /* No space between cards */
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.dark-mode .card {
+  border: 1px solid #ffffff;
+}
+
+.card {
+  margin: 0 10px;
+}
+
+/* Centering the image inside each card */
+.cardScroller2 .card .cardImage {
+  max-width: 70%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+/* Animating the reverse scroll */
+@keyframes scroll-cards-reverse {
+  0% {
+    transform: translateX(-50%);
+    /* Start from the middle of the duplicated cards */
+  }
+
+  100% {
+    transform: translateX(0);
+    /* End at the beginning */
+  }
+}
+
+
+
+@media(max-width:764px) {
+  .our-expertise-head {
+    font-size: 4rem;
+  }
+
+  .cardScroller .card {
+    height: 20vh;
+  }
+
+  .cardScroller2 .card {
+    height: 20vh;
+  }
+}
+
+.our-process-heading {
+  font-family: 'Dirtyline36Daysoftype2022';
+  font-size: 6rem;
+  text-align: center;
+  text-transform: lowercase;
+  line-height: 0.8;
+  font-weight: 100;
+  margin-top: 15vh;
+}
+
+.dark-mode .our-process-heading {
+  color: var(--background-light);
+}
+
+.our-process-text {
+  font-size: 1.5rem;
+  font-family: 'Syne', serif;
+  text-transform: none;
+  text-align: center;
+  margin: 30px 0px;
+  margin-bottom: 15vh;
+}
+
+.dark-mode .our-process-text {
+  color: var(--background-light);
+}
+
+.cardContent {
+  font-family: 'Syne', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sequenceNumber {
+  font-size: 2rem;
+}
+
+.cardHeading {
+  margin: 5vh 0;
+  font-size: 1.9rem;
+}
+
+.cardDescription {
+  text-transform: none;
+  font-size: 1.3rem;
+}
+
+.dark-mode .cardDescription {
+  color: var(--background-light);
+}
+
+/* The main scrolling container */
+.cardScroller3 {
+  display: flex;
+  animation: scroll-cards 20s linear infinite;
+  margin-bottom: 2vh;
+}
+
+.cardScroller3 .card {
+  min-width: 40vw;
+  /* Adjust based on your design */
+  height: 50vh;
+  /* Adjust based on your design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  /* No space between cards */
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10vh;
+}
+
+.dark-mode .card {
+  border: 1px solid #ffffff;
+}
+
+@media(max-width:764px) {
+  .our-process-heading {
+    font-size: 4rem;
+  }
+
+  .our-process-text {
+    font-size: 1.2rem;
+  }
+
+  .cardScroller3 .card {
+    width: 70vw;
+  }
+
+  .sequenceNumber {
+    font-size: 1rem;
+    display: none;
+  }
+
+  .cardHeading {
+    font-size: 1rem;
+    margin-top: -1vh;
     text-align: center;
   }
-  
+
+  .cardDescription {
+    text-transform: none;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: -3vh;
+  }
+
+  .cardScroller3 .card {
+    height: 30vh;
+  }
+}
+
+
+
+
+.time-to-roar-head {
+  font-family: 'Dirtyline36Daysoftype2022';
+  font-size: 6.5rem;
+  text-align: left;
+  text-transform: lowercase;
+  margin-left: 10vw;
+  margin-top: 10vh;
+  line-height: 5rem;
+}
+
+.dark-mode .time-to-roar-head {
+  color: var(--background-light);
+}
+
+.time-to-roar {
+  text-align: center;
+  margin: 20px;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-bottom: 20vh;
+
+}
+
+.horizontal-line {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 10px 0;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.contact-item {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-item small {
+  display: block;
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 5px;
+  font-family: 'Syne', serif;
+  text-transform: none;
+}
+
+.contact-item p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  font-family: 'Syne', serif;
+  text-transform: none;
+}
+
+.dark-mode .contact-item p {
+  color: var(--background-light);
+}
+
+@media(max-width:764px) {
+  .time-to-roar-head {
+    font-size: 4rem;
+    line-height: 3rem;
+
+  }
+
   .contact-item small {
-    display: block;
-    font-size: 1.2rem;
-    color: #888;
-    margin-bottom: 5px;
-    font-family: 'Syne',serif;
-    text-transform: none;
+    font-size: 0.5rem;
   }
-  
+
   .contact-item p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
-    font-family: 'Syne',serif;
-    text-transform: none;
+    font-size: 0.6rem;
   }
-  .dark-mode .contact-item p{
-    color:var(--background-light);
+
+  .web {
+    display: none;
   }
-  
-  @media(max-width:764px){
-    .time-to-roar-head{
-      font-size: 4rem;
-      line-height: 3rem;
-  
-    }
-    .contact-item small{
-      font-size: 0.5rem;
-    }
-    .contact-item p{
-      font-size: 0.6rem;
-    }
-    .web{
-      display: none;
-    }
-  
-  }
-  
+
+}
