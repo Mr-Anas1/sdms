@@ -1,259 +1,269 @@
-
-
 /* Contact Component */
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
+}
+
 
 /* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
 
 
 .contactSection {
-    padding: 80px 0;
-    text-align: center;
-    transition: background-color 0.4s ease;
-    width : 100vw;
-  }
-  
-  /* Light and dark themes */
-  .light {
-    background-color: var(--background-light);
-    color: var(--background-dark);
-  }
-  
-  .dark-mode .contactSection{
-    background-color: var(--background-dark);
-    color: #ffffff;
-  }
-  
-  .innerWidth {
-    max-width: 600px;
-    margin: auto;
-    padding: 0 20px;
-  }
-  
-  .contactSection h1 {
-    font-size: 20px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 400;
-  }
-  
-  .name,
-  .email,
-  .message {
-    background: none;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid currentColor;
-    color: inherit;
-    padding: 10px 6px;
-    font-size: 14px;
-    margin-bottom: 40px;
-    color : var(--background-dark);
-  }
-  
-  
-  .name {
-    float: left;
-    width: 270px;
-  }
-  
-  .email {
-    float: right;
-    width: 270px;
-  }
-  
-  .message {
-    min-width: 100%;
-    max-width: 100%;
-  }
-  
-  .dark-mode .name {
-    color : var(--background-light);
-  }
-  
-  .dark-mode .email {
-    color : var(--background-light);
-  }
-  
-  .dark-mode .message {
-    color : var(--background-light);
-  }
-   
-  
-  .dark-mode  .contactSection button {
-    border: 2px solid #ffffff;
-    color:#ffffff;
-  }
-   
-  .contactSection button:hover {
-    background-color: var(--button-hover-bg);
-    transform: scale(1.1);
-    transition: transition 0.3 ease;
-  }
-  /* Mobile input field */
-  .mobile {
-    background: none;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid currentColor;
-    color: inherit;
-    padding: 10px 6px;
-    font-size: 14px;
-    margin-bottom: 40px;
-    color: var(--background-dark);
-    width: 100%;
-  }
-  
-  /* Dropdown for service selection */
+  padding: 80px 0;
+  text-align: center;
+  transition: background-color 0.4s ease;
+  width: 100vw;
+}
+
+/* Light and dark themes */
+.light {
+  background-color: var(--background-light);
+  color: var(--background-dark);
+}
+
+.dark-mode .contactSection {
+  background-color: var(--background-dark);
+  color: #ffffff;
+}
+
+.innerWidth {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.contactSection h1 {
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+.name,
+.email,
+.message {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: var(--background-dark);
+}
+
+
+.name {
+  float: left;
+  width: 270px;
+}
+
+.email {
+  float: right;
+  width: 270px;
+}
+
+.message {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.dark-mode .name {
+  color: var(--background-light);
+}
+
+.dark-mode .email {
+  color: var(--background-light);
+}
+
+.dark-mode .message {
+  color: var(--background-light);
+}
+
+
+.dark-mode .contactSection button {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.contactSection button:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.1);
+  transition: transition 0.3 ease;
+}
+
+/* Mobile input field */
+.mobile {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: var(--background-dark);
+  width: 100%;
+}
+
+/* Dropdown for service selection */
+.service {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #888;
+  color: inherit;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: #888;
+  ;
+  width: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Dark mode for mobile and service fields */
+.dark-mode .mobile,
+.dark-mode .service {
+  border-bottom: 1px solid #fff;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 600px) {
+
+  .mobile,
   .service {
-    background: none;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #888;
-    color: inherit;
-    padding: 10px 6px;
-    font-size: 14px;
-    margin-bottom: 40px;
-    color: #888;;
     width: 100%;
-    appearance: none;  
-    cursor: pointer;
   }
-  
-  /* Dark mode for mobile and service fields */
-  .dark-mode .mobile,
-  .dark-mode .service {
-    border-bottom: 1px solid #fff;
+}
+
+/* Toggle button */
+.themeToggle {
+  margin-top: 20px;
+  background: none;
+  color: var(--accent-color);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+
+.contact-head {
+  font-size: 5rem;
+  font-family: 'Dirtyline36Daysoftype2022';
+  text-transform: lowercase;
+  padding: 5vh 0;
+  color: #232b2b;
+  letter-spacing: 0.8;
+  font-weight: 100;
+  line-height: 0.8;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 764px) {
+
+  .name,
+  .email {
+    width: 100%;
+    float: none;
   }
-   
-  /* For mobile responsiveness */
-  @media screen and (max-width: 600px) {
-    .mobile,
-    .service {
-      width: 100%;
-    }
-  }
-  
-  /* Toggle button */
-  .themeToggle {
-    margin-top: 20px;
-    background: none;
-    color: var(--accent-color);
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    text-decoration: underline;
-  }
-  
-  
+
   .contact-head {
-    font-size: 5rem;
-    font-family: 'Dirtyline36Daysoftype2022';
-    text-transform: lowercase;
-    padding : 5vh 0;
-    color : #232b2b;
-    letter-spacing: 0.8;
-    font-weight: 100;
-    line-height: 0.8;
+    font-size: 3.5rem;
   }
-  @media screen and (max-width: 764px) {
-    .name,
-    .email {
-      width: 100%;
-      float: none;
-    }
-    .contact-head {
-      font-size: 3.5rem;
-    }
-  }
-  .dark-mode .contact-head {
-    color : #ffffff;
-  }
-  .error {
-    color: red;
-    font-size: 14px;
-    margin-bottom :10px;
-  }
-  
-  .success {
-    color: green;
-    font-size: 14px;
-    margin-top :10px;
-  }
-  
-  
+}
+
+.dark-mode .contact-head {
+  color: #ffffff;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
 /* Button Styling */
- .contact-button {
-    border: 2px solid #000000; /* Gold border for premium feel */
-    background: transparent;
-    color: #000000;
-    padding: 10px 20px;
-    font-size: 1.3rem;
-    font-family:  'Syne',serif;
-    border-radius: 33px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding : 15px;
+.contact-button {
+  border: 2px solid #000000;
+  /* Gold border for premium feel */
+  background: transparent;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  font-family: 'Syne', serif;
+  border-radius: 33px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 15px;
+}
+
+@media (max-width:764px) {
+
+  .contact-button {
+    font-size: 1rem;
   }
-  @media (max-width:764px) {
-  
- .contact-button {
-      font-size:1rem;
-    }
-  }
-  
-  /* Hover effect for buttons */
- .contact-button:hover {
-     transform: scale(1.1);
-     transition: transform 0.3s ease-in-out;
-  }
-  
-   
-  /* Light Mode Adjustments */
- 
- 
-  body.light-mode .contact-button
-  {
-    color: #000; /* Black text and arrow for light mode */
-  }
-  
- 
-  body.dark-mode .contact-button{ 
-    border: 2px solid #ffffff;
-  }
- 
-  body.dark-mode .contact-button{
-    color: #ffffff; /* White text and arrow for dark mode */
-  }
-  
-  
+}
+
+/* Hover effect for buttons */
+.contact-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Light Mode Adjustments */
+
+
+body.light-mode .contact-button {
+  color: #000;
+  /* Black text and arrow for light mode */
+}
+
+
+body.dark-mode .contact-button {
+  border: 2px solid #ffffff;
+}
+
+body.dark-mode .contact-button {
+  color: #ffffff;
+  /* White text and arrow for dark mode */
+}

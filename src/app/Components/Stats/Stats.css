@@ -69,20 +69,21 @@
 }
 
 .stat-card.card1:hover {
-  background-color: #ffd6d6;
+  background-color: #C93102;
+  color: #fff;
 }
 
 .stat-card.card2:hover {
-  background-color: #d9f2d9;
+  background-color: #9ff29f;
 }
 
 .stat-card.card3:hover {
-  background-color: #fff9cc;
+  background-color: #B5DFCE;
 
 }
 
 .stat-card.card4:hover {
-  background-color: #d6eaff;
+  background-color: #F3E453;
 }
 
 .stat-value {
@@ -115,12 +116,12 @@
 }
 
 /* Responsive adjustments for small screens */
-@media (max-width: 764px) {
+@media (max-width: 768px) {
   .stats-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     /* Reduced gap for small screens */
   }
 
@@ -146,6 +147,25 @@
 
   .stat-value {
     font-size: 3rem;
+  }
+
+
+  .stat-card.card1 {
+    background-color: #C93102;
+    color: #fff;
+  }
+
+  .stat-card.card2 {
+    background-color: #9ff29f;
+  }
+
+  .stat-card.card3 {
+    background-color: #B5DFCE;
+
+  }
+
+  .stat-card.card4 {
+    background-color: #F3E453;
   }
 }
 

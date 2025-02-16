@@ -1,113 +1,132 @@
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
+}
+
 
 /* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
+
 /* Scrolling Text Component Styles */
 
 .scrolling-text-container {
-    height: 45vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    background-color: var(--background-light); /* Optional background */
-    color: var(--background-dark);
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--background-light);
+  /* Optional background */
+  color: var(--background-dark);
+  margin-top: 40px;
+}
+
+.dark-mode .scrolling-text-container {
+  background-color: var(--background-dark);
+}
+
+.scrolling-text {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  /* Ensures proper alignment */
+  align-items: center;
+  /* Centers text vertically */
+
+}
+
+.scroll-right,
+.scroll-left {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: none;
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* Ensures infinite scrolling */
+  color: #3F3F3F;
+}
+
+.dark-mode .scroll-right {
+  color: #EDEADE;
+}
+
+.dark-mode .scroll-left {
+  color: #EDEADE;
+}
+
+/* Right-scrolling text */
+.scroll-right {
+  animation: scrollRight 1000s linear infinite;
+  animation-delay: 3s;
+  /* Delay before the animation starts */
+}
+
+/* Left-scrolling text */
+.scroll-left {
+  animation: scrollLeft 1000s linear infinite;
+  animation-delay: 3s;
+  /* Delay before the animation starts */
+}
+
+/* Keyframes for left-scrolling text */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+    /* Stationary at the start */
   }
-  
-  .dark-mode .scrolling-text-container {
-    background-color: var(--background-dark);
+
+  100% {
+    transform: translateX(-100%);
+    /* Scroll out of view to the left */
   }
-  
-  .scrolling-text {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex; /* Ensures proper alignment */
-    align-items: center; /* Centers text vertically */
-    
+}
+
+/* Keyframes for right-scrolling text */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+    /* Stationary at the start */
   }
-  
+
+  100% {
+    transform: translateX(-100%);
+    /* Scroll out of view to the right */
+  }
+}
+
+@media (max-width:768px) {
+
   .scroll-right,
   .scroll-left {
-    font-size: 4rem;
-    font-weight: bold;
-    text-transform: none;
-    font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; /* Ensures infinite scrolling */
-    color:#3F3F3F;
-  }
-  
-  .dark-mode .scroll-right{
-    color: #EDEADE;
-  }
-  .dark-mode .scroll-left{
-    color: #EDEADE;
-  }
-  /* Right-scrolling text */
-  .scroll-right {
-    animation: scrollRight 1000s linear infinite;
-    animation-delay: 3s; /* Delay before the animation starts */
-  }
-  
-  /* Left-scrolling text */
-  .scroll-left {
-    animation: scrollLeft 1000s linear infinite;
-    animation-delay: 3s; /* Delay before the animation starts */
-  }
-  
-  /* Keyframes for left-scrolling text */
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(0); /* Stationary at the start */
-    }
-    100% {
-      transform: translateX(-100%); /* Scroll out of view to the left */
-    }
-  }
-  
-  /* Keyframes for right-scrolling text */
-  @keyframes scrollRight {
-    0% {
-      transform: translateX(0); /* Stationary at the start */
-    }
-    100% {
-      transform: translateX(-100%); /* Scroll out of view to the right */
-    }
-  }
-  @media (max-width:768px) {
-    .scroll-right,
-  .scroll-left{
     font-size: 2rem;
   }
-  }
-  
+}

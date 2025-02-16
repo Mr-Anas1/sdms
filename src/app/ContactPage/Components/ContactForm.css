@@ -9,7 +9,8 @@
 @font-face {
   font-family: 'Syne';
   src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400; /* Regular */
+  font-weight: 400;
+  /* Regular */
   font-style: normal;
 }
 
@@ -45,19 +46,19 @@
   font-family: 'Dirtyline36Daysoftype2022';
   text-transform: lowercase;
   font-size: 3.5rem;
-  
+
 }
 
 .dark-mode .button {
-  color:#ffffff;
-  border-width:5px;
- 
+  color: #ffffff;
+  border-width: 5px;
+
 }
 
 .button.active {
-  border-color:transparent;
-  border-bottom-color:#000000;
-  border-width:5px;
+  border-color: transparent;
+  border-bottom-color: #000000;
+  border-width: 5px;
 }
 
 .dark-mode .button.active {
@@ -66,7 +67,7 @@
   border-width: 5px;
 }
 
- 
+
 .time-display {
   color: #4b5563;
   font-family: monospace;
@@ -74,8 +75,9 @@
   font-family: 'Arial';
 
 }
+
 .dark-mode .time-display {
-  color:#ffffff;
+  color: #ffffff;
 }
 
 /* Form Header */
@@ -84,12 +86,13 @@
   font-weight: 600;
   color: #000000;
   margin-bottom: 16px;
-  font-family: 'Syne',serif;
+  font-family: 'Syne', serif;
 }
 
-.dark-mode .form-header{
-  color:#ffffff;
+.dark-mode .form-header {
+  color: #ffffff;
 }
+
 /* Form styles */
 .form {
   display: flex;
@@ -109,12 +112,15 @@
   font-weight: 500;
   color: #000000;
   margin-bottom: 8px;
-  font-family: 'Syne',serif;
+  font-family: 'Syne', serif;
 }
+
 .dark-mode .label {
-  color:#ffffff;
+  color: #ffffff;
 }
-.input-field, .textarea-field {
+
+.input-field,
+.textarea-field {
   width: 100%;
   padding: 12px;
   border: 1px solid #d1d5db;
@@ -124,18 +130,22 @@
   background-color: #ffffff;
 }
 
-input::placeholder , textarea::placeholder {
-  font-family: 'Syne',serif;
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Syne', serif;
 }
 
 .dark-mode .input-field {
   background-color: #000000;
-  color:#ffffff;
+  color: #ffffff;
 }
+
 .dark-mode .textarea-field {
   background-color: #000000;
 }
-.input-field:focus, .textarea-field:focus {
+
+.input-field:focus,
+.textarea-field:focus {
   border-color: #3b82f6;
   outline: none;
 }
@@ -147,16 +157,17 @@ input::placeholder , textarea::placeholder {
 }
 
 .submit-button {
-  border: 2px solid #000000; /* Gold border for premium feel */
+  border: 2px solid #000000;
+  /* Gold border for premium feel */
   background: transparent;
   color: #000000;
   padding: 10px 20px;
   font-size: 1.3rem;
-  font-family:  'Syne',serif;
+  font-family: 'Syne', serif;
   border-radius: 33px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  padding : 15px;
+  padding: 15px;
 }
 
 .submit-button:hover {
@@ -168,9 +179,10 @@ input::placeholder , textarea::placeholder {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }
+
 .dark-mode .submit-button {
   border-color: #ffffff;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 /* Mobile Styles */
