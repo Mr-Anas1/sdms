@@ -1,124 +1,166 @@
-
 /* Stats Component Styles*/
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
+}
+
 /* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
 
 
 
 .stats-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 15px; /* Reduced gap between cards */
-    justify-items: center; /* Centers items horizontally */
-    align-items: start; /* Aligns items at the start vertically */
-    margin-top: 10vh;
-  }
-  
-  /* Card styling */
-  .stat-card {
-    position: relative; /* For absolute positioning of label */
-    width: 40vw;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5px;
-    border-radius: 12px;
-    color: #1b1b1b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(0);
-    font-family: 'Syne', serif;
-    font-weight: bold;
-  }
-  
-  .stat-value {
-    font-size: 6rem;
-    padding-left: 15px;
-    font-family: 'Charrington';
-     
-  }
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Two columns */
+  gap: 15px;
+  /* Reduced gap between cards */
+  justify-items: center;
+  /* Centers items horizontally */
+  align-items: start;
+  /* Aligns items at the start vertically */
+  margin-top: 10vh;
+}
+
+/* Card styling */
+.stat-card {
+  position: relative;
+  background-color: #fafafa;
+  /* For absolute positioning of label */
+  width: 40vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 12px;
+  color: #1b1b1b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  font-family: 'Syne', serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.stat-card.card1:hover {
+  background-color: #ffd6d6;
+}
+
+.stat-card.card2:hover {
+  background-color: #d9f2d9;
+}
+
+.stat-card.card3:hover {
+  background-color: #fff9cc;
+
+}
+
+.stat-card.card4:hover {
+  background-color: #d6eaff;
+}
+
+.stat-value {
+  font-size: 6rem;
+  padding-left: 15px;
+  font-family: 'Charrington';
+
+}
+
+.stat-label {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 3rem;
+  text-align: right;
+  font-weight: bolder;
+  padding: 15px;
+  font-family: 'Dirtyline36Daysoftype2022', serif;
+  text-transform: lowercase;
+}
+
+@media screen and (max-width: 1050px) {
   .stat-label {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size:3rem;
-    text-align: right;
-    font-weight: bolder;
-    padding:15px;
-    font-family: 'Dirtyline36Daysoftype2022',serif;
-    text-transform: lowercase;
+    font-size: 2.3rem;
   }
-  
-  /* Responsive adjustments for small screens */
-  @media (max-width: 764px) {
-    .stats-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px; /* Reduced gap for small screens */
-    }
-  
-    .stat-card {
-      width: 100%;
-      height: 25vh;
-    }
-    .stat-value{
-      font-size: 2rem;
-    }
-    .stat-label{
-      margin-top: 3vh;
-      margin-left: 3vw;
-      font-size: 2.3rem;
-    }
-    .stat-card {
-      width: 100%;
-      height: 35vh;
-    }
-    .stat-value{
-      font-size: 3rem;
-    }
+
+  .stat-value {
+    font-size: 4rem;
   }
-  
-  /* Desktop adjustments to move right cards lower */
-  @media (min-width: 768px) {
-    .stats-container {
-      grid-template-columns: 1fr 1fr; /* Two columns layout */
-    }
-  
-    .stat-card:nth-child(2), .stat-card:nth-child(4) {
-      align-self: flex-start; /* Ensures the cards are at the top */
-      margin-top: 50px; /* Maintains top space for right cards */
-    }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 764px) {
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    /* Reduced gap for small screens */
   }
-  
-   
+
+  .stat-card {
+    width: 100%;
+    height: 25vh;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    margin-top: 3vh;
+    margin-left: 3vw;
+    font-size: 2.3rem;
+  }
+
+  .stat-card {
+    width: 100%;
+    height: 35vh;
+  }
+
+  .stat-value {
+    font-size: 3rem;
+  }
+}
+
+/* Desktop adjustments to move right cards lower */
+@media (min-width: 768px) {
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+    /* Two columns layout */
+  }
+
+  .stat-card:nth-child(2),
+  .stat-card:nth-child(4) {
+    align-self: flex-start;
+    /* Ensures the cards are at the top */
+    margin-top: 50px;
+    /* Maintains top space for right cards */
+  }
+}

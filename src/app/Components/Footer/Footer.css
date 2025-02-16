@@ -1,111 +1,121 @@
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
+}
+
 /* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
-  
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
+
 /* Footer Component Styles */
 /* Footer Styles */
 
 .footer-head {
-    font-family: 'Dirtyline36Daysoftype2022';
-    text-transform: lowercase;
-    font-size: 5rem;
-    text-align: center;
-    color:var(--background-dark);
-    line-height: 0.8;
-    font-weight: 100;
-  }
-  .dark-mode .footer-head {
-    color : var(--background-light);
-  }
-  .footer-container {
-    padding: 20px;
-    background-color: var(--background-light);
-    width:80vw;
-    margin-left : 10vw;
-  }
-  .dark-mode .footer-container {
-    background-color: var(--background-dark);
-  }
-  .social-media {
-    margin: 10px 0;
-  }
-  
-  .social-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .social-row:hover {
-    transform: scale(1.1); /* Scales the component to 110% of its size */
-    transition: transform 0.3s ease; /* Smooth transition effect */
-  }
-  
+  font-family: 'Dirtyline36Daysoftype2022';
+  text-transform: lowercase;
+  font-size: 5rem;
+  text-align: center;
+  color: var(--background-dark);
+  line-height: 0.8;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+.dark-mode .footer-head {
+  color: var(--background-light);
+}
+
+.footer-container {
+  padding: 20px;
+  background-color: var(--background-light);
+  width: 80vw;
+  margin-left: 10vw;
+}
+
+.dark-mode .footer-container {
+  background-color: var(--background-dark);
+}
+
+.social-media {
+  margin: 10px 0;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-row:hover {
+  transform: scale(1.1);
+}
+
+.social-heading {
+  font-size: 5rem;
+  color: #0e0e0e;
+  /* LinkedIn color */
+  margin: 0;
+  font-family: 'poppins', serif;
+  text-transform: capitalize;
+}
+
+.dark-mode .social-heading {
+  color: #ffffff;
+}
+
+.social-icon .icon {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+
+}
+
+/* Mobile view styles */
+@media (max-width: 764px) {
   .social-heading {
-    font-size: 5rem;
-    color : #0e0e0e; /* LinkedIn color */
-    margin: 0;
-    font-family: 'poppins' , serif;
-    text-transform: capitalize;
+    font-size: 2rem;
   }
-  
-  .dark-mode .social-heading {
-    color : #ffffff;
-  }
-  
+
   .social-icon .icon {
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
+    width: 30px;
+    height: 30px;
+
   }
-  
-  .divider {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 20px 0;
+
+  .footer-head {
+    font-size: 3.5rem;
   }
-  /* Mobile view styles */
-  @media (max-width: 764px) {
-    .social-heading {
-      font-size: 2rem;
-    }
-    .social-icon .icon {
-      width: 30px;
-      height: 30px;
-    
-    }
-    .footer-head {
-      font-size: 3.5rem;
-    }
-  }
-  
-  
-  
+}

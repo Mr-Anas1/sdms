@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import './Stats.css';
+import "./Stats.css";
 
 // Animation variants for cards
 const cardVariants = (direction) => {
@@ -22,54 +22,61 @@ export default function StatsComponent() {
     <div className="stats-container">
       {/* Card 1 */}
       <motion.div
-        className="stat-card"
-        style={{ backgroundColor: "#4CAF50" }}
+        className="stat-card card1"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={cardVariants("left")}
       >
         <div className="stat-value">100+</div>
-        <div className="stat-label">PROJECTS <br/>COMPLETED</div>
+        <div className="stat-label">
+          PROJECTS <br />
+          COMPLETED
+        </div>
       </motion.div>
 
       {/* Card 2 */}
       <motion.div
-        className="stat-card"
-        style={{ backgroundColor: "#2196F3" }}
+        className="stat-card card2"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={cardVariants("top")}
       >
         <div className="stat-value">5+</div>
-        <div className="stat-label">SUCCESSFUL<br/> PARTNERSHIPS</div>
+        <div className="stat-label">
+          SUCCESSFUL
+          <br /> PARTNERSHIPS
+        </div>
       </motion.div>
 
       {/* Card 3 */}
       <motion.div
-        className="stat-card"
-        style={{ backgroundColor: "#FFC107" }}
+        className="stat-card card3"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={cardVariants("bottom")}
       >
         <div className="stat-value">10+</div>
-        <div className="stat-label">CREATIVE <br/>INNOVATORS</div>
+        <div className="stat-label">
+          CREATIVE <br />
+          INNOVATORS
+        </div>
       </motion.div>
 
       {/* Card 4 */}
       <motion.div
-        className="stat-card"
-        style={{ backgroundColor: "#F44336" }}
+        className="stat-card card4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={cardVariants("right")}
       >
         <div className="stat-value">200+</div>
-        <div className="stat-label">HOURS OF <br/> DIGITAL SOLUTIONS</div>
+        <div className="stat-label">
+          HOURS OF <br /> DIGITAL SOLUTIONS
+        </div>
       </motion.div>
     </div>
   );

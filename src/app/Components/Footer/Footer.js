@@ -35,13 +35,16 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       {/* Animated Footer Heading */}
-      <p   className="footer-head">
+      <p className="footer-head">
         connect with us <br /> across the <br /> cosmos
       </p>
 
       {/* Social Media Section */}
       <div className="social-media">
-        <div className="social-row">
+        <div
+          className="social-row"
+          onClick={() => window.open("https://linkedin.com/", "_blank")}
+        >
           <p className="social-heading">LinkedIn</p>
           <div className="social-icon">
             <img
@@ -53,7 +56,10 @@ const Footer = () => {
         </div>
         <hr className="divider" />
 
-        <div className="social-row">
+        <div
+          className="social-row"
+          onClick={() => window.open("https://instagram.com/", "_blank")}
+        >
           <p className="social-heading">Instagram</p>
           <div className="social-icon">
             <img
@@ -65,7 +71,10 @@ const Footer = () => {
         </div>
         <hr className="divider" />
 
-        <div className="social-row">
+        <div
+          className="social-row"
+          onClick={() => window.open("https://facebook.com/", "_blank")}
+        >
           <p className="social-heading">Facebook</p>
           <div className="social-icon">
             <img
