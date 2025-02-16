@@ -106,12 +106,17 @@
   .who-are-we-tag {
     font-size: 1rem;
     padding-left: 0;
+
   }
 
   .who-are-we-head {
     font-size: 4rem;
     margin-top: 5vh;
     letter-spacing: 1pt;
+  }
+
+  .who-are-we-tag {
+    margin-top: 20px;
   }
 }
 
@@ -184,24 +189,23 @@
   transition: transform 0.3s ease-in-out, background-color 0.3s ease;
   margin-top: 10vh;
   margin-bottom: 5vh;
+  gap: 50px;
 }
 
 @media (min-width: 764px) {
   .services-card:nth-child(4) {
     flex-direction: row-reverse;
-    margin-left: -7vw;
     /* Image on the right for desktop view */
   }
 
   .services-card:nth-child(6) {
     flex-direction: row-reverse;
-    margin-left: -7vw;
     /* Image on the right for desktop view */
   }
 }
 
 .services-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   /* Gives an elevation effect */
 }
 
@@ -214,6 +218,7 @@
   transition: transform 0.3s ease;
   /* Animation for image hover */
   border-radius: 12px;
+  flex: 1;
 }
 
 /* Text Section */
@@ -225,6 +230,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  flex: 1;
   /* Adds spacing between text elements */
 }
 
@@ -278,12 +284,15 @@
   .services-card {
     flex-direction: row;
     /* Stacks the content vertically on smaller screens */
+    padding: 0;
   }
 
   .services-image,
   .services-text {
     width: 100%;
   }
+
+
 }
 
 @media (max-width: 768px) {
@@ -298,6 +307,8 @@
     font-size: 1.1rem;
   }
 
+
+
   /* Card Layout */
   .services-card {
     flex-direction: column;
@@ -306,8 +317,9 @@
     /* Center the card content */
     margin-top: 2rem;
     /* Adjust spacing between cards */
-    padding: 1rem;
     /* Add padding for better spacing */
+
+    gap: 20px;
 
   }
 
