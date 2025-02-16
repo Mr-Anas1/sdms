@@ -48,7 +48,7 @@
   flex-direction: column;
   /* Stack content vertically by default */
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   width: 80vw;
   margin-bottom: 10vh;
 }
@@ -101,6 +101,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .image-content img {
