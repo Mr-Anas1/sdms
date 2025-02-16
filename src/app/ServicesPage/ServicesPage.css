@@ -71,7 +71,6 @@
   font-family: "Dirtyline36Daysoftype2022", sans-serif;
   font-size: 5.5rem;
   text-align: center;
-  margin-top: 5vh;
   margin-bottom: 3vh;
 }
 
@@ -136,8 +135,7 @@
   /* Adding subtle border */
   border-radius: 12px;
   /* Rounded corners for a modern look */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
-    0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   /* Enhanced shadow for elevation */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* Smooth transition on hover */
@@ -146,8 +144,7 @@
 .services-extra-container:hover {
   transform: translateY(-5px);
   /* Slight elevation on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3),
-    0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   /* More pronounced shadow on hover */
 }
 
@@ -227,6 +224,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+
 }
 
 /* Responsive Adjustments */
@@ -234,7 +232,6 @@
 
   .services-page-heading {
     font-size: 3rem;
-    margin-top: 2vh;
   }
 
   .services-page-service {

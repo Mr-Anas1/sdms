@@ -1,381 +1,457 @@
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
-  /* Font Import */
+}
+
+/* Font Import */
 @font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
 
 
-/* Trainings & Internships Component Styles */ 
+/* Trainings & Internships Component Styles */
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width:90vw;
-    margin-left:7vw;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  /* Stack content vertically by default */
+  align-items: center;
+  gap: 20px;
+  width: 80vw;
+  margin-bottom: 10vh;
+}
+
+
+/* Large Devices Layout */
+@media (min-width: 768px) {
   .sub-container {
-    display: flex;
-    flex-direction: column; /* Stack content vertically by default */
-    align-items: center;
-    gap: 20px;
-    width: 80vw;
-    margin-bottom:10vh;
-  }
-  
-  @media(max-width:768px){
-    .sub-container{
-    margin-left: 5vw;
-    }
-  }
-  
-  /* Large Devices Layout */
-  @media (min-width: 768px) {
-    .sub-container {
-      flex-direction: row; /* Arrange items in a row for large screens */
-      justify-content: space-between;
-    }
-  
-    .sub-container.reverse {
-      flex-direction: row-reverse; /* Reverse row for second sub-container */
-    }
-  }
-   
-  .text-content {
-    flex: 1;
-    text-align: left;
-     
-  }
-  
-   
-  
-  .buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .btn-primary,
-  .btn-secondary {
-    padding: 10px 20px;
-    font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  @media(max-width:764px){
-      .text-content{
-        text-align: center;
-      }
-  }
-  
-  .image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-   
-  .text-content-head{
-    font-family: 'Dirtyline36Daysoftype2022';
-    font-size: 3rem;
-    font-weight: 100;
-    line-height: 3rem;
-  }
-  .text-content-para{
-    font-family: 'Syne',serif;
-    text-transform: lowercase;
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    text-transform: none;
-  }
-  .dark-mode .text-content-para {
-    color:var(--background-light);
-  }
-  /* Image Section */
-  .services-image {
-    width: 40vw; /* Image takes up 40% of the container width */
-    height: auto;
-    object-fit:cover;
-    transition: transform 0.3s ease; /* Animation for image hover */
-    border-radius: 12px;
-  }
-
-
-  
-  
-  .time-to-roar-head{
-    font-family:'Dirtyline36Daysoftype2022';
-    font-size: 6.5rem;
-    text-align: left;
-    text-transform: lowercase;
-    margin-left: 10vw;
-    margin-top: 10vh;
-    line-height: 5rem;
-    color:#000000;
-  }
-  .dark-mode .time-to-roar-head{
-    color:var(--background-light);
-  }
-  .time-to-roar {
-    text-align: center;
-    margin: 20px;
-    width:80vw;
-    margin-left: 10vw;
-    margin-bottom: 20vh;
-    
-  }
-  
-  .horizontal-line {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 10px 0;
-  }
-  
-  .contact-row {
-    display: flex;
+    flex-direction: row;
+    /* Arrange items in a row for large screens */
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  
-  }
-  
-  .contact-item {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .contact-item small {
-    display: block;
-    font-size: 1.2rem;
-    color: #888;
-    margin-bottom: 5px;
-    font-family: 'Syne',serif;
-    text-transform: none;
-  }
-  
-  .contact-item p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
-    font-family: 'Syne',serif;
-    text-transform: none;
-  }
-  .dark-mode .contact-item p{
-    color:var(--background-light);
-  }
-  
-  @media(max-width:764px){
-    .time-to-roar-head{
-      font-size: 4rem;
-      line-height: 3rem;
-  
-    }
-    .contact-item small{
-      font-size: 0.5rem;
-    }
-    .contact-item p{
-      font-size: 0.6rem;
-    }
-    .web{
-      display: none;
-    }
-    .services-image {
-      width: 90%; /* Image takes 90% of the container width */
-      height: auto; /* Maintain aspect ratio */
-      margin-bottom: 1rem; /* Add spacing between image and text */
-      border-radius: 12px; /* Rounded corners */
-    }
-  
-  }
- 
-  
-  .content-container{
-    margin-top:35vh;
-    background-color: var(--background-light);
-    color:var(--background-dark);
-  }
-  .dark-mode .content-container{
-    background-color:  var(--background-dark);
-    color:var(--background-light);
   }
 
-  .services-page-heading {
-    font-family: "Dirtyline36Daysoftype2022", sans-serif;
-    font-size: 5.5rem;
+  .sub-container.reverse {
+    flex-direction: row-reverse;
+    /* Reverse row for second sub-container */
+  }
+}
+
+.text-content {
+  flex: 1;
+  text-align: left;
+
+}
+
+
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media(max-width:764px) {
+  .text-content {
     text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
+  }
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+}
+
+.text-content-head {
+  font-family: 'Dirtyline36Daysoftype2022';
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 3rem;
+  margin-bottom: 5px;
+}
+
+.text-content-para {
+  font-family: 'Syne', serif;
+  text-transform: lowercase;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  text-transform: none;
+}
+
+.dark-mode .text-content-para {
+  color: var(--background-light);
+}
+
+/* Image Section */
+.services-image {
+  width: 40vw;
+  /* Image takes up 40% of the container width */
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  /* Animation for image hover */
+  border-radius: 12px;
+}
+
+
+
+
+.time-to-roar-head {
+  font-family: 'Dirtyline36Daysoftype2022';
+  font-size: 6.5rem;
+  text-align: left;
+  text-transform: lowercase;
+  margin-left: 10vw;
+  margin-top: 10vh;
+  line-height: 5rem;
+  color: #000000;
+}
+
+.dark-mode .time-to-roar-head {
+  color: var(--background-light);
+}
+
+.time-to-roar {
+  text-align: center;
+  margin: 20px;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-bottom: 20vh;
+
+}
+
+.horizontal-line {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 10px 0;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.contact-item {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-item small {
+  display: block;
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 5px;
+  font-family: 'Syne', serif;
+  text-transform: none;
+}
+
+.contact-item p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  font-family: 'Syne', serif;
+  text-transform: none;
+}
+
+.dark-mode .contact-item p {
+  color: var(--background-light);
+}
+
+@media(max-width:764px) {
+  .time-to-roar-head {
+    font-size: 4rem;
+    line-height: 3rem;
+
+  }
+
+  .contact-item small {
+    font-size: 0.5rem;
+  }
+
+  .contact-item p {
+    font-size: 0.6rem;
+  }
+
+  .web {
+    display: none;
+  }
+
+  .services-image {
+    width: 90%;
+    /* Image takes 90% of the container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-bottom: 1rem;
+    /* Add spacing between image and text */
+    border-radius: 12px;
+    /* Rounded corners */
+  }
+
+}
+
+
+.content-container {
+  margin-top: 25vh;
+  background-color: var(--background-light);
+  color: var(--background-dark);
+}
+
+.dark-mode .content-container {
+  background-color: var(--background-dark);
+  color: var(--background-light);
+}
+
+.services-page-heading {
+  font-family: "Dirtyline36Daysoftype2022", sans-serif;
+  font-size: 5.5rem;
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+}
+
+.services-page-service {
+  text-align: center;
+  margin: 5vh auto;
+  width: 80%;
+}
+
+.service-page-head {
+  font-size: 1.8rem;
+  margin-bottom: 5vh;
+  font-family: 'Syne', serif;
+  text-transform: none;
+  text-align: left;
+}
+
+.dark-mode .service-page-head {
+  color: var(--background-light)
+}
+
+.service-page-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-transform: none;
+  font-family: 'Syne', serif;
+  text-align: left;
+  width: 70%;
+  margin-left: auto;
+
+}
+
+.dark-mode .service-page-text {
+  color: var(--background-light)
+}
+
+/* Button */
+.services-text-button {
+  border: 2px solid #000000;
+  /* Gold border for premium feel */
+  background: transparent;
+  color: var(--background-dark);
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Syne', serif;
+  border-radius: 33px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 15px;
+  margin-right: auto;
+  text-transform: none;
+
+}
+
+.services-text-button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-5px);
+  /* Subtle lift effect on hover */
+}
+
+.dark-mode .services-text-button {
+  color: var(--background-light);
+  border: 2px solid #ffffff;
+}
+
+.trainings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 764px) {
+  .services-page-heading {
+    font-size: 2.5rem;
+    margin-top: 2vh;
   }
 
   .services-page-service {
-    text-align: center;
-    margin: 5vh auto;
-    width: 80%;
+    width: 90%;
   }
 
   .service-page-head {
-    font-size: 1.8rem;
-    margin-bottom: 5vh;
-    font-family: 'Syne' , serif;
-    text-transform: none;
-    text-align: left;
-  }
-  .dark-mode .service-page-head{
-    color:var(--background-light)
+    font-size: 1.3rem;
   }
 
   .service-page-text {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    text-transform: none;
-    font-family: 'Syne',serif;
-    text-align: left;
-    width:70%;
-    margin-left: auto;
-  
-  }
-  
-  .dark-mode .service-page-text{
-    color:var(--background-light)
+    font-size: 1rem;
+    width: 100%;
   }
 
   /* Button */
   .services-text-button {
-    border: 2px solid #000000; /* Gold border for premium feel */
-    background: transparent;
-    color: var(--background-dark);
-    padding: 10px 20px;
+    padding: 12px 20px;
+    /* Slightly larger button padding */
     font-size: 1rem;
-    font-weight: bold;
-    font-family:  'Syne',serif;
-    border-radius: 33px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding : 15px;
-    margin-right: auto;
+    /* Keep font size readable */
+    border-radius: 25px;
+    /* Make the button look modern */
+    margin: 0 auto;
+    /* Center the button */
+    width: auto;
+    /* Ensure button doesn't stretch */
     text-transform: none;
-  
   }
-  .services-text-button:hover {
-    background-color: var(--button-hover-bg);
-    transform: translateY(-5px); /* Subtle lift effect on hover */
-  }
-  .dark-mode .services-text-button {
-    color: var(--background-light);
-    border: 2px solid #ffffff;
-  }
-  @media (max-width: 764px) {
-    .services-page-heading {
-      font-size: 2.5rem;
-      margin-top: 2vh;
-    }
-    .services-page-service {
-      width: 90%;
-    }
-    .service-page-head {
-      font-size:1.3rem;
-    }
-    .service-page-text{
-      font-size: 1rem;
-      width:100%;
-    }
-    /* Button */
-    .services-text-button {
-      padding: 12px 20px; /* Slightly larger button padding */
-      font-size: 1rem; /* Keep font size readable */
-      border-radius: 25px; /* Make the button look modern */
-      margin: 0 auto; /* Center the button */
-      width: auto; /* Ensure button doesn't stretch */
-      text-transform: none;
-    }
-  }
- 
+}
+
 
 
 /* Testimonials container */
 .testimonials-container {
-  max-width: 1200px; /* Max width for larger screens */
-  margin: 0 auto; /* Center the container */
-  padding: 40px 20px; /* Add padding around the container */
-  background-color: var(--testimonial-container-light); /* Light mode background */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 4px 20px var(--shadow-light); /* Light mode shadow */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  max-width: 1200px;
+  /* Max width for larger screens */
+  margin: 0 auto;
+  /* Center the container */
+  padding: 40px 20px;
+  /* Add padding around the container */
+  background-color: var(--testimonial-container-light);
+  /* Light mode background */
+  border-radius: 15px;
+  /* Rounded corners */
+  box-shadow: 0 4px 20px var(--shadow-light);
+  /* Light mode shadow */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Smooth transition */
 }
- 
+
 
 /* Heading styles */
 .testimonials-heading {
-  text-align: left; /* Centered heading */
-  font-size: 5rem; /* Font size for heading */
-  color: #000000; /* Light mode heading color */
-  margin-bottom: 30px; /* Spacing below the heading */
-  font-family: 'Dirtyline36Daysoftype2022'; 
+  text-align: left;
+  /* Centered heading */
+  font-size: 5rem;
+  /* Font size for heading */
+  color: #000000;
+  /* Light mode heading color */
+  margin-bottom: 30px;
+  /* Spacing below the heading */
+  font-family: 'Dirtyline36Daysoftype2022';
   line-height: 4rem;
   font-weight: 100;
 }
 
 /* Dark mode heading */
 
-.dark-mode .testimonials-heading{
-    color: var(--highlight-color) /* Dark mode heading color */
-  }
+.dark-mode .testimonials-heading {
+  color: var(--highlight-color)
+    /* Dark mode heading color */
+}
 
 
 /* Testimonials wrapper for scrolling */
 .testimonials-wrapper {
-  display: flex; /* Use flexbox for horizontal layout */
-  overflow-x: hidden; /* Enable horizontal scrolling */
-  scroll-behavior: smooth; /* Smooth scrolling */
-  padding: 10px 0; /* Padding around the wrapper */
-  cursor: grab; /* Indicate draggable area */
-  width:500%;
+  display: flex;
+  /* Use flexbox for horizontal layout */
+  overflow-x: hidden;
+  /* Enable horizontal scrolling */
+  scroll-behavior: smooth;
+  /* Smooth scrolling */
+  padding: 10px 0;
+  /* Padding around the wrapper */
+  cursor: grab;
+  /* Indicate draggable area */
+  width: 500%;
 }
 
 /* Testimonial card styles */
 .testimonial-card {
-  flex: 0 0 auto; /* Prevent flex items from shrinking */
-  width: 45vw; /* Fixed width for cards */
-  margin-right: 20px; /* Spacing between cards */
-  padding: 20px; /* Padding inside each card */
-  background-color: #ffffff; /* Light mode card */
-  border-radius: 10px; /* Rounded corners for cards */
-  box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
-  position: relative; /* Position for glowing effect */
+  flex: 0 0 auto;
+  /* Prevent flex items from shrinking */
+  width: 45vw;
+  /* Fixed width for cards */
+  margin-right: 20px;
+  /* Spacing between cards */
+  padding: 20px;
+  /* Padding inside each card */
+  background-color: #ffffff;
+  /* Light mode card */
+  border-radius: 10px;
+  /* Rounded corners for cards */
+  box-shadow: 0 2px 10px var(--shadow-light);
+  /* Light mode shadow */
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s;
+  /* Smooth transition */
+  position: relative;
+  /* Position for glowing effect */
   border: 2px solid #000000;
-  cursor: grab; /* Indicate draggable content */
-  user-select: none; /* Prevent text selection while dragging */
+  cursor: grab;
+  /* Indicate draggable content */
+  user-select: none;
+  /* Prevent text selection while dragging */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -385,141 +461,183 @@
 /* Mobile view styles */
 @media (max-width: 764px) {
   .testimonial-card {
-    flex: 0 0 auto; /* Prevent flex items from shrinking */
-    width: 80vw; /* Fixed width for cards */
-    margin-right: 20px; /* Spacing between cards */
-    padding: 20px; /* Padding inside each card */
-    background-color: #ffffff; /* Light mode card */
-    border-radius: 10px; /* Rounded corners for cards */
-    box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
-    position: relative; /* Position for glowing effect */
+    flex: 0 0 auto;
+    /* Prevent flex items from shrinking */
+    width: 80vw;
+    /* Fixed width for cards */
+    margin-right: 20px;
+    /* Spacing between cards */
+    padding: 20px;
+    /* Padding inside each card */
+    background-color: #ffffff;
+    /* Light mode card */
+    border-radius: 10px;
+    /* Rounded corners for cards */
+    box-shadow: 0 2px 10px var(--shadow-light);
+    /* Light mode shadow */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s;
+    /* Smooth transition */
+    position: relative;
+    /* Position for glowing effect */
     border: 2px solid #000000;
-    cursor: grab; /* Indicate draggable content */
-    user-select: none; /* Prevent text selection while dragging */
-   
+    cursor: grab;
+    /* Indicate draggable content */
+    user-select: none;
+    /* Prevent text selection while dragging */
+
   }
+
   /* Testimonials wrapper for scrolling */
   .testimonials-heading {
-    font-size:3.5rem;
+    font-size: 3.5rem;
     line-height: 3rem;
   }
-  .testimonial-text{
+
+  .testimonial-text {
     font-size: 1rem;
   }
-  
+
 }
 
 
 
-.dark-mode  .testimonial-card {
-    background-color: var(--testimonial-card-dark); /* Dark mode card */
-    box-shadow: 0 2px 10px var(--shadow-dark); /* Dark mode shadow */
-    border: 2px solid #ffffff;
-  }
+.dark-mode .testimonial-card {
+  background-color: var(--testimonial-card-dark);
+  /* Dark mode card */
+  box-shadow: 0 2px 10px var(--shadow-dark);
+  /* Dark mode shadow */
+  border: 2px solid #ffffff;
+}
 
 
 /* Testimonial card glow effect */
 .testimonial-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  filter: drop-shadow(0 0 15px var(--glow-light)); /* Light mode glow */
+  transform: translateY(-5px);
+  /* Slight lift on hover */
+  filter: drop-shadow(0 0 15px var(--glow-light));
+  /* Light mode glow */
   border: 2px solid #ffffff;
   background-color: #f0f0f0;
-  
+
 }
 
 .dark-mode .testimonial-card:hover {
   background-color: #000000;
 }
- 
+
 
 
 /* Image styles */
 .testimonial-image {
   width: 100px;
-  height:100px; /* Full width of the card */
-  height: auto; /* Auto height to maintain aspect ratio */
-  border-radius: 50%; /* Circular images */
-  margin-bottom: 15px; /* Spacing below image */
+  height: 100px;
+  /* Full width of the card */
+  height: auto;
+  /* Auto height to maintain aspect ratio */
+  border-radius: 50%;
+  /* Circular images */
+  margin-bottom: 15px;
+  /* Spacing below image */
 }
 
 /* Name styles */
 .testimonial-name {
-  font-size: 1.5rem; /* Font size for name */
-  font-weight: bold; /* Bold font */
-  color: var(--background-dark); /* Light mode name color */
-  margin-bottom: 10px; /* Spacing below name */
+  font-size: 1.5rem;
+  /* Font size for name */
+  font-weight: bold;
+  /* Bold font */
+  color: var(--background-dark);
+  /* Light mode name color */
+  margin-bottom: 10px;
+  /* Spacing below name */
   text-align: center;
   font-family: 'Syne', serif;
-  
+
 }
 
 
 .dark-mode .testimonial-name {
-    color: var(--background-light); /* Dark mode name color */
-  }
+  color: var(--background-light);
+  /* Dark mode name color */
+}
 
 /* Text styles */
 .testimonial-text {
-  font-size: 1.5rem; /* Font size for text */
-  color: #555; /* Grey color for text */
-  margin-bottom: 10px; /* Spacing below text */
-  line-height: 1.5; /* Line height for readability */
-  font-family: 'Syne',serif;
+  font-size: 1.5rem;
+  /* Font size for text */
+  color: #555;
+  /* Grey color for text */
+  margin-bottom: 10px;
+  /* Spacing below text */
+  line-height: 1.5;
+  /* Line height for readability */
+  font-family: 'Syne', serif;
   text-transform: none;
   text-align: center;
-  margin-top:7vh;
-  margin-bottom:auto;
+  margin-top: 7vh;
+  margin-bottom: auto;
 }
 
 .dark-mode .testimonial-text {
-  color : #FFFFF7;
+  color: #FFFFF7;
 }
+
 /* Position styles */
 .testimonial-position {
-  font-size: 0.9rem; /* Smaller font size for position */
-  color: #777; /* Lighter grey for position text */ /* Italic style for emphasis */
+  font-size: 0.9rem;
+  /* Smaller font size for position */
+  color: #777;
+  /* Lighter grey for position text */
+  /* Italic style for emphasis */
   text-align: center;
-  font-family: 'Syne',serif;
+  font-family: 'Syne', serif;
 
 }
 
 /* Dark mode position */
 @media (prefers-color-scheme: dark) {
   .testimonial-position {
-    color: #aaa; /* Light grey for position in dark mode */
+    color: #aaa;
+    /* Light grey for position in dark mode */
   }
 }
+
 /* Mobile view styles */
 @media (max-width: 764px) {
   .testimonial-card {
-    flex: 0 0 auto; /* Prevent flex items from shrinking */
-    width: 80vw; /* Fixed width for cards */
-    margin-right: 20px; /* Spacing between cards */
-    padding: 20px; /* Padding inside each card */
-    background-color: #ffffff; /* Light mode card */
-    border-radius: 10px; /* Rounded corners for cards */
-    box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
-    position: relative; /* Position for glowing effect */
+    flex: 0 0 auto;
+    /* Prevent flex items from shrinking */
+    width: 80vw;
+    /* Fixed width for cards */
+    margin-right: 20px;
+    /* Spacing between cards */
+    padding: 20px;
+    /* Padding inside each card */
+    background-color: #ffffff;
+    /* Light mode card */
+    border-radius: 10px;
+    /* Rounded corners for cards */
+    box-shadow: 0 2px 10px var(--shadow-light);
+    /* Light mode shadow */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s;
+    /* Smooth transition */
+    position: relative;
+    /* Position for glowing effect */
     border: 2px solid #000000;
-    cursor: grab; /* Indicate draggable content */
-    user-select: none; /* Prevent text selection while dragging */
-   
+    cursor: grab;
+    /* Indicate draggable content */
+    user-select: none;
+    /* Prevent text selection while dragging */
+
   }
+
   /* Testimonials wrapper for scrolling */
   .testimonials-heading {
-    font-size:3.5rem;
+    font-size: 3.5rem;
   }
-  .testimonial-text{
+
+  .testimonial-text {
     font-size: 1rem;
   }
-  
+
 }
-
-
-
-
-
-
-
