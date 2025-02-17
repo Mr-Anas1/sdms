@@ -48,7 +48,7 @@ const Footer = () => {
           <p className="social-heading">LinkedIn</p>
           <div className="social-icon">
             <img
-              src="./images/linkedin.svg" // Replace with your LinkedIn icon's path
+              src="./images/linkedin.svg"
               alt="LinkedIn Icon"
               className="icon"
             />
@@ -63,7 +63,7 @@ const Footer = () => {
           <p className="social-heading">Instagram</p>
           <div className="social-icon">
             <img
-              src="./images/instagram.svg" // Replace with your Instagram icon's path
+              src="./images/instagram.svg"
               alt="Instagram Icon"
               className="icon"
             />
@@ -78,7 +78,7 @@ const Footer = () => {
           <p className="social-heading">Facebook</p>
           <div className="social-icon">
             <img
-              src="./images/facebook.svg" // Replace with your Facebook icon's path
+              src="./images/facebook.svg"
               alt="Facebook Icon"
               className="icon"
             />

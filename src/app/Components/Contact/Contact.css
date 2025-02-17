@@ -18,6 +18,8 @@
 }
 
 
+
+
 /* Font Import */
 @font-face {
   font-family: 'Dirtyline36Daysoftype2022';
@@ -33,6 +35,19 @@
   /* Regular */
   font-style: normal;
 }
+
+@keyframes riseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 .contactSection {
@@ -179,6 +194,8 @@
 }
 
 
+
+
 .contact-head {
   font-size: 5rem;
   font-family: 'Dirtyline36Daysoftype2022';
@@ -189,6 +206,10 @@
   font-weight: 100;
   line-height: 0.8;
   margin-bottom: 20px;
+  animation: riseUp;
+  animation-timeline: view();
+  animation-duration: entry 0% cover 40%;
+
 }
 
 @media screen and (max-width: 764px) {

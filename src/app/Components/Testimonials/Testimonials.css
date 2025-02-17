@@ -54,9 +54,25 @@
   /* Smooth transition */
 }
 
-.testimonials-container {
-  margin: 40px 0px;
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
+.testimonials-heading {
+  animation: slideLeft;
+  animation-timeline: view();
+  animation-duration: entry 0% cover 70%;
+}
+
+.testimonials-container {}
 
 /* Heading styles */
 .testimonials-heading {
