@@ -6,7 +6,51 @@
   --foreground-light: #171717;
   --foreground-dark: #ffff;
   --highlight-color: #ffff;
-  /* Golden color */
+}
+
+/* Card container */
+
+.stat-card.left {
+  animation-name: slideInLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.stat-card.right {
+  animation-name: slideInRight;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) rotate(-15deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) rotate(15deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Apply Dark Mode Colors for Dark Mode Preferences */
@@ -38,21 +82,17 @@
 .stats-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Two columns */
   gap: 15px;
-  /* Reduced gap between cards */
   justify-items: center;
-  /* Centers items horizontally */
   align-items: start;
-  /* Aligns items at the start vertically */
   margin-top: 10vh;
+  scroll-behavior: smooth;
 }
 
 /* Card styling */
 .stat-card {
   position: relative;
   background-color: #fafafa;
-  /* For absolute positioning of label */
   width: 40vw;
   height: 40vh;
   display: flex;
