@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import './Contact.css'
+import "./Contact.css";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -24,9 +24,7 @@ export default function Contact() {
     if (!formData.name) newErrors.name = "Name is required.";
     if (!formData.email) {
       newErrors.email = "Email is required.";
-    } else if (
-      !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)
-    ) {
+    } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
       newErrors.email = "Invalid email format.";
     }
     if (!formData.mobile) {
@@ -55,7 +53,13 @@ export default function Contact() {
 
       if (response.ok) {
         setSuccessMessage("Message sent successfully!");
-        setFormData({ name: "", email: "", mobile: "", message: "", service: "" });
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          message: "",
+          service: "",
+        });
       } else {
         setSuccessMessage("Failed to send message. Please try again.");
       }
@@ -73,7 +77,7 @@ export default function Contact() {
           <input
             type="text"
             name="name"
-            className="name"
+            className={`name ${errors.name ? "error" : ""}`}
             placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
@@ -83,7 +87,7 @@ export default function Contact() {
           <input
             type="email"
             name="email"
-            className="email"
+            className={`email ${errors.email ? "error" : ""}`}
             placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
@@ -91,9 +95,9 @@ export default function Contact() {
 
           {/* Mobile Number Field */}
           <input
-            type="text"
+            type="number"
             name="mobile"
-            className="mobile"
+            className={`mobile ${errors.mobile ? "error" : ""}`}
             placeholder="Your Mobile Number"
             value={formData.mobile}
             onChange={handleChange}
@@ -102,15 +106,23 @@ export default function Contact() {
           {/* Dropdown for Services */}
           <select
             name="service"
-            className="service"
+            className={`service ${errors.service ? "error" : ""}`}
             value={formData.service}
             onChange={handleChange}
           >
             <option value="">Select a Service</option>
-            <option value="Digital Solutions & Development">Digital Solutions & Development</option>
-            <option value="Creative Content and Services">Creative Content and Services</option>
-            <option value="Marketing and Management">Marketing and Management</option>
-            <option value="Event Marketing and Training Solutions">Event Marketing and Training Solutions</option>
+            <option value="Digital Solutions & Development">
+              Digital Solutions & Development
+            </option>
+            <option value="Creative Content and Services">
+              Creative Content and Services
+            </option>
+            <option value="Marketing and Management">
+              Marketing and Management
+            </option>
+            <option value="Event Marketing and Training Solutions">
+              Event Marketing and Training Solutions
+            </option>
           </select>
 
           {/* Message Field */}
@@ -118,17 +130,17 @@ export default function Contact() {
             rows="1"
             name="message"
             placeholder="Message"
-            className="message"
+            className={`message ${errors.name ? "error" : ""}`}
             value={formData.message}
             onChange={handleChange}
           />
 
-          {/* Error Messages */}
+          {/* Error Messages
           {errors.name && <p className="error">{errors.name}</p>}
           {errors.email && <p className="error">{errors.email}</p>}
           {errors.mobile && <p className="error">{errors.mobile}</p>}
           {errors.service && <p className="error">{errors.service}</p>}
-          {errors.message && <p className="error">{errors.message}</p>}
+          {errors.message && <p className="error">{errors.message}</p>} */}
 
           {/* Submit Button */}
           <button className="contact-button" type="submit">

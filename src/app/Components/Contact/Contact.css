@@ -82,6 +82,12 @@
   font-weight: 400;
 }
 
+.input.error {
+  border-bottom: 2px solid red;
+  margin-bottom: 40px;
+
+}
+
 .name,
 .email,
 .message {
@@ -230,9 +236,9 @@
 }
 
 .error {
-  color: red;
-  font-size: 14px;
-  margin-bottom: 10px;
+
+  margin-bottom: 40px;
+  border-bottom: 1px solid red;
 }
 
 .success {
