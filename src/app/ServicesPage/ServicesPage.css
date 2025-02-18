@@ -189,6 +189,12 @@
 }
 
 @media(max-width:764px) {
+
+  .content-container {
+    padding-top: 0;
+
+  }
+
   .service-page-head {
     font-size: 1.3rem;
     margin-bottom: 30px;
@@ -199,9 +205,6 @@
     width: 100%;
   }
 
-  .content-container {
-    margin-top: 20vh;
-  }
 }
 
 .services-extra-container {
@@ -355,7 +358,7 @@
   font-family: 'Syne', serif;
   text-align: center;
   font-size: 6rem;
-  margin: 20vh 0;
+  margin: 10vh 0;
 
 }
 
@@ -484,11 +487,17 @@
 
   .cardScroller .card {
     height: 20vh;
+    min-width: 60vw;
+
   }
 
   .cardScroller2 .card {
     height: 20vh;
+    min-width: 60vw;
   }
+
+
+
 }
 
 .our-process-heading {
@@ -589,10 +598,15 @@
 
   .our-process-text {
     font-size: 1.2rem;
+    margin-bottom: 5vh;
+  }
+
+  .cardScroller3 {
+    gap: 15px;
   }
 
   .cardScroller3 .card {
-    width: 70vw;
+    min-width: 60vw;
   }
 
   .sequenceNumber {

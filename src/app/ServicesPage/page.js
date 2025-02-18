@@ -154,11 +154,68 @@ export default function ServicesPage() {
                 />
               </div>
             ))}
+            {cards.map((src, index) => (
+              <div className="card" key={index}>
+                <img
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="cardImage"
+                />
+              </div>
+            ))}
+            {/* Duplicating the cards for infinite scroll */}
+            {cards.map((src, index) => (
+              <div className="card" key={`duplicate-${index}`}>
+                <img
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="cardImage"
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div className="cardScrollerWrapper2">
           <div className="cardScroller2">
             {/* Dynamically rendering the cards */}
+            {cards.map((src, index) => (
+              <div className="card" key={index}>
+                <img
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="cardImage"
+                />
+              </div>
+            ))}
+            {/* Duplicating the cards for infinite scroll */}
+            {cards.map((src, index) => (
+              <div className="card" key={`duplicate-${index}`}>
+                <img
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="cardImage"
+                />
+              </div>
+            ))}
+            {cards.map((src, index) => (
+              <div className="card" key={index}>
+                <img
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="cardImage"
+                />
+              </div>
+            ))}
+            {/* Duplicating the cards for infinite scroll */}
+            {cards.map((src, index) => (
+              <div className="card" key={`duplicate-${index}`}>
+                <img
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="cardImage"
+                />
+              </div>
+            ))}
             {cards.map((src, index) => (
               <div className="card" key={index}>
                 <img
@@ -191,6 +248,46 @@ export default function ServicesPage() {
         <div className="cardScroller3">
           {/* Dynamically rendering the cards */}
           {[
+            {
+              heading: "Foundational Planning",
+              description: `
+              Project Planning <br />
+              Expectations Setting <br />
+              Competitor Analysis <br />
+              Digital Strategy <br />
+              Contract
+            `,
+            },
+            {
+              heading: "Technology & Development",
+              description: `
+              Web Development <br />
+              Front-end Development <br />
+              Custom CMS Integrations <br />
+              E-commerce Development <br />
+              SAAS Implementation
+            `,
+            },
+            {
+              heading: "Testing & Launch",
+              description: `
+              Usability Testing <br />
+              Performance Testing <br />
+              Functionality Testing <br />
+              Security Testing <br />
+              Integration Testing
+            `,
+            },
+            {
+              heading: "Evaluate & Evolve",
+              description: `
+              Reviews <br />
+              Website optimisation <br />
+              3rd Party Evaluation <br />
+              Server performance <br />
+              Improvement
+            `,
+            },
             {
               heading: "Foundational Planning",
               description: `
