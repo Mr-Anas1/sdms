@@ -158,10 +158,9 @@ body.dark-mode .contact-button {
 
 .time-to-roar {
   text-align: center;
-  margin: 20px;
   width: 80vw;
   margin-left: 10vw;
-  margin-bottom: 20vh;
+  padding-bottom: 20vh;
 
 }
 

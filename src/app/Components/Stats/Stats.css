@@ -13,13 +13,13 @@
 .stat-card.left {
   animation-name: slideInLeft;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+  animation-range: entry 0% cover 60%;
 }
 
 .stat-card.right {
   animation-name: slideInRight;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+  animation-range: entry 0% cover 60%;
 }
 
 @keyframes slideInLeft {

@@ -32,6 +32,42 @@
   font-style: normal;
 }
 
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes riseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
 
 /* Trainings & Internships Component Styles */
 
@@ -39,7 +75,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
 
@@ -51,6 +86,12 @@
   gap: 40px;
   width: 80vw;
   margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 768px) {
+  .sub-container {
+    width: 90vw;
+  }
 }
 
 
@@ -71,10 +112,31 @@
 .text-content {
   flex: 1;
   text-align: left;
-
 }
 
+.text-content.one {
+  animation: slideRight;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
 
+.text-content.two {
+  animation: slideLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.services-image.one {
+  animation: slideLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.services-image.two {
+  animation: slideRight;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
 
 .buttons {
   display: flex;
@@ -143,6 +205,12 @@
 }
 
 
+.time-to-roar-head {
+  animation: slideLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 70%;
+}
+
 
 
 .time-to-roar-head {
@@ -162,10 +230,10 @@
 
 .time-to-roar {
   text-align: center;
-  margin: 20px;
+  padding-top: 20px;
   width: 80vw;
   margin-left: 10vw;
-  margin-bottom: 20vh;
+  padding-bottom: 10vh;
 
 }
 
@@ -211,6 +279,23 @@
   color: var(--background-light);
 }
 
+.training-container-main {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 764px) {
+  .training-container-main {
+    height: 65vh;
+    margin-bottom: 140px;
+  }
+
+}
+
 @media(max-width:764px) {
   .time-to-roar-head {
     font-size: 4rem;
@@ -244,10 +329,12 @@
 }
 
 
+
 .content-container {
-  margin-top: 25vh;
+  padding-top: 15vh;
   background-color: var(--background-light);
   color: var(--background-dark);
+
 }
 
 .dark-mode .content-container {
@@ -265,7 +352,7 @@
 
 .services-page-service {
   text-align: center;
-  margin: 5vh auto;
+  margin: 5vh auto 60px;
   width: 80%;
 }
 
@@ -403,6 +490,9 @@
   font-family: 'Dirtyline36Daysoftype2022';
   line-height: 4rem;
   font-weight: 100;
+  animation: slideLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 /* Dark mode heading */

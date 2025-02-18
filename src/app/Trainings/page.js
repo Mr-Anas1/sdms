@@ -102,39 +102,41 @@ export default function Trainings() {
       />
       <Cursor darkMode={darkMode} />
       <div className="content-container">
-        <h2 className="services-page-heading">
-          inplant trainings & <br /> internships
-        </h2>
-        <div className="services-page-service">
-          <p className="service-page-head">
-            Tailored for college students and young aspirants seeking
-            certifications, our Inplant Trainings and Internships (online and
-            offline) offer hands-on, real-world experience. These programs are
-            crafted to guide you through the expanding tech universe, providing
-            the skills and knowledge to launch your career.
-          </p>
-          <p className="service-page-text">
-            With mentorship and practical learning, we prepare you to tackle
-            challenges and succeed in today’s dynamic digital space, equipping
-            you with the certifications that fuel your professional growth and
-            readiness for the tech galaxy..
-          </p>
+        <div className="training-container-main">
+          <h2 className="services-page-heading">
+            inplant trainings & <br /> internships
+          </h2>
+          <div className="services-page-service">
+            <p className="service-page-head">
+              Tailored for college students and young aspirants seeking
+              certifications, our Inplant Trainings and Internships (online and
+              offline) offer hands-on, real-world experience. These programs are
+              crafted to guide you through the expanding tech universe,
+              providing the skills and knowledge to launch your career.
+            </p>
+            <p className="service-page-text">
+              With mentorship and practical learning, we prepare you to tackle
+              challenges and succeed in today’s dynamic digital space, equipping
+              you with the certifications that fuel your professional growth and
+              readiness for the tech galaxy..
+            </p>
+          </div>
         </div>
 
         <div className="trainings-container">
           <div className="main-container">
             {/* First Sub-Container */}
-            <div className="sub-container">
+            <div className="sub-container normal">
               {/* Image Content */}
               <div className="image-content">
                 <img
                   src="./images/training1.jpeg"
                   alt="First Section Image"
-                  className="services-image"
+                  className="services-image one"
                 />
               </div>
               {/* Text Content */}
-              <div className="text-content">
+              <div className="text-content one">
                 <h2 className="text-content-head">inplant trainings</h2>
                 <p className="text-content-para">
                   UI/UX, Full Stack Development, DataScience, Graphic Designing,
@@ -158,11 +160,11 @@ export default function Trainings() {
                 <img
                   src="./images/training2.jpeg"
                   alt="Second Section Image"
-                  className="services-image"
+                  className="services-image two"
                 />
               </div>
               {/* Text Content */}
-              <div className="text-content">
+              <div className="text-content two">
                 <h2 className="text-content-head">internships</h2>
                 <p className="text-content-para">
                   UI/UX Designing <br />

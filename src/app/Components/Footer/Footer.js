@@ -40,51 +40,53 @@ const Footer = () => {
       </p>
 
       {/* Social Media Section */}
-      <div className="social-media">
-        <div
-          className="social-row"
-          onClick={() => window.open("https://linkedin.com/", "_blank")}
-        >
-          <p className="social-heading">LinkedIn</p>
-          <div className="social-icon">
-            <img
-              src="./images/linkedin.svg"
-              alt="LinkedIn Icon"
-              className="icon"
-            />
+      <div className="social-media-container">
+        <div className="social-media">
+          <div
+            className="social-row"
+            onClick={() => window.open("https://linkedin.com/", "_blank")}
+          >
+            <p className="social-heading">LinkedIn</p>
+            <div className="social-icon">
+              <img
+                src="./images/linkedin.svg"
+                alt="LinkedIn Icon"
+                className="icon"
+              />
+            </div>
           </div>
-        </div>
-        <hr className="divider" />
+          <hr className="divider" />
 
-        <div
-          className="social-row"
-          onClick={() => window.open("https://instagram.com/", "_blank")}
-        >
-          <p className="social-heading">Instagram</p>
-          <div className="social-icon">
-            <img
-              src="./images/instagram.svg"
-              alt="Instagram Icon"
-              className="icon"
-            />
+          <div
+            className="social-row"
+            onClick={() => window.open("https://instagram.com/", "_blank")}
+          >
+            <p className="social-heading">Instagram</p>
+            <div className="social-icon">
+              <img
+                src="./images/instagram.svg"
+                alt="Instagram Icon"
+                className="icon"
+              />
+            </div>
           </div>
-        </div>
-        <hr className="divider" />
+          <hr className="divider" />
 
-        <div
-          className="social-row"
-          onClick={() => window.open("https://facebook.com/", "_blank")}
-        >
-          <p className="social-heading">Facebook</p>
-          <div className="social-icon">
-            <img
-              src="./images/facebook.svg"
-              alt="Facebook Icon"
-              className="icon"
-            />
+          <div
+            className="social-row"
+            onClick={() => window.open("https://facebook.com/", "_blank")}
+          >
+            <p className="social-heading">Facebook</p>
+            <div className="social-icon">
+              <img
+                src="./images/facebook.svg"
+                alt="Facebook Icon"
+                className="icon"
+              />
+            </div>
           </div>
+          <hr className="divider" />
         </div>
-        <hr className="divider" />
       </div>
     </footer>
   );

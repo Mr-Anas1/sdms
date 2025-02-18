@@ -48,7 +48,7 @@
 @keyframes riseUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(140px);
   }
 
   100% {
@@ -309,6 +309,21 @@
 
 }
 
+.services-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+
+@media screen and (max-width: 764px) {
+  .services-page-container {
+
+    height: 75vh;
+  }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 764px) {
 
@@ -322,13 +337,7 @@
     margin-top: 0;
   }
 
-  .services-page-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
+
 
   .service-options {
     gap: 20px;
@@ -556,7 +565,7 @@
 /* The main scrolling container */
 .cardScroller3 {
   display: flex;
-  animation: scroll-cards 20s linear infinite;
+  animation: scroll-cards 40s linear infinite;
   margin-bottom: 2vh;
   gap: 30px;
 }

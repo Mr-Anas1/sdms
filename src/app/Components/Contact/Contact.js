@@ -135,13 +135,6 @@ export default function Contact() {
             onChange={handleChange}
           />
 
-          {/* Error Messages
-          {errors.name && <p className="error">{errors.name}</p>}
-          {errors.email && <p className="error">{errors.email}</p>}
-          {errors.mobile && <p className="error">{errors.mobile}</p>}
-          {errors.service && <p className="error">{errors.service}</p>}
-          {errors.message && <p className="error">{errors.message}</p>} */}
-
           {/* Submit Button */}
           <button className="contact-button" type="submit">
             Get in touch
