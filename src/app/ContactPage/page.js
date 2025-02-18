@@ -6,6 +6,7 @@ import Cursor from "../Cursor";
 import Navbar from "../Components/Navbar/Navbar.js";
 import "./ContactPage.css";
 import ContactForm from "./Components/ContactForm";
+import FluidCursor from "../FluidCursor";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(true);

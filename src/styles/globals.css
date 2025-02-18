@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* Root Color Variables for Light and Dark Mode */
 :root {
   --background-light: #ffffff;
@@ -47,6 +49,10 @@
   font-weight: 400;
   /* Regular */
   font-style: normal;
+}
+
+#fluid {
+  z-index: 9999;
 }
 
 html,

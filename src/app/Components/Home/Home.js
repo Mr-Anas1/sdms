@@ -5,6 +5,7 @@ import Head from "next/head";
 import Navbar from "../Navbar/Navbar";
 import Cursor from "../../Cursor";
 import "./Home.css";
+import FluidCursor from "@/app/FluidCursor";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
@@ -66,6 +67,7 @@ export default function Home() {
             menuOpen={menuOpen}
           />
           <Cursor darkMode={darkMode} />
+          {/* <FluidCursor /> */}
           <main className="home-main">
             <h2 className="home-heading">
               let's orbit success <br />
