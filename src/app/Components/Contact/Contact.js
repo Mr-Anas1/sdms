@@ -71,7 +71,14 @@ export default function Contact() {
   return (
     <div className="contactSection" id="contact">
       <div className="innerWidth">
-        <p className="contact-head">let's connect!</p>
+        <div className="contactMain">
+          <section className="scroll-reveal">
+            <p className="contact-head">
+              <span>let's connect!</span>
+            </p>
+          </section>
+        </div>
+
         <form onSubmit={handleSubmit}>
           {/* Name Field */}
           <input

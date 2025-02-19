@@ -46,7 +46,7 @@
 
 /* .who-are-we-head, */
 .who-are-we-main,
-.services-heading {
+.services-heading-main {
   animation: slideLeft;
   animation-timeline: view();
   animation-range: entry 0% cover 70%;
@@ -121,8 +121,6 @@
   font-weight: 100;
   letter-spacing: -3pt;
 
-  /* Apply gradient */
-
 }
 
 .scroll-reveal {
@@ -151,13 +149,6 @@
 
 
 
-
-
-@keyframes scrollReveal {
-  to {
-    background-size: 100%;
-  }
-}
 
 
 /* .dark-mode .who-are-we-head {
@@ -237,17 +228,14 @@
   }
 }
 
-/* Heading */
-.services-heading {
+.servicesTitle {
   font-size: 5rem;
-  /* Slightly larger font for emphasis */
-  line-height: 4rem;
-  color: var(--background-dark);
-  text-transform: lowercase;
-  /* Adds a professional look */
-  font-family: 'Dirtyline36Daysoftype2022';
   font-weight: 100;
+  text-transform: lowercase;
+  font-family: 'Dirtyline36Daysoftype2022';
+  line-height: 4rem;
 }
+
 
 .dark-mode .services-heading {
   color: var(--background-light);

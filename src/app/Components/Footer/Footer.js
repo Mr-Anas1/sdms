@@ -35,9 +35,14 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       {/* Animated Footer Heading */}
-      <p className="footer-head">
-        connect with us <br /> across the <br /> cosmos
-      </p>
+      <div className="footer-main">
+        <section className="scroll-reveal">
+          <p className="footer-head">
+            <span>connect with us</span> <br /> <span>across the</span> <br />{" "}
+            <span>cosmos</span>
+          </p>
+        </section>
+      </div>
 
       {/* Social Media Section */}
       <div className="social-media-container">

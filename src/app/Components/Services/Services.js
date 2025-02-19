@@ -38,13 +38,16 @@ const Services = () => {
         </div>
       </div>
       {/* Heading */}
-      <section className="scroll-reveal">
-        <h2 className="services-heading">
-          <span>
-            our <br /> services
-          </span>
-        </h2>
-      </section>
+
+      <div className="services-heading-main">
+        <section className="scroll-reveal">
+          <h2 className="servicesTitle">
+            <span>
+              our <br /> services
+            </span>
+          </h2>
+        </section>
+      </div>
       <p className="our-services-tag">
         Like a constellation, our services align to create a universe of endless
         possibilities.
