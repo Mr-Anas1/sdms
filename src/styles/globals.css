@@ -70,7 +70,7 @@ body {
 /* Dark Mode Class for Manual Toggling */
 .dark-mode {
   background-color: var(--background-dark);
-  color: var(--foreground-dark);
+  /* color: var(--foreground-dark); */
 }
 
 /* Anchor Tag Reset */

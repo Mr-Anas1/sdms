@@ -44,7 +44,8 @@
   }
 }
 
-.who-are-we-head,
+/* .who-are-we-head, */
+.who-are-we-main,
 .services-heading {
   animation: slideLeft;
   animation-timeline: view();
@@ -108,22 +109,63 @@
 
 }
 
-.who-are-we-head {
+
+
+.who-are-we-head span {
   font-size: 8rem;
-  /* Slightly larger font for emphasis */
   margin-bottom: 0.4rem;
-  color: var(--background-dark);
   text-transform: lowercase;
-  /* Adds a professional look */
   font-family: 'Dirtyline36Daysoftype2022';
   line-height: 0.8;
   margin-top: 8vh;
   font-weight: 100;
   letter-spacing: -3pt;
+
+  /* Apply gradient */
+
 }
 
-.dark-mode .who-are-we-head {
+.scroll-reveal {
+  width: fit-content;
+  padding: 5px;
+  box-sizing: border-box;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-color: #717171 !important;
+  background-size: 0% 100%;
+  background-image: linear-gradient(90deg, #000000, #000000);
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: contain 30vh;
+}
+
+
+
+
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+
+
+
+
+@keyframes scrollReveal {
+  to {
+    background-size: 100%;
+  }
+}
+
+
+/* .dark-mode .who-are-we-head {
   color: var(--background-light);
+} */
+
+.dark-mode .scroll-reveal {
+  background-image: linear-gradient(90deg, #ffffff, #ffffff) !important;
 }
 
 .who-are-we-subhead {

@@ -13,14 +13,20 @@ const Services = () => {
     <section className="services-container" id="our-services">
       {/* Who We Are Section */}
       <div className="who-are-we" id="WhoWeAre">
-        <h2 className="who-are-we-head" ref={WhoWeAreRef}>
-          who <br /> we are
-        </h2>
-        <h4 className="who-are-we-subhead">
-          As a pioneering force in the digital galaxy, SDMS® blends creativity
-          with cutting-edge technology to craft your brand’s journey through the
-          stars.
-        </h4>
+        <div className="who-are-we-main">
+          <section className="scroll-reveal">
+            <h2 className="who-are-we-head" ref={WhoWeAreRef}>
+              <span>who</span>
+              <br />
+              <span> we are</span>
+            </h2>
+          </section>
+          <h4 className="who-are-we-subhead">
+            As a pioneering force in the digital galaxy, SDMS® blends creativity
+            with cutting-edge technology to craft your brand’s journey through
+            the stars.
+          </h4>
+        </div>
 
         <div className="who-are-we-container">
           <p className="who-are-we-tag">
@@ -32,9 +38,13 @@ const Services = () => {
         </div>
       </div>
       {/* Heading */}
-      <h2 className="services-heading">
-        our <br /> services
-      </h2>
+      <section className="scroll-reveal">
+        <h2 className="services-heading">
+          <span>
+            our <br /> services
+          </span>
+        </h2>
+      </section>
       <p className="our-services-tag">
         Like a constellation, our services align to create a universe of endless
         possibilities.
