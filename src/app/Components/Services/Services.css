@@ -300,6 +300,7 @@
   animation-name: slideInRight;
   animation-timeline: view();
   animation-range: entry 0% cover 80%;
+
 }
 
 .services-image.second {
@@ -424,7 +425,7 @@
 
 @media (max-width: 768px) {
   .services-container {
-
+    padding: 1.2rem;
     width: 100vw;
     /* Container takes up 80% of viewport width */
 

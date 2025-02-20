@@ -10,16 +10,41 @@
 
 /* Card container */
 
-.stat-card.left {
-  animation-name: slideInLeft;
-  animation-timeline: view();
-  animation-range: entry 0% cover 80%;
+.stat-card {
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
-.stat-card.right {
+.stat-card.card1 {
+  animation-name: slideInLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
+}
+
+.stat-card.card2 {
   animation-name: slideInRight;
   animation-timeline: view();
-  animation-range: entry 0% cover 80%;
+  animation-range: entry 0% cover 40%;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
+}
+
+.stat-card.card3 {
+  animation-name: slideInLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
+}
+
+.stat-card.card4 {
+  animation-name: slideInRight;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
 }
 
 @keyframes slideInLeft {
@@ -92,13 +117,14 @@ html {
 /* Card styling */
 .stat-card {
   position: relative;
-  background-color: #fafafa;
+  background-color: #f2f2f2;
   width: 40vw;
-  height: 50vh;
+  height: 45vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
+  box-sizing: border-box;
   border-radius: 12px;
   color: #1b1b1b;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -114,7 +140,8 @@ html {
 }
 
 .stat-card.card2:hover {
-  background-color: #9ff29f;
+  background-color: #3F4144;
+  color: #fff;
 }
 
 .stat-card.card3:hover {
@@ -127,8 +154,8 @@ html {
 }
 
 .stat-value {
-  font-size: 6rem;
-  padding-left: 15px;
+  font-size: 7rem;
+  padding-left: 25px;
   font-family: 'Charrington';
 
 }
@@ -137,12 +164,13 @@ html {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  font-size: 3rem;
+  font-size: 2.6rem;
   text-align: right;
   font-weight: bolder;
-  padding: 15px;
+  padding: 25px;
   font-family: 'Dirtyline36Daysoftype2022', serif;
   text-transform: lowercase;
+  line-height: 0.9;
 }
 
 @media screen and (max-width: 1050px) {
@@ -161,46 +189,40 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     /* Reduced gap for small screens */
+
   }
 
   .stat-card {
     width: 100%;
-    height: 25vh;
+    height: 23vh;
   }
 
   .stat-value {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   .stat-label {
     margin-top: 3vh;
     margin-left: 3vw;
-    font-size: 2.3rem;
+    font-size: 1.5rem;
   }
 
-  .stat-card {
-    width: 100%;
-    height: 35vh;
-  }
-
-  .stat-value {
-    font-size: 3rem;
-  }
 
 
   .stat-card.card1 {
-    background-color: #C93102;
+    background-color: #DE4718;
     color: #fff;
   }
 
   .stat-card.card2 {
-    background-color: #9ff29f;
+    background-color: #3F4144;
+    color: #fff;
   }
 
   .stat-card.card3 {
-    background-color: #B5DFCE;
+    background-color: #B7DFCF;
 
   }
 
