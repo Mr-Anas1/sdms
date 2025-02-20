@@ -13,13 +13,13 @@
 .stat-card.left {
   animation-name: slideInLeft;
   animation-timeline: view();
-  animation-range: entry 0% cover 60%;
+  animation-range: entry 0% cover 80%;
 }
 
 .stat-card.right {
   animation-name: slideInRight;
   animation-timeline: view();
-  animation-range: entry 0% cover 60%;
+  animation-range: entry 0% cover 80%;
 }
 
 @keyframes slideInLeft {
@@ -82,7 +82,7 @@ html {
 .stats-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 35px;
   justify-items: center;
   align-items: start;
   margin-top: 10vh;
@@ -94,7 +94,7 @@ html {
   position: relative;
   background-color: #fafafa;
   width: 40vw;
-  height: 40vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

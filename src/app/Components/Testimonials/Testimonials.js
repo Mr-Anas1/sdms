@@ -4,8 +4,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ScrollingText from "../ScollingText/ScrollingText";
 import "./Testimonials.css";
+import { useRef } from "react";
 
-const testimonials = [
+const testimonial = [
   {
     name: "Melissa Hurtado",
     text: "Excited to highlight the exceptional talents of Rukshana, an incredible professional and dear friend! Rukshana of Sabeena Digital Media Services effortlessly wears many hats, showcasing exceptional skills in social media management, storytelling, and crafting engaging content for newsletters and marketing emails. Working alongside Rukshana is an absolute delight. The positive energy she brings to every collaboration is infectious, and her dedication to excellence is truly commendable! ",
@@ -64,56 +65,49 @@ const testimonials = [
   // Additional testimonials...
 ];
 
-const Testimonials = () => {
-  const [dragConstraint, setDragConstraint] = useState(-4500); // Default for desktop
+const Testimonials = ({ testimonials }) => {
+  const wrapperRef = useRef();
+  const [dragConstraint, setDragConstraint] = useState(0);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768 && window.innerWidth > 480) {
-        // Mobile screen width (adjust as needed)
-        setDragConstraint(-2900);
-      } else {
-        setDragConstraint(-3500);
-      }
+    const updateDragConstraints = () => {
+      if (wrapperRef.current) {
+        const wrapperWidth = wrapperRef.current.scrollWidth;
+        const containerWidth = wrapperRef.current.offsetWidth;
+        const newConstraint = -(wrapperWidth - containerWidth);
 
-      if (window.innerWidth <= 480 && window.innerWidth >= 0) {
-        // Mobile screen width (adjust as needed)
-        setDragConstraint(-2500);
-      } else {
-        setDragConstraint(-2500);
+        setDragConstraint(newConstraint < 0 ? newConstraint : 0);
       }
     };
 
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize); // Listen to window resize
+    updateDragConstraints();
+    window.addEventListener("resize", updateDragConstraints);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", updateDragConstraints);
   }, []);
 
   return (
     <div className="testimonials-container" id="testimonials">
-      <div className="testimonials-main">
-        <section className="scroll-reveal">
-          <h2 className="testimonials-heading">
-            <span>partner's</span>
-            <br />
-            <span>testimony</span>
-          </h2>
-        </section>
-      </div>
+      <h2 className="testimonials-heading">
+        <span>partner's</span>
+        <br />
+        <span>testimony</span>
+      </h2>
 
       <motion.div
+        ref={wrapperRef}
         className="testimonials-wrapper"
         drag="x"
         dragConstraints={{ left: dragConstraint, right: 0 }}
+        whileTap={{ cursor: "grabbing" }}
       >
-        {testimonials.map((testimonial, index) => (
+        {testimonial.map((testimonial, index) => (
           <motion.div
             key={index}
             className="testimonial-card"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <p className="testimonial-text">"{testimonial.text}"</p>
             <img
@@ -126,7 +120,6 @@ const Testimonials = () => {
           </motion.div>
         ))}
       </motion.div>
-      <ScrollingText />
     </div>
   );
 };

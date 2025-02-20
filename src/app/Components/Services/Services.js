@@ -6,6 +6,31 @@ import Link from "next/link";
 import "./Services.css";
 
 const Services = () => {
+  const servicesData = {
+    service1: {
+      imgSrc: "./images/service1.jpeg",
+      title: "development",
+      list: [
+        "Software as a Service (SaaS)",
+        "Automation / API Creation",
+        "Website / App Creation",
+        "POS Systems",
+        "UI/UX Design",
+      ],
+    },
+    service2: {
+      imgSrc: "./images/service2.jpeg",
+      title: "marketing & branding",
+      list: [
+        "Video Creation (from Reels to AR/VR videos)",
+        "Content Writing",
+        "Social Media Management",
+        "Ads Management",
+        "Whatsapp & Email Marketing",
+      ],
+    },
+  };
+
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
   const WhoWeAreRef = useRef([]);
@@ -55,51 +80,48 @@ const Services = () => {
 
       {/* Service Cards */}
 
-      {[
-        {
-          imgSrc: "./images/service1.jpeg",
-          title: "development",
-          list: [
-            " Software as a Service (SaaS)",
-            "Automation / API Creation",
-            "Website / App Creation ",
-            "POS Systems",
-            "UI/UX Design",
-          ],
-        },
-        {
-          imgSrc: "./images/service2.jpeg",
-          title: "marketing & branding",
-          list: [
-            "Video Creation (from Reels to AR/VR videos)",
-            "Content Writing",
-            "Social Media Management",
-            "Ads Management",
-            "Whatsapp & Email Marketing",
-          ],
-        },
-      ].map((service, index) => (
-        <div key={index} className="services-card">
-          {/* Image Section */}
-          <img
-            className="services-image"
-            src={service.imgSrc}
-            alt={`${service.title} Image`}
-          />
-          {/* Text Section */}
-          <div className="services-text">
-            <h3 className="services-text-head">{service.title}</h3>
-            <ul className="services-text-para">
-              {service.list.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-            <Link href="/ServicesPage">
-              <button className="contact-button">More Info</button>
-            </Link>
-          </div>
+      <div className="services-card">
+        {/* Service 1 */}
+        <img
+          className="services-image first"
+          src={servicesData.service1.imgSrc}
+          alt={`${servicesData.service1.title} Image`}
+        />
+
+        <div className="services-text">
+          <h3 className="services-text-head">{servicesData.service1.title}</h3>
+          <ul className="services-text-para">
+            {servicesData.service1.list.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <Link href="/ServicesPage">
+            <button className="contact-button">More Info</button>
+          </Link>
         </div>
-      ))}
+      </div>
+
+      <div className="services-card">
+        {/* Service 2 */}
+
+        <img
+          className="services-image  second"
+          src={servicesData.service2.imgSrc}
+          alt={`${servicesData.service2.title} Image`}
+        />
+
+        <div className="services-text">
+          <h3 className="services-text-head">{servicesData.service2.title}</h3>
+          <ul className="services-text-para">
+            {servicesData.service2.list.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <Link href="/ServicesPage">
+            <button className="contact-button">More Info</button>
+          </Link>
+        </div>
+      </div>
 
       {/* Stats Section */}
       <Stats />
