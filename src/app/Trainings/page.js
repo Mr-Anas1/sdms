@@ -30,7 +30,7 @@ const testimonials = [
     name: "Anas",
     text: "Attending the 15-day Figma training by Sabeena Digital Media Services was a game-changer. Bala’s clear guidance made even advanced features like animations easy to master.The hands-on approach boosted my confidence to create impactful designs. I highly recommend this program to anyone looking to elevate their design skills!",
     position: "UI/UX In-Plant Training Attendee",
-    image: "./images/anas.jpg",
+    image: "./images/anas1.png",
   },
 
   // Additional testimonials...
@@ -216,9 +216,14 @@ export default function Trainings() {
           ))}
         </motion.div>
       </div>
-      <p className="time-to-roar-head">
-        time to <br /> roar!
-      </p>
+      <div className="time-to-roar-head-main">
+        <section className="scroll-reveal">
+          <p className="time-to-roar-head">
+            <span>time to </span>
+            <br /> <span>roar!</span>
+          </p>
+        </section>
+      </div>
       <div className="time-to-roar">
         {/* Top Horizontal Line */}
         <hr className="horizontal-line" />

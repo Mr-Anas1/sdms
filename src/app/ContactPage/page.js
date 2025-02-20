@@ -69,9 +69,14 @@ export default function ContactPage() {
       </div>
       <ContactForm />
 
-      <p className="time-to-roar-head">
-        time to <br /> roar!
-      </p>
+      <div className="time-to-roar-head-main">
+        <section className="scroll-reveal">
+          <p className="time-to-roar-head">
+            <span>time to </span>
+            <br /> <span>roar!</span>
+          </p>
+        </section>
+      </div>
       <div className="time-to-roar">
         {/* Top Horizontal Line */}
         <hr className="horizontal-line" />
