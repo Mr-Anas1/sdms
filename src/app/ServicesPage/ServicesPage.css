@@ -48,7 +48,7 @@
 @keyframes riseUp {
   0% {
     opacity: 0;
-    transform: translateY(140px);
+    transform: translateY(100px);
   }
 
   100% {
@@ -115,7 +115,7 @@
 .extra-heading {
   animation: riseUp;
   animation-timeline: view();
-  animation-range: entry 0% cover 70%;
+  animation-range: entry 10% cover 70%;
 }
 
 .extra-text,
@@ -126,13 +126,15 @@
   animation-range: entry 0% cover 70%;
 }
 
-.our-process-heading {
+.our-process-heading-main {
   animation: slideLeft;
   animation-timeline: view();
   animation-range: entry 0% cover 70%;
+  width: fit-content;
+  margin: 0 auto;
 }
 
-.time-to-roar-head {
+.time-to-roar-head-main {
   animation: slideLeft;
   animation-timeline: view();
   animation-range: entry 0% cover 70%;
@@ -190,6 +192,7 @@
 
 @media(max-width:764px) {
 
+
   .content-container {
     padding-top: 0;
 
@@ -210,7 +213,7 @@
 .services-extra-container {
   background-color: var(--background-light);
   color: var(--background-dark);
-  padding: 40px;
+  padding: 60px;
   box-sizing: border-box;
   margin: 5vh 3vw;
   border: 2px solid rgba(0, 0, 0, 0.1);
@@ -251,6 +254,7 @@
   margin-bottom: 2vh;
   width: 50%;
   font-weight: 100;
+  line-height: 0.80;
 }
 
 .extra-text,
@@ -320,7 +324,7 @@
 @media screen and (max-width: 764px) {
   .services-page-container {
 
-    height: 75vh;
+    height: 95vh;
   }
 }
 
@@ -348,6 +352,11 @@
 
   .services-extra-content {
     display: block;
+
+  }
+
+  .services-extra-container {
+    padding: 30px 20px;
   }
 
   .extra-heading {
@@ -509,6 +518,35 @@
 
 }
 
+.scroll-reveal {
+  width: fit-content;
+  padding: 5px;
+  box-sizing: border-box;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-color: #717171 !important;
+  background-size: 0% 100%;
+  background-image: linear-gradient(90deg, #000000, #000000);
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: contain 30vh;
+}
+
+
+
+
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+.dark-mode .scroll-reveal {
+  background-image: linear-gradient(90deg, #ffffff, #ffffff) !important;
+}
+
+
 .our-process-heading {
   font-family: 'Dirtyline36Daysoftype2022';
   font-size: 6rem;
@@ -517,10 +555,7 @@
   line-height: 0.8;
   font-weight: 100;
   margin-top: 15vh;
-}
-
-.dark-mode .our-process-heading {
-  color: var(--background-light);
+  color: transparent;
 }
 
 .our-process-text {
@@ -653,10 +688,7 @@
   margin-left: 10vw;
   margin-top: 10vh;
   line-height: 5rem;
-}
-
-.dark-mode .time-to-roar-head {
-  color: var(--background-light);
+  color: transparent;
 }
 
 .time-to-roar {

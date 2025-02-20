@@ -238,9 +238,15 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <p className="our-process-heading">
-          our <br /> process
-        </p>
+        <div className="our-process-heading-main">
+          <section className="scroll-reveal">
+            <p className="our-process-heading">
+              <span>our</span>
+              <br />
+              <span>process</span>
+            </p>
+          </section>
+        </div>
         <p className="our-process-text">
           {" "}
           These Pillars Support excellence <br /> in the digital jungle.
@@ -403,9 +409,15 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
-      <p className="time-to-roar-head">
-        time to <br /> roar!
-      </p>
+      <div className="time-to-roar-head-main">
+        <section className="scroll-reveal">
+          <p className="time-to-roar-head">
+            <span>time to </span>
+            <br /> <span>roar!</span>
+          </p>
+        </section>
+      </div>
+
       <div className="time-to-roar">
         {/* Top Horizontal Line */}
         <hr className="horizontal-line" />
