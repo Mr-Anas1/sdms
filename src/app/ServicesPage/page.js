@@ -40,7 +40,7 @@ export default function ServicesPage() {
         toggleMenu={toggleMenu}
         menuOpen={menuOpen}
       />
-      <Cursor darkMode={darkMode} />
+      {/* <Cursor darkMode={darkMode} /> */}
       <div className="content-container">
         <div className="service-page-main-content">
           <div className="services-page-container">

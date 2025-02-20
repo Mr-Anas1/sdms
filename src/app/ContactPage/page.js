@@ -47,7 +47,7 @@ export default function ContactPage() {
           toggleMenu={toggleMenu}
           menuOpen={menuOpen}
         />
-        <Cursor darkMode={darkMode} />
+        {/* <Cursor darkMode={darkMode} /> */}
         <main>
           <h2 className="home-heading">
             let's roar <br /> into the wild <br /> together

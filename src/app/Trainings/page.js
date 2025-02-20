@@ -100,7 +100,7 @@ export default function Trainings() {
         toggleMenu={toggleMenu}
         menuOpen={menuOpen}
       />
-      <Cursor darkMode={darkMode} />
+      {/* <Cursor darkMode={darkMode} /> */}
       <div className="content-container">
         <div className="training-container-main">
           <h2 className="services-page-heading">

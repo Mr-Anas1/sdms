@@ -89,9 +89,9 @@
 }
 
 
-.dark-mode .contactSection {
-  background-color: var(--background-dark);
-  color: #ffffff;
+.dark-mode form input::placeholder {
+
+  color: #717171;
 }
 
 .innerWidth {
@@ -128,9 +128,6 @@
   color: var(--background-dark);
 }
 
-form input {
-  color: #000 !important;
-}
 
 
 
