@@ -88,11 +88,15 @@ const Testimonials = ({ testimonials }) => {
 
   return (
     <div className="testimonials-container" id="testimonials">
-      <h2 className="testimonials-heading">
-        <span>partner's</span>
-        <br />
-        <span>testimony</span>
-      </h2>
+      <div className="testimonials-heading-main">
+        <section className="scroll-reveal">
+          <h2 className="testimonials-heading">
+            <span>partner's</span>
+            <br />
+            <span>testimony</span>
+          </h2>
+        </section>
+      </div>
 
       <motion.div
         ref={wrapperRef}

@@ -54,7 +54,6 @@
   /* Smooth transition */
 }
 
-
 .scroll-reveal {
   width: fit-content;
   padding: 5px;
@@ -71,11 +70,25 @@
 }
 
 
+.testimonials-heading-main {
+  animation-name: slideLeft;
+  animation-timeline: view();
+  animation-range: entry 0% cover 80%;
+}
+
+
+
 @keyframes scroll-reveal {
   to {
     background-size: 100% 100%;
   }
 }
+
+
+.dark-mode .scroll-reveal {
+  background-image: linear-gradient(90deg, #ffffff, #ffffff) !important;
+}
+
 
 @keyframes slideLeft {
   0% {
