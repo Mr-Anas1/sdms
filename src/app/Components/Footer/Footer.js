@@ -38,8 +38,9 @@ const Footer = () => {
       <div className="footer-main">
         <section className="scroll-reveal">
           <p className="footer-head">
-            <span>connect with us</span> <br /> <span>across the</span> <br />{" "}
-            <span>cosmos</span>
+            <span>connect with us</span>
+            {/* <br /> <span>across the</span> <br />{" "}
+            <span>cosmos</span> */}
           </p>
         </section>
       </div>

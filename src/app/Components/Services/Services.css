@@ -59,10 +59,11 @@
   animation-range: entry 10% cover 40%;
 }
 
-.who-are-we-tag {
-  animation: slideRight;
+.who-are-we-container {
+  animation: riseUp;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+  animation-range: entry 0% cover 30%;
+  animation-duration: 1.5s;
 }
 
 /* Apply Dark Mode Colors for Dark Mode Preferences */
@@ -148,13 +149,6 @@
 }
 
 
-
-
-
-/* .dark-mode .who-are-we-head {
-  color: var(--background-light);
-} */
-
 .dark-mode .scroll-reveal {
   background-image: linear-gradient(90deg, #ffffff, #ffffff) !important;
 }
@@ -199,7 +193,7 @@
 
   }
 
-  .who-are-we-head {
+  .who-are-we-head span {
     font-size: 4rem;
     margin-top: 5vh;
     letter-spacing: 1pt;
@@ -228,8 +222,8 @@
   }
 }
 
-.servicesTitle {
-  font-size: 5rem;
+.servicesTitle span {
+  font-size: 4rem;
   font-weight: 100;
   text-transform: lowercase;
   font-family: 'Dirtyline36Daysoftype2022';

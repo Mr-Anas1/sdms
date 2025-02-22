@@ -22,7 +22,7 @@ export default function StatsComponent() {
 
       {/* Card 2 */}
       <div className="stat-card right card2">
-        <div className="stat-value">5+</div>
+        <div className="stat-value">05+</div>
         <div className="stat-label">
           SUCCESSFUL
           <br /> PARTNERSHIPS
