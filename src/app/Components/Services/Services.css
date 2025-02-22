@@ -44,6 +44,8 @@
   }
 }
 
+
+
 /* .who-are-we-head, */
 .who-are-we-main,
 .services-heading-main {
@@ -52,8 +54,14 @@
   animation-range: entry 0% cover 70%;
 }
 
-.who-are-we-subhead,
+
 .our-services-tag {
+  animation: riseUp;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+}
+
+.who-are-we-subhead {
   animation: riseUp;
   animation-timeline: view();
   animation-range: entry 10% cover 40%;
@@ -161,6 +169,7 @@
   width: 80%;
   font-weight: 200;
   margin-top: 25px;
+  overflow: hidden;
 }
 
 .who-are-we-container {
