@@ -282,7 +282,7 @@
   gap: 50px;
   animation: riseUp;
   animation-timeline: view();
-  animation-range: entry 10% cover 80%;
+  animation-range: entry 0% cover 80%;
 }
 
 @media (min-width: 764px) {
@@ -299,21 +299,6 @@
 
 
 
-.services-image.first {
-  animation-name: slideInRight;
-  animation-timeline: view();
-  animation-range: entry 0% cover 80%;
-
-}
-
-.services-image.second {
-  animation-name: slideInLeft;
-  animation-timeline: view();
-  animation-range: entry 0% cover 80%;
-}
-
-
-
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -326,17 +311,6 @@
   }
 }
 
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px) rotate(15deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
-  }
-}
 
 
 /* Image Section */
@@ -345,10 +319,7 @@
   /* Image takes up 40% of the container width */
   height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease;
-  /* Animation for image hover */
   border-radius: 12px;
-  flex: 1;
 }
 
 /* Text Section */

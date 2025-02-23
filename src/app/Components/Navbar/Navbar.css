@@ -187,7 +187,6 @@
   background: linear-gradient(to bottom, black, #2E2E2E);
   /* Gradient for light mode */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   /* Keep the text transparent to show the gradient */
   animation: fadeIn 1s ease-in-out;
   /* Fade-in animation */
@@ -202,16 +201,12 @@
   font-family: 'Syne', serif;
   font-weight: bolder;
   margin: 0;
-  background: linear-gradient(to bottom, #ffcc00, #ffd700);
   /* Gradient for light mode */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   /* Keep the text transparent to show the gradient */
   animation: fadeIn 1s ease-in-out;
   /* Fade-in animation */
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
-    /* Gold glow */
-    0 0 20px rgba(255, 215, 0, 0.6);
+  color: #ffffff;
 }
 
 

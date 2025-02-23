@@ -4,8 +4,34 @@ import { gsap } from "gsap";
 import Stats from "../Stats/Stats";
 import Link from "next/link";
 import "./Services.css";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Services = () => {
+  const refRight = useRef(null); // Ref for right image
+  const refLeft = useRef(null); // Ref for left image
+
+  // Scroll tracking for right image
+  const { scrollYProgress: scrollYProgressRight } = useScroll({
+    target: refRight,
+    offset: ["start end", "center center"],
+  });
+
+  const translateXRight = useTransform(
+    scrollYProgressRight,
+    [0, 1],
+    [401.5, 0]
+  );
+  const rotateRight = useTransform(scrollYProgressRight, [0, 1], [10, 0]);
+
+  // Scroll tracking for left image
+  const { scrollYProgress: scrollYProgressLeft } = useScroll({
+    target: refLeft,
+    offset: ["start end", "center center"],
+  });
+
+  const translateXLeft = useTransform(scrollYProgressLeft, [0, 1], [-401.5, 0]);
+  const rotateLeft = useTransform(scrollYProgressLeft, [0, 1], [-10, 0]);
+
   const servicesData = {
     service1: {
       imgSrc: "./images/service1.jpeg",
@@ -49,7 +75,7 @@ const Services = () => {
           <h4 className="who-are-we-subhead">
             As a pioneering force in the digital galaxy, SDMS® blends creativity
             with cutting-edge technology to craft your brand’s journey through
-            the stars.
+            the stars
           </h4>
         </div>
 
@@ -82,11 +108,18 @@ const Services = () => {
 
       <div className="services-card">
         {/* Service 1 */}
-        <img
-          className="services-image first"
-          src={servicesData.service1.imgSrc}
-          alt={`${servicesData.service1.title} Image`}
-        />
+        <div ref={refRight}>
+          {" "}
+          <motion.img
+            src={servicesData.service1.imgSrc}
+            alt="Scroll Image"
+            style={{
+              translateX: translateXRight,
+              rotate: rotateRight,
+            }}
+            className="services-image"
+          />
+        </div>
 
         <div className="services-text">
           <h3 className="services-text-head">{servicesData.service1.title}</h3>
@@ -104,11 +137,18 @@ const Services = () => {
       <div className="services-card">
         {/* Service 2 */}
 
-        <img
-          className="services-image  second"
-          src={servicesData.service2.imgSrc}
-          alt={`${servicesData.service2.title} Image`}
-        />
+        <div ref={refLeft}>
+          {" "}
+          <motion.img
+            src={servicesData.service2.imgSrc}
+            alt="Scroll Image"
+            style={{
+              translateX: translateXLeft,
+              rotate: rotateLeft,
+            }}
+            className="services-image"
+          />
+        </div>
 
         <div className="services-text">
           <h3 className="services-text-head">{servicesData.service2.title}</h3>
