@@ -221,7 +221,8 @@
 }
 
 .dark-mode .testimonial-card:hover {
-  background-color: #000000;
+  background-color: #101010;
+  border-color: #101010;
 }
 
 

@@ -57,6 +57,12 @@ html {
 }
 
 /* Card styling */
+
+.dark-mode .stat-card {
+  background-color: #1b1b1b;
+  color: #ffffff;
+}
+
 .stat-card {
   position: relative;
   background-color: #f2f2f2;
@@ -81,17 +87,18 @@ html {
 }
 
 .stat-card.card2:hover {
-  background-color: #3F4144;
-  color: #fff;
+  background-color: #B6BEBE;
+  color: #0a0a0a;
 }
 
 .stat-card.card3:hover {
   background-color: #B5DFCE;
-
+  color: #0a0a0a;
 }
 
 .stat-card.card4:hover {
   background-color: #F3E453;
+  color: #0a0a0a;
 }
 
 .stat-value {

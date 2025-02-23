@@ -23,14 +23,19 @@ const Services = () => {
     [401.5, 0]
   );
   const rawRotateRight = useTransform(scrollYProgressRight, [0, 1], [10, 0]);
+  const rawOpacityRight = useTransform(scrollYProgressRight, [0, 1], [0, 1]);
 
   const translateXRight = useSpring(rawTranslateXRight, {
     stiffness: 120,
     damping: 20,
     mass: 1,
   });
-
   const rotateRight = useSpring(rawRotateRight, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+  const opacityRight = useSpring(rawOpacityRight, {
     stiffness: 120,
     damping: 20,
     mass: 1,
@@ -48,14 +53,19 @@ const Services = () => {
     [-401.5, 0]
   );
   const rawRotateLeft = useTransform(scrollYProgressLeft, [0, 1], [-10, 0]);
+  const rawOpacityLeft = useTransform(scrollYProgressLeft, [0, 1], [0, 1]);
 
   const translateXLeft = useSpring(rawTranslateXLeft, {
     stiffness: 120,
     damping: 20,
     mass: 1,
   });
-
   const rotateLeft = useSpring(rawRotateLeft, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+  const opacityLeft = useSpring(rawOpacityLeft, {
     stiffness: 120,
     damping: 20,
     mass: 1,
@@ -145,6 +155,7 @@ const Services = () => {
             style={{
               translateX: translateXRight,
               rotate: rotateRight,
+              opacity: opacityRight,
             }}
             className="services-image"
           />
@@ -174,6 +185,7 @@ const Services = () => {
             style={{
               translateX: translateXLeft,
               rotate: rotateLeft,
+              opacity: opacityLeft,
             }}
             className="services-image"
           />

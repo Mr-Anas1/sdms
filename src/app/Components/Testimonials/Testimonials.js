@@ -45,7 +45,7 @@ const testimonial = [
   },
   {
     name: "Dnc Teja",
-    text: "Working with Sabheena Digital Marketing has been an incredible experience. Their personal approach and genuine care made it feel less like a business deal and more like working with a trusted friend.They understood my vision perfectly and brought in creativity and strategy that delivered results beyond expectations. It’s rare to find a team so committed and easy to connect with on a personal level.Thank you, Rukshana, for your unwavering support and for making every step of the journey seamless.",
+    text: "Working with SDMS has been an incredible experience. Their personal approach and genuine care made it feel less like a business deal and more like working with a trusted friend.They understood my vision perfectly and brought in creativity and strategy that delivered results beyond expectations. It’s rare to find a team so committed and easy to connect with on a personal level.Thank you, Rukshana, for your unwavering support and for making every step of the journey seamless.",
     position: "Director, Proven Group of Companies",
     image: "./images/teja.jpg",
   },

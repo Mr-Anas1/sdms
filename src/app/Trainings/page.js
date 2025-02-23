@@ -3,9 +3,11 @@ import Head from "next/head";
 import Navbar from "../Components/Navbar/Navbar";
 import "./Trainings.css";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import axios from "axios";
 import Cursor from "../Cursor";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useSpring } from "framer-motion";
+import { useRef } from "react";
 
 const testimonials = [
   {
@@ -32,11 +34,70 @@ const testimonials = [
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/anas1.png",
   },
-
-  // Additional testimonials...
 ];
 
 export default function Trainings() {
+  const refRight = useRef(null);
+  const refLeft = useRef(null);
+
+  const { scrollYProgress: scrollYProgressRight } = useScroll({
+    target: refRight,
+    offset: ["start end", "center center"],
+  });
+
+  const rawTranslateXRight = useTransform(
+    scrollYProgressRight,
+    [0, 1],
+    [401.5, 0]
+  );
+  const rawRotateRight = useTransform(scrollYProgressRight, [0, 1], [10, 0]);
+  const rawOpacityRight = useTransform(scrollYProgressRight, [0, 1], [0, 1]);
+
+  const translateXRight = useSpring(rawTranslateXRight, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+  const rotateRight = useSpring(rawRotateRight, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+  const opacityRight = useSpring(rawOpacityRight, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+
+  const { scrollYProgress: scrollYProgressLeft } = useScroll({
+    target: refLeft,
+    offset: ["start end", "center center"],
+  });
+
+  const rawTranslateXLeft = useTransform(
+    scrollYProgressLeft,
+    [0, 1],
+    [-401.5, 0]
+  );
+  const rawRotateLeft = useTransform(scrollYProgressLeft, [0, 1], [-10, 0]);
+  const rawOpacityLeft = useTransform(scrollYProgressLeft, [0, 1], [0, 1]);
+
+  const translateXLeft = useSpring(rawTranslateXLeft, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+  const rotateLeft = useSpring(rawRotateLeft, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+  const opacityLeft = useSpring(rawOpacityLeft, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [form1, setForm1] = useState("");
@@ -129,9 +190,14 @@ export default function Trainings() {
             <div className="sub-container normal">
               {/* Image Content */}
               <div className="image-content">
-                <img
+                <motion.img
                   src="./images/training1.jpeg"
-                  alt="First Section Image"
+                  alt="Scroll Image"
+                  style={{
+                    translateX: translateXLeft,
+                    rotate: rotateLeft,
+                    opacity: opacityLeft,
+                  }}
                   className="services-image one"
                 />
               </div>
@@ -157,9 +223,14 @@ export default function Trainings() {
             <div className="sub-container reverse">
               {/* Image Content */}
               <div className="image-content">
-                <img
+                <motion.img
                   src="./images/training2.jpeg"
-                  alt="Second Section Image"
+                  alt="Scroll Image"
+                  style={{
+                    translateX: translateXRight,
+                    rotate: rotateRight,
+                    opacity: opacityRight,
+                  }}
                   className="services-image two"
                 />
               </div>

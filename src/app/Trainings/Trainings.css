@@ -142,43 +142,7 @@
   text-align: left;
 }
 
-.text-content.one {
-  animation: riseUp;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
 
-.text-content.two {
-  animation: riseUp;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
-
-
-.services-image.one {
-  animation-name: slideInLeft;
-  animation-timeline: view();
-  animation-range: entry 0% cover 80%;
-}
-
-.services-image.two {
-  animation-name: slideInRight;
-  animation-timeline: view();
-  animation-range: entry 0% cover 80%;
-}
-
-/* .services-image.one {
-  animation: slideLeft;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
-
-
-.services-image.two {
-  animation: slideRight;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-} */
 
 .buttons {
   display: flex;
@@ -195,6 +159,7 @@
   cursor: pointer;
 }
 
+
 @media(max-width:764px) {
   .text-content {
     text-align: center;
@@ -205,7 +170,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
 
 .image-content img {
@@ -237,14 +201,15 @@
 
 /* Image Section */
 .services-image {
-  width: 40vw;
+  width: 60vw;
   /* Image takes up 40% of the container width */
   height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease;
+
   /* Animation for image hover */
   border-radius: 12px;
 }
+
 
 
 .time-to-roar-head-main {
@@ -387,7 +352,7 @@
   }
 
   .services-image {
-    width: 90%;
+    width: 100%;
     /* Image takes 90% of the container width */
     height: auto;
     /* Maintain aspect ratio */
