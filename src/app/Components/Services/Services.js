@@ -5,10 +5,11 @@ import Stats from "../Stats/Stats";
 import Link from "next/link";
 import "./Services.css";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useSpring } from "framer-motion";
 
 const Services = () => {
-  const refRight = useRef(null); // Ref for right image
-  const refLeft = useRef(null); // Ref for left image
+  const refRight = useRef(null);
+  const refLeft = useRef(null);
 
   // Scroll tracking for right image
   const { scrollYProgress: scrollYProgressRight } = useScroll({
@@ -16,12 +17,24 @@ const Services = () => {
     offset: ["start end", "center center"],
   });
 
-  const translateXRight = useTransform(
+  const rawTranslateXRight = useTransform(
     scrollYProgressRight,
     [0, 1],
     [401.5, 0]
   );
-  const rotateRight = useTransform(scrollYProgressRight, [0, 1], [10, 0]);
+  const rawRotateRight = useTransform(scrollYProgressRight, [0, 1], [10, 0]);
+
+  const translateXRight = useSpring(rawTranslateXRight, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+
+  const rotateRight = useSpring(rawRotateRight, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
 
   // Scroll tracking for left image
   const { scrollYProgress: scrollYProgressLeft } = useScroll({
@@ -29,8 +42,24 @@ const Services = () => {
     offset: ["start end", "center center"],
   });
 
-  const translateXLeft = useTransform(scrollYProgressLeft, [0, 1], [-401.5, 0]);
-  const rotateLeft = useTransform(scrollYProgressLeft, [0, 1], [-10, 0]);
+  const rawTranslateXLeft = useTransform(
+    scrollYProgressLeft,
+    [0, 1],
+    [-401.5, 0]
+  );
+  const rawRotateLeft = useTransform(scrollYProgressLeft, [0, 1], [-10, 0]);
+
+  const translateXLeft = useSpring(rawTranslateXLeft, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
+
+  const rotateLeft = useSpring(rawRotateLeft, {
+    stiffness: 120,
+    damping: 20,
+    mass: 1,
+  });
 
   const servicesData = {
     service1: {
@@ -108,7 +137,7 @@ const Services = () => {
 
       <div className="services-card">
         {/* Service 1 */}
-        <div ref={refRight}>
+        <div className="services-card-img-container" ref={refRight}>
           {" "}
           <motion.img
             src={servicesData.service1.imgSrc}
@@ -137,7 +166,7 @@ const Services = () => {
       <div className="services-card">
         {/* Service 2 */}
 
-        <div ref={refLeft}>
+        <div className="services-card-img-container" ref={refLeft}>
           {" "}
           <motion.img
             src={servicesData.service2.imgSrc}

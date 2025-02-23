@@ -311,11 +311,15 @@
   }
 }
 
-
+.services-card-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Image Section */
 .services-image {
-  width: 40vw;
+  width: 60vw;
   /* Image takes up 40% of the container width */
   height: auto;
   object-fit: cover;
@@ -427,7 +431,7 @@
 
   /* Image Section */
   .services-image {
-    width: 90%;
+    width: 100%;
     /* Image takes 90% of the container width */
     height: auto;
     /* Maintain aspect ratio */
