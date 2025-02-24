@@ -8,6 +8,21 @@
   /* Golden color */
 }
 
+
+.animated-box {
+  width: 300px;
+  height: 150px;
+  background: linear-gradient(90deg, #5cefef 50%, #252525 0);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 8px;
+}
+
+
 @keyframes slideLeft {
   0% {
     opacity: 0;
@@ -47,12 +62,12 @@
 
 
 /* .who-are-we-head, */
-.who-are-we-main,
+/* .who-are-we-main,
 .services-heading-main {
   animation: slideLeft;
   animation-timeline: view();
   animation-range: entry 0% cover 70%;
-}
+} */
 
 
 

@@ -7,8 +7,25 @@ import "./Services.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useSpring } from "framer-motion";
 import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
+import { useInView, useAnimation } from "framer-motion";
 
 const Services = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.3, // Triggers when 30% of the element is in view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        backgroundSize: "100% 100%",
+        transition: { duration: 1, ease: "easeInOut" },
+      });
+    } else {
+      controls.start({ backgroundSize: "0% 100%" });
+    }
+  }, [inView, controls]);
+
   const refRight = useRef(null);
   const refLeft = useRef(null);
   const lineRef = useRef(null);
@@ -126,6 +143,7 @@ const Services = () => {
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
   const WhoWeAreRef = useRef([]);
+
   return (
     <section className="services-container" id="our-services">
       {/* Who We Are Section */}
