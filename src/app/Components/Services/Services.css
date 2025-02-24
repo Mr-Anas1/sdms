@@ -61,18 +61,9 @@
   animation-range: entry 10% cover 40%;
 }
 
-.who-are-we-subhead {
-  animation: riseUp;
-  animation-timeline: view();
-  animation-range: entry 10% cover 40%;
-}
 
-.who-are-we-container {
-  animation: riseUp;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
-  animation-duration: 1.5s;
-}
+
+
 
 /* Apply Dark Mode Colors for Dark Mode Preferences */
 @media (prefers-color-scheme: dark) {
@@ -166,10 +157,23 @@
   font-size: 2.2rem;
   font-family: 'Syne', serif;
   margin-bottom: 10px;
-  width: 80%;
+  width: 90%;
   font-weight: 200;
   margin-top: 25px;
+}
+
+.who-are-we-subhead-line-wrapper {
+  display: block;
+  position: relative;
   overflow: hidden;
+}
+
+.who-are-we-subhead-line {
+  display: block;
+  position: relative;
+  translate: none;
+  rotate: none;
+  scale: none;
 }
 
 .who-are-we-container {

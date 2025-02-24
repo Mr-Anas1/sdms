@@ -10,8 +10,21 @@ import { useSpring } from "framer-motion";
 const Services = () => {
   const refRight = useRef(null);
   const refLeft = useRef(null);
+  const lineRef = useRef(null);
 
-  // Scroll tracking for right image
+  const { scrollYProgress } = useScroll({
+    target: lineRef,
+    offset: ["start 140%", "end 90%"],
+  });
+
+  const rawTranslateY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+
+  const translateY = useSpring(rawTranslateY, {
+    stiffness: 200,
+    damping: 20,
+    mass: 0.8,
+  });
+
   const { scrollYProgress: scrollYProgressRight } = useScroll({
     target: refRight,
     offset: ["start end", "center center"],
@@ -112,9 +125,43 @@ const Services = () => {
             </h2>
           </section>
           <h4 className="who-are-we-subhead">
-            As a pioneering force in the digital galaxy, SDMS® blends creativity
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  style={{
+                    translateY: translateY,
+                  }}
+                >
+                  SDMS® use cutting-edge technology
+                </motion.div>
+              </div>
+            </div>
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  style={{
+                    translateY: translateY,
+                  }}
+                >
+                  to craft your brand’s journey through
+                </motion.div>
+              </div>
+            </div>
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  style={{
+                    translateY: translateY,
+                  }}
+                >
+                  the stars
+                </motion.div>
+              </div>
+            </div>
+
+            {/* As a pioneering force in the digital galaxy, SDMS® blends creativity
             with cutting-edge technology to craft your brand’s journey through
-            the stars
+            the stars */}
           </h4>
         </div>
 
