@@ -118,6 +118,7 @@
   background-color: var(--background-light);
   width: 80vw;
   margin-left: 10vw;
+  margin-top: 60px;
 }
 
 .dark-mode .footer-container {

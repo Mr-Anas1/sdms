@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import "./Contact.css";
+import ScrollFromLeft from "../ScrollFromLeft";
+import ScrollRevealText from "../ScrollRevealText";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -72,11 +74,14 @@ export default function Contact() {
     <div className="contactSection" id="contact">
       <div className="innerWidth">
         <div className="contactMain">
-          <section className="scroll-reveal">
-            <p className="contact-head">
-              <span>let's connect!</span>
-            </p>
-          </section>
+          <ScrollFromLeft>
+            <ScrollRevealText>
+              <p className="contact-head">
+                <span>let's connect!</span>
+              </p>
+            </ScrollRevealText>
+          </ScrollFromLeft>
+          <section className="scroll-reveal"></section>
         </div>
 
         <form onSubmit={handleSubmit}>

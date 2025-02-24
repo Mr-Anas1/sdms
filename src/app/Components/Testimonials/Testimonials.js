@@ -5,6 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 import ScrollingText from "../ScollingText/ScrollingText";
 import "./Testimonials.css";
 import { useRef } from "react";
+import ScrollFromLeft from "../ScrollFromLeft";
+import ScrollRevealText from "../ScrollRevealText";
 
 const testimonial = [
   {
@@ -108,13 +110,15 @@ const Testimonials = () => {
   return (
     <div className="testimonials-container" id="testimonials">
       <div className="testimonials-heading-main">
-        <section className="scroll-reveal">
-          <h2 className="testimonials-heading">
-            <span>partner's</span>
-            <br />
-            <span>testimony</span>
-          </h2>
-        </section>
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="testimonials-heading">
+              <span>partner's</span>
+              <br />
+              <span>testimony</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
       </div>
 
       <motion.div

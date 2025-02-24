@@ -4,15 +4,15 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./Footer.css";
+import ScrollRevealText from "../ScrollRevealText";
+import ScrollFromLeft from "../ScrollFromLeft";
 
 const Footer = () => {
   const headingRef = useRef(null);
 
   useEffect(() => {
-    // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animate the footer heading on each scroll into view
     gsap.fromTo(
       headingRef.current,
       { y: 50, opacity: 0 }, // Starting state
@@ -34,15 +34,16 @@ const Footer = () => {
 
   return (
     <footer className="footer-container">
-      {/* Animated Footer Heading */}
       <div className="footer-main">
-        <section className="scroll-reveal">
-          <p className="footer-head">
-            <span>connect with us</span>
-            {/* <br /> <span>across the</span> <br />{" "}
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <p className="footer-head">
+              <span>connect with us</span>
+              {/* <br /> <span>across the</span> <br />{" "}
             <span>cosmos</span> */}
-          </p>
-        </section>
+            </p>
+          </ScrollRevealText>
+        </ScrollFromLeft>
       </div>
 
       {/* Social Media Section */}

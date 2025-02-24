@@ -7,25 +7,10 @@ import "./Services.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useSpring } from "framer-motion";
 import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
-import { useInView, useAnimation } from "framer-motion";
+import ScrollRevealText from "@/app/Components/ScrollRevealText";
+import ScrollFromLeft from "../ScrollFromLeft";
 
 const Services = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView({
-    threshold: 0.3, // Triggers when 30% of the element is in view
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        backgroundSize: "100% 100%",
-        transition: { duration: 1, ease: "easeInOut" },
-      });
-    } else {
-      controls.start({ backgroundSize: "0% 100%" });
-    }
-  }, [inView, controls]);
-
   const refRight = useRef(null);
   const refLeft = useRef(null);
   const lineRef = useRef(null);
@@ -149,13 +134,16 @@ const Services = () => {
       {/* Who We Are Section */}
       <div className="who-are-we" id="WhoWeAre">
         <div className="who-are-we-main">
-          <section className="scroll-reveal">
-            <h2 className="who-are-we-head" ref={WhoWeAreRef}>
-              <span>who</span>
-              <br />
-              <span> we are</span>
-            </h2>
-          </section>
+          <ScrollFromLeft>
+            <ScrollRevealText>
+              <h2 className="who-are-we-head" ref={WhoWeAreRef}>
+                <span>who</span>
+                <br />
+                <span> we are</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromLeft>
+
           <h4 className="who-are-we-subhead">
             <div className="who-are-we-subhead-line-wrapper">
               <div className="who-are-we-subhead-line" ref={lineRef}>
@@ -212,13 +200,15 @@ const Services = () => {
       {/* Heading */}
 
       <div className="services-heading-main">
-        <section className="scroll-reveal">
-          <h2 className="servicesTitle">
-            <span>
-              our <br /> services
-            </span>
-          </h2>
-        </section>
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="servicesTitle">
+              <span>
+                our <br /> services
+              </span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
       </div>
 
       <div className="our-services-tag-container" ref={desRef2}>
