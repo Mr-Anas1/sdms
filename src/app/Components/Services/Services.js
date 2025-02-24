@@ -6,20 +6,34 @@ import Link from "next/link";
 import "./Services.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useSpring } from "framer-motion";
+import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
 
 const Services = () => {
   const refRight = useRef(null);
   const refLeft = useRef(null);
   const lineRef = useRef(null);
+  const desRef1 = useRef(null);
+  const desRef2 = useRef(null);
+  const desRef3 = useRef(null);
+  const desRef4 = useRef(null);
 
-  const { scrollYProgress } = useScroll({
+  const { translateY: translateY1 } = useScrollAnimation(desRef1);
+  const { translateY: translateY2 } = useScrollAnimation(desRef2);
+  const { translateY: translateY3 } = useScrollAnimation(desRef3);
+  const { translateY: translateY4 } = useScrollAnimation(desRef4);
+
+  // Line Scroll Progress
+  const { scrollYProgress: scrollYProgressLine } = useScroll({
     target: lineRef,
     offset: ["start 140%", "end 90%"],
   });
 
-  const rawTranslateY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
-
-  const translateY = useSpring(rawTranslateY, {
+  const rawTranslateYLine = useTransform(
+    scrollYProgressLine,
+    [0, 1],
+    ["100%", "0%"]
+  );
+  const translateYLine = useSpring(rawTranslateYLine, {
     stiffness: 200,
     damping: 20,
     mass: 0.8,
@@ -129,7 +143,7 @@ const Services = () => {
               <div className="who-are-we-subhead-line" ref={lineRef}>
                 <motion.div
                   style={{
-                    translateY: translateY,
+                    translateY: translateYLine,
                   }}
                 >
                   SDMS® use cutting-edge technology
@@ -140,7 +154,7 @@ const Services = () => {
               <div className="who-are-we-subhead-line" ref={lineRef}>
                 <motion.div
                   style={{
-                    translateY: translateY,
+                    translateY: translateYLine,
                   }}
                 >
                   to craft your brand’s journey through
@@ -151,7 +165,7 @@ const Services = () => {
               <div className="who-are-we-subhead-line" ref={lineRef}>
                 <motion.div
                   style={{
-                    translateY: translateY,
+                    translateY: translateYLine,
                   }}
                 >
                   the stars
@@ -165,13 +179,16 @@ const Services = () => {
           </h4>
         </div>
 
-        <div className="who-are-we-container">
-          <p className="who-are-we-tag">
+        <div className="who-are-we-container" ref={desRef1}>
+          <motion.div
+            style={{ translateY: translateY1 }}
+            className="who-are-we-tag"
+          >
             We help your business launch into the digital cosmos, delivering
             powerful websites and apps that leave a lasting impact. Our
             expertise in the latest digital trends ensures your brand orbits
             success, expanding across the universe of possibilities.
-          </p>
+          </motion.div>
         </div>
       </div>
       {/* Heading */}
@@ -185,10 +202,21 @@ const Services = () => {
           </h2>
         </section>
       </div>
-      <p className="our-services-tag">
+
+      <div className="our-services-tag-container" ref={desRef2}>
+        <motion.div
+          style={{ translateY: translateY2 }}
+          className="our-services-tag"
+        >
+          Like a constellation, our services align to create a universe of
+          endless possibilities.
+        </motion.div>
+      </div>
+
+      {/* <p className="our-services-tag">
         Like a constellation, our services align to create a universe of endless
         possibilities.
-      </p>
+      </p> */}
 
       {/* Service Cards */}
 
@@ -208,7 +236,11 @@ const Services = () => {
           />
         </div>
 
-        <div className="services-text">
+        <motion.div
+          className="services-text"
+          ref={desRef3}
+          style={{ translateY: translateY3 }}
+        >
           <h3 className="services-text-head">{servicesData.service1.title}</h3>
           <ul className="services-text-para">
             {servicesData.service1.list.map((item, idx) => (
@@ -218,7 +250,7 @@ const Services = () => {
           <Link href="/ServicesPage">
             <button className="contact-button">More Info</button>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       <div className="services-card">
@@ -238,7 +270,11 @@ const Services = () => {
           />
         </div>
 
-        <div className="services-text">
+        <motion.div
+          className="services-text"
+          ref={desRef4}
+          style={{ translateY: translateY4 }}
+        >
           <h3 className="services-text-head">{servicesData.service2.title}</h3>
           <ul className="services-text-para">
             {servicesData.service2.list.map((item, idx) => (
@@ -248,7 +284,7 @@ const Services = () => {
           <Link href="/ServicesPage">
             <button className="contact-button">More Info</button>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {/* Stats Section */}

@@ -55,11 +55,6 @@
 }
 
 
-.our-services-tag {
-  animation: riseUp;
-  animation-timeline: view();
-  animation-range: entry 10% cover 40%;
-}
 
 
 
@@ -284,9 +279,6 @@
   margin-top: 10vh;
   margin-bottom: 5vh;
   gap: 50px;
-  animation: riseUp;
-  animation-timeline: view();
-  animation-range: entry 0% cover 80%;
 }
 
 @media (min-width: 764px) {
@@ -327,7 +319,7 @@
   /* Image takes up 40% of the container width */
   height: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 24px;
 }
 
 /* Text Section */

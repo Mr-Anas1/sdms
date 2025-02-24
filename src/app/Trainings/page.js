@@ -8,6 +8,7 @@ import Cursor from "../Cursor";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useSpring } from "framer-motion";
 import { useRef } from "react";
+import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -37,6 +38,12 @@ const testimonials = [
 ];
 
 export default function Trainings() {
+  const desRef1 = useRef(null);
+  const desRef2 = useRef(null);
+
+  const { translateY: translateY1 } = useScrollAnimation(desRef1);
+  const { translateY: translateY2 } = useScrollAnimation(desRef2);
+
   const refRight = useRef(null);
   const refLeft = useRef(null);
 
@@ -202,7 +209,11 @@ export default function Trainings() {
                 />
               </div>
               {/* Text Content */}
-              <div className="text-content one">
+              <motion.div
+                ref={desRef1}
+                style={{ translateY: translateY1 }}
+                className="text-content one"
+              >
                 <h2 className="text-content-head">inplant trainings</h2>
                 <p className="text-content-para">
                   UI/UX, Full Stack Development, DataScience, Graphic Designing,
@@ -216,7 +227,7 @@ export default function Trainings() {
                 >
                   Register
                 </a>
-              </div>
+              </motion.div>
             </div>
 
             {/* Second Sub-Container */}
@@ -235,7 +246,11 @@ export default function Trainings() {
                 />
               </div>
               {/* Text Content */}
-              <div className="text-content two">
+              <motion.div
+                ref={desRef2}
+                style={{ translateY: translateY2 }}
+                className="text-content two"
+              >
                 <h2 className="text-content-head">internships</h2>
                 <p className="text-content-para">
                   UI/UX Designing <br />
@@ -249,7 +264,7 @@ export default function Trainings() {
                 >
                   Register
                 </a>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

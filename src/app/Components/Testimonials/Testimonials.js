@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import ScrollingText from "../ScollingText/ScrollingText";
 import "./Testimonials.css";
 import { useRef } from "react";
@@ -64,10 +64,14 @@ const testimonial = [
 
   // Additional testimonials...
 ];
-
-const Testimonials = ({ testimonials }) => {
+const Testimonials = () => {
   const wrapperRef = useRef();
   const [dragConstraint, setDragConstraint] = useState(0);
+  const [position, setPosition] = useState(0);
+  const controls = useAnimation();
+
+  // Duplicate testimonials for infinite loop
+  const duplicatedTestimonials = [...testimonial, ...testimonial];
 
   useEffect(() => {
     const updateDragConstraints = () => {
@@ -75,7 +79,6 @@ const Testimonials = ({ testimonials }) => {
         const wrapperWidth = wrapperRef.current.scrollWidth;
         const containerWidth = wrapperRef.current.offsetWidth;
         const newConstraint = -(wrapperWidth - containerWidth);
-
         setDragConstraint(newConstraint < 0 ? newConstraint : 0);
       }
     };
@@ -85,6 +88,22 @@ const Testimonials = ({ testimonials }) => {
 
     return () => window.removeEventListener("resize", updateDragConstraints);
   }, []);
+
+  // Handle resetting the position for infinite scroll
+  const handleDragEnd = (event, info) => {
+    const { offset } = info;
+    const distance = offset.x + position;
+
+    if (distance < dragConstraint) {
+      setPosition(0);
+      controls.start({ x: 0, transition: { duration: 0 } });
+    } else if (distance > 0) {
+      setPosition(dragConstraint);
+      controls.start({ x: dragConstraint, transition: { duration: 0 } });
+    } else {
+      setPosition(distance);
+    }
+  };
 
   return (
     <div className="testimonials-container" id="testimonials">
@@ -104,14 +123,16 @@ const Testimonials = ({ testimonials }) => {
         drag="x"
         dragConstraints={{ left: dragConstraint, right: 0 }}
         whileTap={{ cursor: "grabbing" }}
+        onDragEnd={handleDragEnd}
+        animate={controls}
       >
-        {testimonial.map((testimonial, index) => (
+        {duplicatedTestimonials.map((testimonial, index) => (
           <motion.div
             key={index}
             className="testimonial-card"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <p className="testimonial-text">"{testimonial.text}"</p>
             <img

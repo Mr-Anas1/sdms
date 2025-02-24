@@ -4,8 +4,28 @@ import Navbar from "../Components/Navbar/Navbar";
 import "./ServicesPage.css";
 import { useState, useEffect } from "react";
 import Cursor from "../Cursor";
+import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import ScrollAnimation from "../Components/ScrollAnimation";
 
 export default function ServicesPage() {
+  const desRef1 = useRef(null);
+  const desRef2 = useRef(null);
+  const desRef3 = useRef(null);
+  const desRef4 = useRef(null);
+  const desRef5 = useRef(null);
+  const desRef6 = useRef(null);
+  const desRef7 = useRef(null);
+
+  const { translateY: translateY1 } = useScrollAnimation(desRef1);
+  const { translateY: translateY2 } = useScrollAnimation(desRef2);
+  const { translateY: translateY3 } = useScrollAnimation(desRef3);
+  const { translateY: translateY4 } = useScrollAnimation(desRef4);
+  const { translateY: translateY5 } = useScrollAnimation(desRef5);
+  const { translateY: translateY6 } = useScrollAnimation(desRef6);
+  const { translateY: translateY7 } = useScrollAnimation(desRef7);
+
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -62,23 +82,53 @@ export default function ServicesPage() {
           </div>
           <div className="services-extra-container">
             <div className="services-extra-content">
-              <h3 className="extra-heading">
-                develop
-                <br />
-                ment
-              </h3>
-              <p className="extra-text">
+              {/* <motion.div
+                  ref={desRef1}
+                  style={{ translateY: translateY1 }}
+                  className="extra-heading"
+                >
+                  develop
+                  <br />
+                  ment
+                </motion.div> */}
+
+              <div className="extra-heading development-heading">
+                <div className="extra-heading-line-wrapper">
+                  <ScrollAnimation offset={["start 100%", "end 100%"]}>
+                    <div className="extra-heading">develop</div>
+                  </ScrollAnimation>
+                </div>
+                <div className="extra-heading-line-wrapper">
+                  <ScrollAnimation offset={["start 100%", "end 100%"]}>
+                    <div className="extra-heading">ment</div>
+                  </ScrollAnimation>
+                </div>
+              </div>
+
+              <motion.div
+                ref={desRef2}
+                style={{ translateY: translateY2 }}
+                className="extra-text"
+              >
                 In this vast digital galaxy, our tools and technologies are the
                 rocket fuel powering your journey. We leverage top frameworks
                 and languages to build experiences that shine across the digital
                 cosmos, enhanced by seamless animations and interactions.
-              </p>
+              </motion.div>
             </div>
-            <p className="extra-text-para">
-              We develop UI/UX sites, Websites, Applications, APIs, Software,
-              POS Systems for various ventures under the following stacks:
-            </p>
-            <div className="service-options">
+
+            <motion.div ref={desRef3} style={{ translateY: translateY3 }}>
+              <p className="extra-text-para">
+                We develop UI/UX sites, Websites, Applications, APIs, Software,
+                POS Systems for various ventures under the following stacks:
+              </p>
+            </motion.div>
+
+            <motion.div
+              ref={desRef4}
+              style={{ translateY: translateY4 }}
+              className="service-options"
+            >
               <p className="service-options-p">
                 Any UI/UX <br />
                 React JS <br />
@@ -99,22 +149,49 @@ export default function ServicesPage() {
                 jQuery <br />
                 PHP <br />
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="services-extra-container">
           <div className="services-extra-content">
-            <h3 className="extra-heading">marketing & branding</h3>
-            <p className="extra-text">
+            {/* <motion.div
+              ref={desRef5}
+              style={{ translateY: translateY5 }}
+              className="extra-heading"
+            >
+              marketing & branding
+            </motion.div> */}
+            <div className="extra-heading development-heading">
+              <div className="extra-heading-line-wrapper">
+                <ScrollAnimation offset={["start 80%", "end 80%"]}>
+                  <div className="extra-heading">marketing</div>
+                </ScrollAnimation>
+              </div>
+              <div className="extra-heading-line-wrapper">
+                <ScrollAnimation offset={["start 80%", "end 80%"]}>
+                  <div className="extra-heading">& branding</div>
+                </ScrollAnimation>
+              </div>
+            </div>
+
+            <motion.div
+              ref={desRef6}
+              style={{ translateY: translateY6 }}
+              className="extra-text"
+            >
               We help your brand make a bold impact in the digital world. From
               stunning logos and compelling Video narratives to managing
               engaging social media & campaigns, we tell stories that resonate.
               Our services are crafted to boost your brand’s visibility and
               makeit unforgettable, ensuring your ideas are market-ready assets.
-            </p>
+            </motion.div>
           </div>
 
-          <div className="service-options">
+          <motion.div
+            ref={desRef7}
+            style={{ translateY: translateY7 }}
+            className="service-options"
+          >
             <p className="service-options-p">
               Social Media Management <br />
               Advertisement (Google, Youtube, META Ads) <br />
@@ -128,7 +205,7 @@ export default function ServicesPage() {
               Graphic designs & Mockups <br />
               Product Packaging / Marketing Collateral(s) Design <br />
             </p>
-          </div>
+          </motion.div>
         </div>
         <h2 className="our-expertise-head"> Our expertise</h2>
 
