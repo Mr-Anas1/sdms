@@ -330,13 +330,13 @@ export default function Trainings() {
           {/* Email Section */}
           <div className="contact-item">
             <small>Email</small>
-            <p>sabeenadigitalmediaservices@gmail.com</p>
+            <p>sabeenadigitalms@gmail.com</p>
           </div>
 
           {/* Phone Number Section */}
           <div className="contact-item">
             <small>Phone</small>
-            <p>1234567890</p>
+            <p>9345398449</p>
           </div>
 
           {/* Website Section */}

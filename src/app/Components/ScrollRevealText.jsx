@@ -5,14 +5,12 @@ const ScrollRevealText = ({ children }) => {
   const ref = useRef(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Detect dark mode based on class on body
   useEffect(() => {
     const checkDarkMode = () => {
       setIsDarkMode(document.body.classList.contains("dark-mode"));
     };
 
     checkDarkMode();
-    // Listen for class changes
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.body, {
       attributes: true,
@@ -22,7 +20,6 @@ const ScrollRevealText = ({ children }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Track scroll progress
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center center"],
@@ -46,7 +43,7 @@ const ScrollRevealText = ({ children }) => {
         backgroundImage: isDarkMode
           ? "linear-gradient(90deg, #ffffff, #ffffff)"
           : "linear-gradient(90deg, #000000, #000000)",
-        backgroundColor: isDarkMode ? "#808080" : "#DCE1E1", // Gray for dark mode
+        backgroundColor: isDarkMode ? "#808080" : "#DCE1E1",
         backgroundSize: backgroundSize,
         WebkitBackgroundClip: "text",
         color: "transparent",

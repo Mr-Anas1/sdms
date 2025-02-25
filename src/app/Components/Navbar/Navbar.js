@@ -112,7 +112,7 @@ export default function Navbar({
             </div>
             <div className="contact-info">
               <p className="website-url">sabeenadigitalmediaservices.com</p>
-              <p className="phone-number">123-456-7866-5564</p>
+              <p className="phone-number">9345398449</p>
             </div>
             <div className="social-links">
               <a
