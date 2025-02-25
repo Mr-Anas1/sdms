@@ -12,6 +12,7 @@ import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
 import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollRevealText from "../Components/ScrollRevealText";
 import TestimonialContainer from "../Components/TestimonialContainer/TestimonialContainer";
+import FluidCursor from "../FluidCursor";
 
 const testimonials = [
   {
@@ -156,6 +157,7 @@ export default function Trainings() {
 
   return (
     <div className="services-page">
+      <FluidCursor />
       <Head>
         <title>Sabeena Digital Media Services</title>
         <meta

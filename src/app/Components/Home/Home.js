@@ -72,7 +72,7 @@ export default function Home() {
           menuOpen={menuOpen}
         />
         {/* <Cursor darkMode={darkMode} /> */}
-        {/* <FluidCursor /> */}
+        <FluidCursor />
         <main className="home-main">
           <h2 className="home-heading">
             let's orbit success <br />

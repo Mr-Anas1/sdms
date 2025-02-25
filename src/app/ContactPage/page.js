@@ -50,6 +50,7 @@ export default function ContactPage() {
           menuOpen={menuOpen}
         />
         {/* <Cursor darkMode={darkMode} /> */}
+        <FluidCursor />
         <main>
           <h2 className="home-heading">
             let's roar <br /> into the wild <br /> together

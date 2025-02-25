@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import ScrollAnimation from "../Components/ScrollAnimation";
 import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollRevealText from "../Components/ScrollRevealText";
+import FluidCursor from "../FluidCursor";
 
 export default function ServicesPage() {
   const desRef1 = useRef(null);
@@ -534,6 +535,7 @@ export default function ServicesPage() {
         {/* Bottom Horizontal Line */}
         <hr className="horizontal-line" />
       </div>
+      <FluidCursor />
     </div>
   );
 }
