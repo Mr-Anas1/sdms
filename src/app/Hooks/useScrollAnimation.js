@@ -2,7 +2,7 @@ import { useScroll, useTransform, useSpring } from "framer-motion";
 
 export const useScrollAnimation = (ref, offset = ["start 140%", "end 90%"]) => {
   const { scrollYProgress } = useScroll({
-    target: ref, // Attach the ref here
+    target: ref,
     offset,
   });
 

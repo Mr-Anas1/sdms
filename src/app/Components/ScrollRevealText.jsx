@@ -25,7 +25,7 @@ const ScrollRevealText = ({ children }) => {
   // Track scroll progress
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start end", "center center"],
   });
 
   // Animate background size

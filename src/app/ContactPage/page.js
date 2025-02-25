@@ -7,6 +7,8 @@ import Navbar from "../Components/Navbar/Navbar.js";
 import "./ContactPage.css";
 import ContactForm from "./Components/ContactForm";
 import FluidCursor from "../FluidCursor";
+import ScrollFromLeft from "../Components/ScrollFromLeft";
+import ScrollRevealText from "../Components/ScrollRevealText";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(true);
@@ -70,12 +72,14 @@ export default function ContactPage() {
       <ContactForm />
 
       <div className="time-to-roar-head-main">
-        <section className="scroll-reveal">
-          <p className="time-to-roar-head">
-            <span>time to </span>
-            <br /> <span>roar!</span>
-          </p>
-        </section>
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="time-to-roar-head">
+              <span>time to</span>
+              <br /> <span>roar!</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
       </div>
       <div className="time-to-roar">
         {/* Top Horizontal Line */}

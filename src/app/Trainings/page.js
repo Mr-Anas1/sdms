@@ -9,29 +9,32 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useSpring } from "framer-motion";
 import { useRef } from "react";
 import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
+import ScrollFromLeft from "../Components/ScrollFromLeft";
+import ScrollRevealText from "../Components/ScrollRevealText";
+import TestimonialContainer from "../Components/TestimonialContainer/TestimonialContainer";
 
 const testimonials = [
   {
     name: "Mohamed Ridwan A",
-    text: "The 15-day inplant training on UI/UX design with Figma by Sabeena Digital Media Services was incredible. By the end of just 13 days, I had designed an entire UI/UX site with confidence! Tutor Bala’s teaching was clear, practical, and engaging, making complex features like animations easy to master.With a hands-on approach and a supportive team, this training has truly elevated my design skills. Highly recommended for anyone looking to excel in UI/UX design",
+    text: "The 15-day UI/UX training with Figma was incredible. In just 13 days, I confidently designed an entire site. Tutor Bala’s clear, hands-on teaching made complex features like animations simple. The supportive team truly elevated my skills. Highly recommended!",
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/ridwan.jpeg",
   },
   {
     name: "Kaviya",
-    text: "The UI/UX In-Plant training was a fantastic experience. Initially, it felt challenging to perfect my designs, but the tutor’s expert guidance and practical tips made all the difference.The training broke down complex concepts into simple steps, and by the end, I was able to create a complete UI/UX project confidently. It was an enriching journey that sharpened my skills and transformed the way I approach design. Highly recommended for aspiring designers!",
+    text: "The UI/UX In-Plant training was fantastic. Initially challenging, but the tutor’s expert tips simplified everything. By the end, I completed a full project confidently. It sharpened my skills and transformed my design approach. A must for aspiring designers!",
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/kaviya.jpeg",
   },
   {
     name: "Rifkhan",
-    text: "The front-end development training at Sabeena Digital Media Services was absolutely worth every penny. The course gave me the skills to truly excel in front-end development, from mastering core concepts to working with advanced techniques. The practical, hands-on approach and expert guidance made complex topics easy to grasp. I now feel fully equipped to take on real-world projects.",
+    text: "The front-end training at Sabeena Digital was worth every penny. It covered core to advanced concepts with hands-on guidance. Complex topics became easy, and I now feel fully prepared to tackle real-world projects. A game-changing experience!",
     position: "Full-Stack Training Attendee",
     image: "./images/rifkhan.jpeg",
   },
   {
     name: "Anas",
-    text: "Attending the 15-day Figma training by Sabeena Digital Media Services was a game-changer. Bala’s clear guidance made even advanced features like animations easy to master.The hands-on approach boosted my confidence to create impactful designs. I highly recommend this program to anyone looking to elevate their design skills!",
+    text: "The 15-day Figma training was a game-changer. Bala’s guidance made even advanced features like animations simple. The hands-on approach boosted my confidence in design. Highly recommend this program to elevate your skills!",
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/anas1.png",
   },
@@ -270,12 +273,16 @@ export default function Trainings() {
         </div>
       </div>
       <div className="testimonials-container" id="testimonials">
-        <h2 className="testimonials-heading">
-          participant's
-          <br />
-          testimony
-        </h2>
-        <motion.div
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="testimonials-heading">
+              <span>participant's</span>
+              <br />
+              <span>testimony</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
+        {/* <motion.div
           className="testimonials-wrapper"
           drag="x"
           dragConstraints={{ left: dragConstraint, right: 0 }}
@@ -300,15 +307,19 @@ export default function Trainings() {
               </span>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
+
+        <TestimonialContainer testimonials={testimonials} />
       </div>
       <div className="time-to-roar-head-main">
-        <section className="scroll-reveal">
-          <p className="time-to-roar-head">
-            <span>time to </span>
-            <br /> <span>roar!</span>
-          </p>
-        </section>
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="time-to-roar-head">
+              <span>time to</span>
+              <br /> <span>roar!</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
       </div>
       <div className="time-to-roar">
         {/* Top Horizontal Line */}

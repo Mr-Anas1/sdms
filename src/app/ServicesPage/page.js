@@ -8,6 +8,8 @@ import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import ScrollAnimation from "../Components/ScrollAnimation";
+import ScrollFromLeft from "../Components/ScrollFromLeft";
+import ScrollRevealText from "../Components/ScrollRevealText";
 
 export default function ServicesPage() {
   const desRef1 = useRef(null);
@@ -207,7 +209,12 @@ export default function ServicesPage() {
             </p>
           </motion.div>
         </div>
-        <h2 className="our-expertise-head"> Our expertise</h2>
+
+        <div className="our-expertise-head-container">
+          <ScrollAnimation offset={["start 100%", "end 90%"]}>
+            <h2 className="our-expertise-head"> Our expertise</h2>{" "}
+          </ScrollAnimation>
+        </div>
 
         <div className="cardScrollerWrapper">
           <div className="cardScroller">
@@ -316,13 +323,15 @@ export default function ServicesPage() {
         </div>
 
         <div className="our-process-heading-main">
-          <section className="scroll-reveal">
-            <p className="our-process-heading">
-              <span>our</span>
-              <br />
-              <span>process</span>
-            </p>
-          </section>
+          <ScrollFromLeft>
+            <ScrollRevealText>
+              <p className="our-process-heading">
+                <span>our</span>
+                <br />
+                <span>process</span>
+              </p>
+            </ScrollRevealText>
+          </ScrollFromLeft>
         </div>
         <p className="our-process-text">
           {" "}
@@ -487,12 +496,14 @@ export default function ServicesPage() {
         </div>
       </div>
       <div className="time-to-roar-head-main">
-        <section className="scroll-reveal">
-          <p className="time-to-roar-head">
-            <span>time to </span>
-            <br /> <span>roar!</span>
-          </p>
-        </section>
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="time-to-roar-head">
+              <span>time to</span>
+              <br /> <span>roar!</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
       </div>
 
       <div className="time-to-roar">
