@@ -409,7 +409,6 @@
   width: 100%;
   align-items: center;
   margin-top: 10px;
-  padding: 0rem 2rem;
 }
 
 .menu-logo {
@@ -434,7 +433,7 @@
   color: var(--background-dark);
   font-size: 1.5rem;
   position: relative;
-  left: -15px;
+  left: -20px;
 }
 
 .dark-mode .overlay-toggle {
