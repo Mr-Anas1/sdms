@@ -47,7 +47,8 @@
 }
 
 .testimonials-heading-main {
-  margin-left: 50px;
+  margin: 50px;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -82,12 +83,19 @@
 .testimonials-heading {
   font-size: 5rem;
   /* color: #000000; */
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-family: 'Dirtyline36Daysoftype2022';
   line-height: 4rem;
   font-weight: 100;
   padding-left: 40px;
   margin-top: 30px;
+  line-height: 0.2;
+}
+
+@media screen and (max-width: 480px) {
+  .testimonials-heading {
+    padding-left: 30px;
+  }
 }
 
 /* Dark mode heading */

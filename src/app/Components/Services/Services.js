@@ -9,6 +9,7 @@ import { useSpring } from "framer-motion";
 import { useScrollAnimation } from "@/app/Hooks/useScrollAnimation";
 import ScrollRevealText from "@/app/Components/ScrollRevealText";
 import ScrollFromLeft from "../ScrollFromLeft";
+import ScrollFromRight from "../ScrollFromRight";
 
 const Services = () => {
   const refRight = useRef(null);
@@ -138,11 +139,17 @@ const Services = () => {
             <ScrollRevealText>
               <h2 className="who-are-we-head" ref={WhoWeAreRef}>
                 <span>who</span>
-                <br />
-                <span> we are</span>
               </h2>
             </ScrollRevealText>
           </ScrollFromLeft>
+
+          <ScrollFromRight>
+            <ScrollRevealText>
+              <h2 className="who-are-we-head" ref={WhoWeAreRef}>
+                <span> we are</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromRight>
 
           <h4 className="who-are-we-subhead">
             <div className="who-are-we-subhead-line-wrapper">
@@ -178,10 +185,6 @@ const Services = () => {
                 </motion.div>
               </div>
             </div>
-
-            {/* As a pioneering force in the digital galaxy, SDMS® blends creativity
-            with cutting-edge technology to craft your brand’s journey through
-            the stars */}
           </h4>
         </div>
 

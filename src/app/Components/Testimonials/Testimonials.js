@@ -8,6 +8,7 @@ import { useRef } from "react";
 import ScrollFromLeft from "../ScrollFromLeft";
 import ScrollRevealText from "../ScrollRevealText";
 import TestimonialContainer from "../TestimonialContainer/TestimonialContainer";
+import ScrollFromRight from "../ScrollFromRight";
 
 const testimonials = [
   {
@@ -67,46 +68,6 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  // const wrapperRef = useRef();
-  // const [dragConstraint, setDragConstraint] = useState(0);
-  // const [position, setPosition] = useState(0);
-  // const controls = useAnimation();
-
-  // // Duplicate testimonials for infinite loop
-  // const duplicatedTestimonials = [...testimonial, ...testimonial];
-
-  // useEffect(() => {
-  //   const updateDragConstraints = () => {
-  //     if (wrapperRef.current) {
-  //       const wrapperWidth = wrapperRef.current.scrollWidth;
-  //       const containerWidth = wrapperRef.current.offsetWidth;
-  //       const newConstraint = -(wrapperWidth - containerWidth);
-  //       setDragConstraint(newConstraint < 0 ? newConstraint : 0);
-  //     }
-  //   };
-
-  //   updateDragConstraints();
-  //   window.addEventListener("resize", updateDragConstraints);
-
-  //   return () => window.removeEventListener("resize", updateDragConstraints);
-  // }, []);
-
-  // // Handle resetting the position for infinite scroll
-  // const handleDragEnd = (event, info) => {
-  //   const { offset } = info;
-  //   const distance = offset.x + position;
-
-  //   if (distance < dragConstraint) {
-  //     setPosition(0);
-  //     controls.start({ x: 0, transition: { duration: 0 } });
-  //   } else if (distance > 0) {
-  //     setPosition(dragConstraint);
-  //     controls.start({ x: dragConstraint, transition: { duration: 0 } });
-  //   } else {
-  //     setPosition(distance);
-  //   }
-  // };
-
   return (
     <div className="testimonials-container" id="testimonials">
       <div className="testimonials-heading-main">
@@ -114,11 +75,17 @@ const Testimonials = () => {
           <ScrollRevealText>
             <h2 className="testimonials-heading">
               <span>partner's</span>
-              <br />
-              <span>testimony</span>
             </h2>
           </ScrollRevealText>
         </ScrollFromLeft>
+
+        <ScrollFromRight>
+          <ScrollRevealText>
+            <h2 className="testimonials-heading">
+              <span>testimony</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromRight>
       </div>
 
       {/* <motion.div

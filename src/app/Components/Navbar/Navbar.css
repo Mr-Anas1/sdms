@@ -559,3 +559,9 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .menu-container {
+    padding: 1em 2em 2em 2em;
+  }
+}

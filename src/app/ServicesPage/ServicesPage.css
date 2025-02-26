@@ -119,12 +119,16 @@
 
 
 .our-expertise-head-container {
-  margin: 0 auto;
-  display: block;
+  display: flex;
   position: relative;
   overflow: hidden;
   padding: 4px;
   box-sizing: border-box;
+  line-height: 0.8;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px 0px;
 }
 
 
@@ -368,11 +372,9 @@
 }
 
 .our-expertise-head {
-  font-family: 'Syne', serif;
+  font-family: 'Dirtyline36Daysoftype2022', 'Syne', serif;
   text-align: center;
   font-size: 6rem;
-  margin: 10vh 0;
-
 }
 
 
@@ -548,6 +550,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 15vh;
+
 }
 
 .our-process-heading {
@@ -557,7 +561,6 @@
   text-transform: lowercase;
   line-height: 0.8;
   font-weight: 100;
-  margin-top: 15vh;
   color: transparent;
 }
 

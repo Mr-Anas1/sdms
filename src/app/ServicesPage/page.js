@@ -11,6 +11,7 @@ import ScrollAnimation from "../Components/ScrollAnimation";
 import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollRevealText from "../Components/ScrollRevealText";
 import FluidCursor from "../FluidCursor";
+import ScrollFromRight from "../Components/ScrollFromRight";
 
 export default function ServicesPage() {
   const desRef1 = useRef(null);
@@ -212,9 +213,25 @@ export default function ServicesPage() {
         </div>
 
         <div className="our-expertise-head-container">
-          <ScrollAnimation offset={["start 100%", "end 90%"]}>
+          <ScrollFromLeft>
+            <ScrollRevealText>
+              <h2 className="our-expertise-head">
+                <span>our</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromLeft>
+
+          <ScrollFromRight>
+            <ScrollRevealText>
+              <h2 className="our-expertise-head">
+                <span>expertise</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromRight>
+
+          {/* <ScrollAnimation offset={["start 100%", "end 90%"]}>
             <h2 className="our-expertise-head"> Our expertise</h2>{" "}
-          </ScrollAnimation>
+          </ScrollAnimation> */}
         </div>
 
         <div className="cardScrollerWrapper">
@@ -326,13 +343,19 @@ export default function ServicesPage() {
         <div className="our-process-heading-main">
           <ScrollFromLeft>
             <ScrollRevealText>
-              <p className="our-process-heading">
+              <h2 className="our-process-heading">
                 <span>our</span>
-                <br />
-                <span>process</span>
-              </p>
+              </h2>
             </ScrollRevealText>
           </ScrollFromLeft>
+
+          <ScrollFromRight>
+            <ScrollRevealText>
+              <h2 className="our-process-heading">
+                <span>process</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromRight>
         </div>
         <p className="our-process-text">
           {" "}
@@ -526,10 +549,10 @@ export default function ServicesPage() {
           </div>
 
           {/* Website Section */}
-          <div className="contact-item web">
+          {/* <div className="contact-item web">
             <small>Website</small>
             <p>sabeenadigitalmediaservices.com</p>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Horizontal Line */}
