@@ -184,12 +184,9 @@
   font-family: 'Syne', serif;
   font-weight: bolder;
   margin: 0;
-  background: linear-gradient(to bottom, black, #2E2E2E);
-  /* Gradient for light mode */
   -webkit-background-clip: text;
-  /* Keep the text transparent to show the gradient */
   animation: fadeIn 1s ease-in-out;
-  /* Fade-in animation */
+  color: #2e2e2e;
 
 }
 
@@ -412,10 +409,12 @@
   width: 100%;
   align-items: center;
   margin-top: 10px;
+  padding: 0rem 2rem;
 }
 
 .menu-logo {
   height: 50px;
+
 }
 
 .close-icon {
@@ -434,6 +433,8 @@
   cursor: pointer;
   color: var(--background-dark);
   font-size: 1.5rem;
+  position: relative;
+  left: -15px;
 }
 
 .dark-mode .overlay-toggle {

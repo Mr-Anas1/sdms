@@ -30,7 +30,11 @@ export default function Navbar({
       {/* Logo */}
       <div className="left">
         <div className="premium-logo">
-          <span className="logo-main">sdms</span>
+          <Link href="/">
+            {" "}
+            <span className="logo-main">sdms</span>
+          </Link>
+
           <span className="logo-sub">digital media services</span>
         </div>
       </div>
@@ -55,20 +59,22 @@ export default function Navbar({
       </div>
 
       {/* Menu Overlay with Framer Motion */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {menuOpen && (
           <motion.div
+            key="menu-overlay"
             className="menu-overlay open"
-            initial={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
-            animate={{
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            }}
-            exit={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.75, ease: "easeInOut" }}
           >
             <div className="menu-header">
               <div className="premium-logo">
-                <span className="logo-main">SDMS</span>
+                <Link href="/">
+                  {" "}
+                  <span className="logo-main">sdms</span>
+                </Link>
                 <span className="logo-sub">digital media services</span>
               </div>
               <button
