@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const defaultSettings = {
+  centerMode: true, // Enables center mode
+  centerPadding: "40px", // Adjust the padding as needed
   slidesToShow: 2,
   slidesToScroll: 1,
   infinite: true,
@@ -21,6 +23,8 @@ const defaultSettings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        centerMode: true, // Keep center mode for mobile if desired
+        centerPadding: "20px", // Adjust for smaller screens
       },
     },
   ],

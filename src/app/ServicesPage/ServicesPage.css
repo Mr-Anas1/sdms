@@ -84,7 +84,7 @@
 }
 
 .content-container {
-  padding-top: 15vh;
+  padding-top: 100px;
   background-color: var(--background-light);
   color: var(--background-dark);
 }
@@ -698,7 +698,7 @@
   text-align: center;
   width: 80vw;
   margin-left: 10vw;
-  padding-bottom: 20vh;
+  padding-bottom: 24vh;
 
 }
 
