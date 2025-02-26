@@ -236,7 +236,7 @@
   padding-top: 20px;
   width: 80vw;
   margin-left: 10vw;
-  padding-bottom: 15vh;
+  padding-bottom: 20vh;
 
 }
 
@@ -720,6 +720,7 @@
 
   .testimonial-text {
     font-size: 1rem;
+    margin-top: 0;
   }
 
 }

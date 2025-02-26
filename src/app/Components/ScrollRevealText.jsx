@@ -22,10 +22,9 @@ const ScrollRevealText = ({ children }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center center"],
+    offset: ["start end", "1% center"],
   });
 
-  // Animate background size
   const backgroundSize = useTransform(
     scrollYProgress,
     [0, 1],

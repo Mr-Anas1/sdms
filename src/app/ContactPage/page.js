@@ -101,10 +101,10 @@ export default function ContactPage() {
           </div>
 
           {/* Website Section */}
-          <div className="contact-item web">
+          {/* <div className="contact-item web">
             <small>Website</small>
             <p>sabeenadigitalmediaservices.com</p>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Horizontal Line */}
