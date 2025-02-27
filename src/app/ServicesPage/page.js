@@ -447,11 +447,8 @@ export default function ServicesPage() {
           ].map((card, index) => (
             <div className="card" key={index}>
               <div className="cardContent">
-                {/* Sequence number */}
                 <div className="sequenceNumber">{index + 1}</div>
-                {/* Heading */}
                 <h2 className="cardHeading">{card.heading}</h2>
-                {/* Paragraph */}
                 <p
                   className="cardDescription"
                   dangerouslySetInnerHTML={{ __html: card.description }}

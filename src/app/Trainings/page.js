@@ -13,11 +13,12 @@ import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollRevealText from "../Components/ScrollRevealText";
 import TestimonialContainer from "../Components/TestimonialContainer/TestimonialContainer";
 import FluidCursor from "../FluidCursor";
+import ScrollFromBottom from "../Components/ScrollFromBottom";
 
 const testimonials = [
   {
     name: "Mohamed Ridwan A",
-    text: "The 15-day UI/UX training with Figma was incredible. In just 13 days, I confidently designed an entire site. Tutor Bala’s clear, hands-on teaching made complex features like animations simple. The supportive team truly elevated my skills. Highly recommended!",
+    text: "The 15-day UI/UX training with Figma was incredible. In just 13 days, I confidently designed an entire site. Tutor Bala’s clear, hands-on teaching made complex features like animations simple. Highly recommended!",
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/ridwan.jpeg",
   },
@@ -203,7 +204,7 @@ export default function Trainings() {
               {/* Image Content */}
               <div className="image-content">
                 <motion.img
-                  src="./images/training1.jpeg"
+                  src="./images/test3.jpg"
                   alt="Scroll Image"
                   style={{
                     translateX: translateXLeft,
@@ -214,25 +215,38 @@ export default function Trainings() {
                 />
               </div>
               {/* Text Content */}
-              <motion.div
+              <div
                 ref={desRef1}
                 style={{ translateY: translateY1 }}
                 className="text-content one"
               >
-                <h2 className="text-content-head">inplant trainings</h2>
-                <p className="text-content-para">
-                  UI/UX, Full Stack Development, DataScience, Graphic Designing,
-                  Content Writing & Trainings on various coding languages.
-                </p>
+                <div className="line-wrapper">
+                  <ScrollFromBottom>
+                    <h2 className="text-content-head">inplant trainings</h2>
+                  </ScrollFromBottom>
+                </div>
+                <div className="line-wrapper">
+                  <ScrollFromBottom>
+                    <h2 className="text-content-para">
+                      UI/UX, Full Stack Development, DataScience, Graphic
+                      Designing, Content Writing & Trainings on various coding
+                      languages.
+                    </h2>
+                  </ScrollFromBottom>
+                </div>
 
-                <a
-                  href="https://forms.gle/DtNyVJhmAtUyB6jQ7"
-                  target="_blank"
-                  className="services-text-button"
-                >
-                  Register
-                </a>
-              </motion.div>
+                <div className="line-wrapper-btn">
+                  <ScrollFromBottom>
+                    <a
+                      href="https://forms.gle/DtNyVJhmAtUyB6jQ7"
+                      target="_blank"
+                      className="services-text-button"
+                    >
+                      Register
+                    </a>
+                  </ScrollFromBottom>
+                </div>
+              </div>
             </div>
 
             {/* Second Sub-Container */}
@@ -240,7 +254,7 @@ export default function Trainings() {
               {/* Image Content */}
               <div className="image-content">
                 <motion.img
-                  src="./images/training2.jpeg"
+                  src="./images/test4.jpg"
                   alt="Scroll Image"
                   style={{
                     translateX: translateXRight,
@@ -251,25 +265,38 @@ export default function Trainings() {
                 />
               </div>
               {/* Text Content */}
-              <motion.div
+              <div
                 ref={desRef2}
                 style={{ translateY: translateY2 }}
                 className="text-content two"
               >
-                <h2 className="text-content-head">internships</h2>
-                <p className="text-content-para">
-                  UI/UX Designing <br />
-                  Full Stack Development <br />
-                  Data Science
-                </p>
-                <a
-                  href="https://forms.gle/xgxqXt9zHQcVMYPi6"
-                  target="_blank"
-                  className="services-text-button"
-                >
-                  Register
-                </a>
-              </motion.div>
+                <div className="line-wrapper">
+                  <ScrollFromBottom>
+                    <h2 className="text-content-head">internships</h2>
+                  </ScrollFromBottom>
+                </div>
+                <div className="line-wrapper">
+                  <ScrollFromBottom>
+                    <p className="text-content-para">
+                      UI/UX Designing <br />
+                      Full Stack Development <br />
+                      Data Science
+                    </p>
+                  </ScrollFromBottom>
+                </div>
+
+                <div className="line-wrapper-btn">
+                  <ScrollFromBottom>
+                    <a
+                      href="https://forms.gle/xgxqXt9zHQcVMYPi6"
+                      target="_blank"
+                      className="services-text-button"
+                    >
+                      Register
+                    </a>
+                  </ScrollFromBottom>
+                </div>
+              </div>
             </div>
           </div>
         </div>

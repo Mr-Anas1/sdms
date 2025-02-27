@@ -2,7 +2,7 @@
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 600px;
+    min-height: 650px;
     padding: 20px;
     box-sizing: border-box;
     background: #fff;
@@ -33,6 +33,10 @@
 @media screen and (max-width: 968px) {
     .testimonial-profile {
         padding-bottom: 0;
+    }
+
+    .testimonial-text {
+        margin-top: 0;
     }
 }
 

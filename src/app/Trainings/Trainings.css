@@ -189,6 +189,19 @@
   margin-bottom: 5px;
 }
 
+.line-wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.line-wrapper-btn {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding: 15px 0px;
+}
+
 .text-content-para {
   font-family: 'Syne', serif;
   text-transform: lowercase;

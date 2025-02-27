@@ -36,42 +36,6 @@
   font-style: normal;
 }
 
-@keyframes riseUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-.scroll-reveal {
-  width: fit-content;
-  padding: 5px;
-  box-sizing: border-box;
-  -webkit-background-clip: text;
-  background-repeat: no-repeat;
-  background-color: #717171 !important;
-  background-size: 0% 100%;
-  background-image: linear-gradient(90deg, #000000, #000000);
-  animation: scroll-reveal linear forwards;
-  animation-timeline: view();
-  animation-range-start: cover 0%;
-  animation-range-end: contain 30vh;
-}
-
-
-
-
-@keyframes scroll-reveal {
-  to {
-    background-size: 100% 100%;
-  }
-}
 
 
 
@@ -229,9 +193,9 @@
 
 
 .contactMain {
-  animation: riseUp;
-  animation-timeline: view();
-  animation-duration: entry 0% cover 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-head {

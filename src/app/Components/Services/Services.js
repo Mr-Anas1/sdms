@@ -103,7 +103,7 @@ const Services = () => {
 
   const servicesData = {
     service1: {
-      imgSrc: "./images/service1.jpeg",
+      imgSrc: "./images/test2.jpg",
       title: "development",
       list: [
         "Software as a Service (SaaS)",
@@ -114,7 +114,7 @@ const Services = () => {
       ],
     },
     service2: {
-      imgSrc: "./images/service2.jpeg",
+      imgSrc: "./images/test1.jpg",
       title: "marketing & branding",
       list: [
         "Video Creation (from Reels to AR/VR videos)",
@@ -135,22 +135,23 @@ const Services = () => {
       {/* Who We Are Section */}
       <div className="who-are-we" id="WhoWeAre">
         <div className="who-are-we-main">
-          <ScrollFromLeft>
-            <ScrollRevealText>
-              <h2 className="who-are-we-head" ref={WhoWeAreRef}>
-                <span>who</span>
-              </h2>
-            </ScrollRevealText>
-          </ScrollFromLeft>
+          <div className="who-we-are-main-heading">
+            <ScrollFromLeft>
+              <ScrollRevealText>
+                <h2 className="who-are-we-head" ref={WhoWeAreRef}>
+                  <span>who</span>
+                </h2>
+              </ScrollRevealText>
+            </ScrollFromLeft>
 
-          <ScrollFromRight>
-            <ScrollRevealText>
-              <h2 className="who-are-we-head" ref={WhoWeAreRef}>
-                <span> we are</span>
-              </h2>
-            </ScrollRevealText>
-          </ScrollFromRight>
-
+            <ScrollFromRight>
+              <ScrollRevealText>
+                <h2 className="who-are-we-head" ref={WhoWeAreRef}>
+                  <span> we are</span>
+                </h2>
+              </ScrollRevealText>
+            </ScrollFromRight>
+          </div>
           <h4 className="who-are-we-subhead">
             <div className="who-are-we-subhead-line-wrapper">
               <div className="who-are-we-subhead-line" ref={lineRef}>

@@ -48,7 +48,6 @@
 
 .testimonials-heading-main {
   margin: 50px;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -60,11 +59,7 @@
 
 
 
-@keyframes scroll-reveal {
-  to {
-    background-size: 100% 100%;
-  }
-}
+
 
 
 .dark-mode .scroll-reveal {
@@ -72,29 +67,28 @@
 }
 
 
-.testimonials-main {
-  animation: slideLeft;
-  animation-timeline: view();
-  animation-duration: entry 0% cover 70%;
-}
 
 
 /* Heading styles */
 .testimonials-heading {
-  font-size: 5rem;
-  /* color: #000000; */
+  font-size: 6rem;
   margin-bottom: 10px;
   font-family: 'Dirtyline36Daysoftype2022';
   line-height: 4rem;
   font-weight: 100;
   padding-left: 40px;
   margin-top: 30px;
-  line-height: 0.2;
+  height: 40px;
 }
 
 @media screen and (max-width: 480px) {
   .testimonials-heading {
     padding-left: 30px;
+
+  }
+
+  .testimonials-heading {
+    font-size: 4rem;
   }
 }
 
@@ -167,8 +161,10 @@
 
 
   .testimonials-heading {
-    font-size: 3.5rem;
-    line-height: 3rem;
+    font-size: 4rem;
+    line-height: 0;
+    height: 0px;
+
   }
 
   .testimonial-text {
@@ -316,9 +312,6 @@
   }
 
   /* Testimonials wrapper for scrolling */
-  .testimonials-heading {
-    font-size: 3.5rem;
-  }
 
   .testimonial-text {
     font-size: 1rem;
