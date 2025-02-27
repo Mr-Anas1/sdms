@@ -46,7 +46,8 @@
   font-family: 'Dirtyline36Daysoftype2022';
   text-transform: lowercase;
   font-size: 3.5rem;
-
+  color: #000000;
+  line-height: 0.9;
 }
 
 .dark-mode .button {
@@ -150,6 +151,7 @@ textarea::placeholder {
 .dark-mode .textarea-field {
   background-color: #000000;
 }
+
 
 .input-field:focus,
 .textarea-field:focus {

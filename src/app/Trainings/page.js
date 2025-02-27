@@ -54,7 +54,7 @@ export default function Trainings() {
 
   const { scrollYProgress: scrollYProgressRight } = useScroll({
     target: refRight,
-    offset: ["start 90%", "center 50%"],
+    offset: ["start 90%", "center 80%"],
   });
 
   const rawTranslateXRight = useTransform(
@@ -83,7 +83,7 @@ export default function Trainings() {
 
   const { scrollYProgress: scrollYProgressLeft } = useScroll({
     target: refLeft,
-    offset: ["start 90%", "center 50%"],
+    offset: ["start 90%", "center 80%"],
   });
 
   const rawTranslateXLeft = useTransform(
@@ -201,7 +201,7 @@ export default function Trainings() {
             {/* First Sub-Container */}
             <div className="sub-container normal">
               {/* Image Content */}
-              <div className="image-content">
+              <div className="image-content" ref={refLeft}>
                 <motion.img
                   src="./images/test3.jpg"
                   alt="Scroll Image"
@@ -251,7 +251,7 @@ export default function Trainings() {
             {/* Second Sub-Container */}
             <div className="sub-container reverse">
               {/* Image Content */}
-              <div className="image-content">
+              <div className="image-content" ref={refRight}>
                 <motion.img
                   src="./images/test4.jpg"
                   alt="Scroll Image"
