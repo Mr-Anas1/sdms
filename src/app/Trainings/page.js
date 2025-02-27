@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     name: "Kaviya",
-    text: "The UI/UX In-Plant training was fantastic. Initially challenging, but the tutor’s expert tips simplified everything. By the end, I completed a full project confidently. It sharpened my skills and transformed my design approach. A must for aspiring designers!",
+    text: "The UI/UX In-Plant training was fantastic. Initially challenging, but the tutor’s expert tips simplified everything. It sharpened my skills and transformed my design approach. A must for aspiring designers!",
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/kaviya.jpeg",
   },
@@ -54,7 +54,7 @@ export default function Trainings() {
 
   const { scrollYProgress: scrollYProgressRight } = useScroll({
     target: refRight,
-    offset: ["start end", "center center"],
+    offset: ["start 90%", "center 50%"],
   });
 
   const rawTranslateXRight = useTransform(
@@ -83,13 +83,13 @@ export default function Trainings() {
 
   const { scrollYProgress: scrollYProgressLeft } = useScroll({
     target: refLeft,
-    offset: ["start end", "center center"],
+    offset: ["start 90%", "center 50%"],
   });
 
   const rawTranslateXLeft = useTransform(
     scrollYProgressLeft,
     [0, 1],
-    [-401.5, 0]
+    [-401, 0]
   );
   const rawRotateLeft = useTransform(scrollYProgressLeft, [0, 1], [-10, 0]);
   const rawOpacityLeft = useTransform(scrollYProgressLeft, [0, 1], [0, 1]);
@@ -143,7 +143,6 @@ export default function Trainings() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        // Mobile screen width (adjust as needed)
         setDragConstraint(-1000);
       } else {
         setDragConstraint(-1500);
@@ -311,32 +310,6 @@ export default function Trainings() {
             </h2>
           </ScrollRevealText>
         </ScrollFromLeft>
-        {/* <motion.div
-          className="testimonials-wrapper"
-          drag="x"
-          dragConstraints={{ left: dragConstraint, right: 0 }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className="testimonial-card"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="testimonial-text">"{testimonial.text}"</p>
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="testimonial-image"
-              />
-              <h3 className="testimonial-name">{testimonial.name}</h3>
-              <span className="testimonial-position">
-                {testimonial.position}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div> */}
 
         <TestimonialContainer testimonials={testimonials} />
       </div>
@@ -366,12 +339,6 @@ export default function Trainings() {
           <div className="contact-item">
             <small>Phone</small>
             <p>9345398449</p>
-          </div>
-
-          {/* Website Section */}
-          <div className="contact-item web">
-            <small>Website</small>
-            <p>sabeenadigitalmediaservices.com</p>
           </div>
         </div>
 

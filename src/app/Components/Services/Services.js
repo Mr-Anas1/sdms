@@ -225,11 +225,6 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* <p className="our-services-tag">
-        Like a constellation, our services align to create a universe of endless
-        possibilities.
-      </p> */}
-
       {/* Service Cards */}
 
       <div className="services-card">
