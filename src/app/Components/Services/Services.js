@@ -103,7 +103,7 @@ const Services = () => {
 
   const servicesData = {
     service1: {
-      imgSrc: "./images/test2.jpg",
+      imgSrc: "./images/test1.jpg",
       title: "development",
       list: [
         "Software as a Service (SaaS)",
@@ -114,7 +114,7 @@ const Services = () => {
       ],
     },
     service2: {
-      imgSrc: "./images/test1.jpg",
+      imgSrc: "./images/test2.jpg",
       title: "marketing & branding",
       list: [
         "Video Creation (from Reels to AR/VR videos)",
