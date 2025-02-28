@@ -1,12 +1,23 @@
 .testimonial-card {
     display: flex !important;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     min-height: 650px;
     padding: 20px;
     box-sizing: border-box;
     background: #fff;
     border-radius: 8px;
+    gap: 120px;
+    position: relative;
+}
+
+.testimonial-profile {
+    position: absolute;
+    bottom: 0;
+}
+
+.testimonial-text {
+    margin: 0;
 }
 
 .slick-slide {
@@ -25,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
+
     padding-bottom: 40px;
     box-sizing: border-box;
 }
@@ -43,5 +54,15 @@
 @media screen and (max-width: 768px) {
     .testimonial-card {
         min-height: 450px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .testimonial-image {
+        width: 80px;
+    }
+
+    .testimonial-card {
+        height: 500px;
     }
 }

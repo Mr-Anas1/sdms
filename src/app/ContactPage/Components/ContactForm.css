@@ -142,6 +142,13 @@ textarea::placeholder {
   color: #ffffff;
 }
 
+.dark-mode .textarea-field::placeholder {
+  color: #717171;
+}
+
+.textarea-field::placeholder {
+  color: #7F7F7F;
+}
 
 .dark-mode .textarea-field {
   background-color: #000000;

@@ -88,35 +88,6 @@ const Testimonials = () => {
         </ScrollFromRight>
       </div>
 
-      {/* <motion.div
-        ref={wrapperRef}
-        className="testimonials-wrapper"
-        drag="x"
-        dragConstraints={{ left: dragConstraint, right: 0 }}
-        whileTap={{ cursor: "grabbing" }}
-        onDragEnd={handleDragEnd}
-        animate={controls}
-      >
-        {duplicatedTestimonials.map((testimonial, index) => (
-          <motion.div
-            key={index}
-            className="testimonial-card"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <p className="testimonial-text">"{testimonial.text}"</p>
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="testimonial-image"
-            />
-            <h3 className="testimonial-name">{testimonial.name}</h3>
-            <span className="testimonial-position">{testimonial.position}</span>
-          </motion.div>
-        ))}
-      </motion.div> */}
-
       <TestimonialContainer testimonials={testimonials} />
     </div>
   );

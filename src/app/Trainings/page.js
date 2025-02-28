@@ -14,6 +14,7 @@ import ScrollRevealText from "../Components/ScrollRevealText";
 import TestimonialContainer from "../Components/TestimonialContainer/TestimonialContainer";
 import FluidCursor from "../FluidCursor";
 import ScrollFromBottom from "../Components/ScrollFromBottom";
+import ScrollFromRight from "../Components/ScrollFromRight";
 
 const testimonials = [
   {
@@ -301,7 +302,7 @@ export default function Trainings() {
         </div>
       </div>
       <div className="testimonials-container" id="testimonials">
-        <ScrollFromLeft>
+        {/* <ScrollFromLeft>
           <ScrollRevealText>
             <h2 className="testimonials-heading">
               <span>participant's</span>
@@ -309,7 +310,25 @@ export default function Trainings() {
               <span>testimony</span>
             </h2>
           </ScrollRevealText>
-        </ScrollFromLeft>
+        </ScrollFromLeft> */}
+
+        <div className="testimonials-heading-main">
+          <ScrollFromLeft>
+            <ScrollRevealText>
+              <h2 className="testimonials-heading-training">
+                <span>participant's</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromLeft>
+
+          <ScrollFromRight>
+            <ScrollRevealText>
+              <h2 className="testimonials-heading-training">
+                <span>testimony</span>
+              </h2>
+            </ScrollRevealText>
+          </ScrollFromRight>
+        </div>
 
         <TestimonialContainer testimonials={testimonials} />
       </div>

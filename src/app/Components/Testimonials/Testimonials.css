@@ -72,13 +72,12 @@
 /* Heading styles */
 .testimonials-heading {
   font-size: 6rem;
-  margin-bottom: 10px;
+  padding-top: 15px;
   font-family: 'Dirtyline36Daysoftype2022';
   line-height: 4rem;
   font-weight: 100;
   padding-left: 40px;
-  margin-top: 30px;
-  height: 40px;
+  line-height: 0.6;
 }
 
 @media screen and (max-width: 480px) {
@@ -162,8 +161,6 @@
 
   .testimonials-heading {
     font-size: 4rem;
-    line-height: 0;
-    height: 0px;
 
   }
 
@@ -204,7 +201,6 @@
 .testimonial-image {
   width: 100px;
   height: 100px;
-  /* Full width of the card */
   height: auto;
   /* Auto height to maintain aspect ratio */
   border-radius: 50%;
@@ -240,15 +236,13 @@
   /* Font size for text */
   color: #555;
   /* Grey color for text */
-  margin-bottom: 10px;
+
   /* Spacing below text */
   line-height: 1.5;
   /* Line height for readability */
   font-family: 'Syne', serif;
   text-transform: none;
   text-align: center;
-  margin-bottom: auto;
-  padding-top: 30px;
   box-sizing: border-box;
 }
 

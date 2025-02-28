@@ -306,8 +306,7 @@
 
 @media screen and (max-width: 764px) {
   .training-container-main {
-    height: 65vh;
-    margin-bottom: 140px;
+    margin-bottom: 0;
   }
 
 }
@@ -369,7 +368,7 @@
 
 .services-page-service {
   text-align: center;
-  margin: 5vh auto 60px;
+  margin: 0 auto 60px;
   width: 80%;
 }
 
@@ -478,30 +477,61 @@
 /* Testimonials container */
 .testimonials-container {
   margin: 0 auto;
-  /* Center the container */
   padding: 40px 20px;
-  /* Add padding around the container */
   background-color: var(--testimonial-container-light);
-  /* Light mode background */
   border-radius: 15px;
-  /* Rounded corners */
   box-shadow: 0 4px 20px var(--shadow-light);
-  /* Light mode shadow */
   transition: background-color 0.3s, box-shadow 0.3s;
-  /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
+.testimonials-heading-main {
+  margin: 50px;
+}
 
-/* Heading styles */
-.testimonials-heading {
-  text-align: left;
-  font-size: 5rem;
-  margin-bottom: 30px;
+@media screen and (max-width: 768px) {
+  .testimonials-heading-main {
+    margin-left: 0;
+  }
+}
+
+.testimonials-heading-training {
+  font-size: 6rem;
+  padding-top: 15px;
   font-family: 'Dirtyline36Daysoftype2022';
   line-height: 4rem;
   font-weight: 100;
-  margin-top: 80px;
+  padding-left: 40px;
+  line-height: 0.6;
 }
+
+@media screen and (max-width: 480px) {
+  .testimonials-heading-training {
+    padding-left: 0px;
+
+  }
+
+  .testimonials-heading-training {
+    font-size: 4rem;
+  }
+
+  .testimonials-container {
+    padding: 40px 5px;
+  }
+}
+
+/* Heading styles */
+/* .testimonials-heading {
+  text-align: left;
+  font-size: 5rem;
+  height: 28vh !important;
+  font-family: 'Dirtyline36Daysoftype2022';
+  line-height: 6rem;
+  font-weight: 100;
+  margin-top: 40px;
+} */
 
 /* Dark mode heading */
 
@@ -584,10 +614,10 @@
   }
 
   /* Testimonials wrapper for scrolling */
-  .testimonials-heading {
+  /* .testimonials-heading {
     font-size: 3.5rem;
     line-height: 3rem;
-  }
+  } */
 
   .testimonial-text {
     font-size: 1rem;
@@ -727,9 +757,9 @@
   }
 
   /* Testimonials wrapper for scrolling */
-  .testimonials-heading {
+  /* .testimonials-heading {
     font-size: 3.5rem;
-  }
+  } */
 
   .testimonial-text {
     font-size: 1rem;
