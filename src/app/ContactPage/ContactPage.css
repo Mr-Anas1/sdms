@@ -220,7 +220,6 @@ body.dark-mode .contact-button {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-
 }
 
 .contact-item {
@@ -280,4 +279,11 @@ body.dark-mode .contact-button {
     /* Rounded corners */
   }
 
+}
+
+@media screen and (max-width: 480px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

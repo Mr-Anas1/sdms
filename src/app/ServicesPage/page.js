@@ -13,6 +13,8 @@ import ScrollRevealText from "../Components/ScrollRevealText";
 import FluidCursor from "../FluidCursor";
 import ScrollFromRight from "../Components/ScrollFromRight";
 
+import { FaAngular } from "react-icons/fa";
+
 export default function ServicesPage() {
   const desRef1 = useRef(null);
   const desRef2 = useRef(null);
@@ -228,10 +230,6 @@ export default function ServicesPage() {
               </h2>
             </ScrollRevealText>
           </ScrollFromRight>
-
-          {/* <ScrollAnimation offset={["start 100%", "end 90%"]}>
-            <h2 className="our-expertise-head"> Our expertise</h2>{" "}
-          </ScrollAnimation> */}
         </div>
 
         <div className="cardScrollerWrapper">
@@ -362,7 +360,6 @@ export default function ServicesPage() {
           These Pillars Support excellence <br /> in the digital jungle.
         </p>
         <div className="cardScroller3">
-          {/* Dynamically rendering the cards */}
           {[
             {
               heading: "Foundational Planning",
@@ -457,7 +454,6 @@ export default function ServicesPage() {
             </div>
           ))}
 
-          {/* Duplicating the cards for infinite scroll */}
           {[
             {
               heading: "Foundational Planning",
@@ -502,11 +498,8 @@ export default function ServicesPage() {
           ].map((card, index) => (
             <div className="card" key={`duplicate-${index}`}>
               <div className="cardContent">
-                {/* Sequence number */}
                 <div className="sequenceNumber">{index + 1}</div>
-                {/* Heading */}
                 <h2 className="cardHeading">{card.heading}</h2>
-                {/* Paragraph */}
                 <p
                   className="cardDescription"
                   dangerouslySetInnerHTML={{ __html: card.description }}

@@ -207,12 +207,17 @@ const Services = () => {
         <ScrollFromLeft>
           <ScrollRevealText>
             <h2 className="servicesTitle">
-              <span>
-                our <br /> services
-              </span>
+              <span>our</span>
             </h2>
           </ScrollRevealText>
         </ScrollFromLeft>
+        <ScrollFromRight>
+          <ScrollRevealText>
+            <h2 className="servicesTitle">
+              <span>services</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromRight>
       </div>
 
       <div className="our-services-tag-container" ref={desRef2}>

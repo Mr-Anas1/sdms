@@ -36,7 +36,7 @@ const ScrollRevealText = ({ children }) => {
       ref={ref}
       style={{
         width: "fit-content",
-        padding: "5px",
+        padding: "10px",
         boxSizing: "border-box",
         backgroundRepeat: "no-repeat",
         backgroundImage: isDarkMode
@@ -46,6 +46,7 @@ const ScrollRevealText = ({ children }) => {
         backgroundSize: backgroundSize,
         WebkitBackgroundClip: "text",
         color: "transparent",
+        marginTop: "-25px",
       }}
     >
       {children}
