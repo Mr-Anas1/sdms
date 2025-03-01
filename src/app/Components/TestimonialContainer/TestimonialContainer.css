@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 968px) {
     .testimonial-profile {
-        padding-bottom: 0;
+        padding-bottom: 5px;
     }
 
     .testimonial-text {
@@ -63,6 +63,6 @@
     }
 
     .testimonial-card {
-        height: 500px;
+        height: 450px;
     }
 }

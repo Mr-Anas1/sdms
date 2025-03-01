@@ -249,7 +249,7 @@
   padding-top: 20px;
   width: 80vw;
   margin-left: 10vw;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
 
 }
 
@@ -369,12 +369,14 @@
   margin-top: 5vh;
   margin-bottom: 3vh;
   line-height: 0.9;
+  animation: riseUp 1s;
 }
 
 .services-page-service {
   text-align: center;
   margin: 0 auto 60px;
   width: 80%;
+  animation: riseUp 1s;
 }
 
 .service-page-head {

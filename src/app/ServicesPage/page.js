@@ -80,10 +80,10 @@ export default function ServicesPage() {
     setMenuOpen(!menuOpen);
   };
   const cards = [
-    "./images/laravel.png",
-    "./images/less.png",
-    "./images/angular.png",
-    "./images/bootstrap.png",
+    "./images/laravel-new.png",
+    "./images/less-new.png",
+    "./images/angular-new.png",
+    "./images/bootstrap-new.png",
   ];
   return (
     <div className="services-page">
@@ -477,60 +477,6 @@ export default function ServicesPage() {
               </div>
             ))}
           </Slider>
-
-          {/* {[
-            {
-              heading: "Foundational Planning",
-              description: `
-              Project Planning <br />
-              Expectations Setting <br />
-              Competitor Analysis <br />
-              Digital Strategy <br />
-              Contract
-            `,
-            },
-            {
-              heading: "Technology & Development",
-              description: `
-              Web Development <br />
-              Front-end Development <br />
-              Custom CMS Integrations <br />
-              E-commerce Development <br />
-              SAAS Implementation
-            `,
-            },
-            {
-              heading: "Testing & Launch",
-              description: `
-              Usability Testing <br />
-              Performance Testing <br />
-              Functionality Testing <br />
-              Security Testing <br />
-              Integration Testing
-            `,
-            },
-            {
-              heading: "Evaluate & Evolve",
-              description: `
-              Reviews <br />
-              Website optimisation <br />
-              3rd Party Evaluation <br />
-              Server performance <br />
-              Improvement
-            `,
-            },
-          ].map((card, index) => (
-            <div className="card" key={`duplicate-${index}`}>
-              <div className="cardContent">
-                <div className="sequenceNumber">{index + 1}</div>
-                <h2 className="cardHeading">{card.heading}</h2>
-                <p
-                  className="cardDescription"
-                  dangerouslySetInnerHTML={{ __html: card.description }}
-                ></p>
-              </div>
-            </div>
-          ))} */}
         </div>
       </div>
       <div className="time-to-roar-head-main">

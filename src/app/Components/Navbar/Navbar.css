@@ -483,15 +483,15 @@
 }
 
 .nav-links li:hover {
-  color: #ffd700;
+  color: #969696;
+  transition: transform 1s ease;
   transform: translate(25px, 0);
-  transition: transform 0.3s ease;
 }
 
 .navitem:hover {
-  color: #ffd700;
+  color: #969696;
   transform: translate(25px, 0);
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
 }
 
 .dark-mode .navlinks {
