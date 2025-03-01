@@ -12,10 +12,46 @@ import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollRevealText from "../Components/ScrollRevealText";
 import FluidCursor from "../FluidCursor";
 import ScrollFromRight from "../Components/ScrollFromRight";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import { FaAngular } from "react-icons/fa";
+const defaultSettings = {
+  centerMode: true,
+  centerPadding: "40px",
+  slidesToShow: 2.3,
+  slidesToScroll: 1,
+  infinite: true,
+  swipeToSlide: true,
+  speed: 400,
+  cssEase: "ease-in",
+  touchThreshold: 500,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 980,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "40px",
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "40px",
+      },
+    },
+  ],
+};
 
 export default function ServicesPage() {
+  const settings = { ...defaultSettings };
+
   const desRef1 = useRef(null);
   const desRef2 = useRef(null);
   const desRef3 = useRef(null);
@@ -88,16 +124,6 @@ export default function ServicesPage() {
           </div>
           <div className="services-extra-container">
             <div className="services-extra-content">
-              {/* <motion.div
-                  ref={desRef1}
-                  style={{ translateY: translateY1 }}
-                  className="extra-heading"
-                >
-                  develop
-                  <br />
-                  ment
-                </motion.div> */}
-
               <div className="extra-heading development-heading">
                 <div className="extra-heading-line-wrapper">
                   <ScrollAnimation offset={["start 100%", "end 100%"]}>
@@ -160,13 +186,6 @@ export default function ServicesPage() {
         </div>
         <div className="services-extra-container">
           <div className="services-extra-content">
-            {/* <motion.div
-              ref={desRef5}
-              style={{ translateY: translateY5 }}
-              className="extra-heading"
-            >
-              marketing & branding
-            </motion.div> */}
             <div className="extra-heading development-heading">
               <div className="extra-heading-line-wrapper">
                 <ScrollAnimation offset={["start 80%", "end 80%"]}>
@@ -360,101 +379,106 @@ export default function ServicesPage() {
           These Pillars Support excellence <br /> in the digital jungle.
         </p>
         <div className="cardScroller3">
-          {[
-            {
-              heading: "Foundational Planning",
-              description: `
+          <Slider {...settings}>
+            {[
+              {
+                heading: "Foundational Planning",
+                description: `
               Project Planning <br />
               Expectations Setting <br />
               Competitor Analysis <br />
               Digital Strategy <br />
               Contract
             `,
-            },
-            {
-              heading: "Technology & Development",
-              description: `
+              },
+              {
+                heading: "Technology & Development",
+                description: `
               Web Development <br />
               Front-end Development <br />
               Custom CMS Integrations <br />
               E-commerce Development <br />
               SAAS Implementation
             `,
-            },
-            {
-              heading: "Testing & Launch",
-              description: `
+              },
+              {
+                heading: "Testing & Launch",
+                description: `
               Usability Testing <br />
               Performance Testing <br />
               Functionality Testing <br />
               Security Testing <br />
               Integration Testing
             `,
-            },
-            {
-              heading: "Evaluate & Evolve",
-              description: `
+              },
+              {
+                heading: "Evaluate & Evolve",
+                description: `
               Reviews <br />
               Website optimisation <br />
               3rd Party Evaluation <br />
               Server performance <br />
               Improvement
             `,
-            },
-            {
-              heading: "Foundational Planning",
-              description: `
+              },
+              {
+                heading: "Foundational Planning",
+                description: `
               Project Planning <br />
               Expectations Setting <br />
               Competitor Analysis <br />
               Digital Strategy <br />
               Contract
             `,
-            },
-            {
-              heading: "Technology & Development",
-              description: `
+              },
+              {
+                heading: "Technology & Development",
+                description: `
               Web Development <br />
               Front-end Development <br />
               Custom CMS Integrations <br />
               E-commerce Development <br />
               SAAS Implementation
             `,
-            },
-            {
-              heading: "Testing & Launch",
-              description: `
+              },
+              {
+                heading: "Testing & Launch",
+                description: `
               Usability Testing <br />
               Performance Testing <br />
               Functionality Testing <br />
               Security Testing <br />
               Integration Testing
             `,
-            },
-            {
-              heading: "Evaluate & Evolve",
-              description: `
+              },
+              {
+                heading: "Evaluate & Evolve",
+                description: `
               Reviews <br />
               Website optimisation <br />
               3rd Party Evaluation <br />
               Server performance <br />
               Improvement
             `,
-            },
-          ].map((card, index) => (
-            <div className="card" key={index}>
-              <div className="cardContent">
-                <div className="sequenceNumber">{index + 1}</div>
-                <h2 className="cardHeading">{card.heading}</h2>
-                <p
-                  className="cardDescription"
-                  dangerouslySetInnerHTML={{ __html: card.description }}
-                ></p>
-              </div>
-            </div>
-          ))}
+              },
+            ].map((card, index) => (
+              <div className="card" key={index}>
+                <div className="cardContent">
+                  <div className="cardContent-main">
+                    <div className="sequenceNumber">{index + 1}</div>
+                    <h2 className="cardHeading">{card.heading}</h2>
+                  </div>
 
-          {[
+                  <p
+                    className="cardDescription"
+                    dangerouslySetInnerHTML={{ __html: card.description }}
+                  ></p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+
+          {/* {[
             {
               heading: "Foundational Planning",
               description: `
@@ -506,7 +530,7 @@ export default function ServicesPage() {
                 ></p>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="time-to-roar-head-main">
