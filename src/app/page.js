@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import Cursor from "./Cursor";
 import Testimonials from "./Components/Testimonials/Testimonials";
 import ScrollingText from "./Components/ScollingText/ScrollingText";
+import MainFooter from "./Components/MainFooter/MainFooter";
 
 export default function Page({ darkMode }) {
   return (
@@ -16,6 +17,7 @@ export default function Page({ darkMode }) {
       <ScrollingText />
       <Footer />
       <Contact />
+      <MainFooter />
     </div>
   );
 }

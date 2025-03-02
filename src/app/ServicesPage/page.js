@@ -20,17 +20,15 @@ import { FaLaravel } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
 
 const defaultSettings = {
-  centerMode: true,
-  centerPadding: "40px",
   slidesToShow: 2.3,
   slidesToScroll: 1,
-  infinite: true,
+  infinite: false,
   swipeToSlide: true,
   speed: 400,
   cssEase: "ease-in",
   touchThreshold: 500,
   arrows: false,
-  initialSlide: 1,
+  initialSlide: 0,
   responsive: [
     {
       breakpoint: 980,
@@ -84,7 +82,13 @@ export default function ServicesPage() {
     setMenuOpen(!menuOpen);
   };
 
-  const cards = [<FaAngular />, <FaLaravel />, <FaLess />, <FaBootstrap />];
+  const cards = [
+    { name: "Angular", icon: <FaAngular /> },
+    { name: "Laravel", icon: <FaLaravel /> },
+    { name: "Less", icon: <FaLess /> },
+    { name: "Bootstrap", icon: <FaBootstrap /> },
+  ];
+
   return (
     <div className="services-page">
       <Head>
@@ -256,24 +260,28 @@ export default function ServicesPage() {
             {/* Dynamically rendering the cards */}
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
 
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
             {/* Duplicating the cards for infinite scroll */}
             {cards.map((src, index) => (
               <div className="card" key={`duplicate-${index}`}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
           </div>
@@ -282,24 +290,28 @@ export default function ServicesPage() {
           <div className="cardScroller2">
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
 
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
             {/* Duplicating the cards for infinite scroll */}
             {cards.map((src, index) => (
               <div className="card" key={`duplicate-${index}`}>
-                <div className="card-item">{src}</div>
+                <div className="card-item">{src.icon}</div>
+                <div className="card-name">{src.name}</div>
               </div>
             ))}
           </div>

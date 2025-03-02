@@ -401,8 +401,30 @@
   object-fit: contain;
 }
 
+.card {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-item {
-  font-size: 80px;
+  font-size: 60px;
+}
+
+.card-name {
+  font-size: 34px;
+}
+
+@media screen and (max-width: 480px) {
+  .card-item {
+    font-size: 40px;
+  }
+
+  .card-name {
+    font-size: 24px;
+  }
+
 }
 
 /* Animating the scroll */
@@ -700,13 +722,23 @@
   }
 
   .our-process-heading {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 
   .our-process-text {
     font-size: 1rem;
     margin-bottom: 2vh;
   }
+
+  .cardHeading {
+    font-size: 1.5rem;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+  }
+
+
 
 
 
@@ -719,96 +751,5 @@
   }
 
 
-
-}
-
-
-
-
-
-.time-to-roar-head {
-  font-family: 'Dirtyline36Daysoftype2022';
-  font-size: 6.5rem;
-  text-align: left;
-  text-transform: lowercase;
-  margin-left: 10vw;
-  margin-top: 10vh;
-  line-height: 5rem;
-  color: transparent;
-}
-
-.time-to-roar {
-  text-align: center;
-  width: 80vw;
-  margin-left: 10vw;
-  padding-bottom: 10vh;
-
-}
-
-.horizontal-line {
-  border: 0;
-  height: 1px;
-  background: #ccc;
-  margin: 10px 0;
-}
-
-.contact-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-
-}
-
-.contact-item {
-  flex: 1;
-  text-align: center;
-}
-
-.contact-item small {
-  display: block;
-  font-size: 1.2rem;
-  color: #888;
-  margin-bottom: 5px;
-  font-family: 'Syne', serif;
-  text-transform: none;
-}
-
-.contact-item p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
-  font-family: 'Syne', serif;
-  text-transform: none;
-}
-
-.dark-mode .contact-item p {
-  color: var(--background-light);
-}
-
-@media(max-width:764px) {
-  .time-to-roar-head {
-    font-size: 4rem;
-    line-height: 3rem;
-
-  }
-
-  .contact-item small {
-    font-size: 0.5rem;
-  }
-
-  .contact-item p {
-    font-size: 0.6rem;
-  }
-
-  .web {
-    display: none;
-  }
-
-  .contact-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
 }
