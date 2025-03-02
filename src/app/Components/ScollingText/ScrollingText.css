@@ -36,11 +36,10 @@
 /* Scrolling Text Component Styles */
 
 .scrolling-text-container {
-  height: 45vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
   background-color: var(--background-light);
   /* Optional background */
   color: var(--background-dark);
@@ -57,15 +56,14 @@
   overflow: hidden;
   white-space: nowrap;
   display: flex;
-  /* Ensures proper alignment */
   align-items: center;
-  /* Centers text vertically */
+  line-height: 1;
 
 }
 
 .scroll-right,
 .scroll-left {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: bold;
   text-transform: none;
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
@@ -83,12 +81,12 @@
   color: #EDEADE;
 }
 
-/* Right-scrolling text */
 .scroll-right {
   animation: scrollRight 1000s linear infinite;
   animation-delay: 3s;
-  /* Delay before the animation starts */
+
 }
+
 
 /* Left-scrolling text */
 .scroll-left {
@@ -101,25 +99,32 @@
 @keyframes scrollLeft {
   0% {
     transform: translateX(0);
-    /* Stationary at the start */
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     /* Scroll out of view to the left */
   }
 }
 
-/* Keyframes for right-scrolling text */
+
+
 @keyframes scrollRight {
   0% {
-    transform: translateX(0);
-    /* Stationary at the start */
+    transform: translateX(-50%);
   }
 
   100% {
-    transform: translateX(-100%);
-    /* Scroll out of view to the right */
+    transform: translateX(0);
+  }
+}
+
+
+@media screen and (max-width: 1250) {
+
+  .scroll-right,
+  .scroll-left {
+    font-size: 5rem;
   }
 }
 
@@ -127,12 +132,50 @@
 
   .scroll-right,
   .scroll-left {
-    font-size: 2rem;
+    font-size: 4rem;
   }
+
+  .scrolling-text-container {
+    height: 45vh;
+  }
+
 }
 
-@media screen and (max-width: 768px) {
-  .scrolling-text-container {
-    height: 20vh;
+@media (max-width:480px) {
+
+  .scroll-right,
+  .scroll-left {
+    font-size: 2.5rem;
   }
+
+  .scrolling-text-container {
+    height: 30vh;
+  }
+
+
+}
+
+
+.scrolling-text-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Glowing Circle */
+.glowing-circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(110, 110, 109, 0.7), rgba(150, 150, 150, 0.3));
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+  transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+
+/* Show the glow on hover */
+.scrolling-text-container:hover .glowing-circle {
+  opacity: 1;
 }

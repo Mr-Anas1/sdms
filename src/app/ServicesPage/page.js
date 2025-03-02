@@ -15,6 +15,9 @@ import ScrollFromRight from "../Components/ScrollFromRight";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaAngular, FaBootstrap } from "react-icons/fa";
+import { FaLaravel } from "react-icons/fa";
+import { FaLess } from "react-icons/fa";
 
 const defaultSettings = {
   centerMode: true,
@@ -27,6 +30,7 @@ const defaultSettings = {
   cssEase: "ease-in",
   touchThreshold: 500,
   arrows: false,
+  initialSlide: 1,
   responsive: [
     {
       breakpoint: 980,
@@ -79,12 +83,8 @@ export default function ServicesPage() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const cards = [
-    "./images/laravel-new.png",
-    "./images/less-new.png",
-    "./images/angular-new.png",
-    "./images/bootstrap-new.png",
-  ];
+
+  const cards = [<FaAngular />, <FaLaravel />, <FaLess />, <FaBootstrap />];
   return (
     <div className="services-page">
       <Head>
@@ -256,102 +256,50 @@ export default function ServicesPage() {
             {/* Dynamically rendering the cards */}
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
-              </div>
-            ))}
-            {/* Duplicating the cards for infinite scroll */}
-            {cards.map((src, index) => (
-              <div className="card" key={`duplicate-${index}`}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
+                <div className="card-item">{src}</div>
               </div>
             ))}
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
+                <div className="card-item">{src}</div>
+              </div>
+            ))}
+
+            {cards.map((src, index) => (
+              <div className="card" key={index}>
+                <div className="card-item">{src}</div>
               </div>
             ))}
             {/* Duplicating the cards for infinite scroll */}
             {cards.map((src, index) => (
               <div className="card" key={`duplicate-${index}`}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
+                <div className="card-item">{src}</div>
               </div>
             ))}
           </div>
         </div>
         <div className="cardScrollerWrapper2">
           <div className="cardScroller2">
-            {/* Dynamically rendering the cards */}
             {cards.map((src, index) => (
               <div className="card" key={index}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
+                <div className="card-item">{src}</div>
+              </div>
+            ))}
+            {cards.map((src, index) => (
+              <div className="card" key={index}>
+                <div className="card-item">{src}</div>
+              </div>
+            ))}
+
+            {cards.map((src, index) => (
+              <div className="card" key={index}>
+                <div className="card-item">{src}</div>
               </div>
             ))}
             {/* Duplicating the cards for infinite scroll */}
             {cards.map((src, index) => (
               <div className="card" key={`duplicate-${index}`}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
-              </div>
-            ))}
-            {cards.map((src, index) => (
-              <div className="card" key={index}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
-              </div>
-            ))}
-            {/* Duplicating the cards for infinite scroll */}
-            {cards.map((src, index) => (
-              <div className="card" key={`duplicate-${index}`}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
-              </div>
-            ))}
-            {cards.map((src, index) => (
-              <div className="card" key={index}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
-              </div>
-            ))}
-            {/* Duplicating the cards for infinite scroll */}
-            {cards.map((src, index) => (
-              <div className="card" key={`duplicate-${index}`}>
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="cardImage"
-                />
+                <div className="card-item">{src}</div>
               </div>
             ))}
           </div>

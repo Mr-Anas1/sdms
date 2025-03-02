@@ -365,6 +365,7 @@
 /* The main scrolling container */
 .cardScroller {
   display: flex;
+  width: max-content;
   animation: scroll-cards 20s linear infinite;
   margin-bottom: 2vh;
 }
@@ -400,6 +401,10 @@
   object-fit: contain;
 }
 
+.card-item {
+  font-size: 80px;
+}
+
 /* Animating the scroll */
 @keyframes scroll-cards {
   0% {
@@ -421,8 +426,8 @@
 /* The main scrolling container for the second wrapper */
 .cardScroller2 {
   display: flex;
+  width: max-content;
   animation: scroll-cards-reverse 20s linear infinite;
-  /* Reverse scroll */
   margin-bottom: 2vh;
 }
 
