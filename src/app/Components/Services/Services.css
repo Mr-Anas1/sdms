@@ -256,11 +256,13 @@
   }
 
   .who-are-we-subhead {
-    font-size: 1.2rem;
+    font-size: 1.29rem;
+    margin-top: 0;
   }
 
   .who-are-we-container {
     justify-content: flex-start;
+    margin-top: 0;
   }
 
   .who-are-we-tag {

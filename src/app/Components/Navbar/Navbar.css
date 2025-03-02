@@ -102,21 +102,22 @@
   cursor: pointer;
 }
 
-.menu span {
+.menu p {
   margin-right: 10px;
   font-size: 16px;
   color: #000000;
+  font-weight: 500;
   /* Set color for visibility */
 }
 
-.dark-mode .menu span,
+.dark-mode .menu p,
 .dark-mode .line {
   color: #ffffff;
   /* Adjust color for dark mode */
 }
 
 
-.menu span {
+.menu p {
   margin-right: 10px;
   font-size: 16px;
 }
@@ -563,4 +564,11 @@
   .menu-container {
     padding: 1em 2em 2em 2em;
   }
+
+  .logo-main {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+
 }

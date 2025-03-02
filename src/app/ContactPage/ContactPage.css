@@ -1,3 +1,15 @@
+@keyframes riseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Home Heading */
 .home-heading {
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
@@ -9,6 +21,7 @@
   margin-top: 5vh;
   font-weight: 100;
   letter-spacing: -2px;
+  animation: riseUp 1s;
 }
 
 .dark-mode .home-heading {
@@ -26,6 +39,7 @@
   color: #000;
   /* Default color for light mode */
   text-align: center;
+  animation: riseUp 1s;
 }
 
 /* Responsive Heading Size */
@@ -51,6 +65,7 @@
   /* Default color for light mode */
   display: flex;
   justify-content: center;
+  animation: riseUp 1s;
 
 }
 

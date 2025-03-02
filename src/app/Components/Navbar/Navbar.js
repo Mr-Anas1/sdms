@@ -49,7 +49,7 @@ export default function Navbar({
       {/* Menu Icon */}
       <div className="right">
         <div className="menu" onClick={toggleMenu}>
-          <span>menu</span>
+          <p>menu</p>
           <div className="hamburger">
             <div className="line"></div>
             <div className="line"></div>

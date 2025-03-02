@@ -379,6 +379,9 @@
   animation: riseUp 1s;
 }
 
+
+
+
 .service-page-head {
   font-size: 1.8rem;
   margin-bottom: 5vh;
@@ -527,20 +530,16 @@
   .testimonials-container {
     padding: 40px 5px;
   }
+
+  .service-page-head {
+    font-size: 1rem;
+  }
+
+  .service-page-text {
+    font-size: 1rem;
+  }
 }
 
-/* Heading styles */
-/* .testimonials-heading {
-  text-align: left;
-  font-size: 5rem;
-  height: 28vh !important;
-  font-family: 'Dirtyline36Daysoftype2022';
-  line-height: 6rem;
-  font-weight: 100;
-  margin-top: 40px;
-} */
-
-/* Dark mode heading */
 
 
 

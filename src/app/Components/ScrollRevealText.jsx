@@ -22,7 +22,7 @@ const ScrollRevealText = ({ children }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "1% center"],
+    offset: ["start end", "1% 60%"],
   });
 
   const backgroundSize = useTransform(
@@ -36,7 +36,10 @@ const ScrollRevealText = ({ children }) => {
       ref={ref}
       style={{
         width: "fit-content",
-        padding: "10px",
+        paddingTop: "10px",
+        paddingRight: "10px",
+        paddingBottom: "10px",
+        paddingLeft: "0px",
         boxSizing: "border-box",
         backgroundRepeat: "no-repeat",
         backgroundImage: isDarkMode

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useScroll, useTransform, useSpring } from "framer-motion";
 
-export const useScrollFromLeft = (offset = ["start 80%", "end 60%"]) => {
+export const useScrollFromLeft = (offset = ["start 100%", "end 60%"]) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
