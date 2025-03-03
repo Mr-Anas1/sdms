@@ -35,7 +35,7 @@ const MainFooter = () => {
           {/* Phone Number Section */}
           <div className="contact-item">
             <small>Phone</small>
-            <p>9345398449</p>
+            <p>+91 9345398449</p>
           </div>
           <div className="contact-item">
             <small>Address</small>

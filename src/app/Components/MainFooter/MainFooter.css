@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 20px;
+    gap: 25px;
 
 }
 
@@ -40,22 +40,26 @@
 .contact-item small {
     display: block;
     font-size: 1.2rem;
-    color: #888;
-    margin-bottom: 5px;
+    color: #000;
     font-family: 'Syne', serif;
     text-transform: none;
 }
 
+
+
 .contact-item p {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+    color: #000;
     margin: 0;
     font-family: 'Syne', serif;
     text-transform: none;
 }
 
 .dark-mode .contact-item p {
+    color: var(--background-light);
+}
+
+.dark-mode .contact-item small {
     color: var(--background-light);
 }
 
@@ -92,12 +96,10 @@
 
     .contact-item small {
         font-size: 16px;
-        color: #333;
     }
 
     .contact-item p {
         font-size: 22px;
-        color: #888;
     }
 
     .web {
