@@ -22,7 +22,7 @@ const ScrollRevealText = ({ children }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "1% 60%"],
+    offset: ["start end", "1% 50%"],
   });
 
   const backgroundSize = useTransform(

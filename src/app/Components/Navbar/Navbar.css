@@ -570,5 +570,9 @@
     font-weight: 500;
   }
 
+  .toggle-button {
+    font-size: 1.3rem;
+  }
+
 
 }

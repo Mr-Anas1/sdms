@@ -4,8 +4,10 @@ import React from "react";
 import "./MainFooter.css";
 import ScrollFromLeft from "../ScrollFromLeft";
 import ScrollRevealText from "../ScrollRevealText";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
 
 const MainFooter = () => {
+  const year = new Date().getFullYear();
   return (
     <div className="mainFooter">
       <div className="time-to-roar-head-main">
@@ -35,16 +37,26 @@ const MainFooter = () => {
             <small>Phone</small>
             <p>9345398449</p>
           </div>
-
-          {/* Website Section */}
-          {/* <div className="contact-item web">
-            <small>Website</small>
-            <p>sabeenadigitalmediaservices.com</p>
-          </div> */}
+          <div className="contact-item">
+            <small>Address</small>
+            <p>F-2, MSS Enclave, Basha Street, Choolaimedu</p>
+          </div>
         </div>
 
         {/* Bottom Horizontal Line */}
         <hr className="horizontal-line" />
+
+        <div className="footer-end">
+          <div className="copyright">
+            <p>© {year} SDMS</p>
+          </div>
+          <div
+            className="up-arrow"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <FaRegArrowAltCircleUp />
+          </div>
+        </div>
       </div>
     </div>
   );

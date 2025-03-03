@@ -18,6 +18,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaAngular, FaBootstrap } from "react-icons/fa";
 import { FaLaravel } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
+import MainFooter from "../Components/MainFooter/MainFooter";
 
 const defaultSettings = {
   slidesToShow: 2.3,
@@ -381,46 +382,6 @@ export default function ServicesPage() {
               Improvement
             `,
               },
-              {
-                heading: "Foundational Planning",
-                description: `
-              Project Planning <br />
-              Expectations Setting <br />
-              Competitor Analysis <br />
-              Digital Strategy <br />
-              Contract
-            `,
-              },
-              {
-                heading: "Technology & Development",
-                description: `
-              Web Development <br />
-              Front-end Development <br />
-              Custom CMS Integrations <br />
-              E-commerce Development <br />
-              SAAS Implementation
-            `,
-              },
-              {
-                heading: "Testing & Launch",
-                description: `
-              Usability Testing <br />
-              Performance Testing <br />
-              Functionality Testing <br />
-              Security Testing <br />
-              Integration Testing
-            `,
-              },
-              {
-                heading: "Evaluate & Evolve",
-                description: `
-              Reviews <br />
-              Website optimisation <br />
-              3rd Party Evaluation <br />
-              Server performance <br />
-              Improvement
-            `,
-              },
             ].map((card, index) => (
               <div className="card" key={index}>
                 <div className="cardContent">
@@ -439,45 +400,8 @@ export default function ServicesPage() {
           </Slider>
         </div>
       </div>
-      <div className="time-to-roar-head-main">
-        <ScrollFromLeft>
-          <ScrollRevealText>
-            <h2 className="time-to-roar-head">
-              <span>time to</span>
-              <br /> <span>roar!</span>
-            </h2>
-          </ScrollRevealText>
-        </ScrollFromLeft>
-      </div>
 
-      <div className="time-to-roar">
-        {/* Top Horizontal Line */}
-        <hr className="horizontal-line" />
-
-        {/* Middle Content */}
-        <div className="contact-row">
-          {/* Email Section */}
-          <div className="contact-item">
-            <small>Email</small>
-            <p>sabeenadigitalms@gmail.com</p>
-          </div>
-
-          {/* Phone Number Section */}
-          <div className="contact-item">
-            <small>Phone</small>
-            <p>9345398449</p>
-          </div>
-
-          {/* Website Section */}
-          {/* <div className="contact-item web">
-            <small>Website</small>
-            <p>sabeenadigitalmediaservices.com</p>
-          </div> */}
-        </div>
-
-        {/* Bottom Horizontal Line */}
-        <hr className="horizontal-line" />
-      </div>
+      <MainFooter />
       <FluidCursor />
     </div>
   );

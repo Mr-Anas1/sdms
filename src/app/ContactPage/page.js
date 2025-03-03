@@ -9,6 +9,7 @@ import ContactForm from "./Components/ContactForm";
 import FluidCursor from "../FluidCursor";
 import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollRevealText from "../Components/ScrollRevealText";
+import MainFooter from "../Components/MainFooter/MainFooter";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(true);
@@ -72,44 +73,7 @@ export default function ContactPage() {
       </div>
       <ContactForm />
 
-      <div className="time-to-roar-head-main">
-        <ScrollFromLeft>
-          <ScrollRevealText>
-            <h2 className="time-to-roar-head">
-              <span>time to</span>
-              <br /> <span>roar!</span>
-            </h2>
-          </ScrollRevealText>
-        </ScrollFromLeft>
-      </div>
-      <div className="time-to-roar">
-        {/* Top Horizontal Line */}
-        <hr className="horizontal-line" />
-
-        {/* Middle Content */}
-        <div className="contact-row">
-          {/* Email Section */}
-          <div className="contact-item">
-            <small>Email</small>
-            <p>sabeenadigitalms@gmail.com</p>
-          </div>
-
-          {/* Phone Number Section */}
-          <div className="contact-item">
-            <small>Phone</small>
-            <p>9345398449</p>
-          </div>
-
-          {/* Website Section */}
-          {/* <div className="contact-item web">
-            <small>Website</small>
-            <p>sabeenadigitalmediaservices.com</p>
-          </div> */}
-        </div>
-
-        {/* Bottom Horizontal Line */}
-        <hr className="horizontal-line" />
-      </div>
+      <MainFooter />
     </div>
   );
 }

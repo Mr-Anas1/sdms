@@ -520,33 +520,7 @@
 
 }
 
-.scroll-reveal {
-  width: fit-content;
-  padding: 5px;
-  box-sizing: border-box;
-  -webkit-background-clip: text;
-  background-repeat: no-repeat;
-  background-color: #717171 !important;
-  background-size: 0% 100%;
-  background-image: linear-gradient(90deg, #000000, #000000);
-  animation: scroll-reveal linear forwards;
-  animation-timeline: view();
-  animation-range-start: cover 0%;
-  animation-range-end: contain 30vh;
-}
 
-
-
-
-@keyframes scroll-reveal {
-  to {
-    background-size: 100% 100%;
-  }
-}
-
-.dark-mode .scroll-reveal {
-  background-image: linear-gradient(90deg, #ffffff, #ffffff) !important;
-}
 
 .our-process-heading-main {
   display: flex;

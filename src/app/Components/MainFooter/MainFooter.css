@@ -13,7 +13,7 @@
     text-align: center;
     width: 80vw;
     margin-left: 10vw;
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
 
 }
 
@@ -21,20 +21,20 @@
     border: 0;
     height: 1px;
     background: #ccc;
-    margin: 10px 0;
+    margin: 40px 0;
 }
 
 .contact-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     gap: 20px;
 
 }
 
 .contact-item {
     flex: 1;
-    text-align: center;
+    text-align: start;
 }
 
 .contact-item small {
@@ -59,6 +59,24 @@
     color: var(--background-light);
 }
 
+.footer-end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    margin-top: 25px;
+
+}
+
+.copyright p {
+    font-size: 14px;
+}
+
+.up-arrow {
+    font-size: 28px;
+    cursor: pointer;
+}
+
 @media(max-width:764px) {
     .time-to-roar-head {
         font-size: 4rem;
@@ -66,12 +84,18 @@
 
     }
 
+    .contact-item {
+        text-align: start;
+    }
+
     .contact-item small {
-        font-size: 0.5rem;
+        font-size: 16px;
+        color: #333;
     }
 
     .contact-item p {
-        font-size: 0.6rem;
+        font-size: 22px;
+        color: #888;
     }
 
     .web {
