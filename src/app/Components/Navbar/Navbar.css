@@ -561,6 +561,12 @@
 }
 
 @media screen and (max-width: 480px) {
+
+  .dark-mode .logo-main {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
   .menu-container {
     padding: 1em 2em 2em 2em;
   }
