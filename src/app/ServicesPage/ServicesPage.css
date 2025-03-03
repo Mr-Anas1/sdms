@@ -417,6 +417,12 @@
 }
 
 @media screen and (max-width: 480px) {
+
+  .services-page-heading {
+    font-size: 2rem !important;
+
+  }
+
   .card-item {
     font-size: 40px;
   }
