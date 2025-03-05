@@ -82,7 +82,7 @@ const Testimonials = () => {
         <ScrollFromRight>
           <ScrollRevealText>
             <h2 className="testimonials-heading">
-              <span>testimony</span>
+              <span>view</span>
             </h2>
           </ScrollRevealText>
         </ScrollFromRight>

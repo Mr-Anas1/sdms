@@ -18,6 +18,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaAngular, FaBootstrap } from "react-icons/fa";
 import { FaLaravel } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { DiJqueryLogo } from "react-icons/di";
 import MainFooter from "../Components/MainFooter/MainFooter";
 
 const defaultSettings = {
@@ -88,6 +92,10 @@ export default function ServicesPage() {
     { name: "Laravel", icon: <FaLaravel /> },
     { name: "Less", icon: <FaLess /> },
     { name: "Bootstrap", icon: <FaBootstrap /> },
+    { name: "JQuery", icon: <DiJqueryLogo /> },
+    { name: "Javascript", icon: <IoLogoJavascript /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "Html", icon: <FaHtml5 /> },
   ];
 
   return (
