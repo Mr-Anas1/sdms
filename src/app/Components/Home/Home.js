@@ -8,15 +8,12 @@ import "./Home.css";
 import FluidCursor from "@/app/FluidCursor";
 export default function Home() {
   const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 5000); // Show the loading screen for 5 seconds (video duration)
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -37,32 +34,6 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/* 
-  {loading ? (
-    <div className="loading-screen">
-      <video
-        id="intro-video"
-        className="video"
-        autoPlay
-        muted
-        playsInline
-        onEnded={() => setLoading(false)}
-      >
-        <source src="./images/intro.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div id="logo-and-title" className="fade-in">
-        <img src="./images/logo.jpeg" alt="Logo" className="logo zoom-in" />
-        <h1 className="glow-text zoom-in">
-          Sabeena Digital Media Services
-        </h1>
-      </div>
-    </div>
-  ) : (
-    <div className="main-content"></div>
-  )}
-*/}
 
       <div className={`home ${darkMode ? "dark" : ""}`} id="home">
         <Navbar

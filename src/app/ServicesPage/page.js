@@ -75,8 +75,12 @@ export default function ServicesPage() {
   const { translateY: translateY6 } = useScrollAnimation(desRef6);
   const { translateY: translateY7 } = useScrollAnimation(desRef7);
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

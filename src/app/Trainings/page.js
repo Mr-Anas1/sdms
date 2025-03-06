@@ -112,7 +112,7 @@ export default function Trainings() {
     mass: 1,
   });
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [form1, setForm1] = useState("");
   const [form2, setForm2] = useState("");
@@ -126,6 +126,10 @@ export default function Trainings() {
       });
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark-mode", !darkMode);
@@ -134,12 +138,7 @@ export default function Trainings() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const cards = [
-    "./images/laravel.png",
-    "./images/less.png",
-    "./images/angular.png",
-    "./images/bootstrap.png",
-  ];
+
   const [dragConstraint, setDragConstraint] = useState(-1500); // Default for desktop
 
   useEffect(() => {
@@ -315,7 +314,7 @@ export default function Trainings() {
           <ScrollFromRight>
             <ScrollRevealText>
               <h2 className="testimonials-heading-training">
-                <span>testimony</span>
+                <span>view</span>
               </h2>
             </ScrollRevealText>
           </ScrollFromRight>
