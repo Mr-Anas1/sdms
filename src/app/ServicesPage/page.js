@@ -15,7 +15,7 @@ import ScrollFromRight from "../Components/ScrollFromRight";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaAngular, FaBootstrap } from "react-icons/fa";
+import { FaAngular, FaBootstrap, FaWix, FaWordpress } from "react-icons/fa";
 import { FaLaravel } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
@@ -96,6 +96,8 @@ export default function ServicesPage() {
     { name: "Javascript", icon: <IoLogoJavascript /> },
     { name: "React", icon: <FaReact /> },
     { name: "Html", icon: <FaHtml5 /> },
+    { name: "Wix", icon: <FaWix /> },
+    { name: "Wordpress", icon: <FaWordpress /> },
   ];
 
   return (

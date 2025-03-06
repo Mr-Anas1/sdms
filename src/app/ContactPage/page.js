@@ -13,15 +13,12 @@ import MainFooter from "../Components/MainFooter/MainFooter";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000); // Show the loading screen for 5 seconds (video duration)
-    return () => clearTimeout(timer);
-  }, []);
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

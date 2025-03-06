@@ -366,8 +366,8 @@
 .cardScroller {
   display: flex;
   width: max-content;
-  animation: scroll-cards 20s linear infinite;
-  margin-bottom: 2vh;
+  animation: scroll-cards 35s linear infinite;
+  margin-bottom: 10px;
 }
 
 /* Flexbox for card layout */
@@ -455,7 +455,7 @@
 .cardScroller2 {
   display: flex;
   width: max-content;
-  animation: scroll-cards-reverse 20s linear infinite;
+  animation: scroll-cards-reverse 35s linear infinite;
   margin-bottom: 2vh;
 }
 

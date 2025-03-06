@@ -26,18 +26,15 @@
 
 .dark-mode .home-heading {
   color: var(--highlight-color);
-  /* Highlight color for dark mode */
 }
 
 /* Paragraph Styling */
 .home-desc {
   font-size: 1rem;
-  /* Minimal font size for readability */
   font-family: 'Syne', serif;
   margin: 10px 20px;
   line-height: 1.5;
   color: #000;
-  /* Default color for light mode */
   text-align: center;
   animation: riseUp 1s;
 }
