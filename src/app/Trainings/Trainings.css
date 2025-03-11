@@ -236,6 +236,20 @@
   margin-bottom: 100px;
 }
 
+@media screen and (max-width: 1250px) {
+  .services-page-heading {
+    font-size: 5rem !important;
+  }
+
+  .service-page-head {
+    font-size: 1.4rem !important;
+  }
+
+  .service-page-text {
+    font-size: 1.2rem !important;
+  }
+}
+
 @media screen and (max-width: 968px) {
   .services-page-heading {
     font-size: 4rem !important;

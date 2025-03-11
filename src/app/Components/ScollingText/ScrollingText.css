@@ -175,7 +175,13 @@
 }
 
 
-/* Show the glow on hover */
 .scrolling-text-container:hover .glowing-circle {
   opacity: 1;
+}
+
+
+@media screen and (max-width: 480px) {
+  .scrolling-text-container:hover .glowing-circle {
+    opacity: 0 !important;
+  }
 }

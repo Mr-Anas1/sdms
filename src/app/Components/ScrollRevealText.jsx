@@ -38,7 +38,7 @@ const ScrollRevealText = ({ children }) => {
         width: "fit-content",
         paddingTop: "10px",
         paddingRight: "10px",
-        paddingBottom: "10px",
+        paddingBottom: "15px",
         paddingLeft: "0px",
         boxSizing: "border-box",
         backgroundRepeat: "no-repeat",
