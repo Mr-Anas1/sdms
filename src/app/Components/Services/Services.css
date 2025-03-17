@@ -256,7 +256,7 @@
   }
 
   .who-are-we-subhead {
-    font-size: 1.29rem;
+    font-size: 1.9rem;
     margin-top: 0;
   }
 
@@ -422,6 +422,10 @@
   /* Subtle lift effect on hover */
 }
 
+.subhead-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 1250px) {
   .services-card {
     gap: 10px;
@@ -549,6 +553,20 @@
 @media screen and (max-width: 480px) {
   .services-text-head {
     font-size: 2rem;
-
   }
+
+  .subhead-main {
+    display: none !important;
+  }
+
+  .subhead-mobile {
+    display: block !important;
+  }
+
+  @media screen and (max-width: 380px) {
+    .who-are-we-subhead {
+      font-size: 1.5rem;
+    }
+  }
+
 }

@@ -156,6 +156,7 @@ const Services = () => {
             <div className="who-are-we-subhead-line-wrapper">
               <div className="who-are-we-subhead-line" ref={lineRef}>
                 <motion.div
+                  className="subhead-main"
                   style={{
                     translateY: translateYLine,
                   }}
@@ -167,6 +168,7 @@ const Services = () => {
             <div className="who-are-we-subhead-line-wrapper">
               <div className="who-are-we-subhead-line" ref={lineRef}>
                 <motion.div
+                  className="subhead-main"
                   style={{
                     translateY: translateYLine,
                   }}
@@ -178,11 +180,55 @@ const Services = () => {
             <div className="who-are-we-subhead-line-wrapper">
               <div className="who-are-we-subhead-line" ref={lineRef}>
                 <motion.div
+                  className="subhead-main"
                   style={{
                     translateY: translateYLine,
                   }}
                 >
                   the stars
+                </motion.div>
+              </div>
+            </div>
+          </h4>
+
+          <h4 className="who-are-we-subhead ">
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  className="subhead-mobile"
+                  style={{ translateY: translateYLine }}
+                >
+                  SDMS® use cutting-edge
+                </motion.div>
+              </div>
+            </div>
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  className="subhead-mobile"
+                  style={{ translateY: translateYLine }}
+                >
+                  technology to craft
+                </motion.div>
+              </div>
+            </div>
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  className="subhead-mobile"
+                  style={{ translateY: translateYLine }}
+                >
+                  your brand’s journey
+                </motion.div>
+              </div>
+            </div>
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  className="subhead-mobile"
+                  style={{ translateY: translateYLine }}
+                >
+                  through the stars
                 </motion.div>
               </div>
             </div>
