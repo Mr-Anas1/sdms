@@ -51,7 +51,12 @@ const Footer = () => {
         <div className="social-media">
           <div
             className="social-row"
-            onClick={() => window.open("https://linkedin.com/", "_blank")}
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/company/sabeena-digital-media-services/posts/?feedView=all",
+                "_blank"
+              )
+            }
           >
             <p className="social-heading">LinkedIn</p>
             <div className="social-icon">
@@ -66,7 +71,12 @@ const Footer = () => {
 
           <div
             className="social-row"
-            onClick={() => window.open("https://instagram.com/", "_blank")}
+            onClick={() =>
+              window.open(
+                "https://www.instagram.com/sabeena.digital_media/",
+                "_blank"
+              )
+            }
           >
             <p className="social-heading">Instagram</p>
             <div className="social-icon">
@@ -83,10 +93,10 @@ const Footer = () => {
             className="social-row"
             onClick={() => window.open("https://facebook.com/", "_blank")}
           >
-            <p className="social-heading">Facebook</p>
+            <p className="social-heading">Whatsapp</p>
             <div className="social-icon">
               <img
-                src="./images/facebook.svg"
+                src="./images/whatsapp.svg"
                 alt="Facebook Icon"
                 className="icon"
               />

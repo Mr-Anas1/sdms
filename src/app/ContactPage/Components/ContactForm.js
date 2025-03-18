@@ -10,19 +10,18 @@ export default function ContactForm() {
     const updateClock = () => {
       const now = new Date();
       const options = {
-        hour: '2-digit',
-        minute: '2-digit',
+        hour: "2-digit",
+        minute: "2-digit",
         hour12: true,
-        timeZone: 'Asia/Kolkata', // Set the timezone to IST
+        timeZone: "Asia/Kolkata", // Set the timezone to IST
       };
-      const indianTime = now.toLocaleTimeString('en-US', options) + " IST";
+      const indianTime = now.toLocaleTimeString("en-US", options) + " IST";
       setCurrentTime(indianTime);
     };
-  
+
     const interval = setInterval(updateClock, 1000);
     return () => clearInterval(interval);
   }, []);
-  
 
   return (
     <div className="contact-form-container">
@@ -88,18 +87,22 @@ export default function ContactForm() {
               />
             </div>
             <div>
-            <label className="label">Project Type</label>
-            <select className="input-field" defaultValue="">
-              <option value="" disabled>
-                Select a project type
-              </option>
-              <option value="branding">Branding</option>
-              <option value="design">Design</option>
-              <option value="development">Development</option>
-              <option value="design-and-development">Design and Development</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+              <label className="label">Project Type</label>
+              <select className="input-field" defaultValue="">
+                <option value="" disabled>
+                  Select a project type
+                </option>
+
+                <option value="marketing">Social Media Marketing</option>
+                <option value="branding">Branding</option>
+                <option value="development">Web or App Development</option>
+                <option value="production">Video Production</option>
+                <option value="design">Graphic Design</option>
+                <option value="ad">Ad Production</option>
+                <option value="writing">Copy Writing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
 
             <div>
               <label className="label">Project Budget </label>

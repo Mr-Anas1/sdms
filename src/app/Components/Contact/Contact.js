@@ -135,6 +135,7 @@ export default function Contact() {
             <option value="Event Marketing and Training Solutions">
               Event Marketing and Training Solutions
             </option>
+            <option value="other">Other</option>
           </select>
 
           {/* Message Field */}

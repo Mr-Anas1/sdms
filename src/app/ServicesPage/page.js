@@ -247,7 +247,6 @@ export default function ServicesPage() {
               Videos (AR/VR Videos, Reels, Shorts, YT full length videos,
               Voiceover Narratives) <br />
               Graphic designs & Mockups <br />
-              Product Packaging / Marketing Collateral(s) Design <br />
             </p>
           </motion.div>
         </div>

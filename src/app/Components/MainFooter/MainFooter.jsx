@@ -39,7 +39,10 @@ const MainFooter = () => {
           </div>
           <div className="contact-item">
             <small>Address</small>
-            <p>F-2, MSS Enclave, Basha Street, Choolaimedu</p>
+            <p>
+              F-2, MSS Enclave, Basha Street, Choolaimedu, Chennai,
+              Tamil Nadu, India
+            </p>
           </div>
         </div>
 
