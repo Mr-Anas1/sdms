@@ -40,8 +40,8 @@ const MainFooter = () => {
           <div className="contact-item">
             <small>Address</small>
             <p>
-              F-2, MSS Enclave, Basha Street, Choolaimedu, Chennai,
-              Tamil Nadu, India
+              F-2, MSS Enclave, Basha Street, Choolaimedu, Chennai, Tamil Nadu,
+              India
             </p>
           </div>
         </div>

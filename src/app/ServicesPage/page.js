@@ -66,6 +66,9 @@ export default function ServicesPage() {
   const desRef5 = useRef(null);
   const desRef6 = useRef(null);
   const desRef7 = useRef(null);
+  const desRef8 = useRef(null);
+  const desRef9 = useRef(null);
+  const desRef10 = useRef(null);
 
   const { translateY: translateY1 } = useScrollAnimation(desRef1);
   const { translateY: translateY2 } = useScrollAnimation(desRef2);
@@ -74,6 +77,9 @@ export default function ServicesPage() {
   const { translateY: translateY5 } = useScrollAnimation(desRef5);
   const { translateY: translateY6 } = useScrollAnimation(desRef6);
   const { translateY: translateY7 } = useScrollAnimation(desRef7);
+  const { translateY: translateY8 } = useScrollAnimation(desRef8);
+  const { translateY: translateY9 } = useScrollAnimation(desRef9);
+  const { translateY: translateY10 } = useScrollAnimation(desRef10);
 
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -247,6 +253,56 @@ export default function ServicesPage() {
               Videos (AR/VR Videos, Reels, Shorts, YT full length videos,
               Voiceover Narratives) <br />
               Graphic designs & Mockups <br />
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="services-extra-container">
+          <div className="services-extra-content">
+            <div className="extra-heading event-heading">
+              <div className="extra-heading-line-wrapper">
+                <ScrollAnimation offset={["start 100%", "end 100%"]}>
+                  <div className="extra-heading">event</div>
+                </ScrollAnimation>
+              </div>
+              <div className="extra-heading-line-wrapper">
+                <ScrollAnimation offset={["start 100%", "end 100%"]}>
+                  <div className="extra-heading">management</div>
+                </ScrollAnimation>
+              </div>
+            </div>
+
+            <motion.div
+              ref={desRef8}
+              style={{ translateY: translateY8 }}
+              className="extra-text"
+            >
+              With expertise in hosting 20+ programs across India & the US, we
+              provide end-to-end event management for corporates, non-profits,
+              and educational institutions—from hackathons to summer/winter
+              camps, ensuring seamless execution and marketing.
+            </motion.div>
+          </div>
+
+          <motion.div ref={desRef9} style={{ translateY: translateY9 }}>
+            <p className="extra-text-para">
+              Our Event Management Services Include: Registration Outsourcing,
+              Event Marketing & Promotions, Keynote Speakers & Expert Trainers
+              Outsourcing.
+            </p>
+          </motion.div>
+
+          <motion.div
+            ref={desRef10}
+            style={{ translateY: translateY10 }}
+            className="service-options"
+          >
+            <p className="service-options-p">
+              Hosting Hackathons <br />
+              Corporate Training Sessions <br />
+              Soft Skills Training for Colleges & Professionals <br />
+              Technical & Industry-Specific College Training Programs <br />
+              Summer & Winter Camps <br />
             </p>
           </motion.div>
         </div>

@@ -197,6 +197,13 @@
   margin-top: 50px;
   padding-left: 30px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.brochure {
+  align-self: start;
 }
 
 .servicesTitle span {
@@ -425,6 +432,15 @@
 .subhead-mobile {
   display: none;
 }
+
+
+
+.who-are-we-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 
 @media screen and (max-width: 1250px) {
   .services-card {

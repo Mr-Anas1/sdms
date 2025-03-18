@@ -244,6 +244,11 @@ const Services = () => {
             powerful websites and apps that leave a lasting impact. Our
             expertise in the latest digital trends ensures your brand orbits
             success, expanding across the universe of possibilities.
+            <a href="/brochure.pdf" download>
+              <button className="contact-button brochure">
+                Download Brochure
+              </button>
+            </a>
           </motion.div>
         </div>
       </div>
