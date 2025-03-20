@@ -279,8 +279,8 @@ export default function ServicesPage() {
             >
               With expertise in hosting 20+ programs across India & the US, we
               provide end-to-end event management for corporates, non-profits,
-              and educational institutions—from hackathons to summer/winter
-              camps, ensuring seamless execution and marketing.
+              and educational institutions ensuring seamless execution and
+              marketing.
             </motion.div>
           </div>
 
@@ -300,7 +300,6 @@ export default function ServicesPage() {
             <p className="service-options-p">
               Hosting Hackathons <br />
               Corporate Training Sessions <br />
-              Soft Skills Training for Colleges & Professionals <br />
               Technical & Industry-Specific College Training Programs <br />
               Summer & Winter Camps <br />
             </p>

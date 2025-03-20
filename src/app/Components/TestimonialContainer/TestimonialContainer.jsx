@@ -40,11 +40,14 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
           <p className="testimonial-text">{testimonial.text}</p>
 
           <div className="testimonial-profile">
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="testimonial-image"
-            />
+            <div className="img-container">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="testimonial-image"
+              />
+            </div>
+
             <h3 className="testimonial-name">{testimonial.name}</h3>
             <span className="testimonial-position">{testimonial.position}</span>
           </div>

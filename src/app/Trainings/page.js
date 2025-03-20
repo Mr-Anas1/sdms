@@ -22,7 +22,7 @@ const testimonials = [
     name: "Mohamed Ridwan A",
     text: "The 15-day UI/UX training with Figma was incredible. In just 13 days, I confidently designed an entire site. Tutor Bala’s clear, hands-on teaching made complex features like animations simple. Highly recommended!",
     position: "UI/UX In-Plant Training Attendee",
-    image: "./images/ridwan.jpeg",
+    image: "./images/ridwan.jpg",
   },
   {
     name: "Kaviya",
