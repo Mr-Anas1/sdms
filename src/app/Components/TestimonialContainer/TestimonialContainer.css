@@ -76,8 +76,9 @@
 }
 
 @media screen and (max-width: 480px) {
-    .testimonial-image {
+    .img-container {
         width: 80px;
+        height: 80px;
     }
 
     .testimonial-card {
