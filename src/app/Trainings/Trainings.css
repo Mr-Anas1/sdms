@@ -603,12 +603,9 @@
 .testimonial-image {
   width: 100px;
   height: 100px;
-  /* Full width of the card */
-  height: auto;
   /* Auto height to maintain aspect ratio */
   border-radius: 50%;
   /* Circular images */
-  margin-bottom: 15px;
   /* Spacing below image */
 }
 
