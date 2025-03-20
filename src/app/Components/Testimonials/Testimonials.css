@@ -201,9 +201,7 @@
 
 /* Image styles */
 .testimonial-image {
-  width: 100px;
-  height: 100px;
-  height: auto;
+
   /* Auto height to maintain aspect ratio */
   border-radius: 50%;
   /* Circular images */
