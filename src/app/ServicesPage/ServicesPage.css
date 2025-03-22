@@ -552,8 +552,7 @@
   font-family: 'Syne', serif;
   text-transform: none;
   text-align: center;
-  margin: 30px 0px;
-  margin-bottom: 15vh;
+  margin: 10px 0px 40px 0px;
 }
 
 .dark-mode .our-process-text {
@@ -683,7 +682,6 @@
 
   .our-process-text {
     font-size: 1.2rem;
-    margin-bottom: 5vh;
   }
 
   .cardScroller3 .card {
@@ -706,7 +704,7 @@
   }
 
   .our-process-text {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 2vh;
   }
 

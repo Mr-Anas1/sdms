@@ -38,6 +38,11 @@
     margin: 0;
 }
 
+.slick-list {
+    padding: 0px !important;
+}
+
+
 .slick-slide {
     display: flex !important;
     height: auto;
