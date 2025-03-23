@@ -91,7 +91,12 @@ const Footer = () => {
 
           <div
             className="social-row"
-            onClick={() => window.open("https://facebook.com/", "_blank")}
+            onClick={() =>
+              window.open(
+                "https://chat.whatsapp.com/G9R7oircDjBJHMNGBLVurU",
+                "_blank"
+              )
+            }
           >
             <p className="social-heading">Whatsapp</p>
             <div className="social-icon">
