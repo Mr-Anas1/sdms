@@ -53,8 +53,9 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
       if (response.ok) {
-        setSuccessMessage("Message sent successfully!");
+        setSuccessMessage(result.message || "Message sent successfully!");
         setFormData({
           name: "",
           email: "",
@@ -63,7 +64,7 @@ export default function Contact() {
           service: "",
         });
       } else {
-        setSuccessMessage("Failed to send message. Please try again.");
+        setSuccessMessage(result.message || "Failed to send message. Please try again.");
       }
     } catch (error) {
       setSuccessMessage("An error occurred. Please try again.");
@@ -94,6 +95,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
           />
+          {errors.name && <p className="error-message">{errors.name}</p>}
 
           {/* Email Field */}
           <input
@@ -104,6 +106,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
           />
+          {errors.email && <p className="error-message">{errors.email}</p>}
 
           {/* Mobile Number Field */}
           <input
@@ -114,6 +117,7 @@ export default function Contact() {
             value={formData.mobile}
             onChange={handleChange}
           />
+          {errors.mobile && <p className="error-message">{errors.mobile}</p>}
 
           {/* Dropdown for Services */}
           <select
@@ -137,16 +141,18 @@ export default function Contact() {
             </option>
             <option value="other">Other</option>
           </select>
+          {errors.service && <p className="error-message">{errors.service}</p>}
 
           {/* Message Field */}
           <textarea
             rows="1"
             name="message"
             placeholder="Message"
-            className={`message ${errors.name ? "error" : ""}`}
+            className={`message ${errors.message ? "error" : ""}`}
             value={formData.message}
             onChange={handleChange}
           />
+          {errors.message && <p className="error-message">{errors.message}</p>}
 
           {/* Submit Button */}
           <button className="contact-button" type="submit">
