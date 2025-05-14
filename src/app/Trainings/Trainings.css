@@ -444,7 +444,7 @@
 
 @media screen and (max-width: 768px) {
   .testimonials-heading-main {
-    margin-left: 0;
+    margin-left: 20px;
   }
 }
 

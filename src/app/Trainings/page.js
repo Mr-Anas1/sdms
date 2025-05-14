@@ -42,6 +42,12 @@ const testimonials = [
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/anas1.png",
   },
+  {
+    name: "Mandeep Kaur",
+    text: "Being a part of the Full Stack Web Development program at SDMS was an incredible experience. Devansh Sir was an amazing mentor—always supportive and insightful. I’m truly grateful for this opportunity and deeply appreciate Rukhsana Ma’am for making it possible.",
+    position: "Full Stack Training Attendee",
+    image: "./images/mandeep2.jpg",
+  },
 ];
 
 export default function Trainings() {
@@ -306,7 +312,7 @@ export default function Trainings() {
           <ScrollFromLeft>
             <ScrollRevealText>
               <h2 className="testimonials-heading-training">
-                <span>participant's</span>
+                <span>trainee's</span>
               </h2>
             </ScrollRevealText>
           </ScrollFromLeft>
