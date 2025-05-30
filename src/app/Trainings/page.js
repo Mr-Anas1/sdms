@@ -234,9 +234,9 @@ export default function Trainings() {
                 <div className="line-wrapper">
                   <ScrollFromBottom>
                     <h2 className="text-content-para">
-                      UI/UX, Full Stack Development, DataScience, Graphic
-                      Designing, Content Writing & Trainings on various coding
-                      languages.
+                      Spend 15 days building real skills that actually matter.
+                      It’s hands-on, practical, and built to get you ready
+                      for the industry.
                     </h2>
                   </ScrollFromBottom>
                 </div>
@@ -244,7 +244,7 @@ export default function Trainings() {
                 <div className="line-wrapper-btn">
                   <ScrollFromBottom>
                     <a
-                      href="https://forms.gle/DtNyVJhmAtUyB6jQ7"
+                      href="https://forms.gle/YshyRVNa9VmobMet7"
                       target="_blank"
                       className="services-text-button"
                     >
