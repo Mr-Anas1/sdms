@@ -88,7 +88,9 @@ const Testimonials = () => {
         </ScrollFromRight>
       </div>
 
-      <TestimonialContainer testimonials={testimonials} />
+      <div>
+        <TestimonialContainer testimonials={testimonials} />
+      </div>
     </div>
   );
 };

@@ -273,7 +273,7 @@ export default function ServicesPage() {
             <motion.div
               ref={desRef8}
               style={{ translateY: translateY8 }}
-              className="extra-text"
+              className="extra-text event-management-extra-text"
             >
               With expertise in hosting 20+ programs across India & the US, we
               provide end-to-end event management for corporates, non-profits,

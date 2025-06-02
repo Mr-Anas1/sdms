@@ -54,9 +54,6 @@ export default function Home() {
             help you get both — using powerful software, sales-focused websites,
             engaging videos, and smart marketing that actually works.
             <br />
-            Whether you're a startup or small business, we build systems that
-            attract the right people and turn them into paying customers.
-            <br />
             <br />
             Let’s move your business forward.
           </p>

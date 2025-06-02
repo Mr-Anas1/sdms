@@ -143,6 +143,7 @@
   color: var(--background-light)
 }
 
+
 @media(max-width:764px) {
 
   .extra-heading {
@@ -151,6 +152,10 @@
 
   .development-heading {
     margin-bottom: 20px;
+  }
+
+  .event-management-extra-text {
+    margin-top: 20px !important;
   }
 
   .content-container {
