@@ -46,14 +46,21 @@ export default function Home() {
         <FluidCursor />
         <main className="home-main">
           <h2 className="home-heading">
-            let's orbit success <br />
-            in the digital universe
+            let’s get more <br />
+            leads & customers
           </h2>
           <p className="home-desc">
-            Launch your brand into the digital cosmos with powerful software,
-            dynamic video creations <br /> and stellar web and app solutions. We
-            guide your business to new galaxies of growth and success.
+            Your business needs just two things to grow: leads and sales. We
+            help you get both — using powerful software, sales-focused websites,
+            engaging videos, and smart marketing that actually works.
+            <br />
+            Whether you're a startup or small business, we build systems that
+            attract the right people and turn them into paying customers.
+            <br />
+            <br />
+            Let’s move your business forward.
           </p>
+
           <div
             className="down-arrow"
             onClick={() =>

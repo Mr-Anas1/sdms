@@ -200,6 +200,7 @@
   /* Default color for light mode */
   text-align: center;
   transform-origin: bottom;
+  max-width: 50vw;
   animation: homeEffect 1s ease-in-out forwards;
 }
 
@@ -283,6 +284,7 @@ body.dark-mode .down-arrow {
 
   .home-desc {
     font-size: 0.8rem;
+    max-width: 90vw;
   }
 
   .button-row {

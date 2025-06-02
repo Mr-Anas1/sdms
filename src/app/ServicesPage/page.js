@@ -134,10 +134,10 @@ export default function ServicesPage() {
             <h2 className="services-page-heading">our services</h2>
             <div className="services-page-service">
               <p className="service-page-head">
-                We harness the power of creativity and technology to fuel your
-                brand’s digital journey. From dynamic design to robust
-                development, we create solutions that propel you into new
-                digital realms.
+                At Sabeena Digital Media Services (SDMS), we understand that
+                businesses thrive on two essentials: leads and sales. Our
+                services are crafted to deliver these outcomes through tailored
+                digital solutions.
               </p>
               <p className="service-page-text">
                 Whether it’s crafting immersive websites, developing powerful
@@ -167,10 +167,10 @@ export default function ServicesPage() {
                 style={{ translateY: translateY2 }}
                 className="extra-text"
               >
-                In this vast digital galaxy, our tools and technologies are the
-                rocket fuel powering your journey. We leverage top frameworks
-                and languages to build experiences that shine across the digital
-                cosmos, enhanced by seamless animations and interactions.
+                Your website or app should be more than just visually
+                appealing—it should be a lead-generating machine. We specialize
+                in creating platforms that not only look good but also drive
+                user engagement and conversions.
               </motion.div>
             </div>
 
@@ -229,11 +229,9 @@ export default function ServicesPage() {
               style={{ translateY: translateY6 }}
               className="extra-text"
             >
-              We help your brand make a bold impact in the digital world. From
-              stunning logos and compelling Video narratives to managing
-              engaging social media & campaigns, we tell stories that resonate.
-              Our services are crafted to boost your brand’s visibility and
-              makeit unforgettable, ensuring your ideas are market-ready assets.
+              Visibility is key to attracting leads. Our marketing strategies
+              are designed to increase your online presence and convert visitors
+              into loyal customers.
             </motion.div>
           </div>
 
@@ -403,51 +401,41 @@ export default function ServicesPage() {
             </ScrollRevealText>
           </ScrollFromRight>
         </div>
-        <p className="our-process-text">
-          {" "}
-          These Pillars Support excellence <br /> in the digital jungle.
-        </p>
+        <p className="our-process-text"> From Concept to Conversion</p>
         <div className="cardScroller3">
           <Slider {...settings}>
             {[
               {
-                heading: "Foundational Planning",
+                heading: "Discovery & Strategy",
                 description: `
-              Project Planning <br />
-              Expectations Setting <br />
-              Competitor Analysis <br />
-              Digital Strategy <br />
-              Contract
+               Understanding your <br /> 
+               business goals and <br /> 
+               target audience.
+
             `,
               },
               {
-                heading: "Technology & Development",
+                heading: "Design & Development",
                 description: `
-              Web Development <br />
-              Front-end Development <br />
-              Custom CMS Integrations <br />
-              E-commerce Development <br />
-              SAAS Implementation
+              Creating tailored <br />
+              solutions that align <br />
+              with your objectives.
             `,
               },
               {
                 heading: "Testing & Launch",
                 description: `
-              Usability Testing <br />
-              Performance Testing <br />
-              Functionality Testing <br />
-              Security Testing <br />
-              Integration Testing
+              Ensuring functionality <br />
+              and user experience <br />
+              are optimized.
             `,
               },
               {
                 heading: "Evaluate & Evolve",
                 description: `
-              Reviews <br />
-              Website optimisation <br />
-              3rd Party Evaluation <br />
-              Server performance <br />
-              Improvement
+              Monitoring performance <br />
+              and making data-driven <br />
+              improvements.
             `,
               },
             ].map((card, index) => (

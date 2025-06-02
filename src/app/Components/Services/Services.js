@@ -161,7 +161,7 @@ const Services = () => {
                     translateY: translateYLine,
                   }}
                 >
-                  SDMS® use cutting-edge technology
+                  We’re SDMS — A creative-tech company
                 </motion.div>
               </div>
             </div>
@@ -173,7 +173,7 @@ const Services = () => {
                     translateY: translateYLine,
                   }}
                 >
-                  to craft your brand’s journey through
+                  that helps you digitally to Scale Smarter
                 </motion.div>
               </div>
             </div>
@@ -185,7 +185,7 @@ const Services = () => {
                     translateY: translateYLine,
                   }}
                 >
-                  the stars
+                  With Leads That ACTUALLY Close.
                 </motion.div>
               </div>
             </div>
@@ -198,7 +198,7 @@ const Services = () => {
                   className="subhead-mobile"
                   style={{ translateY: translateYLine }}
                 >
-                  SDMS® use cutting-edge
+                  We’re SDMS — A
                 </motion.div>
               </div>
             </div>
@@ -208,7 +208,7 @@ const Services = () => {
                   className="subhead-mobile"
                   style={{ translateY: translateYLine }}
                 >
-                  technology to craft
+                  creative-tech company
                 </motion.div>
               </div>
             </div>
@@ -218,7 +218,7 @@ const Services = () => {
                   className="subhead-mobile"
                   style={{ translateY: translateYLine }}
                 >
-                  your brand’s journey
+                  that helps you digitally to
                 </motion.div>
               </div>
             </div>
@@ -228,7 +228,17 @@ const Services = () => {
                   className="subhead-mobile"
                   style={{ translateY: translateYLine }}
                 >
-                  through the stars
+                  Scale Smarter With Leads
+                </motion.div>
+              </div>
+            </div>
+            <div className="who-are-we-subhead-line-wrapper">
+              <div className="who-are-we-subhead-line" ref={lineRef}>
+                <motion.div
+                  className="subhead-mobile"
+                  style={{ translateY: translateYLine }}
+                >
+                  That ACTUALLY Close.
                 </motion.div>
               </div>
             </div>
@@ -240,10 +250,14 @@ const Services = () => {
             style={{ translateY: translateY1 }}
             className="who-are-we-tag"
           >
-            We help your business launch into the digital cosmos, delivering
-            powerful websites and apps that leave a lasting impact. Our
-            expertise in the latest digital trends ensures your brand orbits
-            success, expanding across the universe of possibilities.
+            At SDMS, we engineer lead-generating websites, sales-focused
+            marketing systems, and automated solutions that free up your time
+            and deliver real results turning your marketing expenses into a
+            real-time investment.
+            <br />
+            <br />
+            Yes — No fluff. Just websites, systems, and strategies that actually
+            work.
             <a href="/brochure.pdf" download>
               <button className="contact-button brochure">
                 Download Brochure

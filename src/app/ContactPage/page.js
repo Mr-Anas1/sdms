@@ -51,12 +51,11 @@ export default function ContactPage() {
         <FluidCursor />
         <main>
           <h2 className="home-heading">
-            let's roar <br /> into the wild <br /> together
+            ready to <br /> get more leads <br /> and sales?
           </h2>
           <p className="home-desc">
-            Launch your brand into the digital cosmos with powerful software,
-            dynamic video creations <br /> and stellar web and app solutions. We
-            guide your business to new galaxies of growth and success.
+            Let’s build your digital system — one that attracts, sells, and
+            scales.
           </p>
           <div
             className="down-arrow"
