@@ -88,7 +88,7 @@ const Testimonials = () => {
         </ScrollFromRight>
       </div>
 
-      <div>
+      <div className="testimonials-section-content">
         <TestimonialContainer testimonials={testimonials} />
       </div>
     </div>

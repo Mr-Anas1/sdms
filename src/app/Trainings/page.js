@@ -48,6 +48,12 @@ const testimonials = [
     position: "Full Stack Training Attendee",
     image: "./images/mandeep2.jpg",
   },
+  {
+    name: "Asheem",
+    text: "The 15-day UI/UX training was a transformative experience. The tutor’s expert guidance made complex features like animations easy to grasp. I now feel confident in my design skills and ready to tackle real-world projects. Highly recommended!",
+    position: "UI/UX In-Plant Training Attendee",
+    image: "./images/asheem.jpg",
+  },
 ];
 
 export default function Trainings() {
