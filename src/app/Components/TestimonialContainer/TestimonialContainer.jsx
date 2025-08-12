@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+// UPDATED: Import the icon from the library
+import { FaQuoteLeft } from "react-icons/fa";
 import "./TestimonialContainer.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -37,7 +39,14 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
     <Slider {...settings}>
       {testimonials.map((testimonial, index) => (
         <div className="testimonial-card" key={index}>
-          <p className="testimonial-text">{testimonial.text}</p>
+          <div className="content-wrapper">
+            {/* UPDATED: Replaced the div with the icon component */}
+            <div className="testimonial-quote-container">
+              <FaQuoteLeft size="3rem" color="rgba(255, 255, 255, 0.8)" />
+            </div>
+
+            <p className="testimonial-text">{testimonial.text}</p>
+          </div>
 
           <div className="testimonial-profile">
             <div className="img-container">
@@ -47,9 +56,10 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
                 className="testimonial-image"
               />
             </div>
-
             <h3 className="testimonial-name">{testimonial.name}</h3>
-            <span className="testimonial-position">{testimonial.position}</span>
+            <span className="testimonial-position">
+              {testimonial.position}
+            </span>
           </div>
         </div>
       ))}

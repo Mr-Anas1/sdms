@@ -43,8 +43,12 @@
   align-items: center;
   padding: 15px;
   /* backdrop-filter: blur(10px); */
-  background-color: transparent;
+  background-color: white;
   z-index: 10;
+}
+
+.dark-mode .navbar {
+  background-color: black;
 }
 
 .navbar .left,
@@ -257,7 +261,11 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  background: transparent;
+  background: white;
+}
+
+.dark-mode .menu-container {
+  background: black;
 }
 
 .menu-bar a,

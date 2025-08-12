@@ -78,7 +78,7 @@ export default function ContactForm() {
             GET A QUOTE
           </button>
         </div>
-        <div className="time-display">{currentTime}</div>
+        <div className="time-display ">{currentTime}</div>
       </div>
 
       {/* Form Header */}

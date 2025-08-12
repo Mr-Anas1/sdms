@@ -29,7 +29,7 @@ const MainFooter = () => {
           {/* Email Section */}
           <div className="contact-item">
             <small>Email</small>
-            <p>sabeenadigitalms@gmail.com</p>
+            <p>info@sabeenadigitalms.in</p>
           </div>
 
           {/* Phone Number Section */}

@@ -93,7 +93,7 @@ const Footer = () => {
             className="social-row"
             onClick={() =>
               window.open(
-                "https://chat.whatsapp.com/G9R7oircDjBJHMNGBLVurU",
+                "https://wa.me/919345398449",
                 "_blank"
               )
             }
