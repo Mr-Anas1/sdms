@@ -221,20 +221,7 @@ html {
 }
 
 /* Height-based responsive adjustments for lower height devices  -------- We can remove this if not necessary---------*/ 
-@media screen and (max-height: 600px) {
-  .stat-card {
-    height: 280px;
-  }
-  
-  .stat-value {
-    font-size: 6rem;
-  }
-  
-  .stat-label {
-    font-size: 2rem;
-    padding: 15px;
-  }
-}
+
 
 @media screen and (max-height: 500px) {
   .stat-card {
@@ -251,6 +238,21 @@ html {
     padding: 10px;
     bottom: 5px;
     right: 5px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .stat-card {
+    height: 280px;
+  }
+  
+  .stat-value {
+    font-size: 6rem;
+  }
+  
+  .stat-label {
+    font-size: 2rem;
+    padding: 15px;
   }
 }
 
