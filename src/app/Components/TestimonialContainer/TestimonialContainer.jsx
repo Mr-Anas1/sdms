@@ -42,7 +42,7 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
           <div className="content-wrapper">
             {/* UPDATED: Replaced the div with the icon component */}
             <div className="testimonial-quote-container">
-              <FaQuoteLeft size="3rem" color="rgba(255, 255, 255, 0.8)" />
+              <FaQuoteLeft size="3rem" className="quote-icon" />
             </div>
 
             <p className="testimonial-text">{testimonial.text}</p>

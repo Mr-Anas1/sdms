@@ -522,6 +522,10 @@
   /* Position for glowing effect */
   border: 2px solid #000000;
   cursor: grab;
+  height: 700px !important; /* Fixed height to ensure consistency */
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
   /* Indicate draggable content */
   user-select: none;
   /* Prevent text selection while dragging */
@@ -697,6 +701,10 @@
     /* Indicate draggable content */
     user-select: none;
     /* Prevent text selection while dragging */
+    height: 600px !important; /* Fixed height for mobile */
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
 
   }
 
@@ -716,6 +724,10 @@
 @media screen and (max-width: 480px) {
   .services-page-heading {
     font-size: 2rem !important;
-
+  }
+  
+  .testimonial-card {
+    height: 550px !important; /* Fixed height for small screens */
+    padding: 15px;
   }
 }

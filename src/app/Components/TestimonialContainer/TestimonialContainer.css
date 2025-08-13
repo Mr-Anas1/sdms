@@ -2,19 +2,27 @@
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 700px;
+    height: 700px; /* Changed from min-height to fixed height */
     padding: 35px 25px;
     box-sizing: border-box;
-    background: #fff;
+    background: #ffffff;
     border-radius: 15px;
     gap: 45px;
     position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.testimonial-card:hover {
+    background: #f5f5f5;
+}
+
 .dark-mode .testimonial-card {
-    background: #1b1b1b;
+    background: #000000;
     color: #ffffff;
+}
+
+.dark-mode .testimonial-card:hover {
+    background: #1b1b1b;
 }
 
 .content-wrapper {
@@ -38,11 +46,20 @@
     align-items: center;
 }
 
+.quote-icon {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .quote-icon {
+    color: #ffffff;
+}
+
 .quote-line {
     position: absolute;
     width: 2px;
     height: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #000000;
     transition: background-color 0.3s ease;
 }
 
@@ -72,7 +89,7 @@
 }
 
 .dark-mode .testimonial-text {
-    color: #ededed;
+    color: #ffffff;
 }
 
 .testimonial-profile {
@@ -145,12 +162,18 @@
 
 .slick-slide > div {
     height: 100%;
+    display: flex !important;
+}
+
+.slick-slide {
+    height: auto;
+    display: flex !important;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 968px) {
     .testimonial-card {
-        min-height: 600px;
+        height: 600px; /* Fixed height instead of min-height */
         padding: 25px 15px;
     }
     
@@ -161,7 +184,7 @@
 
 @media screen and (max-width: 768px) {
     .testimonial-card {
-        height: 600px !important;
+        height: 600px !important; /* Fixed height */
         min-height: 600px !important;
         padding: 20px 15px;
         gap: 30px;
@@ -191,7 +214,7 @@
 
 @media screen and (max-width: 480px) {
     .testimonial-card {
-        height: 550px !important;
+        height: 550px !important; /* Fixed height */
         min-height: 550px !important;
         padding: 15px 10px;
         gap: 25px;
