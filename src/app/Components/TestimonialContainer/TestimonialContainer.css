@@ -2,7 +2,7 @@
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
-    height: 700px; /* Changed from min-height to fixed height */
+    height: 700px; /* Desktop default */
     padding: 35px 25px;
     box-sizing: border-box;
     background: #ffffff;
@@ -173,7 +173,7 @@
 /* Responsive adjustments */
 @media screen and (max-width: 968px) {
     .testimonial-card {
-        height: 600px; /* Fixed height instead of min-height */
+        height: 600px; /* Tablet */
         padding: 25px 15px;
     }
     
@@ -183,68 +183,85 @@
 }
 
 @media screen and (max-width: 768px) {
+    .slick-track {
+        display: flex !important;
+        align-items: stretch !important; /* ensures all slides are same height */
+    }
+
+    .slick-slide {
+        display: flex !important;
+        height: auto !important;
+    }
+
+    .slick-slide > div {
+        display: flex !important;
+        flex-direction: column;
+        flex: 1; /* makes card take full height of parent */
+    }
+
     .testimonial-card {
-        height: 600px !important; /* Fixed height */
-        min-height: 600px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1; /* ensures equal height */
+        height: 100% !important; /* enforce equal height */
         padding: 20px 15px;
-        gap: 30px;
+        box-sizing: border-box;
     }
-    
-    .content-wrapper {
-        gap: 20px;
-    }
-    
+
     .testimonial-text {
         font-size: 1.2rem;
+        margin-bottom: 0;
     }
-    
+
+    .testimonial-profile {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
     .img-container {
         width: 70px;
         height: 70px;
     }
-    
+
     .testimonial-name {
         font-size: 0.95rem;
     }
-    
+
     .testimonial-position {
         font-size: 0.8rem;
     }
 }
 
+
 @media screen and (max-width: 480px) {
     .testimonial-card {
-        height: 550px !important; /* Fixed height */
-        min-height: 550px !important;
+        height: auto !important; 
         padding: 15px 10px;
-        gap: 25px;
-    }
-    
-    .content-wrapper {
         gap: 15px;
     }
-    
+
+    .testimonial-text {
+        font-size: 1.05rem;
+        line-height: 1.4;
+        margin-bottom: 0; /* ensure no gap */
+    }
+
+    .testimonial-profile {
+        padding-bottom: 0; /* no bottom padding */
+    }
+
     .img-container {
         width: 60px;
         height: 60px;
         margin-bottom: 8px;
     }
-    
-    .testimonial-text {
-        font-size: 1.1rem;
-        line-height: 1.5;
-    }
-    
+
     .testimonial-name {
         font-size: 0.9rem;
     }
-    
+
     .testimonial-position {
         font-size: 0.75rem;
     }
-    
-    .testimonial-profile {
-        padding-bottom: 15px;
-    }
 }
-

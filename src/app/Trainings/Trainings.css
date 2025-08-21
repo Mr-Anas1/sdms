@@ -308,7 +308,7 @@
   font-family: "Dirtyline36Daysoftype2022", sans-serif;
   font-size: 5.5rem;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 10vh;  /*changed from 5vh to 10vh*/
   margin-bottom: 3vh;
   line-height: 0.9;
   animation: riseUp 1s;
@@ -392,7 +392,8 @@
 @media (max-width: 764px) {
   .services-page-heading {
     font-size: 2.5rem;
-    margin-top: 2vh;
+    /* margin-top: 2vh; */
+    margin-top:10vh;
   }
 
   .services-page-service {
