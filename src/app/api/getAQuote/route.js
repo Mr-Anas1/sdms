@@ -1,5 +1,9 @@
 import nodemailer from "nodemailer";
 
+// Ensure Node.js runtime on Vercel and avoid caching
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -16,9 +20,20 @@ export async function POST(req) {
       );
     }
 
-    // Create Nodemailer transporter
+    // Ensure env vars exist
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error("EMAIL_USER or EMAIL_PASS is not set in environment.");
+      return new Response(
+        JSON.stringify({ message: "Email service is not configured." }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // Create Nodemailer transporter using explicit Gmail SMTP config
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // use TLS
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
