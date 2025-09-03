@@ -65,12 +65,6 @@ const testimonials = [
     position: "Product Manager @ Way.com | Volunteer",
     image: "./images/nitin.jpeg",
   },
-  {
-    name:"Naveed Ahmad",
-    text:"The Machine Learning training at SDMS was truly industry-level. The skill training is helpful for my college syllabus and is also helpful with my real-time projects. I would highly recommend doing IPTs and internships at SDMS.",
-    position:"Student",
-    image:"./images/naveed.jpeg"
-  }
 ];
 
 const Testimonials = () => {
