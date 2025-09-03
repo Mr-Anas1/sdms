@@ -54,6 +54,30 @@ const testimonials = [
     position: "UI/UX In-Plant Training Attendee",
     image: "./images/asheem.jpg",
   },
+  {
+    name:"Naveed Ahmad",
+    text:"The Machine Learning training at SDMS was truly industry-level. The skill training is helpful for my college syllabus and is also helpful with my real-time projects. I would highly recommend doing IPTs and internships at SDMS.",
+    position:"ML Training Attendee",
+    image:"./images/naveed.jpeg"
+  },
+  {
+    name:"Rihan Ahmed",
+    text:"My 15-day ML implant program at SDMS was fantastic! With Devansh Sir’s clear teaching and hands-on projects, I built a strong foundation in ML. The supportive team made it a great way to jumpstart my skills—highly recommended!",
+    position:"ML Training Attendee",
+    image:'./images/rihan.jpeg'
+  },
+  {
+    name:"Venkatachalam S",
+    text:"My Machine Learning implant training was an excellent experience. I built a solid foundation in ML concepts, improved coding skills through hands-on practice, and gained confidence with the support of great instructors.",
+    position:"ML Training Attendee",
+    image:'./images/venkat.jpeg'
+  },
+  {
+    name:"Nishanth",
+    text:"The 15-day implant program at SDMS gave me a strong start in Machine Learning. Thanks to Devansh Sir’s clear teaching and the hands-on projects, I built a solid foundation. The supportive SDMS team made learning smooth. Highly recommend! 👍",
+    position:"ML Training Attendee",
+    image:'./images/nishanth.jpeg'
+  }
 ];
 
 export default function Trainings() {
