@@ -77,6 +77,24 @@ const testimonials = [
     text:"The 15-day implant program at SDMS gave me a strong start in Machine Learning. Thanks to Devansh Sir’s clear teaching and the hands-on projects, I built a solid foundation. The supportive SDMS team made learning smooth. Highly recommend! 👍",
     position:"ML Training Attendee",
     image:'./images/nishanth.jpeg'
+  },
+  {
+    name:"Hayagrivan K M",
+    text:"Gained hands-on experience through mini and core projects in Linear Regression, Logistic Regression, and SVM. Completed a 15-day Machine Learning implant training under Devansh’s guidance, enhancing both practical skills and conceptual understanding.",
+    position:"ML Training Attendee",
+    image:"./images/hayagrivan.JPG",
+  },
+  {
+    name:"Sanjai Ganth",
+    text:"Developed practical expertise through projects on Linear Regression, Logistic Regression, and SVM. Completed a 15-day Machine Learning training under Devansh, which strengthened my ability to apply ML techniques to real-world challenges.",
+    position:"ML Training Attendee",
+    image:"./images/sanjai1.jpg"
+  },
+  {
+    name:"R N Periyar Selvan",
+    text:"The Inplant Training at SDMS was great! I learned Machine Learning with great teaching support, and the real-time project was very helpful for my college work.",
+    position:"ML Training Attendee",
+    image:"./images/selvan.webp"
   }
 ];
 
