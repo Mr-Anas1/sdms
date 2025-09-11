@@ -95,6 +95,12 @@ const testimonials = [
     text:"The Inplant Training at SDMS was great! I learned Machine Learning with great teaching support, and the real-time project was very helpful for my college work.",
     position:"ML Training Attendee",
     image:"./images/selvan.webp"
+  },
+  {
+    name:"Ameen",
+    text:"Completed implant training in Machine Learning, gaining practical exposure, hands-on project experience, and strengthened confidence in applying ML techniques.",
+    position:"ML Training Attendee",
+    image:"./images/ameen.jpeg"
   }
 ];
 
