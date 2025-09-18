@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import dynamic from "next/dynamic"; // <-- import dynamic
+import React, { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { FaQuoteLeft } from "react-icons/fa";
 import "./TestimonialContainer.css";
 
-// Import slick styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Dynamically import react-slick (no SSR)
+// Dynamically import react-slick (disable SSR)
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const defaultSettings = {
@@ -23,7 +22,7 @@ const defaultSettings = {
   cssEase: "ease-in-out",
   touchThreshold: 500,
   arrows: false,
-  adaptiveHeight: true, // helps with mobile alignment
+  adaptiveHeight: true,
   responsive: [
     {
       breakpoint: 768,
@@ -40,15 +39,23 @@ const defaultSettings = {
 const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
   const settings = { ...defaultSettings, ...sliderSettings };
   const sliderRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Force slick to recalc layout on first mount
-    const timer = setTimeout(() => {
-      window.dispatchEvent(new Event("resize"));
-    }, 100);
-
-    return () => clearTimeout(timer);
+    // Delay mount until client is ready
+    setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (mounted && sliderRef.current) {
+      // Force slick to recalc after hydration
+      setTimeout(() => {
+        window.dispatchEvent(new Event("resize"));
+      }, 200);
+    }
+  }, [mounted]);
+
+  if (!mounted) return null; // render nothing until client is ready
 
   return (
     <Slider ref={sliderRef} {...settings}>
