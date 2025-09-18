@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
-// UPDATED: Import the icon from the library
+import React, { useEffect, useRef } from "react";
+import dynamic from "next/dynamic"; // <-- import dynamic
 import { FaQuoteLeft } from "react-icons/fa";
 import "./TestimonialContainer.css";
-import Slider from "react-slick";
+
+// Import slick styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// Dynamically import react-slick (no SSR)
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const defaultSettings = {
   centerMode: true,
@@ -19,6 +23,7 @@ const defaultSettings = {
   cssEase: "ease-in-out",
   touchThreshold: 500,
   arrows: false,
+  adaptiveHeight: true, // helps with mobile alignment
   responsive: [
     {
       breakpoint: 768,
@@ -34,17 +39,25 @@ const defaultSettings = {
 
 const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
   const settings = { ...defaultSettings, ...sliderSettings };
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    // Force slick to recalc layout on first mount
+    const timer = setTimeout(() => {
+      window.dispatchEvent(new Event("resize"));
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <Slider {...settings}>
+    <Slider ref={sliderRef} {...settings}>
       {testimonials.map((testimonial, index) => (
         <div className="testimonial-card" key={index}>
           <div className="content-wrapper">
-            {/* UPDATED: Replaced the div with the icon component */}
             <div className="testimonial-quote-container">
               <FaQuoteLeft size="3rem" className="quote-icon" />
             </div>
-
             <p className="testimonial-text">{testimonial.text}</p>
           </div>
 
@@ -57,9 +70,7 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
               />
             </div>
             <h3 className="testimonial-name">{testimonial.name}</h3>
-            <span className="testimonial-position">
-              {testimonial.position}
-            </span>
+            <span className="testimonial-position">{testimonial.position}</span>
           </div>
         </div>
       ))}
