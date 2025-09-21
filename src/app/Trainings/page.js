@@ -88,7 +88,7 @@ const testimonials = [
     name:"Sanjai Ganth",
     text:"Developed practical expertise through projects on Linear Regression, Logistic Regression, and SVM. Completed a 15-day Machine Learning training under Devansh, which strengthened my ability to apply ML techniques to real-world challenges.",
     position:"ML Training Attendee",
-    image:"./images/sanjai1.jpg"
+    image:"./images/sanjay.jpg"
   },
   {
     name:"R N Periyar Selvan",
