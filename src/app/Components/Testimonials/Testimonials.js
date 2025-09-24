@@ -13,13 +13,13 @@ import ScrollFromRight from "../ScrollFromRight";
 const testimonials = [
   {
     name: "Melissa Hurtado",
-    text: "Rukshana of Sabeena Digital Media Services showcases exceptional skills in social media management, storytelling, and content creation. Her positive energy and dedication to excellence make every collaboration a delight.",
+    text: "Rukshana of Sabeena Digital Media Services excels in social media, storytelling, and content creation, bringing positivity and dedication to every collaboration.",
     position: "Property Manager, Self employed",
     image: "./images/MelissaHurta.jpeg",
   },
   {
     name: "Mariel McCann",
-    text: "Rukshana is a creative and talented social media manager who helped Shooting Stars Foundation with impactful content. Her patience and attention to feedback make her an integral part of our digital strategy.",
+    text: "Rukshana is a creative social media manager whose impactful content and responsiveness make her vital to Shooting Stars Foundation’s digital strategy.",
     position: "Shooting Stars (Former) Senior Program Manager",
     image: "./images/Mariel.jpeg",
   },
