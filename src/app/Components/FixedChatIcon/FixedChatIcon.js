@@ -6,7 +6,7 @@ const FixedChatIcon = () => {
   return (
     // This link can go to your WhatsApp, contact page, etc.
     <a 
-      href="https://wa.me/YOUR_PHONE_NUMBER" 
+      href="https://wa.me/9345398449" 
       target="_blank" 
       rel="noopener noreferrer" 
       className={styles.iconContainer}
