@@ -4,6 +4,7 @@ import React,{useRef,useEffect} from "react";
 // UPDATED: Import the icon from the library
 import { FaQuoteLeft } from "react-icons/fa";
 import "./TestimonialContainer.css";
+import Slider from "react-slick"
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
