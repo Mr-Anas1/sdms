@@ -1,3 +1,5 @@
+// TestimonialContainer.jsx
+
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -27,7 +29,7 @@ const defaultSettings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true, // 🚀 disable on mobile to fix enlargement
+        centerMode: true,
       },
     },
   ],
@@ -44,26 +46,32 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
     setMounted(true);
   }, []);
 
-  // ✅ Fix layout on hydration + orientation change
+  // ✅ Force slick recalc on mount + visibility/tab switch
   useEffect(() => {
     if (!mounted || !sliderRef.current) return;
 
     const recalc = () => {
       try {
-        sliderRef.current.slickGoTo(0, true); // reset position
+        sliderRef.current.slickGoTo(0, true); // reset to first slide
+        sliderRef.current.slickPlay?.();       // resume autoplay if enabled
       } catch {}
-      window.dispatchEvent(new Event("resize"));
+      window.dispatchEvent(new Event("resize")); // force slick recalc
     };
 
-    const t = setTimeout(recalc, 150);
+    // Run once after mount
+    const t = setTimeout(recalc, 300);
 
-    window.addEventListener("orientationchange", recalc);
-    document.addEventListener("visibilitychange", recalc);
+    // Run on visibility change (tab switch)
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") {
+        recalc();
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
     return () => {
       clearTimeout(t);
-      window.removeEventListener("orientationchange", recalc);
-      document.removeEventListener("visibilitychange", recalc);
+      document.removeEventListener("visibilitychange", handleVisibility);
     };
   }, [mounted]);
 
