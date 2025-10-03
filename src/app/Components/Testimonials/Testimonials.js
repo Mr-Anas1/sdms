@@ -13,13 +13,13 @@ import ScrollFromRight from "../ScrollFromRight";
 const testimonials = [
   {
     name: "Melissa Hurtado",
-    text: "Rukshana of Sabeena Digital Media Services excels in social media, storytelling, and content creation, bringing positivity and dedication to every collaboration.",
+    text: "Rukshana of Sabeena Digital Media Services showcases exceptional skills in social media management, storytelling, and content creation. Her positive energy and dedication to excellence make every collaboration a delight.",
     position: "Property Manager, Self employed",
     image: "./images/MelissaHurta.jpeg",
   },
   {
     name: "Mariel McCann",
-    text: "Rukshana is a creative social media manager whose impactful content and responsiveness make her vital to Shooting Stars Foundation’s digital strategy.",
+    text: "Rukshana is a creative and talented social media manager who helped Shooting Stars Foundation with impactful content. Her patience and attention to feedback make her an integral part of our digital strategy.",
     position: "Shooting Stars (Former) Senior Program Manager",
     image: "./images/Mariel.jpeg",
   },
@@ -68,12 +68,6 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-    useEffect(() => {
-    // Force slick to recalc slide heights on first load
-    setTimeout(() => {
-      window.dispatchEvent(new Event("resize"));
-    }, 500);
-  }, []);
   return (
     <div className="testimonials-container" id="testimonials">
       <div className="testimonials-heading-main">
