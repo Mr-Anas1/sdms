@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React,{useRef,useEffect} from "react";
 // UPDATED: Import the icon from the library
 import { FaQuoteLeft } from "react-icons/fa";
 import "./TestimonialContainer.css";
@@ -33,10 +33,20 @@ const defaultSettings = {
 };
 
 const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
+    const sliderRef = useRef(null);
   const settings = { ...defaultSettings, ...sliderSettings };
 
+  useEffect(() => {
+    // Force slick to recalc layout on mobile
+    if (sliderRef.current) {
+      setTimeout(() => {
+        sliderRef.current.slickGoTo(0); // re-render track
+      }, 100);
+    }
+  }, []);
+
   return (
-    <Slider {...settings}>
+    <Slider ref={sliderRef} {...settings} >
       {testimonials.map((testimonial, index) => (
         <div className="testimonial-card" key={index}>
           <div className="content-wrapper">
@@ -57,9 +67,7 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
               />
             </div>
             <h3 className="testimonial-name">{testimonial.name}</h3>
-            <span className="testimonial-position">
-              {testimonial.position}
-            </span>
+            <span className="testimonial-position">{testimonial.position}</span>
           </div>
         </div>
       ))}

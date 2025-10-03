@@ -160,9 +160,15 @@
     align-items: stretch;
 }
 
-.slick-slide > div {
+/* .slick-slide > div {
     height: 100%;
     display: flex !important;
+} */
+
+.slick-slide > div {
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column;
 }
 
 .slick-slide {
