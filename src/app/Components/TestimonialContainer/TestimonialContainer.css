@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 550px; /* Desktop default */
-    height:auto;
+    height:auto !important;
     padding: 35px 25px;
     box-sizing: border-box;
     background: #ffffff;

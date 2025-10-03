@@ -52,16 +52,18 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
 
     const recalc = () => {
       try {
-        sliderRef.current.slickGoTo(0, true); // reset to first slide
-        sliderRef.current.slickPlay?.();       // resume autoplay if enabled
-      } catch {}
-      window.dispatchEvent(new Event("resize")); // force slick recalc
+        // Force slick to reset internal track height
+        sliderRef.current.slickGoTo(0, true);
+        sliderRef.current.innerSlider.onWindowResized();
+      } catch (err) {
+        console.warn("Slick recalc error:", err);
+      }
     };
 
     // Run once after mount
     const t = setTimeout(recalc, 300);
 
-    // Run on visibility change (tab switch)
+    // Run again on tab visibility change
     const handleVisibility = () => {
       if (document.visibilityState === "visible") {
         recalc();
@@ -97,9 +99,7 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
               />
             </div>
             <h3 className="testimonial-name">{testimonial.name}</h3>
-            <span className="testimonial-position">
-              {testimonial.position}
-            </span>
+            <span className="testimonial-position">{testimonial.position}</span>
           </div>
         </div>
       ))}
