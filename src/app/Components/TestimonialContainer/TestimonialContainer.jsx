@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
+import React,{useRef,useEffect} from "react";
+// UPDATED: Import the icon from the library
 import { FaQuoteLeft } from "react-icons/fa";
 import "./TestimonialContainer.css";
 
@@ -37,6 +37,7 @@ const defaultSettings = {
 };
 
 const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
+    const sliderRef = useRef(null);
   const settings = { ...defaultSettings, ...sliderSettings };
   const sliderRef = useRef(null);
   const [mounted, setMounted] = useState(false);
@@ -86,8 +87,17 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
 
   if (!mounted) return null; // render nothing until client is ready
 
+  useEffect(() => {
+    // Force slick to recalc layout on mobile
+    if (sliderRef.current) {
+      setTimeout(() => {
+        sliderRef.current.slickGoTo(0); // re-render track
+      }, 100);
+    }
+  }, []);
+
   return (
-    <Slider key={sliderKey} ref={sliderRef} {...settings}>
+    <Slider ref={sliderRef} {...settings} >
       {testimonials.map((testimonial, index) => (
         <div className="testimonial-card" key={index}>
           <div className="content-wrapper">
