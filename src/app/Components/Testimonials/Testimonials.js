@@ -68,6 +68,12 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+    useEffect(() => {
+    // Force slick to recalc slide heights on first load
+    setTimeout(() => {
+      window.dispatchEvent(new Event("resize"));
+    }, 500);
+  }, []);
   return (
     <div className="testimonials-container" id="testimonials">
       <div className="testimonials-heading-main">
