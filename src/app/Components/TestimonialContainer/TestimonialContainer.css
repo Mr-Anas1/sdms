@@ -2,7 +2,8 @@
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
-    height: 700px; /* Desktop default */
+    min-height: 550px; /* Desktop default */
+    height:auto;
     padding: 35px 25px;
     box-sizing: border-box;
     background: #ffffff;
@@ -179,7 +180,8 @@
 /* Responsive adjustments */
 @media screen and (max-width: 968px) {
     .testimonial-card {
-        height: 600px; /* Tablet */
+        min-height:450px;
+        height: auto; /* Tablet */
         padding: 25px 15px;
     }
     
@@ -210,7 +212,8 @@
         flex-direction: column;
         justify-content: space-between;
         flex: 1; /* ensures equal height */
-        height: 100% !important; /* enforce equal height */
+        min-height: auto;
+        height: auto !important; /* enforce equal height */
         padding: 20px 15px;
         box-sizing: border-box;
     }
@@ -242,6 +245,7 @@
 
 @media screen and (max-width: 480px) {
     .testimonial-card {
+        min-height: auto;
         height: auto !important; 
         padding: 15px 10px;
         gap: 15px;
