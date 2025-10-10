@@ -101,7 +101,13 @@ const testimonials = [
     text:"Completed implant training in Machine Learning, gaining practical exposure, hands-on project experience, and strengthened confidence in applying ML techniques.",
     position:"ML Training Attendee",
     image:"./images/ameen.jpeg"
-  }
+  },
+    {
+      name:'Shaafiyah',
+      text:'The Web Development Internship by the SDMS team was an incredible experience! Huge thanks to our tutor, Devansh, for making learning so engaging and easy to grasp.',
+      position:'Full Stack Training Attendee',
+      image:'./images/shaafiyah.jpeg'
+    }
 ];
 
 export default function Trainings() {

@@ -65,6 +65,12 @@ const testimonials = [
     position: "Product Manager @ Way.com | Volunteer",
     image: "./images/nitin.jpeg",
   },
+  {
+    name:'Sakthi Thangavelu',
+    text:'Had a great experience working with SDMS! Their digital marketing expertise helped boost our LinkedIn presence and build a stunning, seamless website. Highly recommend for anyone looking to elevate their digital presence!',
+    position:'Founder - Ethically.in',
+    image:'./images/sakthi.jpeg'
+  }
 ];
 
 const Testimonials = () => {
