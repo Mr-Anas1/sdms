@@ -156,8 +156,10 @@
 
 .slick-track {
     display: flex !important;
-    gap: 40px;
+    /* gap: 40px;  <-- REMOVED: Gap conflicts with slick calculations */
     align-items: stretch;
+    margin-left: -20px; /* Offset for the padding on slides */
+    margin-right: -20px;
 }
 
 /* .slick-slide > div {
@@ -169,11 +171,13 @@
   height: auto !important;
   display: flex !important;
   flex-direction: column;
+  padding: 0 20px; /* ✅ Added padding for spacing */
 }
 
 .slick-slide {
     height: auto;
     display: flex !important;
+    /* justify-content: center; */
 }
 
 /* Responsive adjustments */
