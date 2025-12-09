@@ -27,7 +27,7 @@ const defaultSettings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true, // 🚀 disable on mobile to fix enlargement
+        centerMode: false, // 🚀 disable on mobile to fix enlargement
       },
     },
   ],
@@ -51,7 +51,7 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
     const recalc = () => {
       try {
         sliderRef.current.slickGoTo(0, true); // reset position
-      } catch {}
+      } catch { }
       window.dispatchEvent(new Event("resize"));
     };
 
