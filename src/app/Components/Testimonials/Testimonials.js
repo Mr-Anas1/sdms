@@ -66,15 +66,21 @@ const testimonials = [
     image: "./images/nitin.jpeg",
   },
   {
-    name:'Sakthi Thangavelu',
-    text:'Had a great experience working with SDMS! Their digital marketing expertise helped boost our LinkedIn presence and build a stunning, seamless website. Highly recommend for anyone looking to elevate their digital presence!',
-    position:'Founder - Ethically.in',
-    image:'./images/sakthi.jpeg'
+    name: 'Sakthi Thangavelu',
+    text: 'Had a great experience working with SDMS! Their digital marketing expertise helped boost our LinkedIn presence and build a stunning, seamless website. Highly recommend for anyone looking to elevate their digital presence!',
+    position: 'Founder - Ethically.in',
+    image: './images/shakthi.png'
+  },
+  {
+    name: 'Dr. Vimaladevi',
+    text: 'The digital marketing team delivered outstanding results for my LinkedIn and company website, driving visible growth and engagement. Their data-driven strategies increased our organic reach and improved overall brand visibility. I highly recommend their services to anyone seeking impactful digital marketing solutions.',
+    position: 'Doctor',
+    image: './images/vimaladevi.png'
   }
 ];
 
 const Testimonials = () => {
-    useEffect(() => {
+  useEffect(() => {
     // Force slick to recalc slide heights on first load
     setTimeout(() => {
       window.dispatchEvent(new Event("resize"));
