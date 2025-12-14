@@ -29,14 +29,13 @@ export default function Navbar({
     <nav className="navbar menu-container">
       {/* Logo */}
       <div className="left">
-        <div className="premium-logo">
-          <Link href="/">
-            {" "}
-            <span className="logo-main">sdms</span>
-          </Link>
-
-          <span className="logo-sub">digital media services</span>
-        </div>
+        <Link href="/" className="logo-link">
+          <img
+            src="/images/sdms-logo.png"
+            alt="Sabeena Digital Media Services"
+            className="navbar-logo-image"
+          />
+        </Link>
       </div>
 
       {/* Toggle Dark Mode Button */}
@@ -70,13 +69,13 @@ export default function Navbar({
             transition={{ duration: 0.75, ease: "easeInOut" }}
           >
             <div className="menu-header">
-              <div className="premium-logo">
-                <Link href="/">
-                  {" "}
-                  <span className="logo-main">sdms</span>
-                </Link>
-                <span className="logo-sub">digital media services</span>
-              </div>
+              <Link href="/" className="logo-link">
+                <img
+                  src="/images/sdms-logo.png"
+                  alt="Sabeena Digital Media Services"
+                  className="navbar-logo-image"
+                />
+              </Link>
               <button
                 className="toggle-button overlay-toggle"
                 onClick={toggleDarkMode}

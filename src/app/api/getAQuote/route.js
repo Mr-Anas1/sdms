@@ -43,36 +43,38 @@ export async function POST(req) {
     // Define recipients
     const recipients = [
       "sabeenadigitalmediaservices@gmail.com",
-       `${email}`, // Add more emails as needed
+      `${email}`, // Add more emails as needed
     ];
 
     // HTML template for the email
     const htmlTemplate = `
-      <div style="font-family: Arial, sans-serif; background-color: #000; color: #fff; padding: 20px; border-radius: 10px;">
-        <div style="text-align: center; background-color: #FFD700; padding: 20px; border-radius: 10px 10px 0 0;">
-          <!-- Text-based Logo -->
-          <div style="font-size: 24px; font-weight: bold; color: #000; text-transform: uppercase; letter-spacing: 2px; text-align: center;">
-            <span style="color: #000;">Sabeena</span>
-            <br>
-            <span style="color: #FFD700; background-color: #000; padding: 5px 10px; border-radius: 5px;">Digital Media Services</span>
+      <div style="font-family: Arial, sans-serif; background-color: #000; color: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; background-color: #000; padding: 20px; border-radius: 10px 10px 0 0;">
+          <!-- Text-based Logo as fallback -->
+          <div style="margin-bottom: 10px;">
+            <div style="font-size: 28px; font-weight: bold; color: #FFD700; letter-spacing: 2px; margin-bottom: 5px;">SABEENA</div>
+            <div style="font-size: 16px; font-weight: bold; color: #FFFFFF; letter-spacing: 1px;">DIGITAL MEDIA SERVICES</div>
           </div>
         </div>
-        <div style="padding: 20px;">
-          <h2 style="color: #FFD700;">We will get in touch with you soon!</h2>
+        <div style="padding: 20px; background-color: #000;">
+          <h2 style="color: #FFD700; margin-top: 0;">We will get in touch with you soon!</h2>
           <p style="color: #fff;">Here are the details you provided:</p>
           <ul style="list-style: none; padding: 0;">
-            <li style="color: #fff;"><strong>Name:</strong> ${name}</li>
-            <li style="color: #fff;"><strong>Email:</strong> ${email}</li>
-            <li style="color: #fff;"><strong>Company/Organization:</strong> ${company}</li>
-            <li style="color: #fff;"><strong>Phone:</strong> ${phone}</li>
-            <li style="color: #fff;"><strong>Project Type:</strong> ${projectType}</li>
-            <li style="color: #fff;"><strong>Project Budget:</strong> ${budget}</li>
-            <li style="color: #fff;"><strong>How did you hear about us?:</strong> ${hearAbout}</li>
-            <li style="color: #fff;"><strong>Message:</strong> ${message}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Name:</strong> ${name}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Email:</strong> ${email}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Company/Organization:</strong> ${company}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Phone:</strong> ${phone}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Project Type:</strong> ${projectType}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Project Budget:</strong> ${budget}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>How did you hear about us?:</strong> ${hearAbout}</li>
+            <li style="color: #fff; margin-bottom: 8px;"><strong>Message:</strong> ${message}</li>
           </ul>
         </div>
-        <div style="text-align: center; background-color: #FFD700; padding: 10px; border-radius: 0 0 10px 10px;">
-          <p style="color: #000;">&copy; 2023 Sabeena Digital Media Services. All rights reserved.</p>
+        <div style="text-align: center; background-color: #FFD700; padding: 15px; border-radius: 0 0 10px 10px;">
+          <p style="color: #000; font-size: 11px; font-weight: 600; margin: 0; line-height: 1.6; text-transform: uppercase;">
+            AN ASSOCIATE OF EDRC GLOBAL COMPUTERS PVT. LTD., UAE,<br/>
+            AND SS BB MARKETING PVT. LTD., SINGAPORE
+          </p>
         </div>
       </div>
     `;
@@ -81,7 +83,7 @@ export async function POST(req) {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: recipients.join(", "), // Send to multiple recipients
-      subject: `New Get A Quote Form Submission from ${name}`,
+      subject: `Thank you for visiting Sabeena Digital Media Services`,
       html: htmlTemplate, // Use HTML template
     };
 
