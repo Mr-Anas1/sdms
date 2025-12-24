@@ -12,6 +12,10 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.testimonials-heading-main{
+    margin: 0px 10px;
+}
+
 .testimonial-card:hover {
     background: #f5f5f5;
 }
@@ -25,12 +29,12 @@
     background: #1b1b1b;
 }
 
-.content-wrapper {
+/* .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     flex: 1;
-}
+} */
 
 .testimonial-quote-container {
     align-self: center;
@@ -82,7 +86,7 @@
     font-size: 1.6rem;
     color: #333;
     line-height: 1.6;
-    text-align: center;
+    text-align: center !important;
     margin: 0;
     flex: 1;
     transition: color 0.3s ease;
@@ -96,7 +100,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     text-align: center;
     margin-top: auto;
     padding-bottom: 20px;
@@ -182,9 +186,10 @@
 
 /* Responsive adjustments */
 @media screen and (max-width: 968px) {
-    .testimonial-card {
-        height: 600px; /* Tablet */
-        padding: 25px 15px;
+    .testimonials {
+        width: 90vw; /* Tablet */
+        padding: 0 0 0 4rem;
+
     }
     
     .testimonial-text {
@@ -193,6 +198,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .testimonials {
+        width: 90vw !important; /* Tablet */
+        padding: 0 0 0 4rem;
+
+        background-color: red;
+    }
     .slick-track {
         display: flex !important;
         align-items: stretch !important; /* ensures all slides are same height */
@@ -214,57 +225,32 @@
         flex-direction: column;
         justify-content: space-between;
         flex: 1; /* ensures equal height */
-        height: 100% !important; /* enforce equal height */
-        padding: 20px 15px;
+        height: auto !important; /* allow flexible height */
+        padding: 5px 12px;
         box-sizing: border-box;
+        gap: 10px;
     }
 
+    /* .content-wrapper {
+        gap: 10px;
+    } */
+
     .testimonial-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-bottom: 0;
-    }
-
-    .testimonial-profile {
-        margin-top: 0;
-        padding-bottom: 0;
-    }
-
-    .img-container {
-        width: 70px;
-        height: 70px;
-    }
-
-    .testimonial-name {
-        font-size: 0.95rem;
-    }
-
-    .testimonial-position {
-        font-size: 0.8rem;
-    }
-}
-
-
-@media screen and (max-width: 480px) {
-    .testimonial-card {
-        height: auto !important; 
-        padding: 15px 10px;
-        gap: 15px;
-    }
-
-    .testimonial-text {
-        font-size: 1.05rem;
         line-height: 1.4;
-        margin-bottom: 0; /* ensure no gap */
     }
 
     .testimonial-profile {
-        padding-bottom: 0; /* no bottom padding */
+        margin-top: auto;
+        padding-bottom: 0;
+        gap: 3px;
     }
 
     .img-container {
         width: 60px;
         height: 60px;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
 
     .testimonial-name {
@@ -273,6 +259,54 @@
 
     .testimonial-position {
         font-size: 0.75rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .testimonial-card {
+        /* max-width: 70%; */
+        height: auto !important; 
+        padding: 12px 10px;
+        gap: 8px;
+    }
+
+    /* .content-wrapper {
+        gap: 8px;
+    } */
+
+    .testimonial-quote-container {
+        margin-bottom: 5px;
+    }
+
+    .custom-quote-mark {
+        width: 30px;
+        height: 25px;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+        line-height: 1.35;
+        margin-bottom: 0; /* ensure no gap */
+    }
+
+    .testimonial-profile {
+        padding-bottom: 0; /* no bottom padding */
+        gap: 2px;
+    }
+
+    .img-container {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 3px;
+    }
+
+    .testimonial-name {
+        font-size: 0.85rem;
+    }
+
+    .testimonial-position {
+        font-size: 0.7rem;
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1366px) {

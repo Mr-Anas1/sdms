@@ -1,6 +1,8 @@
 // src/app/layout.js
+import LenisProvider from "@/lenis-provider";
 import "../styles/globals.css";
 import FixedChatIcon from "./Components/FixedChatIcon/FixedChatIcon";
+
 export default function Layout({ children }) {
   return (
     <html lang="en">
@@ -14,6 +16,7 @@ export default function Layout({ children }) {
       <body>
         {children}
         <FixedChatIcon />
+        <LenisProvider/>
       </body>
     </html>
   );

@@ -7,6 +7,10 @@
   --foreground-light: #171717;
   --foreground-dark: #ffff;
   --highlight-color: #ffff;
+
+  --scroll-thumb: rgba(128, 128, 128, 0.545);
+  --scroll-thumb-hover: rgba(62, 62, 62, 0.762);
+  --scroll-track: #ffffff;
   /* Golden color */
 }
 
@@ -72,15 +76,21 @@ body {
   position: relative;
 }
 
+
+
+
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
+
 /* Dark Mode Class for Manual Toggling */
 .dark-mode {
   background-color: var(--background-dark);
+  --scroll-thumb-hover: rgba(160, 160, 160, 0.762);
+  --scroll-track: #0a0a0a;
   /* color: var(--foreground-dark); */
 }
 
@@ -123,3 +133,31 @@ a {
     position: fixed;
   }
 }
+
+*::-webkit-scrollbar{
+  /* background-color: var(--background-dark); */
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  width: 8px;
+}
+
+
+
+*::-webkit-scrollbar-thumb{
+  background-color: var(--scroll-thumb);
+  width: 8px;
+  height: 20%;
+  border-radius: 15px;
+  /* border: 3px dashed rgb(255, 141, 28); */
+}
+
+*::-webkit-scrollbar-thumb:hover{
+    background-color: var(--scroll-thumb-hover)
+}
+
+
+*::-webkit-scrollbar-track{
+  /* background-color: ; */
+  background-color: var(--scroll-track);
+
+}
+
