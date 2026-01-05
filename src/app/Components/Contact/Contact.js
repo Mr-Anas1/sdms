@@ -122,11 +122,12 @@ export default function Contact() {
           {/* Dropdown for Services */}
           <select
             name="service"
+            style={{"apperance": "none"}}
             className={`service ${errors.service ? "error" : ""}`}
             value={formData.service}
             onChange={handleChange}
           >
-            <option value="">Select a Service</option>
+            <option  value="">Select a Service</option>
             <option value="Digital Solutions & Development">
               Digital Solutions & Development
             </option>

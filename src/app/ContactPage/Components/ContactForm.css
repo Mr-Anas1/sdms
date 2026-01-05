@@ -1,19 +1,5 @@
-/* Font Import */
-@font-face {
-  font-family: 'Dirtyline36Daysoftype2022';
-  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Syne';
-  src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400;
-  /* Regular */
-  font-style: normal;
-}
-
+/* Contact Form Component */
+@import '../../../styles/shared.css';
 
 /* General styles */
 .contact-form-container {

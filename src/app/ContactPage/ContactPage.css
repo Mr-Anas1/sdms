@@ -1,14 +1,4 @@
-@keyframes riseUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@import '../../styles/shared.css';
 
 /* Home Heading */
 .home-heading {

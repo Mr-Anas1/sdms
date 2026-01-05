@@ -6,6 +6,7 @@ import Navbar from "../Navbar/Navbar";
 import Cursor from "../../Cursor";
 import "./Home.css";
 import FluidCursor from "@/app/FluidCursor";
+import { Link } from "react-router-dom";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
@@ -67,8 +68,8 @@ export default function Home() {
             <FaRegArrowAltCircleDown />
           </div>
           <div className="button-row">
-            <button className="explore-button">Explore work</button>
-            <button className="contact-button">Get in Touch</button>
+            <a href="/ServicesPage" className="explore-button">Explore work</a>
+            <a href={"/ContactPage"} className="contact-button">Get in Touch</a>
           </div>
         </main>
       </div>

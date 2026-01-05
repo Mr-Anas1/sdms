@@ -1,40 +1,5 @@
 /* Contact Component */
-/* Root Color Variables for Light and Dark Mode */
-:root {
-  --background-light: #ffffff;
-  --background-dark: #0a0a0a;
-  --foreground-light: #171717;
-  --foreground-dark: #ffff;
-  --highlight-color: #ffff;
-  /* Golden color */
-}
-
-/* Apply Dark Mode Colors for Dark Mode Preferences */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-light: #ffffff;
-    --foreground-light: #ededed;
-  }
-}
-
-
-
-
-/* Font Import */
-@font-face {
-  font-family: 'Dirtyline36Daysoftype2022';
-  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Syne';
-  src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400;
-  /* Regular */
-  font-style: normal;
-}
+@import '../../../styles/shared.css';
 
 
 
@@ -134,11 +99,11 @@
   color: #ffffff;
 }
 
-.contactSection button:hover {
+/* .contactSection button:hover {
   background-color: var(--button-hover-bg);
   transform: scale(1.1);
   transition: transition 0.3 ease;
-}
+} */
 
 /* Mobile input field */
 .mobile {
@@ -255,53 +220,11 @@
 
 
 /* Button Styling */
-.contact-button {
-  border: 2px solid #000000;
-  /* Gold border for premium feel */
-  background: transparent;
-  color: #000000;
-  padding: 10px 20px;
-  font-size: 1.3rem;
-  font-family: 'Syne', serif;
-  border-radius: 33px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  padding: 15px;
-}
+
 
 .dark-mode form input {
   color: #ffffff !important;
 }
 
 
-@media (max-width:764px) {
 
-  .contact-button {
-    font-size: 1rem;
-  }
-}
-
-/* Hover effect for buttons */
-.contact-button:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-
-/* Light Mode Adjustments */
-
-
-body.light-mode .contact-button {
-  color: #000;
-  /* Black text and arrow for light mode */
-}
-
-
-body.dark-mode .contact-button {
-  border: 2px solid #ffffff;
-}
-
-body.dark-mode .contact-button {
-  color: #ffffff;
-  /* White text and arrow for dark mode */
-}

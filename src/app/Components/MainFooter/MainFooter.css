@@ -53,6 +53,10 @@
     margin: 0;
     font-family: 'Syne', serif;
     text-transform: none;
+
+    &:hover a{
+        color: #fed700;
+    }
 }
 
 .dark-mode .contact-item p {

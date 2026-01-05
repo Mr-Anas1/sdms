@@ -1,0 +1,297 @@
+/* ============================================
+   CENTRALIZED SHARED CSS
+   This file contains all common styles, variables,
+   fonts, and animations used across the application
+   ============================================ */
+
+/* Root Color Variables for Light and Dark Mode */
+:root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+
+  --scroll-thumb: rgba(128, 128, 128, 0.545);
+  --scroll-thumb-hover: rgba(62, 62, 62, 0.762);
+  --scroll-track: #ffffff;
+
+  --hover-bg: #000;
+  --hover-text: #fff;
+}
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-light: #ffffff;
+    --foreground-light: #ededed;
+  }
+}
+
+.dark-mode {
+  background-color: var(--background-dark);
+  --scroll-thumb-hover: rgba(160, 160, 160, 0.762);
+  --scroll-track: #0a0a0a;
+  --hover-bg: #fff;
+  --hover-text: #000;
+}
+
+/* ============================================
+   FONT IMPORTS
+   ============================================ */
+
+@font-face {
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Charrington';
+  src: url('/fonts/Charbold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Inconsolata:wght@200..900&display=swap');
+
+/* ============================================
+   GLOBAL RESET AND BASE STYLES
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-light);
+  color: #0000;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+  width: 8px;
+  height: 20%;
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover);
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--scroll-track);
+}
+
+/* ============================================
+   CURSOR CANVAS STYLES
+   ============================================ */
+
+.cursor-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (max-width: 764px) {
+  .cursor-canvas {
+    position: fixed;
+  }
+}
+
+#fluid {
+  z-index: 9999;
+}
+
+/* ============================================
+   COMMON ANIMATIONS
+   ============================================ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow-effect {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffae00, 0 0 20px #ffae00, 0 0 25px #ffc700, 0 0 30px #ffc700;
+  }
+  50% {
+    text-shadow: 0 0 10px #ffae00, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffc700, 0 0 50px #ffd700, 0 0 60px #ffd700;
+  }
+}
+
+@keyframes riseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   COMMON BUTTON STYLES
+   ============================================ */
+
+.explore-button:hover,
+.contact-button:hover {
+  background-color: var(--hover-bg);
+  color: var(--hover-text) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* ============================================
+   HOME PAGE UTILITY CLASSES
+   ============================================ */
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}

@@ -29,19 +29,19 @@ const MainFooter = () => {
           {/* Email Section */}
           <div className="contact-item">
             <small>Email</small>
-            <p>info@sabeenadigitalms.in</p>
+            <p><a href="mailto:info@sabeenadigitalms.in">info@sabeenadigitalms.in</a></p>
           </div>
 
           {/* Phone Number Section */}
           <div className="contact-item">
             <small>Phone</small>
-            <p>+91 9345398449</p>
+            <p><a href="tel:+919345398449">+91 9345398449</a></p>
           </div>
           <div className="contact-item">
             <small>Address</small>
             <p>
-              F-2, MSS Enclave, Basha Street, Choolaimedu, Chennai, Tamil Nadu,
-              India
+              <a href="https://maps.app.goo.gl/ge41QPGwaFKT5tGX9">F-2, MSS Enclave, Basha Street, Choolaimedu, Chennai, Tamil Nadu,
+              India</a>
             </p>
           </div>
         </div>

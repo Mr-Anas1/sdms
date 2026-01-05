@@ -1,39 +1,5 @@
-/* Root Color Variables for Light and Dark Mode */
-:root {
-  --background-light: #ffffff;
-  --background-dark: #0a0a0a;
-  --foreground-light: #171717;
-  --foreground-dark: #ffff;
-  --highlight-color: #ffff;
-  /* Golden color */
-}
-
-/* Apply Dark Mode Colors for Dark Mode Preferences */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-light: #ffffff;
-    --foreground-light: #ededed;
-  }
-}
-
-
-/* Font Import */
-@font-face {
-  font-family: 'Dirtyline36Daysoftype2022';
-  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Syne';
-  src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400;
-  /* Regular */
-  font-style: normal;
-}
-
-/* Navbar Styles */
+/* Navbar Component */
+@import '../../../styles/shared.css';
 .navbar {
   position: fixed;
   top: 0;

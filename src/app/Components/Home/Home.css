@@ -1,39 +1,5 @@
-/* Root Color Variables for Light and Dark Mode */
-:root {
-  --background-light: #ffffff;
-  --background-dark: #0a0a0a;
-  --foreground-light: #171717;
-  --foreground-dark: #ffff;
-  --highlight-color: #ffff;
-  /* Golden color */
-}
-
-/* Apply Dark Mode Colors for Dark Mode Preferences */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-light: #ffffff;
-    --foreground-light: #ededed;
-  }
-}
-
-
-/* Font Import */
-@font-face {
-  font-family: 'Dirtyline36Daysoftype2022';
-  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Syne';
-  src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400;
-  /* Regular */
-  font-style: normal;
-}
-
-/* Home Page Styles */
+/* Home Component */
+@import '../../../styles/shared.css';
 
 /* General styles for the loading screen */
 .loading-screen {
@@ -298,11 +264,14 @@ body.dark-mode .down-arrow {
 }
 
 /* Hover effect for buttons */
-.explore-button:hover,
+/* .explore-button:hover,
 .contact-button:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
-}
+} */
+
+
+
 
 
 /* Light Mode Adjustments */
@@ -325,10 +294,8 @@ body.dark-mode .down-arrow,
 body.dark-mode .explore-button,
 body.dark-mode .contact-button {
   color: #ffffff;
-  /* White text and arrow for dark mode */
+ 
 }
-
-
 
 .home-main {
   display: flex;

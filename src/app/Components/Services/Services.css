@@ -1,12 +1,5 @@
-/* Root Color Variables for Light and Dark Mode */
-:root {
-  --background-light: #ffffff;
-  --background-dark: #0a0a0a;
-  --foreground-light: #171717;
-  --foreground-dark: #ffff;
-  --highlight-color: #ffff;
-  /* Golden color */
-}
+/* Services Component */
+@import '../../../styles/shared.css';
 
 
 .animated-box {
@@ -23,74 +16,12 @@
 }
 
 
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes riseUp {
-  0% {
-    opacity: 0;
-    transform: translateY(120px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0)
-  }
-}
 
 
 
 
 
 
-
-
-
-
-/* Apply Dark Mode Colors for Dark Mode Preferences */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-light: #ffffff;
-    --foreground-light: #ededed;
-  }
-}
-
-/* Font Import */
-@font-face {
-  font-family: 'Dirtyline36Daysoftype2022';
-  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Syne';
-  src: url('/fonts/Syne.ttf') format('truetype');
-  font-weight: 400;
-  /* Regular */
-  font-style: normal;
-}
 
 /* Our Services Component Styles*/
 

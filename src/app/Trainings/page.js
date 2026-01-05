@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Navbar from "../Components/Navbar/Navbar";
 import "./Trainings.css";
+import "../Components/TestimonialContainer/TestimonialContainer.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cursor from "../Cursor";
