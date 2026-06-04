@@ -105,12 +105,12 @@
 .reg-highlights-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* 5th card spans full width */
+/* 5th card centered in 2-col grid */
 .reg-hcard-5 {
   grid-column: span 2;
   max-width: 48%;
@@ -121,7 +121,7 @@
 .reg-highlight-card {
   position: relative;
   background-color: #f2f2f2;
-  height: 360px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -134,6 +134,7 @@
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: default;
+  overflow: hidden;
 }
 
 .dark-mode .reg-highlight-card {
@@ -146,7 +147,6 @@
   color: #fff;
 }
 
-/* Cards 2 & 4 text stays dark on hover (light hover colors) */
 .reg-hcard-2:hover,
 .reg-hcard-3:hover,
 .reg-hcard-4:hover {
@@ -155,69 +155,75 @@
 
 .reg-hcard-value {
   font-family: 'Inconsolata', monospace;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 500;
-  letter-spacing: -4px;
-  padding-left: 20px;
+  letter-spacing: -3px;
+  padding-left: 18px;
   padding-top: 10px;
   line-height: 1;
 }
 
 .reg-hcard-label {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  bottom: 10px;
+  right: 10px;
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-  font-size: 2.4rem;
+  font-size: 1.7rem;
   font-weight: 100;
   text-align: right;
   line-height: 0.9;
-  padding: 20px;
+  padding: 14px;
   text-transform: lowercase;
 }
 
-/* Staggered vertical offset on desktop (same as home page) */
+/* Staggered offset on desktop */
 @media (min-width: 768px) {
-  .reg-hcard-2 { margin-top: 50px; }
-  .reg-hcard-4 { margin-top: 50px; }
-  .reg-hcard-3 { margin-top: -50px; }
+  .reg-hcard-2 { margin-top: 40px; }
+  .reg-hcard-4 { margin-top: 40px; }
+  .reg-hcard-3 { margin-top: -40px; }
 }
 
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .reg-highlights-section {
-    padding: 3rem 1.5rem 4rem;
+    padding: 3rem 1rem 3rem;
   }
 
   .reg-highlights-heading {
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
 
+  /* 2 columns on mobile — all 5 visible without excessive scrolling */
   .reg-highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .reg-hcard-5 {
-    grid-column: span 1;
+    grid-column: span 2;
     max-width: 100%;
   }
 
   .reg-highlight-card {
-    height: 240px;
+    height: 150px;
   }
 
   .reg-hcard-value {
-    font-size: 5rem;
-    letter-spacing: -3px;
+    font-size: 2.6rem;
+    letter-spacing: -2px;
+    padding-left: 12px;
+    padding-top: 8px;
   }
 
   .reg-hcard-label {
-    font-size: 1.8rem;
-    padding: 14px;
+    font-size: 1.1rem;
+    padding: 10px;
+    bottom: 6px;
+    right: 6px;
   }
 
-  /* Mobile: pre-apply the hover colors so they're always visible */
+  /* Pre-apply colors since hover doesn't work on touch */
   .reg-hcard-1 { background-color: #C93102; color: #fff; }
   .reg-hcard-2 { background-color: #3F4144; color: #fff; margin-top: 0; }
   .reg-hcard-3 { background-color: #B5DFCE; color: #0a0a0a; margin-top: 0; }
