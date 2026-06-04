@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     height: 700px;
-    /* Desktop default */
     padding: 30px 20px;
     box-sizing: border-box;
     background: #ffffff;
@@ -28,6 +27,36 @@
 
 .dark-mode .testimonial-card:hover {
     background: #1b1b1b;
+}
+
+/* ── Scoped card border — loaded everywhere TestimonialContainer is used.
+   Three layers prevent hydration flash:
+   1. Base (#333) for light mode
+   2. .dark-mode class → white (via useEffect)
+   3. prefers-color-scheme: dark → white instantly, no JS needed       */
+.testimonials-section-content .testimonial-card {
+    border: 2px solid #333333;
+    background: transparent;
+    border-radius: 20px;
+    padding: 40px;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    transition: border-color 0.4s ease-in-out;
+}
+
+.dark-mode .testimonials-section-content .testimonial-card {
+    border: 2px solid #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .testimonials-section-content .testimonial-card {
+        border: 2px solid #ffffff;
+    }
+}
+
+.testimonials-section-content .testimonial-card:hover {
+    border-color: transparent;
 }
 
 /* .content-wrapper {

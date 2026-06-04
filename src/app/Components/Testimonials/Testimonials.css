@@ -41,25 +41,15 @@
 
 
 /* The main testimonial card */
+/* Border + height rules live in TestimonialContainer.css */
 .testimonials-section-content .testimonial-card {
   box-sizing: border-box;
-  background: transparent;
-  /* Always white — section background is always dark, no dark-mode
-     class dependency which causes a hydration flash on every refresh */
-  border: 2px solid #ffffff;
-  border-radius: 20px;
-  padding: 40px;
-  min-height: 600px;
-  max-height: 600px;
   height: auto;
+  min-height: unset;
+  max-height: unset;
   display: flex !important;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.4s ease-in-out;
-}
-
-.testimonials-section-content .testimonial-card:hover {
-  border-color: transparent;
 }
 
 

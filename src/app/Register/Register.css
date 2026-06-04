@@ -509,7 +509,12 @@ textarea.reg-input {
 /* ─── Gallery ───────────────────────────────────────────── */
 .reg-gallery-section {
   padding: 6rem 4rem;
-  background-color: #0a0a0a;
+  background-color: var(--background-light);
+  transition: background-color 0.3s;
+}
+
+.dark-mode .reg-gallery-section {
+  background-color: var(--background-dark);
 }
 
 .reg-gallery-header {
@@ -521,8 +526,13 @@ textarea.reg-input {
   font-size: 6rem;
   font-weight: 100;
   line-height: 0.8;
-  color: #ffffff;
+  color: var(--background-dark);
   margin: 0;
+  transition: color 0.3s;
+}
+
+.dark-mode .reg-gallery-title {
+  color: var(--background-light);
 }
 
 .reg-carousel {
@@ -555,17 +565,27 @@ textarea.reg-input {
 .reg-carousel-counter {
   font-family: 'Inconsolata', monospace;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.4);
   letter-spacing: 3px;
   white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.dark-mode .reg-carousel-counter {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .reg-carousel-progress {
   flex: 1;
   height: 1px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+  transition: background 0.3s;
+}
+
+.dark-mode .reg-carousel-progress {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .reg-carousel-progress-bar {
@@ -574,8 +594,13 @@ textarea.reg-input {
   left: 0;
   height: 100%;
   width: 0%;
-  background: #ffffff;
+  background: #000000;
   animation: carousel-progress 3.2s linear forwards;
+  transition: background 0.3s;
+}
+
+.dark-mode .reg-carousel-progress-bar {
+  background: #ffffff;
 }
 
 @keyframes carousel-progress {
