@@ -203,6 +203,20 @@
   }
 }
 
+/* ─── Google Form iframe ────────────────────────────────── */
+.reg-iframe-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.reg-iframe-wrapper iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
 /* ─── Form Section ──────────────────────────────────────── */
 .reg-form-section {
   padding: 3rem 4rem 6rem;
