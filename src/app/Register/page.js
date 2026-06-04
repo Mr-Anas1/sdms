@@ -265,7 +265,22 @@ export default function Register() {
             <h2 className="reg-section-label">register here</h2>
           </ScrollFromBottom>
 
-          <form className="reg-form" onSubmit={handleSubmit} noValidate>
+          {/* ── Embedded Google Form ── */}
+          <div className="reg-iframe-wrapper">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfsfS-nzGR9YN7F3J5tkSKG3Q82Qlg4_tcaXgtn2_TOVqrnnQ/viewform?embedded=true"
+              width="100%"
+              height="2742"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+            >
+              Loading…
+            </iframe>
+          </div>
+
+          {/* Custom form hidden — restore by changing false to true */}
+          {false && <form className="reg-form" onSubmit={handleSubmit} noValidate>
             {/* Row 1 */}
             <div className="reg-grid-2">
               <div className="reg-field">
@@ -478,7 +493,7 @@ export default function Register() {
                 Something went wrong. Please try again.
               </p>
             )}
-          </form>
+          </form>}
         </div>
       </section>
 
