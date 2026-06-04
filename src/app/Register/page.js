@@ -9,6 +9,8 @@ import ScrollFromLeft from "../Components/ScrollFromLeft";
 import ScrollFromRight from "../Components/ScrollFromRight";
 import ScrollFromBottom from "../Components/ScrollFromBottom";
 import ScrollRevealText from "../Components/ScrollRevealText";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Register.css";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
@@ -133,6 +135,9 @@ export default function Register() {
     document.body.classList.toggle("dark-mode", !darkMode);
   };
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   const handleFaqToggle = (index) => {
@@ -219,9 +224,11 @@ export default function Register() {
 
       {/* ── Program Highlights ── */}
       <section className="reg-highlights-section" ref={statsRef}>
-        <ScrollFromBottom>
-          <h2 className="reg-highlights-heading">program highlights</h2>
-        </ScrollFromBottom>
+        <div className="reg-highlights-heading-wrap">
+          <ScrollFromBottom>
+            <h2 className="reg-highlights-heading">program highlights</h2>
+          </ScrollFromBottom>
+        </div>
         <div className="reg-highlights-grid">
           {highlights.map((h, i) => (
             <motion.div
@@ -231,7 +238,6 @@ export default function Register() {
                 translateX: cardMotion[i].x,
                 rotate:     cardMotion[i].r,
                 opacity:    cardMotion[i].o,
-                "--hover-color": h.color,
               }}
             >
               <div className="reg-hcard-value">{h.value}</div>
@@ -418,26 +424,38 @@ export default function Register() {
           </ScrollFromRight>
         </div>
         <div className="reg-carousel">
-          <Slider
-            dots={true}
-            infinite={true}
-            autoplay={true}
-            autoplaySpeed={2500}
-            speed={600}
-            slidesToShow={2}
-            slidesToScroll={1}
-            pauseOnHover={true}
-            arrows={true}
-            responsive={[
-              { breakpoint: 768, settings: { slidesToShow: 1, arrows: false } },
-            ]}
-          >
-            {galleryImages.map((img, i) => (
-              <div key={i} className="reg-carousel-slide">
-                <img src={img.src} alt={img.alt} loading="lazy" />
-              </div>
-            ))}
-          </Slider>
+          {mounted && (
+            <Slider
+              centerMode={true}
+              centerPadding="60px"
+              slidesToShow={3}
+              slidesToScroll={1}
+              infinite={true}
+              autoplay={true}
+              autoplaySpeed={2800}
+              speed={500}
+              cssEase="ease-in-out"
+              pauseOnHover={true}
+              arrows={false}
+              swipeToSlide={true}
+              responsive={[
+                {
+                  breakpoint: 1024,
+                  settings: { slidesToShow: 2, centerPadding: "40px" },
+                },
+                {
+                  breakpoint: 640,
+                  settings: { slidesToShow: 1, centerPadding: "30px", centerMode: true },
+                },
+              ]}
+            >
+              {galleryImages.map((img, i) => (
+                <div key={i} className="reg-carousel-slide">
+                  <img src={img.src} alt={img.alt} loading="lazy" />
+                </div>
+              ))}
+            </Slider>
+          )}
         </div>
       </section>
 
@@ -477,7 +495,7 @@ export default function Register() {
             </h2>
           </ScrollFromBottom>
           <ScrollFromBottom>
-            <a href="/" className="reg-cta-btn">
+            <a href="/ContactPage" className="reg-cta-btn">
               Know more about us
             </a>
           </ScrollFromBottom>

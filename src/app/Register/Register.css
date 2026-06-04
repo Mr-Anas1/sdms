@@ -30,6 +30,14 @@
   width: 100%;
 }
 
+/* ScrollFromLeft/Right wrap in motion.div — make it a flex container
+   so the fit-content ScrollRevealText child gets positionally centered */
+.reg-hero-inner > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .reg-hero-title {
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
   font-size: 6rem;
@@ -73,6 +81,11 @@
   background-color: var(--background-dark);
 }
 
+.reg-highlights-heading-wrap {
+  width: 100%;
+  text-align: center;
+}
+
 .reg-highlights-heading {
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
   font-size: 4rem;
@@ -80,6 +93,7 @@
   margin-bottom: 4rem;
   line-height: 1;
   text-align: center;
+  display: inline-block;
   color: var(--background-dark);
   transition: color 0.3s;
 }
@@ -91,12 +105,12 @@
 .reg-highlights-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* 5th card spans full width */
+/* 5th card centered in 2-col grid */
 .reg-hcard-5 {
   grid-column: span 2;
   max-width: 48%;
@@ -107,7 +121,7 @@
 .reg-highlight-card {
   position: relative;
   background-color: #f2f2f2;
-  height: 360px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -120,6 +134,7 @@
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: default;
+  overflow: hidden;
 }
 
 .dark-mode .reg-highlight-card {
@@ -127,88 +142,92 @@
   color: #ffffff;
 }
 
-.reg-highlight-card:hover {
-  background-color: var(--hover-color);
-  color: #fff;
-}
+/* Always-on card colors — !important to override .dark-mode .reg-highlight-card */
+.reg-hcard-1 { background-color: #C93102 !important; color: #fff !important; }
+.reg-hcard-2 { background-color: #3F4144 !important; color: #fff !important; }
+.reg-hcard-3 { background-color: #B5DFCE !important; color: #0a0a0a !important; }
+.reg-hcard-4 { background-color: #F3E453 !important; color: #0a0a0a !important; }
+.reg-hcard-5 { background-color: #A78BFA !important; color: #fff !important; }
 
-/* Cards 2 & 4 text stays dark on hover (light hover colors) */
-.reg-hcard-2:hover,
-.reg-hcard-3:hover,
-.reg-hcard-4:hover {
-  color: #0a0a0a;
+/* Subtle brighten on hover */
+.reg-highlight-card:hover {
+  filter: brightness(1.1);
 }
 
 .reg-hcard-value {
   font-family: 'Inconsolata', monospace;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 500;
-  letter-spacing: -4px;
-  padding-left: 20px;
+  letter-spacing: -3px;
+  padding-left: 18px;
   padding-top: 10px;
   line-height: 1;
 }
 
 .reg-hcard-label {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  bottom: 10px;
+  right: 10px;
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-  font-size: 2.4rem;
+  font-size: 1.7rem;
   font-weight: 100;
   text-align: right;
   line-height: 0.9;
-  padding: 20px;
+  padding: 14px;
   text-transform: lowercase;
 }
 
-/* Staggered vertical offset on desktop (same as home page) */
+/* Staggered offset on desktop */
 @media (min-width: 768px) {
-  .reg-hcard-2 { margin-top: 50px; }
-  .reg-hcard-4 { margin-top: 50px; }
-  .reg-hcard-3 { margin-top: -50px; }
+  .reg-hcard-2 { margin-top: 40px; }
+  .reg-hcard-4 { margin-top: 40px; }
+  .reg-hcard-3 { margin-top: -40px; }
 }
 
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .reg-highlights-section {
-    padding: 3rem 1.5rem 4rem;
+    padding: 3rem 1rem 3rem;
   }
 
   .reg-highlights-heading {
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
 
+  /* 2 columns on mobile — all 5 visible without excessive scrolling */
   .reg-highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .reg-hcard-5 {
-    grid-column: span 1;
+    grid-column: span 2;
     max-width: 100%;
   }
 
   .reg-highlight-card {
-    height: 240px;
+    height: 150px;
   }
 
   .reg-hcard-value {
-    font-size: 5rem;
-    letter-spacing: -3px;
+    font-size: 2.6rem;
+    letter-spacing: -2px;
+    padding-left: 12px;
+    padding-top: 8px;
   }
 
   .reg-hcard-label {
-    font-size: 1.8rem;
-    padding: 14px;
+    font-size: 1.1rem;
+    padding: 10px;
+    bottom: 6px;
+    right: 6px;
   }
 
-  /* Mobile: pre-apply the hover colors so they're always visible */
-  .reg-hcard-1 { background-color: #C93102; color: #fff; }
-  .reg-hcard-2 { background-color: #3F4144; color: #fff; margin-top: 0; }
-  .reg-hcard-3 { background-color: #B5DFCE; color: #0a0a0a; margin-top: 0; }
-  .reg-hcard-4 { background-color: #F3E453; color: #0a0a0a; margin-top: 0; }
-  .reg-hcard-5 { background-color: #A78BFA; color: #fff; }
+  /* Reset stagger offsets on mobile */
+  .reg-hcard-2 { margin-top: 0; }
+  .reg-hcard-3 { margin-top: 0; }
+  .reg-hcard-4 { margin-top: 0; }
 }
 
 /* ─── Form Section ──────────────────────────────────────── */
@@ -448,53 +467,41 @@
 
 .reg-carousel {
   width: 100%;
-  padding-bottom: 2rem;
+  overflow: hidden;
 }
 
 .reg-carousel-slide {
-  padding: 0 10px;
+  padding: 0 8px;
+  outline: none;
 }
 
 .reg-carousel-slide img {
   width: 100%;
-  height: 420px;
+  height: 340px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 14px;
   display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.6;
+  transform: scale(0.93);
 }
 
-/* Slick dot overrides for gallery */
-.reg-carousel .slick-dots {
-  bottom: -2rem;
-}
-
-.reg-carousel .slick-dots li button:before {
-  color: #ffffff;
-  font-size: 8px;
-  opacity: 0.4;
-}
-
-.reg-carousel .slick-dots li.slick-active button:before {
+/* Highlight the active/center slide */
+.reg-carousel .slick-center .reg-carousel-slide img {
   opacity: 1;
-  color: #ffffff;
+  transform: scale(1);
 }
 
-/* Arrow overrides */
-.reg-carousel .slick-prev,
-.reg-carousel .slick-next {
-  z-index: 10;
-  width: 40px;
-  height: 40px;
+/* Mobile slide height */
+@media (max-width: 640px) {
+  .reg-carousel-slide img {
+    height: 240px;
+  }
 }
 
-.reg-carousel .slick-prev { left: -10px; }
-.reg-carousel .slick-next { right: -10px; }
-
-.reg-carousel .slick-prev:before,
-.reg-carousel .slick-next:before {
-  font-size: 30px;
-  color: #ffffff;
-  opacity: 0.7;
+.reg-carousel .slick-track {
+  display: flex !important;
+  align-items: center;
 }
 
 /* ─── FAQ ───────────────────────────────────────────────── */
