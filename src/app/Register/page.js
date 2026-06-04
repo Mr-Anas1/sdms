@@ -161,6 +161,9 @@ export default function Register() {
       degree: e.target.degree.value,
       major: e.target.major.value,
       program: e.target.program.value,
+      availability: e.target.availability.value,
+      projectIdeas: e.target.projectIdeas.value,
+      socialConnected: e.target.socialConnected.value,
     };
 
     try {
@@ -385,6 +388,72 @@ export default function Register() {
                 <label className="reg-radio-label">
                   <input type="radio" name="lookingFor" value="Internship Training" />
                   <span>Internship Training</span>
+                </label>
+              </div>
+            </div>
+
+            {/* ── Declaration ── */}
+            <div className="reg-declaration-divider">
+              <span>Declaration</span>
+            </div>
+
+            {/* Availability */}
+            <div className="reg-field">
+              <label className="reg-label">
+                Are you available for full-time training?
+                <span className="reg-label-sub"> 25th June to 25th July, 2026</span>
+                <span className="reg-required"> *</span>
+              </label>
+              <div className="reg-radio-group">
+                <label className="reg-radio-label">
+                  <input type="radio" name="availability" value="Yes" required />
+                  <span>Yes</span>
+                </label>
+                <label className="reg-radio-label">
+                  <input type="radio" name="availability" value="No" />
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Project ideas */}
+            <div className="reg-field">
+              <label className="reg-label">
+                Do you have any specific projects or ideas you would like to work on during the training?
+              </label>
+              <textarea
+                name="projectIdeas"
+                className="reg-input"
+                rows="3"
+                placeholder="Describe your project idea (optional)"
+              />
+            </div>
+
+            {/* Social handles */}
+            <div className="reg-field">
+              <label className="reg-label">
+                Are you connected on our social handles?
+                <span className="reg-required"> *</span>
+              </label>
+              <div className="reg-social-links">
+                <a href="https://www.instagram.com/sabeena.digital_media" target="_blank" rel="noopener noreferrer">
+                  IG — @sabeena.digital_media
+                </a>
+                <a href="https://www.linkedin.com/company/sabeena-digital-media-services/" target="_blank" rel="noopener noreferrer">
+                  LI — Sabeena Digital Media Services
+                </a>
+                <a href="https://chat.whatsapp.com/LJML7ZLHyJDCp0OEMOuDZ8" target="_blank" rel="noopener noreferrer">
+                  WA — Join WhatsApp Group
+                </a>
+              </div>
+              <div className="reg-radio-group" style={{ marginTop: "0.8rem" }}>
+                <label className="reg-radio-label">
+                  <input type="radio" name="socialConnected" value="Yes" required />
+                  <span>Yes, I'm connected</span>
+                </label>
+                <label className="reg-radio-label">
+                  <input type="radio" name="socialConnected" value="No" />
+                  <span>Not yet</span>
                 </label>
               </div>
             </div>

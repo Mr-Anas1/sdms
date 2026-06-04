@@ -6,8 +6,7 @@ export const dynamic = "force-dynamic";
 const GOOGLE_FORM_URL =
   "https://docs.google.com/forms/d/1HgKcMu7WFsyPRH91scuV9iSW3LzmwEjORJWFFttyAjw/formResponse";
 
-async function submitToGoogleForm({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program }) {
-  // Google date fields require year/month/day as separate params
+async function submitToGoogleForm({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected }) {
   const [year, month, day] = (dob || "").split("-");
 
   const params = new URLSearchParams({
@@ -20,14 +19,17 @@ async function submitToGoogleForm({ name, email, dob, address, institution, phon
     "entry.600141462":  degree,
     "entry.634982653":  major,
     "entry.577356214":  program,
-    // Date of Birth — Google Forms date field splits into 3 parts
+    // Date of Birth
     "entry.435289079_year":  year  || "",
     "entry.435289079_month": month ? String(parseInt(month, 10)) : "",
     "entry.435289079_day":   day   ? String(parseInt(day,   10)) : "",
-    // Email address field (Google's built-in collector)
+    // Declaration fields
+    "entry.1814682088": availability   || "",
+    "entry.1077434401": projectIdeas   || "",
+    "entry.2105371957": socialConnected || "",
     "emailAddress": email,
     "fvv": "1",
-    "pageHistory": "0",
+    "pageHistory": "0,1",
     "fbzx": Date.now().toString(),
   });
 
@@ -48,9 +50,10 @@ export async function POST(req) {
     const {
       name, email, dob, address, institution,
       phone, lookingFor, yearOfStudy, degree, major, program,
+      availability, projectIdeas, socialConnected,
     } = body;
 
-    if (!name || !email || !dob || !address || !institution || !phone || !lookingFor || !yearOfStudy || !degree || !major || !program) {
+    if (!name || !email || !dob || !address || !institution || !phone || !lookingFor || !yearOfStudy || !degree || !major || !program || !availability || !socialConnected) {
       return new Response(JSON.stringify({ message: "All fields are required." }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
@@ -59,7 +62,7 @@ export async function POST(req) {
 
     // ── 1. Submit to Google Forms (primary storage) ──────────
     try {
-      await submitToGoogleForm({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program });
+      await submitToGoogleForm({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected });
     } catch (gErr) {
       console.error("Google Forms submission error:", gErr.message);
       // Non-fatal — continue even if this fails
@@ -94,6 +97,9 @@ export async function POST(req) {
               <li style="color:#fff;margin-bottom:8px;"><strong>Degree:</strong> ${degree}</li>
               <li style="color:#fff;margin-bottom:8px;"><strong>Major/Field:</strong> ${major}</li>
               <li style="color:#fff;margin-bottom:8px;"><strong>Training Program:</strong> ${program}</li>
+              <li style="color:#fff;margin-bottom:8px;"><strong>Available Jun 25–Jul 25:</strong> ${availability}</li>
+              <li style="color:#fff;margin-bottom:8px;"><strong>Connected on Social:</strong> ${socialConnected}</li>
+              ${projectIdeas ? `<li style="color:#fff;margin-bottom:8px;"><strong>Project Ideas:</strong> ${projectIdeas}</li>` : ""}
             </ul>
           </div>
           <div style="text-align:center;background:#FFD700;padding:15px;border-radius:0 0 10px 10px;margin-top:20px;">
