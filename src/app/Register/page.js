@@ -495,7 +495,7 @@ export default function Register() {
             </h2>
           </ScrollFromBottom>
           <ScrollFromBottom>
-            <a href="/" className="reg-cta-btn">
+            <a href="/ContactPage" className="reg-cta-btn">
               Know more about us
             </a>
           </ScrollFromBottom>
