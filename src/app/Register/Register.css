@@ -15,26 +15,31 @@
 
 /* ─── Hero ──────────────────────────────────────────────── */
 .reg-hero {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
-  padding: 0 4rem;
-  padding-top: 12vh;
+  justify-content: center;
+  padding: 0 2rem;
+  padding-top: 14vh;
+  padding-bottom: 3rem;
+  text-align: center;
 }
 
 .reg-hero-inner {
-  max-width: 1200px;
+  max-width: 900px;
+  width: 100%;
 }
 
 .reg-hero-title {
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 100;
-  line-height: 0.85;
+  line-height: 0.9;
   margin: 0;
   text-transform: lowercase;
   color: var(--background-dark);
   transition: color 0.3s;
+  text-align: center;
 }
 
 .dark-mode .reg-hero-title {
@@ -43,21 +48,23 @@
 
 .reg-hero-subtitle {
   font-family: 'Syne', serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.7;
-  margin-top: 2.5rem;
-  max-width: 620px;
-  color: #555;
+  margin-top: 1.5rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
   transition: color 0.3s;
 }
 
 .dark-mode .reg-hero-subtitle {
-  color: #aaa;
+  color: #ffffff;
 }
 
 /* ─── Form Section ──────────────────────────────────────── */
 .reg-form-section {
-  padding: 6rem 4rem;
+  padding: 3rem 4rem 6rem;
   background-color: var(--background-light);
   transition: background-color 0.3s;
 }
@@ -504,17 +511,17 @@
 
 @media (max-width: 768px) {
   .reg-hero {
-    padding: 0 1.5rem;
-    padding-top: 14vh;
-    min-height: 80vh;
+    padding: 14vh 1.5rem 2rem;
+    min-height: auto;
   }
 
   .reg-hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .reg-hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 
   .reg-form-section,
