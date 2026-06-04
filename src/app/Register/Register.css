@@ -142,15 +142,16 @@
   color: #ffffff;
 }
 
-.reg-highlight-card:hover {
-  background-color: var(--hover-color);
-  color: #fff;
-}
+/* Always-on card colors */
+.reg-hcard-1 { background-color: #C93102; color: #fff; }
+.reg-hcard-2 { background-color: #3F4144; color: #fff; }
+.reg-hcard-3 { background-color: #B5DFCE; color: #0a0a0a; }
+.reg-hcard-4 { background-color: #F3E453; color: #0a0a0a; }
+.reg-hcard-5 { background-color: #A78BFA; color: #fff; }
 
-.reg-hcard-2:hover,
-.reg-hcard-3:hover,
-.reg-hcard-4:hover {
-  color: #0a0a0a;
+/* Subtle brighten on hover */
+.reg-highlight-card:hover {
+  filter: brightness(1.1);
 }
 
 .reg-hcard-value {
@@ -223,12 +224,10 @@
     right: 6px;
   }
 
-  /* Pre-apply colors since hover doesn't work on touch */
-  .reg-hcard-1 { background-color: #C93102; color: #fff; }
-  .reg-hcard-2 { background-color: #3F4144; color: #fff; margin-top: 0; }
-  .reg-hcard-3 { background-color: #B5DFCE; color: #0a0a0a; margin-top: 0; }
-  .reg-hcard-4 { background-color: #F3E453; color: #0a0a0a; margin-top: 0; }
-  .reg-hcard-5 { background-color: #A78BFA; color: #fff; }
+  /* Reset stagger offsets on mobile */
+  .reg-hcard-2 { margin-top: 0; }
+  .reg-hcard-3 { margin-top: 0; }
+  .reg-hcard-4 { margin-top: 0; }
 }
 
 /* ─── Form Section ──────────────────────────────────────── */

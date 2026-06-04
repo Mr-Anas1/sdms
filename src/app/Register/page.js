@@ -238,7 +238,6 @@ export default function Register() {
                 translateX: cardMotion[i].x,
                 rotate:     cardMotion[i].r,
                 opacity:    cardMotion[i].o,
-                "--hover-color": h.color,
               }}
             >
               <div className="reg-hcard-value">{h.value}</div>
