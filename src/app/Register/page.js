@@ -168,12 +168,22 @@ export default function Register() {
     };
 
     try {
+      // Submit to API (sends confirmation email)
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       await res.json();
+
+      // Submit directly to Google Sheets via Apps Script (client-side avoids Vercel→Google network block)
+      fetch("https://script.google.com/macros/s/AKfycbw-MsqDLm31LyIqw3ku2UWGy8PH_sRCQE2gaYETv7CuQjR5gYIuXAqjggCZ06cPPln1/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+        mode: "no-cors",
+      }).catch(() => {});
+
       setFormStatus(res.ok ? "success" : "error");
       if (res.ok) e.target.reset();
     } catch {
