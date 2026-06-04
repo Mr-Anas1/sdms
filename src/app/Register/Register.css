@@ -30,10 +30,12 @@
   width: 100%;
 }
 
-/* Force scroll animation wrappers full-width so text-align:center works */
+/* ScrollFromLeft/Right wrap in motion.div — make it a flex container
+   so the fit-content ScrollRevealText child gets positionally centered */
 .reg-hero-inner > div {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .reg-hero-title {
