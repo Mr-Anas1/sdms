@@ -3,45 +3,18 @@ import nodemailer from "nodemailer";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const GOOGLE_FORM_URL =
-  "https://docs.google.com/forms/d/1HgKcMu7WFsyPRH91scuV9iSW3LzmwEjORJWFFttyAjw/formResponse";
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbw-MsqDLm31LyIqw3ku2UWGy8PH_sRCQE2gaYETv7CuQjR5gYIuXAqjggCZ06cPPln1/exec";
 
-async function submitToGoogleForm({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected }) {
-  const [year, month, day] = (dob || "").split("-");
-
-  const params = new URLSearchParams({
-    "entry.1211967578": name,
-    "entry.1799362014": phone,
-    "entry.1180499118": address,
-    "entry.154220535":  institution,
-    "entry.272275402":  lookingFor,
-    "entry.1768712921": yearOfStudy,
-    "entry.600141462":  degree,
-    "entry.634982653":  major,
-    "entry.577356214":  program,
-    // Date of Birth
-    "entry.435289079_year":  year  || "",
-    "entry.435289079_month": month ? String(parseInt(month, 10)) : "",
-    "entry.435289079_day":   day   ? String(parseInt(day,   10)) : "",
-    // Declaration fields
-    "entry.1814682088": availability   || "",
-    "entry.1077434401": projectIdeas   || "",
-    "entry.2105371957": socialConnected || "",
-    "emailAddress": email,
-    "fvv": "1",
-    "pageHistory": "0,1",
-    "fbzx": Date.now().toString(),
-  });
-
-  const res = await fetch(GOOGLE_FORM_URL, {
+async function submitToSheet({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected }) {
+  const res = await fetch(APPS_SCRIPT_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: params.toString(),
-    redirect: "manual", // Google Forms 302-redirects on success — treat as OK
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected }),
+    redirect: "follow",
   });
 
-  // Google Forms returns 302 on success, 200 on error page
-  return res.status === 302 || res.ok;
+  return res.ok;
 }
 
 export async function POST(req) {
@@ -62,7 +35,7 @@ export async function POST(req) {
 
     // ── 1. Submit to Google Forms (primary storage) ──────────
     try {
-      await submitToGoogleForm({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected });
+      await submitToSheet({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected });
     } catch (gErr) {
       console.error("Google Forms submission error:", gErr.message);
       // Non-fatal — continue even if this fails
