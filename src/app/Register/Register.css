@@ -102,28 +102,31 @@
   color: var(--background-light);
 }
 
-/* Single column — one card per row on all screen sizes */
+/* Desktop: 2-column grid matching home page Stats */
 .reg-highlights-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* no span needed — single column */
+/* 5th card centered in 2-col grid */
 .reg-hcard-5 {
+  grid-column: span 2;
+  max-width: 48%;
+  margin: 0 auto;
   width: 100%;
 }
 
 .reg-highlight-card {
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 32px 28px;
+  padding: 36px 36px 30px;
   box-sizing: border-box;
   border-radius: 18px;
   overflow: hidden;
@@ -173,7 +176,14 @@
   line-height: 0.9;
 }
 
-/* ── Mobile ── */
+/* Desktop stagger — matches home page Stats */
+@media (min-width: 768px) {
+  .reg-hcard-2 { margin-top: 50px; }
+  .reg-hcard-4 { margin-top: 50px; }
+  .reg-hcard-3 { margin-top: -50px; }
+}
+
+/* ── Mobile — single column ── */
 @media (max-width: 768px) {
   .reg-highlights-section {
     padding: 3rem 1.5rem 3rem;
@@ -184,9 +194,20 @@
     margin-bottom: 1.5rem;
   }
 
+  .reg-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .reg-hcard-5 {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+
   .reg-highlight-card {
     height: 220px;
     padding: 24px 24px 20px;
+    margin-top: 0 !important;
   }
 
   .reg-hcard-value {

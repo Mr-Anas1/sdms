@@ -3,19 +3,6 @@ import nodemailer from "nodemailer";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbw-MsqDLm31LyIqw3ku2UWGy8PH_sRCQE2gaYETv7CuQjR5gYIuXAqjggCZ06cPPln1/exec";
-
-async function submitToSheet({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected }) {
-  const res = await fetch(APPS_SCRIPT_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected }),
-    redirect: "follow",
-  });
-
-  return res.ok;
-}
 
 export async function POST(req) {
   try {
@@ -33,15 +20,8 @@ export async function POST(req) {
       });
     }
 
-    // ── 1. Submit to Google Forms (primary storage) ──────────
-    try {
-      await submitToSheet({ name, email, dob, address, institution, phone, lookingFor, yearOfStudy, degree, major, program, availability, projectIdeas, socialConnected });
-    } catch (gErr) {
-      console.error("Google Forms submission error:", gErr.message);
-      // Non-fatal — continue even if this fails
-    }
-
-    // ── 2. Send emails (if configured) ───────────────────────
+    // ── Send emails (if configured) ───────────────────────
+    // Note: Google Sheets is handled client-side via Apps Script
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
