@@ -484,12 +484,12 @@ export default function Register() {
         <div className="reg-gallery-header">
           <ScrollFromLeft>
             <ScrollRevealText>
-              <h2 className="reg-gallery-title"><span>glimpses of our</span></h2>
+              <h2 className="reg-gallery-title"><span>behind the</span></h2>
             </ScrollRevealText>
           </ScrollFromLeft>
           <ScrollFromRight>
             <ScrollRevealText>
-              <h2 className="reg-gallery-title"><span>training programs</span></h2>
+              <h2 className="reg-gallery-title"><span>scenes.</span></h2>
             </ScrollRevealText>
           </ScrollFromRight>
         </div>
