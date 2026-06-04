@@ -105,12 +105,12 @@
 .reg-highlights-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 16px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* 5th card centered in 2-col grid */
+/* 5th card centered */
 .reg-hcard-5 {
   grid-column: span 2;
   max-width: 48%;
@@ -120,61 +120,49 @@
 
 .reg-highlight-card {
   position: relative;
-  background-color: #f2f2f2;
-  height: 260px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 8px;
+  padding: 28px 28px 24px;
   box-sizing: border-box;
-  border-radius: 15px;
-  color: #1b1b1b;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  font-family: 'Syne', serif;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: default;
+  border-radius: 18px;
   overflow: hidden;
+  cursor: default;
+  transition: filter 0.3s ease;
 }
 
-.dark-mode .reg-highlight-card {
-  background-color: #1b1b1b;
-  color: #ffffff;
+.reg-highlight-card:hover {
+  filter: brightness(1.06);
 }
 
-/* Always-on card colors — !important to override .dark-mode .reg-highlight-card */
+/* Card colors */
 .reg-hcard-1 { background-color: #C93102 !important; color: #fff !important; }
-.reg-hcard-2 { background-color: #3F4144 !important; color: #fff !important; }
+.reg-hcard-2 { background-color: #EBEBEB !important; color: #0a0a0a !important; }
 .reg-hcard-3 { background-color: #B5DFCE !important; color: #0a0a0a !important; }
 .reg-hcard-4 { background-color: #F3E453 !important; color: #0a0a0a !important; }
 .reg-hcard-5 { background-color: #A78BFA !important; color: #fff !important; }
 
-/* Subtle brighten on hover */
-.reg-highlight-card:hover {
-  filter: brightness(1.1);
-}
-
+/* Large serif number — top left */
 .reg-hcard-value {
-  font-family: 'Inconsolata', monospace;
-  font-size: 5rem;
-  font-weight: 500;
-  letter-spacing: -3px;
-  padding-left: 18px;
-  padding-top: 10px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 6.5rem;
+  font-weight: 900;
   line-height: 1;
+  letter-spacing: -2px;
+  margin: 0;
 }
 
+/* All-caps label — bottom right */
 .reg-hcard-label {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 100;
+  align-self: flex-end;
   text-align: right;
-  line-height: 0.9;
-  padding: 14px;
-  text-transform: lowercase;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.3;
 }
 
 /* Staggered offset on desktop */
@@ -195,7 +183,6 @@
     margin-bottom: 1.5rem;
   }
 
-  /* 2 columns on mobile — all 5 visible without excessive scrolling */
   .reg-highlights-grid {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -207,21 +194,18 @@
   }
 
   .reg-highlight-card {
-    height: 150px;
+    height: 180px;
+    padding: 18px 18px 16px;
   }
 
   .reg-hcard-value {
-    font-size: 2.6rem;
-    letter-spacing: -2px;
-    padding-left: 12px;
-    padding-top: 8px;
+    font-size: 3.5rem;
+    letter-spacing: -1px;
   }
 
   .reg-hcard-label {
-    font-size: 1.1rem;
-    padding: 10px;
-    bottom: 6px;
-    right: 6px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
   }
 
   /* Reset stagger offsets on mobile */

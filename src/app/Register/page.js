@@ -245,11 +245,7 @@ export default function Register() {
               }}
             >
               <div className="reg-hcard-value">{h.value}</div>
-              <div className="reg-hcard-label">
-                {h.label.split("\n").map((line, j) => (
-                  <span key={j}>{line}<br /></span>
-                ))}
-              </div>
+              <div className="reg-hcard-label">{h.label.replace("\n", " ")}</div>
             </motion.div>
           ))}
         </div>
