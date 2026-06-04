@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Navbar from "../Components/Navbar/Navbar";
 import MainFooter from "../Components/MainFooter/MainFooter";
 import FluidCursor from "../FluidCursor";
@@ -72,12 +73,56 @@ const faqs = [
   },
 ];
 
+const highlights = [
+  { value: "28500+", label: "Students\nTrained",       color: "#C93102" },
+  { value: "2500+",  label: "Projects\nCompleted",     color: "#B6BEBE" },
+  { value: "50+",    label: "Industry\nMentors",        color: "#B5DFCE" },
+  { value: "100+",   label: "Internship\nOpportunities",color: "#F3E453" },
+  { value: "150+",   label: "Students\nPlaced",         color: "#A78BFA" },
+];
+
 export default function Register() {
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
   const [formStatus, setFormStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
+
+  // Highlights scroll animations
+  const statsRef = useRef(null);
+  const { scrollYProgress: statsProgress } = useScroll({
+    target: statsRef,
+    offset: ["start end", "end start"],
+  });
+  const spring = (v) => useSpring(v, { stiffness: 250, damping: 30, mass: 0.9 });
+
+  const c1x = spring(useTransform(statsProgress, [0,    0.2 ], [-220, 0]));
+  const c1r = spring(useTransform(statsProgress, [0,    0.2 ], [-10,  0]));
+  const c1o = spring(useTransform(statsProgress, [0,    0.2 ], [0,    1]));
+
+  const c2x = spring(useTransform(statsProgress, [0.15, 0.35], [ 220, 0]));
+  const c2r = spring(useTransform(statsProgress, [0.15, 0.35], [ 10,  0]));
+  const c2o = spring(useTransform(statsProgress, [0.15, 0.35], [0,    1]));
+
+  const c3x = spring(useTransform(statsProgress, [0.3,  0.5 ], [-220, 0]));
+  const c3r = spring(useTransform(statsProgress, [0.3,  0.5 ], [-10,  0]));
+  const c3o = spring(useTransform(statsProgress, [0.3,  0.5 ], [0,    1]));
+
+  const c4x = spring(useTransform(statsProgress, [0.45, 0.65], [ 220, 0]));
+  const c4r = spring(useTransform(statsProgress, [0.45, 0.65], [ 10,  0]));
+  const c4o = spring(useTransform(statsProgress, [0.45, 0.65], [0,    1]));
+
+  const c5x = spring(useTransform(statsProgress, [0.6,  0.8 ], [-220, 0]));
+  const c5r = spring(useTransform(statsProgress, [0.6,  0.8 ], [-10,  0]));
+  const c5o = spring(useTransform(statsProgress, [0.6,  0.8 ], [0,    1]));
+
+  const cardMotion = [
+    { x: c1x, r: c1r, o: c1o },
+    { x: c2x, r: c2r, o: c2o },
+    { x: c3x, r: c3r, o: c3o },
+    { x: c4x, r: c4r, o: c4o },
+    { x: c5x, r: c5r, o: c5o },
+  ];
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
@@ -169,6 +214,34 @@ export default function Register() {
               projects, mentorship, and professional development opportunities.
             </p>
           </ScrollFromBottom>
+        </div>
+      </section>
+
+      {/* ── Program Highlights ── */}
+      <section className="reg-highlights-section" ref={statsRef}>
+        <ScrollFromBottom>
+          <h2 className="reg-highlights-heading">program highlights</h2>
+        </ScrollFromBottom>
+        <div className="reg-highlights-grid">
+          {highlights.map((h, i) => (
+            <motion.div
+              key={i}
+              className={`reg-highlight-card reg-hcard-${i + 1}`}
+              style={{
+                translateX: cardMotion[i].x,
+                rotate:     cardMotion[i].r,
+                opacity:    cardMotion[i].o,
+                "--hover-color": h.color,
+              }}
+            >
+              <div className="reg-hcard-value">{h.value}</div>
+              <div className="reg-hcard-label">
+                {h.label.split("\n").map((line, j) => (
+                  <span key={j}>{line}<br /></span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

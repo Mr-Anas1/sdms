@@ -62,6 +62,155 @@
   color: #ffffff;
 }
 
+/* ─── Program Highlights ────────────────────────────────── */
+.reg-highlights-section {
+  padding: 5rem 4rem 6rem;
+  background-color: var(--background-light);
+  transition: background-color 0.3s;
+}
+
+.dark-mode .reg-highlights-section {
+  background-color: var(--background-dark);
+}
+
+.reg-highlights-heading {
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  font-size: 4rem;
+  font-weight: 100;
+  margin-bottom: 4rem;
+  line-height: 1;
+  text-align: center;
+  color: var(--background-dark);
+  transition: color 0.3s;
+}
+
+.dark-mode .reg-highlights-heading {
+  color: var(--background-light);
+}
+
+.reg-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 5th card spans full width */
+.reg-hcard-5 {
+  grid-column: span 2;
+  max-width: 48%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.reg-highlight-card {
+  position: relative;
+  background-color: #f2f2f2;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: #1b1b1b;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  font-family: 'Syne', serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.dark-mode .reg-highlight-card {
+  background-color: #1b1b1b;
+  color: #ffffff;
+}
+
+.reg-highlight-card:hover {
+  background-color: var(--hover-color);
+  color: #fff;
+}
+
+/* Cards 2 & 4 text stays dark on hover (light hover colors) */
+.reg-hcard-2:hover,
+.reg-hcard-3:hover,
+.reg-hcard-4:hover {
+  color: #0a0a0a;
+}
+
+.reg-hcard-value {
+  font-family: 'Inconsolata', monospace;
+  font-size: 7rem;
+  font-weight: 500;
+  letter-spacing: -4px;
+  padding-left: 20px;
+  padding-top: 10px;
+  line-height: 1;
+}
+
+.reg-hcard-label {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 100;
+  text-align: right;
+  line-height: 0.9;
+  padding: 20px;
+  text-transform: lowercase;
+}
+
+/* Staggered vertical offset on desktop (same as home page) */
+@media (min-width: 768px) {
+  .reg-hcard-2 { margin-top: 50px; }
+  .reg-hcard-4 { margin-top: 50px; }
+  .reg-hcard-3 { margin-top: -50px; }
+}
+
+@media (max-width: 768px) {
+  .reg-highlights-section {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .reg-highlights-heading {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .reg-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .reg-hcard-5 {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+
+  .reg-highlight-card {
+    height: 240px;
+  }
+
+  .reg-hcard-value {
+    font-size: 5rem;
+    letter-spacing: -3px;
+  }
+
+  .reg-hcard-label {
+    font-size: 1.8rem;
+    padding: 14px;
+  }
+
+  /* Mobile: pre-apply the hover colors so they're always visible */
+  .reg-hcard-1 { background-color: #C93102; color: #fff; }
+  .reg-hcard-2 { background-color: #3F4144; color: #fff; margin-top: 0; }
+  .reg-hcard-3 { background-color: #B5DFCE; color: #0a0a0a; margin-top: 0; }
+  .reg-hcard-4 { background-color: #F3E453; color: #0a0a0a; margin-top: 0; }
+  .reg-hcard-5 { background-color: #A78BFA; color: #fff; }
+}
+
 /* ─── Form Section ──────────────────────────────────────── */
 .reg-form-section {
   padding: 3rem 4rem 6rem;
