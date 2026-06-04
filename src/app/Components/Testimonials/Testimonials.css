@@ -41,20 +41,15 @@
 
 
 /* The main testimonial card */
-/* Border rules moved to TestimonialContainer.css so they load
-   on every page that uses the component (including /Trainings) */
+/* Border + height rules live in TestimonialContainer.css */
 .testimonials-section-content .testimonial-card {
   box-sizing: border-box;
-  background: transparent;
-  border-radius: 20px;
-  padding: 40px;
-  min-height: 600px;
-  max-height: 600px;
   height: auto;
+  min-height: unset;
+  max-height: unset;
   display: flex !important;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.4s ease-in-out;
 }
 
 

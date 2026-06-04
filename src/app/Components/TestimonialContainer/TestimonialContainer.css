@@ -29,21 +29,19 @@
     background: #1b1b1b;
 }
 
-/* ── Scoped card border when wrapped in .testimonials-section-content ──
-   Rules live here so they load on every page using TestimonialContainer.
-   Three layers to cover all states without hydration flash:
-   1. Base: dark border for light mode
-   2. .dark-mode class: white border (applied via useEffect)
-   3. prefers-color-scheme: dark: white border — fires instantly, no JS,
-      covers the gap before useEffect adds .dark-mode to body           */
+/* ── Scoped card border — loaded everywhere TestimonialContainer is used.
+   Three layers prevent hydration flash:
+   1. Base (#333) for light mode
+   2. .dark-mode class → white (via useEffect)
+   3. prefers-color-scheme: dark → white instantly, no JS needed       */
 .testimonials-section-content .testimonial-card {
     border: 2px solid #333333;
     background: transparent;
     border-radius: 20px;
     padding: 40px;
-    min-height: 600px;
-    max-height: 600px;
     height: auto;
+    min-height: unset;
+    max-height: unset;
     transition: border-color 0.4s ease-in-out;
 }
 
@@ -55,25 +53,6 @@
     .testimonials-section-content .testimonial-card {
         border: 2px solid #ffffff;
     }
-}
-
-.testimonials-section-content .testimonial-card:hover {
-    border-color: transparent;
-}
-
-/* Border lives here (not in Testimonials.css) so it loads on every
-   page that uses TestimonialContainer, including /Trainings.
-   Always white — the wrapper section always has a dark background.
-   border-color transition on hover removes it smoothly. */
-.testimonials-section-content .testimonial-card {
-    border: 2px solid #ffffff;
-    background: transparent;
-    border-radius: 20px;
-    padding: 40px;
-    min-height: 600px;
-    max-height: 600px;
-    height: auto;
-    transition: border-color 0.4s ease-in-out;
 }
 
 .testimonials-section-content .testimonial-card:hover {
