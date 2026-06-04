@@ -142,12 +142,12 @@
   color: #ffffff;
 }
 
-/* Always-on card colors */
-.reg-hcard-1 { background-color: #C93102; color: #fff; }
-.reg-hcard-2 { background-color: #3F4144; color: #fff; }
-.reg-hcard-3 { background-color: #B5DFCE; color: #0a0a0a; }
-.reg-hcard-4 { background-color: #F3E453; color: #0a0a0a; }
-.reg-hcard-5 { background-color: #A78BFA; color: #fff; }
+/* Always-on card colors — !important to override .dark-mode .reg-highlight-card */
+.reg-hcard-1 { background-color: #C93102 !important; color: #fff !important; }
+.reg-hcard-2 { background-color: #3F4144 !important; color: #fff !important; }
+.reg-hcard-3 { background-color: #B5DFCE !important; color: #0a0a0a !important; }
+.reg-hcard-4 { background-color: #F3E453 !important; color: #0a0a0a !important; }
+.reg-hcard-5 { background-color: #A78BFA !important; color: #fff !important; }
 
 /* Subtle brighten on hover */
 .reg-highlight-card:hover {
