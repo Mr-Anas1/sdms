@@ -219,9 +219,11 @@ export default function Register() {
 
       {/* ── Program Highlights ── */}
       <section className="reg-highlights-section" ref={statsRef}>
-        <ScrollFromBottom>
-          <h2 className="reg-highlights-heading">program highlights</h2>
-        </ScrollFromBottom>
+        <div className="reg-highlights-heading-wrap">
+          <ScrollFromBottom>
+            <h2 className="reg-highlights-heading">program highlights</h2>
+          </ScrollFromBottom>
+        </div>
         <div className="reg-highlights-grid">
           {highlights.map((h, i) => (
             <motion.div
