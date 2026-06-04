@@ -30,6 +30,12 @@
   width: 100%;
 }
 
+/* Force scroll animation wrappers full-width so text-align:center works */
+.reg-hero-inner > div {
+  width: 100%;
+  text-align: center;
+}
+
 .reg-hero-title {
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
   font-size: 6rem;
