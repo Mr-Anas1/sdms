@@ -55,61 +55,34 @@ export default function StatsComponent() {
       {/* Card 1 - From Left */}
       <motion.div
         className="stat-card left card1"
-        style={{
-          translateX: card1X,
-          rotate: card1Rotate,
-          opacity: card1Opacity,
-        }}
+        style={{ translateX: card1X, rotate: card1Rotate, opacity: card1Opacity }}
       >
-        <div className="stat-value">100+</div>
-        <div className="stat-label">
-          PROJECTS <br /> COMPLETED
-        </div>
+        <div className="stat-value">100<sup className="stat-sup">+</sup></div>
+        <div className="stat-label">projects<br />completed</div>
       </motion.div>
 
-      {/* Card 2 - From Right */}
       <motion.div
         className="stat-card right card2"
-        style={{
-          translateX: card2X,
-          rotate: card2Rotate,
-          opacity: card2Opacity,
-        }}
+        style={{ translateX: card2X, rotate: card2Rotate, opacity: card2Opacity }}
       >
-        <div className="stat-value">05+</div>
-        <div className="stat-label">
-          SUCCESSFUL <br /> PARTNERSHIPS
-        </div>
+        <div className="stat-value">05<sup className="stat-sup">+</sup></div>
+        <div className="stat-label">successful<br />partnerships</div>
       </motion.div>
 
-      {/* Card 3 - From Left */}
       <motion.div
         className="stat-card left card3"
-        style={{
-          translateX: card3X,
-          rotate: card3Rotate,
-          opacity: card3Opacity,
-        }}
+        style={{ translateX: card3X, rotate: card3Rotate, opacity: card3Opacity }}
       >
-        <div className="stat-value">10+</div>
-        <div className="stat-label">
-          CREATIVE <br /> INNOVATORS
-        </div>
+        <div className="stat-value">10<sup className="stat-sup">+</sup></div>
+        <div className="stat-label">creative<br />innovators</div>
       </motion.div>
 
-      {/* Card 4 - From Right */}
       <motion.div
         className="stat-card right card4"
-        style={{
-          translateX: card4X,
-          rotate: card4Rotate,
-          opacity: card4Opacity,
-        }}
+        style={{ translateX: card4X, rotate: card4Rotate, opacity: card4Opacity }}
       >
-        <div className="stat-value">200+</div>
-        <div className="stat-label">
-          HOURS OF <br /> DIGITAL SOLUTIONS
-        </div>
+        <div className="stat-value">200<sup className="stat-sup">+</sup></div>
+        <div className="stat-label">hours of<br />digital solutions</div>
       </motion.div>
     </div>
   );

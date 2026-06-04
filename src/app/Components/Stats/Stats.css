@@ -1,249 +1,122 @@
-/* Stats Component Styles*/
+/* Stats Component Styles */
 @import '../../../styles/shared.css';
 
-.stat-card {
-  animation-fill-mode: forwards;
-}
-
-
-
+/* ── Container — single column, matches Register highlights ── */
 .stats-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  justify-items: center;
-  align-items: start;
-  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 10vh auto 0;
+  padding: 0 4rem;
   position: relative;
 }
 
-/* Card styling */
+/* ── Card base ── */
+.stat-card {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 32px 28px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: default;
+  transition: filter 0.3s ease;
+  background-color: #f2f2f2;
+  color: #1b1b1b;
+}
 
 .dark-mode .stat-card {
   background-color: #1b1b1b;
   color: #ffffff;
 }
 
-.stat-card {
-  position: relative;
-  background-color: #f2f2f2;
-  width: 40vw;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5px;
-  box-sizing: border-box;
-  border-radius: 15px;
-  color: #1b1b1b;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-family: 'Syne', serif;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+.stat-card:hover {
+  filter: brightness(1.07);
 }
 
-.stat-card.card1:hover {
-  background-color: #C93102;
-  color: #fff;
-}
+/* ── Card colors (always on, same as Register page) ── */
+.stat-card.card1 { background-color: #C93102 !important; color: #fff !important; }
+.stat-card.card2 { background-color: #EBEBEB !important; color: #0a0a0a !important; }
+.stat-card.card3 { background-color: #B5DFCE !important; color: #0a0a0a !important; }
+.stat-card.card4 { background-color: #F3E453 !important; color: #0a0a0a !important; }
 
-.stat-card.card2:hover {
-  background-color: #B6BEBE;
-  color: #0a0a0a;
-}
-
-.stat-card.card3:hover {
-  background-color: #B5DFCE;
-  color: #0a0a0a;
-}
-
-.stat-card.card4:hover {
-  background-color: #F3E453;
-  color: #0a0a0a;
-}
-
+/* ── Number — Inconsolata, slashed-zero, letter-spacing -8px ── */
 .stat-value {
-  font-size: 8rem;
-  padding-left: 25px;
-  font-family: "Inconsolata", monospace;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  letter-spacing: -5px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 7rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -8px;
+  font-variant-numeric: slashed-zero;
+  margin: 0;
 }
 
+.stat-sup {
+  font-family: 'Inconsolata', monospace;
+  font-size: 2.5rem;
+  font-weight: 400;
+  vertical-align: super;
+  letter-spacing: 0;
+}
 
+/* ── Label — Dirtyline lowercase, bottom right ── */
 .stat-label {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 2.8rem;
+  align-self: flex-end;
   text-align: right;
-  font-weight: 500;
-  padding: 25px;
-  font-family: 'Dirtyline36Daysoftype2022', serif;
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
   text-transform: lowercase;
   line-height: 0.9;
 }
 
-
-
-@media screen and (max-width: 1050px) {
-  .stat-label {
-    font-size: 2.5rem;
-    font-weight: 600;
-  }
-
-  .stat-value {
-    font-size: 4.5rem;
-    font-weight: 600;
-  }
-}
-
+/* ── Mobile ── */
 @media screen and (max-width: 768px) {
   .stats-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-
+    padding: 0 1.5rem;
+    gap: 10px;
   }
 
   .stat-card {
-    width: 100%;
-    height: 320px;
+    height: 220px;
+    padding: 24px 24px 20px;
   }
 
   .stat-value {
-    font-size: 5.5rem;
-    font-weight: 600;
+    font-size: 5rem;
+    letter-spacing: -8px;
+  }
+
+  .stat-sup {
+    font-size: 1.8rem;
   }
 
   .stat-label {
-    margin-top: 3vh;
-    margin-left: 3vw;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-  }
-
-
-
-  .stat-card.card1 {
-    background-color: #DE4718;
-    color: #fff;
-  }
-
-  .stat-card.card2 {
-    background-color: #3F4144;
-    color: #fff;
-  }
-
-  .stat-card.card3 {
-    background-color: #B7DFCF;
-
-  }
-
-  .stat-card.card4 {
-    background-color: #F3E453;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .stat-value {
-    font-size: 4.2rem;
-    font-weight: 600;
+  .stat-card {
+    height: 180px;
+    padding: 18px 18px 16px;
   }
 
-  .stat-label {
-    margin-top: 3vh;
-    margin-left: 3vw;
+  .stat-value {
+    font-size: 3.8rem;
+    letter-spacing: -6px;
+  }
+
+  .stat-sup {
     font-size: 1.4rem;
-    letter-spacing: 1px;
-    font-weight: 600;
   }
 
-  .stat-card {
-    width: 100%;
-    height: 220px;
-  }
-}
-
-/* Height-based responsive adjustments for lower height devices  -------- We can remove this if not necessary---------*/ 
-
-
-@media screen and (max-height: 500px) {
-  .stat-card {
-    height: 200px;
-  }
-  
-  .stat-value {
-    font-size: 4.5rem;
-    padding-left: 15px;
-  }
-  
   .stat-label {
-    font-size: 1.6rem;
-    padding: 10px;
-    bottom: 5px;
-    right: 5px;
-  }
-}
-
-@media screen and (max-height: 600px) {
-  .stat-card {
-    height: 280px;
-  }
-  
-  .stat-value {
-    font-size: 6rem;
-  }
-  
-  .stat-label {
-    font-size: 2rem;
-    padding: 15px;
-  }
-}
-
-@media screen and (max-height: 400px) {
-  .stat-card {
-    height: 150px;
-  }
-  
-  .stat-value {
-    font-size: 3.5rem;
-    padding-left: 10px;
-  }
-  
-  .stat-label {
-    font-size: 1.2rem;
-    padding: 8px;
-    bottom: 3px;
-    right: 3px;
-  }
-}
-/*-------------------Till here height based adjustment-----------*/
-
-
-/* Desktop adjustments to move right cards lower */
-@media (min-width: 768px) {
-  .stats-container {
-    grid-template-columns: 1fr 1fr;
-    /* Two columns layout */
-  }
-
-  .stat-card:nth-child(2),
-  .stat-card:nth-child(4) {
-    align-self: flex-start;
-    margin-top: 50px;
-  }
-
-  .stat-card:nth-child(2) {
-    position: relative;
-    top: 50px;
-  }
-
-  .stat-card:nth-child(3) {
-    position: relative;
-    top: -50px;
+    font-size: 1.1rem;
   }
 }
