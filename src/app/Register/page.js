@@ -10,24 +10,16 @@ import ScrollRevealText from "../Components/ScrollRevealText";
 import "./Register.css";
 
 const galleryImages = [
-  { src: "/images/gallery-lab-1.jpg", alt: "Hands-on lab session" },
-  { src: "/images/gallery-lab-2.jpg", alt: "Web Works Studio training" },
-  { src: "/images/gallery-outdoor.jpg", alt: "SDMS at college campus" },
-  { src: "/images/gallery-surface-mount.jpg", alt: "Industry visit" },
-  { src: "/images/gallery-trainer.jpg", alt: "Trainer with batch" },
-  { src: "/images/gallery-batch.jpg", alt: "Batch completion" },
-  { src: "/images/gallery-meeting.jpg", alt: "Faculty coordination" },
-  { src: "/images/gallery-workshop-1.jpg", alt: "Hands-on workshop" },
-  { src: "/images/gallery-workshop-2.jpg", alt: "Workshop activity" },
-  { src: "/images/gallery-auditorium.jpg", alt: "College seminar" },
-  { src: "/images/gallery-award-1.jpg", alt: "Certificate ceremony" },
-  { src: "/images/gallery-large-hall.jpg", alt: "Large batch program" },
-  { src: "/images/gallery-award-2.jpg", alt: "Placement drive valedictory" },
-  { src: "/images/gallery-principal.jpg", alt: "Principal's office coordination" },
-  { src: "/images/gallery-seminar.jpg", alt: "Seminar session" },
-  { src: "/images/gallery-placement-drive.jpg", alt: "Placement drive" },
-  { src: "/images/gallery-team-1.jpg", alt: "Team SDMS" },
-  { src: "/images/gallery-team-2.jpg", alt: "Team SDMS with faculty" },
+  { src: "/images/test1.jpg", alt: "Hands-on lab session" },
+  { src: "/images/training2.jpeg", alt: "Training program" },
+  { src: "/images/test3.jpg", alt: "Workshop session" },
+  { src: "/images/college.webp", alt: "College training" },
+  { src: "/images/test2.jpg", alt: "Practical learning" },
+  { src: "/images/training1.jpeg", alt: "Batch training" },
+  { src: "/images/test4.jpg", alt: "Internship program" },
+  { src: "/images/service1.jpeg", alt: "Live project work" },
+  { src: "/images/school.webp", alt: "School program" },
+  { src: "/images/service2.jpeg", alt: "Mentorship session" },
 ];
 
 const faqs = [
