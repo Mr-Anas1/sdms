@@ -136,6 +136,7 @@ export default function Register() {
   };
 
   const [mounted, setMounted] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => { setMounted(true); }, []);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -494,36 +495,37 @@ export default function Register() {
         </div>
         <div className="reg-carousel">
           {mounted && (
-            <Slider
-              centerMode={true}
-              centerPadding="60px"
-              slidesToShow={3}
-              slidesToScroll={1}
-              infinite={true}
-              autoplay={true}
-              autoplaySpeed={2800}
-              speed={500}
-              cssEase="ease-in-out"
-              pauseOnHover={true}
-              arrows={false}
-              swipeToSlide={true}
-              responsive={[
-                {
-                  breakpoint: 1024,
-                  settings: { slidesToShow: 2, centerPadding: "40px" },
-                },
-                {
-                  breakpoint: 640,
-                  settings: { slidesToShow: 1, centerPadding: "30px", centerMode: true },
-                },
-              ]}
-            >
-              {galleryImages.map((img, i) => (
-                <div key={i} className="reg-carousel-slide">
-                  <img src={img.src} alt={img.alt} loading="lazy" />
+            <>
+              <Slider
+                fade={true}
+                slidesToShow={1}
+                slidesToScroll={1}
+                infinite={true}
+                autoplay={true}
+                autoplaySpeed={3200}
+                speed={900}
+                cssEase="ease-in-out"
+                arrows={false}
+                dots={false}
+                swipeToSlide={true}
+                pauseOnHover={true}
+                afterChange={(i) => setCurrentSlide(i)}
+              >
+                {galleryImages.map((img, i) => (
+                  <div key={i} className="reg-carousel-slide">
+                    <img src={img.src} alt={img.alt} loading="lazy" />
+                  </div>
+                ))}
+              </Slider>
+              <div className="reg-carousel-footer">
+                <span className="reg-carousel-counter">
+                  {String(currentSlide + 1).padStart(2, "0")} / {String(galleryImages.length).padStart(2, "0")}
+                </span>
+                <div className="reg-carousel-progress">
+                  <div className="reg-carousel-progress-bar" key={currentSlide} />
                 </div>
-              ))}
-            </Slider>
+              </div>
+            </>
           )}
         </div>
       </section>

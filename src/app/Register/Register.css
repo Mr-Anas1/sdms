@@ -558,37 +558,65 @@ textarea.reg-input {
 }
 
 .reg-carousel-slide {
-  padding: 0 8px;
   outline: none;
+  padding: 0;
 }
 
 .reg-carousel-slide img {
   width: 100%;
-  height: 340px;
+  height: 65vh;
   object-fit: cover;
-  border-radius: 14px;
+  object-position: center;
+  border-radius: 20px;
   display: block;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0.6;
-  transform: scale(0.93);
 }
 
-/* Highlight the active/center slide */
-.reg-carousel .slick-center .reg-carousel-slide img {
-  opacity: 1;
-  transform: scale(1);
+/* ── Counter + progress bar ── */
+.reg-carousel-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 0.25rem 0;
 }
 
-/* Mobile slide height */
+.reg-carousel-counter {
+  font-family: 'Inconsolata', monospace;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.reg-carousel-progress {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.reg-carousel-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #ffffff;
+  animation: carousel-progress 3.2s linear forwards;
+}
+
+@keyframes carousel-progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* Mobile */
 @media (max-width: 640px) {
   .reg-carousel-slide img {
-    height: 240px;
+    height: 50vw;
+    min-height: 220px;
+    border-radius: 14px;
   }
-}
-
-.reg-carousel .slick-track {
-  display: flex !important;
-  align-items: center;
 }
 
 /* ─── FAQ ───────────────────────────────────────────────── */
@@ -789,10 +817,6 @@ textarea.reg-input {
 
   .reg-gallery-title {
     font-size: 3.5rem;
-  }
-
-  .reg-carousel-slide img {
-    height: 280px;
   }
 
   .reg-cta-section {
