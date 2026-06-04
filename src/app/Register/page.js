@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "../Components/Navbar/Navbar";
 import MainFooter from "../Components/MainFooter/MainFooter";
 import FluidCursor from "../FluidCursor";
@@ -9,36 +10,39 @@ import ScrollFromBottom from "../Components/ScrollFromBottom";
 import ScrollRevealText from "../Components/ScrollRevealText";
 import "./Register.css";
 
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
+
+// Tshirt pics first, then alternating between event photos
 const galleryImages = [
+  { src: "/images/gallery-27.jpeg", alt: "Team SDMS" },
+  { src: "/images/gallery-28.jpeg", alt: "Team SDMS" },
+  { src: "/images/gallery-29.jpeg", alt: "Team SDMS" },
   { src: "/images/gallery-01.jpeg", alt: "Training session" },
-  { src: "/images/gallery-02.jpeg", alt: "Hands-on learning" },
-  { src: "/images/gallery-03.jpeg", alt: "Workshop activity" },
-  { src: "/images/gallery-04.jpeg", alt: "College program" },
-  { src: "/images/gallery-05.jpeg", alt: "Batch training" },
-  { src: "/images/gallery-06.jpeg", alt: "Live project work" },
-  { src: "/images/gallery-07.jpeg", alt: "Mentorship session" },
-  { src: "/images/gallery-08.jpeg", alt: "Industry collaboration" },
-  { src: "/images/gallery-09.jpeg", alt: "Placement drive" },
-  { src: "/images/gallery-10.jpeg", alt: "Certificate ceremony" },
-  { src: "/images/gallery-11.jpeg", alt: "Seminar session" },
-  { src: "/images/gallery-12.jpeg", alt: "Practical training" },
-  { src: "/images/gallery-13.jpeg", alt: "Team SDMS" },
   { src: "/images/gallery-14.jpeg", alt: "Faculty coordination" },
+  { src: "/images/gallery-02.jpeg", alt: "Hands-on learning" },
   { src: "/images/gallery-15.jpeg", alt: "Internship program" },
+  { src: "/images/gallery-03.jpeg", alt: "Workshop activity" },
   { src: "/images/gallery-16.jpeg", alt: "Award ceremony" },
+  { src: "/images/gallery-04.jpeg", alt: "College program" },
   { src: "/images/gallery-17.jpeg", alt: "Large batch" },
+  { src: "/images/gallery-05.jpeg", alt: "Batch training" },
   { src: "/images/gallery-18.jpeg", alt: "Valedictory ceremony" },
+  { src: "/images/gallery-06.jpeg", alt: "Live project work" },
   { src: "/images/gallery-19.jpeg", alt: "Principal meeting" },
+  { src: "/images/gallery-07.jpeg", alt: "Mentorship session" },
   { src: "/images/gallery-20.jpeg", alt: "Training workshop" },
+  { src: "/images/gallery-08.jpeg", alt: "Industry collaboration" },
   { src: "/images/gallery-21.jpeg", alt: "Classroom session" },
+  { src: "/images/gallery-09.jpeg", alt: "Placement drive" },
   { src: "/images/gallery-22.jpeg", alt: "Student engagement" },
+  { src: "/images/gallery-10.jpeg", alt: "Certificate ceremony" },
   { src: "/images/gallery-23.jpeg", alt: "Lab session" },
+  { src: "/images/gallery-11.jpeg", alt: "Seminar session" },
   { src: "/images/gallery-24.jpeg", alt: "Group activity" },
+  { src: "/images/gallery-12.jpeg", alt: "Practical training" },
   { src: "/images/gallery-25.jpeg", alt: "Skill training" },
+  { src: "/images/gallery-13.jpeg", alt: "Team SDMS" },
   { src: "/images/gallery-26.jpeg", alt: "Project work" },
-  { src: "/images/gallery-27.jpeg", alt: "Outdoor program" },
-  { src: "/images/gallery-28.jpeg", alt: "Team photo" },
-  { src: "/images/gallery-29.jpeg", alt: "Graduation ceremony" },
 ];
 
 const faqs = [
@@ -340,12 +344,27 @@ export default function Register() {
             </ScrollRevealText>
           </ScrollFromRight>
         </div>
-        <div className="reg-masonry">
-          {galleryImages.map((img, i) => (
-            <div key={i} className="reg-masonry-item">
-              <img src={img.src} alt={img.alt} loading="lazy" />
-            </div>
-          ))}
+        <div className="reg-carousel">
+          <Slider
+            dots={true}
+            infinite={true}
+            autoplay={true}
+            autoplaySpeed={2500}
+            speed={600}
+            slidesToShow={2}
+            slidesToScroll={1}
+            pauseOnHover={true}
+            arrows={true}
+            responsive={[
+              { breakpoint: 768, settings: { slidesToShow: 1, arrows: false } },
+            ]}
+          >
+            {galleryImages.map((img, i) => (
+              <div key={i} className="reg-carousel-slide">
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
 
