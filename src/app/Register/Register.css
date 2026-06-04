@@ -83,7 +83,7 @@
 
 .reg-highlights-heading-wrap {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .reg-highlights-heading {
@@ -92,7 +92,7 @@
   font-weight: 100;
   margin-bottom: 4rem;
   line-height: 1;
-  text-align: center;
+  text-align: left;
   display: inline-block;
   color: var(--background-dark);
   transition: color 0.3s;
@@ -102,92 +102,81 @@
   color: var(--background-light);
 }
 
+/* Single column — one card per row on all screen sizes */
 .reg-highlights-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* 5th card centered in 2-col grid */
+/* no span needed — single column */
 .reg-hcard-5 {
-  grid-column: span 2;
-  max-width: 48%;
-  margin: 0 auto;
   width: 100%;
 }
 
 .reg-highlight-card {
   position: relative;
-  background-color: #f2f2f2;
-  height: 260px;
+  width: 100%;
+  height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 8px;
+  padding: 32px 32px 28px;
   box-sizing: border-box;
-  border-radius: 15px;
-  color: #1b1b1b;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  font-family: 'Syne', serif;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: default;
+  border-radius: 18px;
   overflow: hidden;
+  cursor: default;
+  transition: filter 0.3s ease;
 }
 
-.dark-mode .reg-highlight-card {
-  background-color: #1b1b1b;
-  color: #ffffff;
+.reg-highlight-card:hover {
+  filter: brightness(1.07);
 }
 
-/* Always-on card colors — !important to override .dark-mode .reg-highlight-card */
+/* Card colors */
 .reg-hcard-1 { background-color: #C93102 !important; color: #fff !important; }
-.reg-hcard-2 { background-color: #3F4144 !important; color: #fff !important; }
+.reg-hcard-2 { background-color: #EBEBEB !important; color: #0a0a0a !important; }
 .reg-hcard-3 { background-color: #B5DFCE !important; color: #0a0a0a !important; }
 .reg-hcard-4 { background-color: #F3E453 !important; color: #0a0a0a !important; }
 .reg-hcard-5 { background-color: #A78BFA !important; color: #fff !important; }
 
-/* Subtle brighten on hover */
-.reg-highlight-card:hover {
-  filter: brightness(1.1);
-}
-
+/* Large monospace number — top left, slashed zeros */
 .reg-hcard-value {
   font-family: 'Inconsolata', monospace;
-  font-size: 5rem;
-  font-weight: 500;
-  letter-spacing: -3px;
-  padding-left: 18px;
-  padding-top: 10px;
+  font-size: 7rem;
+  font-weight: 400;
   line-height: 1;
+  letter-spacing: -8px;
+  font-variant-numeric: slashed-zero;
+  margin: 0;
 }
 
+.reg-hcard-plus {
+  font-family: 'Inconsolata', monospace;
+  font-size: 2.5rem;
+  font-weight: 400;
+  vertical-align: super;
+  letter-spacing: 0;
+}
+
+/* Label — bottom right, Dirtyline to match site font */
 .reg-hcard-label {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 100;
+  align-self: flex-end;
   text-align: right;
-  line-height: 0.9;
-  padding: 14px;
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 0;
   text-transform: lowercase;
-}
-
-/* Staggered offset on desktop */
-@media (min-width: 768px) {
-  .reg-hcard-2 { margin-top: 40px; }
-  .reg-hcard-4 { margin-top: 40px; }
-  .reg-hcard-3 { margin-top: -40px; }
+  line-height: 0.9;
 }
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .reg-highlights-section {
-    padding: 3rem 1rem 3rem;
+    padding: 3rem 1.5rem 3rem;
   }
 
   .reg-highlights-heading {
@@ -195,39 +184,23 @@
     margin-bottom: 1.5rem;
   }
 
-  /* 2 columns on mobile — all 5 visible without excessive scrolling */
-  .reg-highlights-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .reg-hcard-5 {
-    grid-column: span 2;
-    max-width: 100%;
-  }
-
   .reg-highlight-card {
-    height: 150px;
+    height: 220px;
+    padding: 24px 24px 20px;
   }
 
   .reg-hcard-value {
-    font-size: 2.6rem;
-    letter-spacing: -2px;
-    padding-left: 12px;
-    padding-top: 8px;
+    font-size: 5rem;
+    letter-spacing: -8px;
+  }
+
+  .reg-hcard-plus {
+    font-size: 1.8rem;
   }
 
   .reg-hcard-label {
-    font-size: 1.1rem;
-    padding: 10px;
-    bottom: 6px;
-    right: 6px;
+    font-size: 1.4rem;
   }
-
-  /* Reset stagger offsets on mobile */
-  .reg-hcard-2 { margin-top: 0; }
-  .reg-hcard-3 { margin-top: 0; }
-  .reg-hcard-4 { margin-top: 0; }
 }
 
 /* ─── Form Section ──────────────────────────────────────── */

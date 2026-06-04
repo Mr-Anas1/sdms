@@ -44,8 +44,9 @@
 .testimonials-section-content .testimonial-card {
   box-sizing: border-box;
   background: transparent;
-  /* Visible on both light and dark before dark-mode class fires */
-  border: 2px solid #888;
+  /* Always white — section background is always dark, no dark-mode
+     class dependency which causes a hydration flash on every refresh */
+  border: 2px solid #ffffff;
   border-radius: 20px;
   padding: 40px;
   min-height: 600px;
@@ -55,12 +56,6 @@
   flex-direction: column;
   justify-content: space-between;
   transition: border-color 0.4s ease-in-out;
-}
-
-/* !important overrides SSR hydration delay where dark-mode class
-   hasn't been applied to body yet */
-.dark-mode .testimonials-section-content .testimonial-card {
-  border: 2px solid #ffffff !important;
 }
 
 .testimonials-section-content .testimonial-card:hover {

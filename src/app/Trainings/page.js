@@ -305,8 +305,7 @@ export default function Trainings() {
                 <div className="line-wrapper-btn">
                   <ScrollFromBottom>
                     <a
-                      href="https://forms.gle/YshyRVNa9VmobMet7"
-                      target="_blank"
+                      href="/Register"
                       className="services-text-button"
                     >
                       Register
@@ -355,8 +354,7 @@ export default function Trainings() {
                 <div className="line-wrapper-btn">
                   <ScrollFromBottom>
                     <a
-                      href="https://forms.gle/xgxqXt9zHQcVMYPi6"
-                      target="_blank"
+                      href="/Register"
                       className="services-text-button"
                     >
                       Register

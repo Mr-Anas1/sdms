@@ -244,10 +244,13 @@ export default function Register() {
                 opacity:    cardMotion[i].o,
               }}
             >
-              <div className="reg-hcard-value">{h.value}</div>
+              <div className="reg-hcard-value">
+                {h.value.replace("+", "")}
+                <sup className="reg-hcard-plus">+</sup>
+              </div>
               <div className="reg-hcard-label">
                 {h.label.split("\n").map((line, j) => (
-                  <span key={j}>{line}<br /></span>
+                  <span key={j} style={{ display: "block" }}>{line}</span>
                 ))}
               </div>
             </motion.div>
@@ -259,7 +262,7 @@ export default function Register() {
       <section className="reg-form-section" id="register">
         <div className="reg-form-container">
           <ScrollFromBottom>
-            <h2 className="reg-section-label">register now</h2>
+            <h2 className="reg-section-label">register here</h2>
           </ScrollFromBottom>
 
           <form className="reg-form" onSubmit={handleSubmit} noValidate>
@@ -554,22 +557,6 @@ export default function Register() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="reg-cta-section">
-        <div className="reg-cta-inner">
-          <ScrollFromBottom>
-            <h2 className="reg-cta-title">
-              Ready to gain real-world experience and build your professional skills?
-            </h2>
-          </ScrollFromBottom>
-          <ScrollFromBottom>
-            <a href="/ContactPage" className="reg-cta-btn">
-              Know more about us
-            </a>
-          </ScrollFromBottom>
         </div>
       </section>
 
