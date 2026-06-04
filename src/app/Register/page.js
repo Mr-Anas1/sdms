@@ -279,8 +279,8 @@ export default function Register() {
             </iframe>
           </div>
 
-          {/* ── Custom form (commented out — restore when Google Sheets integration is ready) ── */}
-          {/* <form className="reg-form" onSubmit={handleSubmit} noValidate>
+          {/* Custom form hidden — restore by changing false to true */}
+          {false && <form className="reg-form" onSubmit={handleSubmit} noValidate>
             {/* Row 1 */}
             <div className="reg-grid-2">
               <div className="reg-field">
@@ -493,7 +493,7 @@ export default function Register() {
                 Something went wrong. Please try again.
               </p>
             )}
-          </form> */ }
+          </form>}
         </div>
       </section>
 
