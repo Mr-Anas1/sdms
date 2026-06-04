@@ -387,7 +387,9 @@ export default function Trainings() {
           </ScrollFromRight>
         </div>
 
-        <TestimonialContainer testimonials={testimonials} />
+        <div className="testimonials-section-content">
+          <TestimonialContainer testimonials={testimonials} />
+        </div>
       </div>
       <MainFooter />
     </div>
