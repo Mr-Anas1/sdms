@@ -41,12 +41,11 @@
 
 
 /* The main testimonial card */
+/* Border rules moved to TestimonialContainer.css so they load
+   on every page that uses the component (including /Trainings) */
 .testimonials-section-content .testimonial-card {
   box-sizing: border-box;
   background: transparent;
-  /* Always white — section background is always dark, no dark-mode
-     class dependency which causes a hydration flash on every refresh */
-  border: 2px solid #ffffff;
   border-radius: 20px;
   padding: 40px;
   min-height: 600px;
@@ -56,10 +55,6 @@
   flex-direction: column;
   justify-content: space-between;
   transition: border-color 0.4s ease-in-out;
-}
-
-.testimonials-section-content .testimonial-card:hover {
-  border-color: transparent;
 }
 
 
