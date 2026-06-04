@@ -108,13 +108,6 @@ export default function Navbar({
                 </li>
 
                 <li>
-                  <Link href="/Register" className="navitem">
-                    register
-                  </Link>
-                  <br />
-                </li>
-
-                <li>
                   <Link href="/ContactPage" className="navitem">
                     contact
                   </Link>

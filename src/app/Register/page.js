@@ -136,6 +136,7 @@ export default function Register() {
   };
 
   const [mounted, setMounted] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => { setMounted(true); }, []);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -172,7 +173,7 @@ export default function Register() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      const result = await res.json();
+      await res.json();
       setFormStatus(res.ok ? "success" : "error");
       if (res.ok) e.target.reset();
     } catch {
@@ -243,10 +244,13 @@ export default function Register() {
                 opacity:    cardMotion[i].o,
               }}
             >
-              <div className="reg-hcard-value">{h.value}</div>
+              <div className="reg-hcard-value">
+                {h.value.replace("+", "")}
+                <sup className="reg-hcard-plus">+</sup>
+              </div>
               <div className="reg-hcard-label">
                 {h.label.split("\n").map((line, j) => (
-                  <span key={j}>{line}<br /></span>
+                  <span key={j} style={{ display: "block" }}>{line}</span>
                 ))}
               </div>
             </motion.div>
@@ -258,7 +262,7 @@ export default function Register() {
       <section className="reg-form-section" id="register">
         <div className="reg-form-container">
           <ScrollFromBottom>
-            <h2 className="reg-section-label">register now</h2>
+            <h2 className="reg-section-label">register here</h2>
           </ScrollFromBottom>
 
           <form className="reg-form" onSubmit={handleSubmit} noValidate>
@@ -483,47 +487,48 @@ export default function Register() {
         <div className="reg-gallery-header">
           <ScrollFromLeft>
             <ScrollRevealText>
-              <h2 className="reg-gallery-title"><span>glimpses of our</span></h2>
+              <h2 className="reg-gallery-title"><span>behind the</span></h2>
             </ScrollRevealText>
           </ScrollFromLeft>
           <ScrollFromRight>
             <ScrollRevealText>
-              <h2 className="reg-gallery-title"><span>training programs</span></h2>
+              <h2 className="reg-gallery-title"><span>scenes.</span></h2>
             </ScrollRevealText>
           </ScrollFromRight>
         </div>
         <div className="reg-carousel">
           {mounted && (
-            <Slider
-              centerMode={true}
-              centerPadding="60px"
-              slidesToShow={3}
-              slidesToScroll={1}
-              infinite={true}
-              autoplay={true}
-              autoplaySpeed={2800}
-              speed={500}
-              cssEase="ease-in-out"
-              pauseOnHover={true}
-              arrows={false}
-              swipeToSlide={true}
-              responsive={[
-                {
-                  breakpoint: 1024,
-                  settings: { slidesToShow: 2, centerPadding: "40px" },
-                },
-                {
-                  breakpoint: 640,
-                  settings: { slidesToShow: 1, centerPadding: "30px", centerMode: true },
-                },
-              ]}
-            >
-              {galleryImages.map((img, i) => (
-                <div key={i} className="reg-carousel-slide">
-                  <img src={img.src} alt={img.alt} loading="lazy" />
+            <>
+              <Slider
+                fade={true}
+                slidesToShow={1}
+                slidesToScroll={1}
+                infinite={true}
+                autoplay={true}
+                autoplaySpeed={3200}
+                speed={900}
+                cssEase="ease-in-out"
+                arrows={false}
+                dots={false}
+                swipeToSlide={true}
+                pauseOnHover={true}
+                afterChange={(i) => setCurrentSlide(i)}
+              >
+                {galleryImages.map((img, i) => (
+                  <div key={i} className="reg-carousel-slide">
+                    <img src={img.src} alt={img.alt} loading="lazy" />
+                  </div>
+                ))}
+              </Slider>
+              <div className="reg-carousel-footer">
+                <span className="reg-carousel-counter">
+                  {String(currentSlide + 1).padStart(2, "0")} / {String(galleryImages.length).padStart(2, "0")}
+                </span>
+                <div className="reg-carousel-progress">
+                  <div className="reg-carousel-progress-bar" key={currentSlide} />
                 </div>
-              ))}
-            </Slider>
+              </div>
+            </>
           )}
         </div>
       </section>
@@ -531,7 +536,7 @@ export default function Register() {
       {/* ── FAQs ── */}
       <section className="reg-faq-section">
         <ScrollFromBottom>
-          <h2 className="reg-faq-heading">frequently asked questions</h2>
+          <h2 className="reg-faq-heading">faqs</h2>
         </ScrollFromBottom>
         <div className="reg-faq-list">
           {faqs.map((item, i) => (
@@ -552,22 +557,6 @@ export default function Register() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="reg-cta-section">
-        <div className="reg-cta-inner">
-          <ScrollFromBottom>
-            <h2 className="reg-cta-title">
-              Ready to gain real-world experience and build your professional skills?
-            </h2>
-          </ScrollFromBottom>
-          <ScrollFromBottom>
-            <a href="/ContactPage" className="reg-cta-btn">
-              Know more about us
-            </a>
-          </ScrollFromBottom>
         </div>
       </section>
 
