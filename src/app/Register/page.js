@@ -172,7 +172,7 @@ export default function Register() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      const result = await res.json();
+      await res.json();
       setFormStatus(res.ok ? "success" : "error");
       if (res.ok) e.target.reset();
     } catch {
@@ -531,7 +531,7 @@ export default function Register() {
       {/* ── FAQs ── */}
       <section className="reg-faq-section">
         <ScrollFromBottom>
-          <h2 className="reg-faq-heading">frequently asked questions</h2>
+          <h2 className="reg-faq-heading">faqs</h2>
         </ScrollFromBottom>
         <div className="reg-faq-list">
           {faqs.map((item, i) => (

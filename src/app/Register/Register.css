@@ -608,6 +608,7 @@ textarea.reg-input {
   font-weight: 100;
   margin-bottom: 3rem;
   line-height: 1;
+  text-align: center;
   color: var(--background-dark);
   transition: color 0.3s;
 }
