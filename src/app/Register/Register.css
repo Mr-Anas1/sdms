@@ -454,53 +454,41 @@
 
 .reg-carousel {
   width: 100%;
-  padding-bottom: 2rem;
+  overflow: hidden;
 }
 
 .reg-carousel-slide {
-  padding: 0 10px;
+  padding: 0 8px;
+  outline: none;
 }
 
 .reg-carousel-slide img {
   width: 100%;
-  height: 420px;
+  height: 340px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 14px;
   display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.6;
+  transform: scale(0.93);
 }
 
-/* Slick dot overrides for gallery */
-.reg-carousel .slick-dots {
-  bottom: -2rem;
-}
-
-.reg-carousel .slick-dots li button:before {
-  color: #ffffff;
-  font-size: 8px;
-  opacity: 0.4;
-}
-
-.reg-carousel .slick-dots li.slick-active button:before {
+/* Highlight the active/center slide */
+.reg-carousel .slick-center .reg-carousel-slide img {
   opacity: 1;
-  color: #ffffff;
+  transform: scale(1);
 }
 
-/* Arrow overrides */
-.reg-carousel .slick-prev,
-.reg-carousel .slick-next {
-  z-index: 10;
-  width: 40px;
-  height: 40px;
+/* Mobile slide height */
+@media (max-width: 640px) {
+  .reg-carousel-slide img {
+    height: 240px;
+  }
 }
 
-.reg-carousel .slick-prev { left: -10px; }
-.reg-carousel .slick-next { right: -10px; }
-
-.reg-carousel .slick-prev:before,
-.reg-carousel .slick-next:before {
-  font-size: 30px;
-  color: #ffffff;
-  opacity: 0.7;
+.reg-carousel .slick-track {
+  display: flex !important;
+  align-items: center;
 }
 
 /* ─── FAQ ───────────────────────────────────────────────── */
